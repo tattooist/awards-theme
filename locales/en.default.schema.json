@@ -822,7 +822,7 @@
           "info": "Select a different menu for mobile sidebar. If none is set the main menu is used."
         },
         "transparent_header_h1": {
-          "content": "Enable"
+          "content": "Transparent header"
         },
         "enable_transparent_header": {
           "label": "Enable",
