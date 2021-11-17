@@ -51,7 +51,7 @@
       {
         "type": "color",
         "id": "colors_text",
-        "default": "#121212",
+        "default": "#262626",
         "label": "t:settings_schema.colors.settings.colors_text.label",
         "info": "t:settings_schema.colors.settings.colors_text.info"
       },
@@ -96,7 +96,7 @@
       {
         "type": "font_picker",
         "id": "type_header_font",
-        "default": "assistant_n4",
+        "default": "poppins_n4",
         "label": "t:settings_schema.typography.settings.type_header_font.label",
         "info": "t:settings_schema.typography.settings.type_header_font.info"
       },
@@ -117,7 +117,7 @@
       {
         "type": "font_picker",
         "id": "type_body_font",
-        "default": "assistant_n4",
+        "default": "poppins_n4",
         "label": "t:settings_schema.typography.settings.type_body_font.label",
         "info": "t:settings_schema.typography.settings.type_body_font.info"
       },

@@ -783,33 +783,76 @@
           "label": "Color scheme"
         },
         "logo": {
-          "label": "Logo image"
+          "header": "Logo",
+          "label": "Logo image",
+          "info": "124 x 40px .png recommended"
         },
         "logo_width": {
           "unit": "px",
-          "label": "Custom logo width"
+          "label": "Image width"
+        },
+        "logo_width_mob": {
+          "unit": "px",
+          "label": "Mobile image width"
+        },
+        "destop_header_h1": {
+          "content": "Destop"
         },
         "logo_position": {
-          "label": "Logo position on large screens",
+          "label": "Layout",
           "options__1": {
-            "label": "Middle left"
+            "label": "Logo left, navigation inline"
           },
           "options__2": {
-            "label": "Top left"
+            "label": "Logo center, navigation inline"
           },
           "options__3": {
-            "label": "Top center"
+            "label": "Logo left, bottom navigation"
+          },
+          "options__4": {
+            "label": "Logo center, bottom navigation"
           }
         },
         "menu": {
+          "header": "Navigation",
           "label": "Menu"
         },
+        "menu_mob": {
+          "label": "Mobile menu",
+          "info": "Select a different menu for mobile sidebar. If none is set the main menu is used."
+        },
+        "transparent_header_h1": {
+          "content": "Enable"
+        },
+        "enable_transparent_header": {
+          "label": "Enable",
+          "info": "Home page only"
+        },
+        "transparent_text_color": {
+          "label": "Text color"
+        },
+        "transparent_header_logo": {
+          "label": "Logo image",
+          "info": "Uses the dimensions set on your main logo."
+        },
         "show_line_separator": {
-          "label": "Show separator line"
+          "label": "Separator line"
         },
         "enable_sticky_header": {
-          "label": "Enable sticky header",
+          "label": "Sticky header",
           "info": "Header shows on the screen as customers scroll up."
+        },
+        "show_icons": {
+          "label": "Show icons"
+        },
+        "color_header_h1": {
+          "content": "Color"
+        },
+        "section_background_color": {
+          "label": "Section background"
+        },
+        "section_text_color": {
+          "label": "Text color"
         }
       }
     },
@@ -852,25 +895,6 @@
         },
         "image_overlay_opacity": {
           "label": "Image overlay opacity"
-        },
-        "color_scheme": {
-          "options__1": {
-            "label": "Accent 1"
-          },
-          "options__2": {
-            "label": "Accent 2"
-          },
-          "options__3": {
-            "label": "Background 1"
-          },
-          "options__4": {
-            "label": "Background 2"
-          },
-          "options__5": {
-            "label": "Inverse"
-          },
-          "label": "Color scheme",
-          "info": "Used for text box."
         },
         "header": {
           "content": "Mobile Layout"
