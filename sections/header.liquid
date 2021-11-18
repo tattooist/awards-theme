@@ -66,6 +66,14 @@
   }
 </style>
 
+{% style %}
+  :root {
+    --color-transparent-header-text: {{ section.settings.transparent_text_color }};
+    --color-base-header-text: {% if section.settings.enable_transparent_header and request.page_type == 'index' %}var(--color-transparent-header-text){% else %}{{ section.settings.section_text_color }}{% endif %};
+    --color-header-section-bg: {{ section.settings.section_background_color }};
+  }
+{% endstyle %}
+
 <script src="{{ 'details-disclosure.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'details-modal.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
@@ -79,7 +87,7 @@
     <path d="M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z" fill="currentColor">
   </symbol>
 </svg>
-<{% if section.settings.enable_sticky_header %}sticky-header{% else %}div{% endif %} class="header-wrapper gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}">
+<{% if section.settings.enable_sticky_header %}sticky-header{% else %}div{% endif %} class="header-wrapper gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}{% if section.settings.enable_transparent_header and request.page_type == 'index' %} header-wrapper--transparent{% endif %}">
   <header class="header header--{{ section.settings.logo_position }} page-width{% if section.settings.menu != blank %} header--has-menu{% endif %}">
     {%- if section.settings.menu != blank -%}
       <header-drawer data-breakpoint="tablet">
@@ -95,7 +103,14 @@
               <div class="menu-drawer__navigation-container">
                 <nav class="menu-drawer__navigation">
                   <ul class="menu-drawer__menu list-menu" role="list">
-                    {%- for link in section.settings.menu.links -%}
+
+                    {%- if section.settings.menu_mob != blank -%}
+                      {%- assign menu_mob = section.settings.menu_mob -%}
+                    {% else %}
+                      {%- assign menu_mob = section.settings.menu -%}
+                    {%- endif -%}
+
+                    {%- for link in menu_mob.links -%}
                       <li>
                         {%- if link.links != blank -%}
                           <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
@@ -330,16 +345,30 @@
       <h1 class="header__heading">
     {%- endif -%}
         <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
-          {%- if section.settings.logo != blank -%}
+          {%- if section.settings.transparent_header_logo != blank and section.settings.enable_transparent_header and request.page_type == 'index' -%}
+            {%- assign header_logo = section.settings.transparent_header_logo -%}
+          {% else %}
+            {%- assign header_logo = section.settings.logo  -%}
+          {% endif %}
+
+          {%- if header_logo != blank -%}
             {%- assign image_size = section.settings.logo_width | append: 'x' -%}
-            <img srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
-              src="{{ section.settings.logo | img_url: image_size }}"
+            <img srcset="{{ header_logo | img_url: image_size }} 1x, {{ header_logo | img_url: image_size, scale: 2 }} 2x"
+              src="{{ header_logo | img_url: image_size }}"
               loading="lazy"
               class="header__heading-logo"
-              width="{{ section.settings.logo.width }}"
-              height="{{ section.settings.logo.height }}"
-              alt="{{ section.settings.logo.alt | default: shop.name | escape }}"
+              width="{{ header_logo.width }}"
+              height="{{ header_logo.height }}"
+              alt="{{ header_logo.alt | default: shop.name | escape }}"
             >
+            {%- assign image_size_mobile = section.settings.logo_width_mob -%}
+            <style>
+              @media screen and (max-width: 749px) {
+                .header__heading-logo {
+                  width: {{ image_size_mobile }}px;
+                }
+              }
+            </style>
           {%- else -%}
             <span class="h2">{% comment %}{{ shop.name }}{% endcomment %} St.Store</span>
           {%- endif -%}
@@ -401,7 +430,7 @@
     {%- endif -%}
 
     <div class="header__icons">
-      <details-modal class="header__search">
+      <details-modal class="header__search {% if section.settings.menu != blank %} small-hide{% endif %}">
         <details>
           <summary class="header__icon header__icon--search header__icon--summary link focus-inset modal__toggle" aria-haspopup="dialog" aria-label="{{ 'general.search.search' | t }}">
             <span>
@@ -475,7 +504,7 @@
       </details-modal>
 
       {%- if shop.customer_accounts_enabled -%}
-        <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
+        <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset">
           {% render 'icon-account' %}
           <span class="visually-hidden">
             {%- liquid
@@ -719,7 +748,7 @@
       "type": "color",
       "id": "transparent_text_color",
       "label": "t:sections.header.settings.transparent_text_color.label",
-      "default": "#000000"
+      "default": "#262626"
     },
     {
       "type": "image_picker",
