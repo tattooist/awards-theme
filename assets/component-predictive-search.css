@@ -29,10 +29,6 @@
 } 
 
 @media screen and (min-width: 750px) {
-  .predictive-search {
-    border-top: none; 
-  }
-
   .header predictive-search { 
     position: relative;
   }

@@ -671,7 +671,7 @@ details > * {
 }
 
 .icon-arrow {
-  width: 1.5rem;
+  width: 2.4rem;
 }
 
 h3 .icon-arrow,
@@ -1545,8 +1545,8 @@ details[open] > .share-button__fallback {
 }
 
 .field__button > svg {
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 2.4rem;
+  width: 2.4rem;
 }
 
 .field__input:-webkit-autofill ~ .field__button,
@@ -1741,8 +1741,8 @@ input[type='checkbox'] {
 }
 
 .modal__close-button .icon {
-  width: 1.7rem;
-  height: 1.7rem;
+  width: 2.4rem;
+  height: 2.4rem;
 }
 
 .modal__content {
@@ -2194,18 +2194,15 @@ details[open] .modal-overlay::after {
   }
 
   .search-modal__content {
-    padding: 0 6rem;
+    padding: 0 8rem;
   }
 }
 
 @media screen and (min-width: 990px) {
-  .search-modal__form {
-    max-width: 47.8rem;
-  }
-
   .search-modal__close-button {
     position: initial;
     margin-left: 0.5rem;
+    margin-right: -1rem;
   }
 }
 
@@ -2401,7 +2398,7 @@ span.header__menu-item-text {
 }
 
 .header__submenu.list-menu {
-  padding: 2rem 0;
+  padding: 2.8rem 0;
 }
 
 .header__submenu .header__submenu {
@@ -2415,7 +2412,11 @@ span.header__menu-item-text {
 }
 
 .header__submenu .header__menu-item {
-  padding: 0.95rem 3.5rem 0.95rem 2rem;
+  padding: .4rem 2.4rem .4rem 2.4rem;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  text-transform: none;
 }
 
 .header__submenu .header__submenu .header__menu-item {

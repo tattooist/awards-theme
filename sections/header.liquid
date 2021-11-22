@@ -83,8 +83,9 @@
     <path d="M20.9999 20.9999L16.6567 16.6567" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
   </symbol>
 
-  <symbol id="icon-close" class="icon icon-close" fill="none" viewBox="0 0 18 17">
-    <path d="M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z" fill="currentColor">
+  <symbol id="icon-close" class="icon icon-close" fill="none" viewBox="0 0 24 24">
+    <path d="M7 7L17 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M17 7L7 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
   </symbol>
 </svg>
 <{% if section.settings.enable_sticky_header %}sticky-header{% else %}div{% endif %} class="header-wrapper gradient{% if section.settings.show_line_separator %} header-wrapper--border-bottom{% endif %}{% if section.settings.enable_transparent_header and request.page_type == 'index' %} header-wrapper--transparent{% endif %}">
@@ -122,9 +123,10 @@
                             <div id="link-{{ link.title | escape }}" class="menu-drawer__submenu motion-reduce" tabindex="-1">
                               <div class="menu-drawer__inner-submenu">
                                 <button class="menu-drawer__close-button link link--text focus-inset" aria-expanded="true">
-                                  {% render 'icon-arrow' %}
-                                  {{ link.title | escape }}
+                                  {% render 'icon-arrow-big' %}
+                                  Back
                                 </button>
+                                <div class="menu-drawer__menu-title">{{ link.title | escape }}</div>
                                 <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
                                   {%- for childlink in link.links -%}
                                     <li>
@@ -141,9 +143,10 @@
                                           </summary>
                                           <div id="childlink-{{ childlink.title | escape }}" class="menu-drawer__submenu motion-reduce">
                                             <button class="menu-drawer__close-button link link--text focus-inset" aria-expanded="true">
-                                              {% render 'icon-arrow' %}
-                                              {{ childlink.title | escape }}
+                                              {% render 'icon-arrow-big' %}
+                                              Back
                                             </button>
+                                            <div class="menu-drawer__menu-title">{{ childlink.title | escape }}</div>
                                             <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
                                               {%- for grandchildlink in childlink.links -%}
                                                 <li>
@@ -174,14 +177,7 @@
                 <div class="menu-drawer__utility-links">
                   {%- if shop.customer_accounts_enabled -%}
                     <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="menu-drawer__account link focus-inset h5">
-                      {% render 'icon-account' %}
-                      {%- liquid
-                        if customer
-                          echo 'customer.account_fallback' | t
-                        else
-                          echo 'customer.log_in' | t
-                        endif
-                      -%}
+                      {{ 'customer.account_fallback' | t }}
                     </a>
                   {%- endif -%}
                   <ul class="list list-social list-unstyled" role="list">
@@ -290,6 +286,11 @@
               {%- endif -%}
                 <form action="{{ routes.search_url }}" method="get" role="search" class="search search-modal__form">
                   <div class="field">
+                    <button class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
+                      <svg class="icon icon-search" aria-hidden="true" focusable="false" role="presentation">
+                        <use href="#icon-search">
+                      </svg>
+                    </button>
                     <input class="search__input field__input"
                       id="Search-In-Modal-1"
                       type="search"
@@ -311,11 +312,6 @@
                     >
                     <label class="field__label" for="Search-In-Modal-1">{{ 'general.search.search' | t }}</label>
                     <input type="hidden" name="options[prefix]" value="last">
-                    <button class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
-                      <svg class="icon icon-search" aria-hidden="true" focusable="false" role="presentation">
-                        <use href="#icon-search">
-                      </svg>
-                    </button>
                   </div>
 
                   {%- if settings.predictive_search_enabled -%}
@@ -390,7 +386,6 @@
                   <details id="Details-HeaderMenu-{{ forloop.index }}">
                     <summary class="header__menu-item list-menu__item link focus-inset">
                       <span {%- if link.child_active %} class="header__active-menu-item"{% endif %}>{{ link.title | escape }}</span>
-                      {% render 'icon-caret' %}
                     </summary>
                     <ul id="HeaderMenu-MenuList-{{ forloop.index }}" class="header__submenu list-menu list-menu--disclosure caption-large motion-reduce" role="list" tabindex="-1">
                       {%- for childlink in link.links -%}
@@ -403,7 +398,6 @@
                             <details id="Details-HeaderSubMenu-{{ forloop.index }}">
                               <summary class="header__menu-item link link--text list-menu__item focus-inset caption-large">
                                 {{ childlink.title | escape }}
-                                {% render 'icon-caret' %}
                               </summary>
                               <ul id="HeaderMenu-SubMenuList-{{ forloop.index }}" class="header__submenu list-menu motion-reduce">
                                 {%- for grandchildlink in childlink.links -%}
@@ -433,7 +427,7 @@
     {%- endif -%}
 
     <div class="header__icons{% unless section.settings.show_icons %} header__icons--disabled{% endunless %}">
-      <details-modal class="header__search{% if section.settings.menu != blank %} small-hide{% endif %}">
+      <details-modal class="header__search">
         <details>
           <summary class="header__icon header__icon--search header__icon--summary link focus-inset modal__toggle {% unless section.settings.show_icons %} header__icon--disabled{% endunless %}" aria-haspopup="dialog" aria-label="{{ 'general.search.search' | t }}">
               <span>
@@ -456,6 +450,11 @@
               {%- endif -%}
                 <form action="{{ routes.search_url }}" method="get" role="search" class="search search-modal__form">
                   <div class="field">
+                    <button class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
+                      <svg class="icon icon-search" aria-hidden="true" focusable="false" role="presentation">
+                        <use href="#icon-search">
+                      </svg>
+                    </button>
                     <input class="search__input field__input"
                       id="Search-In-Modal"
                       type="search"
@@ -477,11 +476,6 @@
                     >
                     <label class="field__label" for="Search-In-Modal">{{ 'general.search.search' | t }}</label>
                     <input type="hidden" name="options[prefix]" value="last">
-                    <button class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
-                      <svg class="icon icon-search" aria-hidden="true" focusable="false" role="presentation">
-                        <use href="#icon-search">
-                      </svg>
-                    </button>
                   </div>
 
                   {%- if settings.predictive_search_enabled -%}
@@ -510,7 +504,7 @@
       </details-modal>
 
       {%- if shop.customer_accounts_enabled -%}
-        <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% unless section.settings.show_icons %} header__icon--disabled{% endunless %}">
+        <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% unless section.settings.show_icons %} header__icon--disabled{% endunless %}{% if section.settings.menu != blank %} small-hide{% endif %}">
           {% render 'icon-account' %}
           <span class="header__menu-item-text">{{ 'customer.account_fallback' | t }}</span>
         </a>
