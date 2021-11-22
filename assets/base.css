@@ -1807,10 +1807,53 @@ input[type='checkbox'] {
   background: var(--color-announcement-bar-bg);
 }
 
+.announcement-bar-sticky {
+  height: 3.6rem;
+  width: 100%;
+}
+
+.shopify-section-announcement-bar--everywhere .announcement-bar
+{
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.shopify-section-announcement-bar--everywhere + .shopify-section-header-sticky {
+  top: 3.6rem;
+}
+
+
+@media screen and (max-width: 749px) {
+  .shopify-section-announcement-bar--on-mobile .announcement-bar
+  {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+  .shopify-section-announcement-bar--on-mobile + .shopify-section-header-sticky {
+    top: 3.6rem;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .shopify-section-announcement-bar--on-desktop .announcement-bar
+  {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+  .shopify-section-announcement-bar--on-desktop + .shopify-section-header-sticky {
+    top: 3.6rem;
+  }
+}
+
 .announcement-bar__link {
   display: block;
   width: 100%;
-  padding: 1rem 2rem;
+  padding: .8rem 2rem;
   text-decoration: none;
 }
 
@@ -1833,7 +1876,7 @@ input[type='checkbox'] {
 
 .announcement-bar__message {
   text-align: center;
-  padding: 1rem 2rem;
+  padding: .8rem 2rem;
   margin: 0;
   font-weight: normal;
   font-size: 1.2rem;

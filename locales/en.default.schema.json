@@ -224,6 +224,13 @@
       "color_title": "Color",
       "bg_color":"Background",
       "text_color":"Text",
+      "position": {
+        "label": "Position",
+        "non-sticky": "Non sticky",
+        "on-desktop": "Sticky on desktop",
+        "on-mobile": "Sticky on mobile",
+        "everywhere": "Sticky everywhere"
+      },
       "blocks": {
         "announcement": {
           "name": "Announcement",
