@@ -1803,8 +1803,8 @@ input[type='checkbox'] {
 }
 
 .announcement-bar {
-  border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
-  color: rgb(var(--color-foreground));
+  color: var(--color-announcement-bar-text);
+  background: var(--color-announcement-bar-bg);
 }
 
 .announcement-bar__link {
@@ -1835,7 +1835,11 @@ input[type='checkbox'] {
   text-align: center;
   padding: 1rem 2rem;
   margin: 0;
-  letter-spacing: 0.1rem;
+  font-weight: normal;
+  font-size: 1.2rem;
+  line-height: 2rem;
+  letter-spacing: 0.02em;
+  color: var(--color-announcement-bar-text);
 }
 
 /* section-header */

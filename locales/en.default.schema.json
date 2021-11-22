@@ -220,6 +220,10 @@
   "sections": {
     "announcement-bar": {
       "name": "Announcement bar",
+      "home_page_only": "Show on Home page only",
+      "color_title": "Color",
+      "bg_color":"Background",
+      "text_color":"Text",
       "blocks": {
         "announcement": {
           "name": "Announcement",
