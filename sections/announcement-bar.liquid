@@ -5,7 +5,7 @@
     --color-announcement-bar-bg: {{ section.settings.bg_color }};
     }
   {% endstyle %}
-  {%- if section.settings.position != "non-sticky" -%}<div class="announcement-bar-sticky announcement-bar-sticky--{{section.settings.position}}">{%- endif -%}
+
   {%- for block in section.blocks -%}
     {%- case block.type -%}
       {%- when 'announcement' -%}
@@ -24,11 +24,10 @@
         </div>
     {%- endcase -%}
   {%- endfor -%}
-  {%- if section.settings.position != "non-sticky" -%}</div>{%- endif -%}
 
   {%- if section.settings.position != "non-sticky" -%}
     <script>
-      document.getElementById("shopify-section-announcement-bar").classList.add("shopify-section-announcement-bar-sticky", "shopify-section-announcement-bar--{{ section.settings.position }}");
+      document.getElementById("shopify-section-announcement-bar").classList.add("announcement-bar-sticky--{{ section.settings.position }}");
     </script>
   {%- endif -%}
 {%- endif -%}

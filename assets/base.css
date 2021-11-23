@@ -1807,45 +1807,47 @@ input[type='checkbox'] {
   background: var(--color-announcement-bar-bg);
 }
 
-.announcement-bar-sticky {
+.announcement-bar-sticky--everywhere,
+.announcement-bar-sticky--on-mobile,
+.announcement-bar-sticky--on-desktop {
   height: 3.6rem;
   width: 100%;
 }
 
-.shopify-section-announcement-bar--everywhere .announcement-bar
+.announcement-bar-sticky--everywhere .announcement-bar
 {
   position: fixed;
   top: 0;
   width: 100%;
 }
 
-.shopify-section-announcement-bar--everywhere + .shopify-section-header-sticky {
+.announcement-bar-sticky--everywhere + .shopify-section-header-sticky {
   top: 3.6rem;
 }
 
 
 @media screen and (max-width: 749px) {
-  .shopify-section-announcement-bar--on-mobile .announcement-bar
+  .announcement-bar-sticky--on-mobile .announcement-bar
   {
     position: fixed;
     top: 0;
     width: 100%;
   }
 
-  .shopify-section-announcement-bar--on-mobile + .shopify-section-header-sticky {
+  .announcement-bar-sticky--on-mobile + .shopify-section-header-sticky {
     top: 3.6rem;
   }
 }
 
 @media screen and (min-width: 750px) {
-  .shopify-section-announcement-bar--on-desktop .announcement-bar
+  .announcement-bar-sticky--on-desktop .announcement-bar
   {
     position: fixed;
     top: 0;
     width: 100%;
   }
 
-  .shopify-section-announcement-bar--on-desktop + .shopify-section-header-sticky {
+  .announcement-bar-sticky--on-desktop + .shopify-section-header-sticky {
     top: 3.6rem;
   }
 }
