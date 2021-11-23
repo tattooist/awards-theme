@@ -1870,6 +1870,11 @@ input[type='checkbox'] {
   margin-left: 0.8rem;
   vertical-align: middle;
   margin-bottom: 0.2rem;
+  width: 1.6rem;
+}
+
+.announcement-bar__link .icon-arrow path {
+  stroke: var(--color-announcement-bar-text);
 }
 
 .announcement-bar__link .announcement-bar__message {
