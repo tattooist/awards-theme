@@ -16,7 +16,7 @@
           "announcement-bar-0": {
             "type": "announcement",
             "settings": {
-              "text": "Welcome to our store",
+              "text": "Complimentary shipping on all orders",
               "link": ""
             }
           }
@@ -27,7 +27,7 @@
         "settings": {
           "position": "non-sticky",
           "home_page_only": true,
-          "bg_color": "#c9a486",
+          "bg_color": "#c29665",
           "text_color": "#FFF"
         }
       },
