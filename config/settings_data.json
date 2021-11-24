@@ -26,8 +26,8 @@
         ],
         "settings": {
           "position": "non-sticky",
-          "home_page_only": false,
-          "bg_color": "#262626",
+          "home_page_only": true,
+          "bg_color": "#c9a486",
           "text_color": "#FFF"
         }
       },
@@ -41,7 +41,7 @@
           "menu": "main-menu",
           "menu_mob": "main-menu",
           "enable_transparent_header": true,
-          "transparent_text_color": "#262626",
+          "transparent_text_color": "#000000",
           "logo_position": "center",
           "show_icons": false,
           "section_background_color": "#FFFFFF",
