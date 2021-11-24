@@ -6,8 +6,14 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Talk about your brand",
+            "heading": "Meet Doris",
             "heading_size": "medium"
+          }
+        },
+        "2b3133c8-2d96-4850-b190-f8d466290f0f": {
+          "type": "text",
+          "settings": {
+            "text": "Our signature handbag is finally here"
           }
         },
         "button": {
@@ -25,6 +31,7 @@
       },
       "block_order": [
         "heading",
+        "2b3133c8-2d96-4850-b190-f8d466290f0f",
         "button"
       ],
       "settings": {
