@@ -5,7 +5,7 @@
 <noscript>{{ 'section-rich-text.css' | asset_url | stylesheet_tag }}</noscript>
 
 <div class="{% unless section.settings.full_width %}page-width{% endunless %}">
-  <div class="rich-text color-{{ section.settings.color_scheme }} gradient{% if section.settings.full_width %} rich-text--full-width{% endif %}">
+  <div class="rich-text gradient rich-text--full-width">
     <div class="rich-text__blocks">
       {%- for block in section.blocks -%}
         {%- case block.type -%}
@@ -14,7 +14,7 @@
           {%- when 'text' -%}
             <div class="rich-text__text rte" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
           {%- when 'button' -%}
-            <a{% if block.settings.button_link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.button_link }}"{% endif %} class="button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}" {{ block.shopify_attributes }}>
+            <a{% if block.settings.button_link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.button_link }}"{% endif %} class="button button--primary" {{ block.shopify_attributes }}>
               {{ block.settings.button_label | escape }}
             </a>
         {%- endcase -%}
@@ -31,37 +31,19 @@
   "settings": [
     {
       "type": "select",
-      "id": "color_scheme",
-      "options": [
+      "id": "text_aligment",
+        "options": [
         {
-          "value": "accent-1",
-          "label": "t:sections.rich-text.settings.color_scheme.options__1.label"
+          "value": "left",
+          "label": "t:sections.rich-text.settings.text_aligment.options__1.label"
         },
         {
-          "value": "accent-2",
-          "label": "t:sections.rich-text.settings.color_scheme.options__2.label"
-        },
-        {
-          "value": "background-1",
-          "label": "t:sections.rich-text.settings.color_scheme.options__3.label"
-        },
-        {
-          "value": "background-2",
-          "label": "t:sections.rich-text.settings.color_scheme.options__4.label"
-        },
-        {
-          "value": "inverse",
-          "label": "t:sections.rich-text.settings.color_scheme.options__5.label"
+          "value": "center",
+          "label": "t:sections.rich-text.settings.text_aligment.options__2.label"
         }
       ],
-      "default": "background-1",
-      "label": "t:sections.rich-text.settings.color_scheme.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "full_width",
-      "default": true,
-      "label": "t:sections.rich-text.settings.full_width.label"
+      "default": "center",
+      "label": "t:sections.rich-text.settings.text_aligment.label"
     }
   ],
   "blocks": [
@@ -73,7 +55,7 @@
         {
           "type": "text",
           "id": "heading",
-          "default": "Talk about your brand",
+          "default": "Take A Moment",
           "label": "t:sections.rich-text.blocks.heading.settings.heading.label"
         },
         {
@@ -81,16 +63,20 @@
           "id": "heading_size",
           "options": [
             {
-              "value": "h2",
+              "value": "h3",
               "label": "t:sections.rich-text.blocks.heading.settings.heading_size.options__1.label"
             },
             {
-              "value": "h1",
+              "value": "h2",
               "label": "t:sections.rich-text.blocks.heading.settings.heading_size.options__2.label"
             },
             {
-              "value": "h0",
+              "value": "h1",
               "label": "t:sections.rich-text.blocks.heading.settings.heading_size.options__3.label"
+            },
+            {
+              "value": "h0",
+              "label": "t:sections.rich-text.blocks.heading.settings.heading_size.options__4.label"
             }
           ],
           "default": "h1",
@@ -106,7 +92,7 @@
         {
           "type": "richtext",
           "id": "text",
-          "default": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
+          "default": "<p>Our collection of face masks not only help to brighten and rejuvenate your complexion but allow you to nourish and tend to the skin while you wind down after a long hard day.</p>",
           "label": "t:sections.rich-text.blocks.text.settings.text.label"
         }
       ]
@@ -126,12 +112,6 @@
           "type": "url",
           "id": "button_link",
           "label": "t:sections.rich-text.blocks.button.settings.button_link.label"
-        },
-        {
-          "type": "checkbox",
-          "id": "button_style_secondary",
-          "default": false,
-          "label": "t:sections.rich-text.blocks.button.settings.button_style_secondary.label"
         }
       ]
     }

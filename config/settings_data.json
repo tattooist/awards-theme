@@ -88,7 +88,7 @@
   "presets": {
     "Default": {
       "colors_solid_button_labels": "#FFFFFF",
-      "colors_accent_1": "#121212",
+      "colors_accent_1": "#262626",
       "colors_accent_2": "#334FB4",
       "colors_text": "#262626",
       "colors_outline_button_labels": "#121212",

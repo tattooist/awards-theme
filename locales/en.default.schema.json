@@ -870,58 +870,104 @@
     "image-banner": {
       "name": "Image banner",
       "settings": {
-        "image": {
-          "label": "First image"
-        },
-        "image_2": {
-          "label": "Second image"
-        },
-        "image_height": {
-          "label": "Banner height",
+        "section_height": {
+          "label": "Section height",
           "options__1": {
-            "label": "Small"
+            "label": "Fit screen height"
           },
           "options__2": {
-            "label": "Medium"
+            "label": "Small"
           },
           "options__3": {
+            "label": "Medium"
+          },
+          "options__4": {
             "label": "Large"
           },
-          "info": "For best results, use an image with a 3:2 aspect ratio. [Learn more](https://help.shopify.com/en/manual/shopify-admin/productivity-tools/image-editor#understanding-image-aspect-ratio)"
+          "options__5": {
+            "label": "Original image ratio"
+          }
+        },
+        "layout": {
+          "label": "Layout",
+          "options__1": {
+            "label": "Fullsized"
+          },
+          "options__2": {
+            "label": "Boxed"
+          },
+          "options__3": {
+            "label": "Boxed radius"
+          }
+        },
+        "image": {
+          "label": "Image",
+          "info": "2160 x 1080px recommended, 1080 x 1080px recommended if split."
+        },
+        "image_2": {
+          "label": "Split image",
+          "info": "1080 x 1080px .jpg recommended. Won't show up on mobile."
+        },
+        "image_mob": {
+          "label": "Mobile image",
+          "info": "1000 x 1400px .jpg recommended. If none is set, desktop image will be used."
+        },
+        "desktop_text_box_header_h1": {
+          "content": "Desktop layout"
         },
         "desktop_text_box_position": {
           "options__1": {
-            "label": "Top"
+            "label": "Top left"
           },
           "options__2": {
-            "label": "Center"
+            "label": "Top center"
           },
           "options__3": {
-            "label": "Bottom"
+            "label": "Middle left"
           },
-          "label": "Desktop text position"
-        },
-        "show_text_box": {
-          "label": "Show text box on desktop"
+          "options__4": {
+            "label": "Middle center"
+          },
+          "options__5": {
+            "label": "Bottom left"
+          },
+          "options__6": {
+            "label": "Bottom center"
+          },
+          "label": "Text position"
         },
         "image_overlay_opacity": {
-          "label": "Image overlay opacity"
+          "label": "Overlay opacity"
         },
         "header": {
           "content": "Mobile Layout"
         },
-        "stack_images_on_mobile": {
-          "label": "Stack images on mobile"
-        },
         "show_text_below": {
           "label": "Show text below images"
         },
-        "adapt_height_first_image": {
-          "label": "Adapt section height to first image size",
-          "info": "Overwrites image banner height setting when checked."
+        "color_h1": {
+          "content": "Colors"
+        },
+        "bg_color": {
+          "label": "Background",
+          "info": "Used while image is loading"
+        },
+        "overlay_color": {
+          "label": "Overlay"
         }
       },
       "blocks": {
+        "subheading": {
+          "name": "Subheading",
+          "settings": {
+            "subheading": {
+              "label": "Subheading"
+            },
+            "subheading_size": {
+              "label": "Heading font size"
+            }
+          }
+        },
         "heading": {
           "name": "Heading",
           "settings": {
@@ -980,51 +1026,89 @@
     "image-with-text": {
       "name": "Image with text",
       "settings": {
-        "image": {
-          "label": "Image"
-        },
-        "height": {
+        "section_height": {
+          "label": "Section height",
           "options__1": {
-            "label": "Adapt to image"
+            "label": "Fit screen height"
           },
           "options__2": {
             "label": "Small"
           },
           "options__3": {
-            "label": "Large"
-          },
-          "label": "Image ratio"
-        },
-        "color_scheme": {
-          "options__1": {
-            "label": "Background 1"
-          },
-          "options__2": {
-            "label": "Background 2"
-          },
-          "options__3": {
-            "label": "Inverse"
+            "label": "Medium"
           },
           "options__4": {
-            "label": "Accent 1"
+            "label": "Large"
           },
           "options__5": {
-            "label": "Accent 2"
-          },
-          "label": "Color scheme"
+            "label": "Original image ratio"
+          }
         },
         "layout": {
+          "label": "Layout",
           "options__1": {
-            "label": "Image first"
+            "label": "Fullsized"
           },
           "options__2": {
-            "label": "Text first"
+            "label": "Boxed"
           },
-          "label": "Desktop layout",
-          "info": "Image first is the default mobile layout."
+          "options__3": {
+            "label": "Boxed radius"
+          }
+        },
+        "image": {
+          "label": "Image",
+          "info": "2160 x 1080px recommended, 1080 x 1080px recommended if split."
+        },
+        "bg_color": {
+          "label": "Accent background"
+        },
+        "desktop_text_header_h1": {
+          "content": "Desktop layout"
+        },
+        "desktop_text_position": {
+          "options__1": {
+            "label": "Top"
+          },
+          "options__2": {
+            "label": "Center"
+          },
+          "options__3": {
+            "label": "Bottom"
+          },
+          "label": "Text position"
+        },
+        "desktop_text_aligment": {
+          "options__1": {
+            "label": "Left"
+          },
+          "options__2": {
+            "label": "Center"
+          },
+          "label": "Text alignment"
+        },
+        "desktop_text_first": {
+          "label": "Inverse"
+        },
+        "mobile_text_header_h1": {
+          "content": "Mobile layout"
+        },
+        "show_text_below": {
+          "label": "Show text below images"
         }
       },
       "blocks": {
+        "subheading": {
+          "name": "Subheading",
+          "settings": {
+            "subheading": {
+              "label": "Subheading"
+            },
+            "subheading_size": {
+              "label": "Heading font size"
+            }
+          }
+        },
         "heading": {
           "name": "Heading",
           "settings": {
@@ -1041,15 +1125,28 @@
             }
           }
         },
-        "button": {
-          "name": "Button",
+        "buttons": {
+          "name": "Buttons",
           "settings": {
-            "button_label": {
-              "label": "Button label",
+            "button_label_1": {
+              "label": "First button label",
               "info": "Leave the label blank to hide the button."
             },
-            "button_link": {
-              "label": "Button link"
+            "button_link_1": {
+              "label": "First button link"
+            },
+            "button_style_secondary_1": {
+              "label": "Use outline button style"
+            },
+            "button_label_2": {
+              "label": "Second button label",
+              "info": "Leave the label blank to hide the button."
+            },
+            "button_link_2": {
+              "label": "Second button link"
+            },
+            "button_style_secondary_2": {
+              "label": "Use outline button style"
             }
           }
         }
@@ -1919,26 +2016,14 @@
     "rich-text": {
       "name": "Rich text",
       "settings": {
-        "color_scheme": {
+        "text_aligment": {
           "options__1": {
-            "label": "Accent 1"
+            "label": "Left"
           },
           "options__2": {
-            "label": "Accent 2"
+            "label": "Center"
           },
-          "options__3": {
-            "label": "Background 1"
-          },
-          "options__4": {
-            "label": "Background 2"
-          },
-          "options__5": {
-            "label": "Inverse"
-          },
-          "label": "Color scheme"
-        },
-        "full_width": {
-          "label": "Make section full width"
+          "label": "Text alignment"
         }
       },
       "blocks": {
@@ -1957,6 +2042,9 @@
               },
               "options__3": {
                 "label": "Large"
+              },
+              "options__4": {
+                "label": "Extra large"
               },
               "label": "Heading font size"
             }
@@ -1978,9 +2066,6 @@
             },
             "button_link": {
               "label": "Button link"
-            },
-            "button_style_secondary": {
-              "label": "Use outline button style"
             }
           }
         }
