@@ -136,6 +136,7 @@
 
   .image-with-text__content--align-center {
     text-align: center;
+    align-items: center;
   }
 }
 
@@ -167,6 +168,7 @@
 
   .image-with-text__content-mob--align-center {
     text-align: center;
+    align-items: center;
   }
 }
 
@@ -236,40 +238,35 @@
     flex-direction: column-reverse;
   }
 
-  .image-with-text:not(.image-with-text--fullsized)  .grid__item:nth-child(1) .image-with-text__media {
-    padding: 0 1.6rem 2.4rem;
+  .image-with-text__content {
+    padding:1.6rem 1.6rem 2.4rem;
   }
 
-  .image-with-text:not(.image-with-text--fullsized) .grid__item:nth-child(2) .image-with-text__media {
-    padding: 2.4rem 1.6rem 1.6rem;
+  .image-with-text--fullsized .image-with-text__grid:not(.image-with-text__grid--text-below) .grid__item:nth-child(2) .image-with-text__content {
+    padding-top: 4rem;
   }
 
-  .image-with-text:not(.image-with-text--fullsized) .image-with-text__grid--text-below .grid__item:nth-child(2) .image-with-text__content {
-    padding: 2.4rem 1.6rem 1.6rem;
+  .image-with-text--boxed,
+  .image-with-text--boxed-radius {
+    padding: 2.4rem 1.6rem;
   }
 
-  .image-with-text:not(.image-with-text--fullsized) .image-with-text__grid--text-below .grid__item:nth-child(2) .image-with-text__content {
-    padding: 0 1.6rem 2.4rem;
+  .image-with-text--boxed-radius.image-with-text--with-bg .image-with-text__grid,
+  .image-with-text--boxed-radius:not(.image-with-text--with-bg) .image-with-text__media {
+    border-radius: 16px;
+    overflow:hidden;
   }
 
-  .image-with-text--fullsized .grid__item + .grid__item {
-    margin-top: 1.6rem;
+  .image-with-text--boxed:not(.image-with-text--with-bg) .image-with-text__content,
+  .image-with-text--boxed-radius:not(.image-with-text--with-bg) .image-with-text__content {
+    padding-left:0;
+    padding-right:0;
   }
 
-  .grid__item:nth-child(1) .image-with-text__content {
-    padding: 0 1.6rem 2.4rem;
-  }
-
-  .grid__item:nth-child(2) .image-with-text__content {
-    padding: 2.4rem 1.6rem 1.6rem;
-  }
-
-  .image-with-text__grid--text-below .grid__item:nth-child(2) .image-with-text__content {
-    padding: 0 1.6rem 2.4rem;
-  }
-
-  .image-with-text__grid--text-below  .grid__item:nth-child(1) .image-with-text__content {
-    padding: 2.4rem 1.6rem 1.6rem;
+  .image-with-text--boxed.image-with-text--with-bg .image-with-text__content,
+  .image-with-text--boxed-radius.image-with-text--with-bg .image-with-text__content {
+    padding-left:1.6rem;
+    padding-right:1.6rem;
   }
 
   .image-with-text__heading {
@@ -294,14 +291,5 @@
 
   .image-with-text__buttons .button + .image-with-text__buttons .button {
     margin-top: 1.6rem;
-  }
-
-  .image-with-text--boxed-radius .image-with-text__media img {
-    border-radius: 16px;
-    overflow: hidden;
-  }
-
-  .image-with-text__content {
-    padding: 0;
   }
 }
