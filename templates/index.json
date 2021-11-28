@@ -17,11 +17,10 @@
         },
         "button": {
           "type": "buttons",
-          "disabled": true,
           "settings": {
             "button_label_1": "Shop all",
             "button_link_1": "shopify:\/\/collections\/all",
-            "button_style_secondary_1": false,
+            "button_style_secondary_1": true,
             "button_label_2": "",
             "button_link_2": "",
             "button_style_secondary_2": false
@@ -51,21 +50,21 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Talk about your brand",
+            "heading": "Each of your leather goods is crafted by hand, so it has a unique character resulting in beautiful lasting quality. The final result is always a surprise and you’ll never meet two similar goods. It compliments you, emphasises your style and perfectly matches your wardrobe.",
             "heading_size": "h1"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+            "text": "<p>Alex Miller, Founder<\/p>"
           }
         },
         "button": {
           "type": "button",
           "settings": {
-            "button_label": "Button label",
-            "button_link": ""
+            "button_label": "Our story",
+            "button_link": "shopify:\/\/pages\/contact"
           }
         }
       },
@@ -75,7 +74,7 @@
         "button"
       ],
       "settings": {
-        "text_aligment": "center"
+        "text_aligment": "left"
       }
     },
     "featured_products": {
