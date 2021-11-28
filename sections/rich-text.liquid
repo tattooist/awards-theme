@@ -5,16 +5,18 @@
 <noscript>{{ 'section-rich-text.css' | asset_url | stylesheet_tag }}</noscript>
 
 <div class="{% unless section.settings.full_width %}page-width{% endunless %}">
-  <div class="rich-text gradient rich-text--full-width">
+  <div class="rich-text gradient rich-text--full-width rich-text--{{ section.settings.text_aligment }}">
     <div class="rich-text__blocks">
       {%- for block in section.blocks -%}
         {%- case block.type -%}
+          {%- when 'subheading' -%}
+            <h2 class="rich-text__subheading" {{ block.shopify_attributes }}>{{ block.settings.subheading | escape }}</h2>
           {%- when 'heading' -%}
             <h2 class="{{ block.settings.heading_size }}" {{ block.shopify_attributes }}>{{ block.settings.heading | escape }}</h2>
           {%- when 'text' -%}
             <div class="rich-text__text rte" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
           {%- when 'button' -%}
-            <a{% if block.settings.button_link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.button_link }}"{% endif %} class="button button--primary" {{ block.shopify_attributes }}>
+            <a{% if block.settings.button_link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.button_link }}"{% endif %} class="button button--secondary" {{ block.shopify_attributes }}>
               {{ block.settings.button_label | escape }}
             </a>
         {%- endcase -%}
@@ -47,6 +49,19 @@
     }
   ],
   "blocks": [
+    {
+      "type": "subheading",
+      "name": "t:sections.rich-text.blocks.subheading.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "subheading",
+          "default": "San Care",
+          "label": "t:sections.rich-text.blocks.subheading.settings.subheading.label"
+        }
+      ]
+    },
     {
       "type": "heading",
       "name": "t:sections.rich-text.blocks.heading.name",
@@ -120,6 +135,9 @@
     {
       "name": "t:sections.rich-text.presets.name",
       "blocks": [
+        {
+          "type": "subheading"
+        },
         {
           "type": "heading"
         },

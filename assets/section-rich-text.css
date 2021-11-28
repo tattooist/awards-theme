@@ -25,13 +25,21 @@
 
 .rich-text:not(.rich-text--full-width),
 .rich-text--full-width.color-background-1 {
-  margin-top: 5rem;
-  margin-bottom: 5rem;
+  margin-top: 6.4rem;
+  margin-bottom: 6.4rem;
 }
 
 .rich-text:not(.color-background-1) {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 6.4rem;
+  padding-bottom: 6.4rem;
+}
+
+.rich-text--left {
+  text-align: left;
+}
+
+.rich-text--left .rich-text__blocks {
+  margin: 0;
 }
 
 @media screen and (min-width: 750px) {
@@ -42,8 +50,8 @@
   }
 
   .rich-text:not(.color-background-1) {
-    padding-top: calc(5rem + var(--page-width-margin));
-    padding-bottom: calc(5rem + var(--page-width-margin));
+    padding-top: calc(6.4rem + var(--page-width-margin));
+    padding-bottom: calc(6.4rem + var(--page-width-margin));
   }
 
   .rich-text__blocks {
@@ -53,6 +61,20 @@
   .rich-text--full-width .rich-text__blocks {
     /* 7.5rem (5rem + 2.5rem) margin on left & right */
     width: calc(100% - 15rem);
+  }
+
+  .rich-text__subheading {
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-weight: normal;
+  }
+
+  .rich-text__text {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    letter-spacing: 0.02em;
   }
 }
 
@@ -70,9 +92,52 @@
 }
 
 .rich-text__blocks > * + * {
-  margin-top: 2rem;
+  margin-top: 2.4rem;
 }
 
 .rich-text__blocks > * + a {
-  margin-top: 3rem;
+  margin-top: 4rem;
+}
+
+.rich-text__subheading + * {
+  margin-top: 1.6rem;
+}
+
+@media screen and (max-width: 749px) {
+  .rich-text {
+    padding-top: 3.2rem;
+    padding-bottom: 3.2rem;
+  }
+
+  .rich-text__blocks > * + * {
+    margin-top: 1.6rem;
+  }
+
+  .rich-text__blocks > * + a {
+    margin-top: 2.4rem;
+  }
+
+  .rich-text__subheading {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    text-transform: uppercase;
+    font-weight: normal;
+  }
+
+  .rich-text__text {
+    font-size: 1.4rem;
+    line-height: 2rem;
+  }
+
+  .rich-text--full-width .rich-text__blocks {
+    width: 100%;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .rich-text--left .button {
+    width: auto;
+  }
 }

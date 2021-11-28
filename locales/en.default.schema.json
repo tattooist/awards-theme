@@ -2027,6 +2027,14 @@
         }
       },
       "blocks": {
+        "subheading": {
+          "name": "Subheading",
+          "settings": {
+            "subheading": {
+              "label": "Headline"
+            }
+          }
+        },
         "heading": {
           "name": "Heading",
           "settings": {
