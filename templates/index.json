@@ -34,7 +34,7 @@
         "button"
       ],
       "settings": {
-        "layout": "boxed-radius",
+        "layout": "fullsized",
         "section_height": "fit-screen",
         "image": "shopify:\/\/shop_images\/Pic.jpg",
         "desktop_text_box_position": "flex-start__flex-start",
