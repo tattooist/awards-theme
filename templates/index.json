@@ -39,7 +39,7 @@
         "desktop_text_box_position": "center__flex-start",
         "desktop_text_box_position_mob": "center__center",
         "show_text_below": true,
-        "bg_color": "#e3d6cc",
+        "bg_color": "#ffffff",
         "overlay_color": "#262626",
         "image_overlay_opacity": 0
       }
