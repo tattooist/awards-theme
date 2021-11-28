@@ -37,14 +37,13 @@
 
 .deferred-media__poster-button {
   background-color: rgb(var(--color-background));
-  border: 0.1rem solid rgba(var(--color-foreground), 0.1);
   border-radius: 50%;
   color: rgb(var(--color-foreground));
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 6.2rem;
-  width: 6.2rem;
+  height: 8rem;
+  width: 8rem;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -59,7 +58,18 @@
 
 .deferred-media__poster-button .icon {
   width: 2rem;
-  height: 2rem;
+  height: 2.4rem;
+}
+
+@media screen and (max-width: 749px) {
+  .deferred-media__poster-button {
+    height: 5.6rem;
+    width: 5.6rem;
+  }
+  .deferred-media__poster-button .icon {
+    width: 1rem;
+    height: 1.4rem;
+  }
 }
 
 .deferred-media__poster-button .icon-play {
