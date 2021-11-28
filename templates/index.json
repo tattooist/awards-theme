@@ -37,7 +37,7 @@
         "layout": "fullsized",
         "section_height": "fit-screen",
         "image": "shopify:\/\/shop_images\/Pic.jpg",
-        "desktop_text_box_position": "flex-start__flex-start",
+        "desktop_text_box_position": "center__flex-start",
         "desktop_text_box_position_mob": "center__center",
         "show_text_below": true,
         "bg_color": "#262626",
