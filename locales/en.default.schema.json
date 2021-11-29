@@ -2083,7 +2083,7 @@
       }
     },
     "video": {
-      "name": "Video",
+      "name": "Video background",
       "settings": {
         "video_url": {
           "label": "URL",
@@ -2113,7 +2113,7 @@
         }
       },
       "presets": {
-        "name": "Video"
+        "name": "Video background"
       }
     }
   }
