@@ -6,8 +6,7 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Meet Doris",
-            "heading_size": "medium"
+            "heading": "Meet Doris"
           }
         },
         "2b3133c8-2d96-4850-b190-f8d466290f0f": {
@@ -18,11 +17,10 @@
         },
         "button": {
           "type": "buttons",
-          "disabled": true,
           "settings": {
             "button_label_1": "Shop all",
             "button_link_1": "shopify:\/\/collections\/all",
-            "button_style_secondary_1": false,
+            "button_style_secondary_1": true,
             "button_label_2": "",
             "button_link_2": "",
             "button_style_secondary_2": false
@@ -35,15 +33,15 @@
         "button"
       ],
       "settings": {
+        "layout": "fullsized",
+        "section_height": "fit-screen",
         "image": "shopify:\/\/shop_images\/Pic.jpg",
-        "image_height": "large",
-        "adapt_height_first_image": false,
-        "desktop_text_box_position": "flex-start",
-        "show_text_box": false,
-        "image_overlay_opacity": 0,
-        "color_scheme": "background-1",
-        "stack_images_on_mobile": true,
-        "show_text_below": true
+        "desktop_text_box_position": "center__flex-start",
+        "desktop_text_box_position_mob": "center__center",
+        "show_text_below": true,
+        "bg_color": "#ffffff",
+        "overlay_color": "#262626",
+        "image_overlay_opacity": 0
       }
     },
     "rich_text": {
@@ -52,22 +50,21 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Talk about your brand",
+            "heading": "Each of your leather goods is crafted by hand, so it has a unique character resulting in beautiful lasting quality. The final result is always a surprise and you’ll never meet two similar goods. It compliments you, emphasises your style and perfectly matches your wardrobe.",
             "heading_size": "h1"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+            "text": "<p>Alex Miller, Founder<\/p>"
           }
         },
         "button": {
           "type": "button",
           "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "button_style_secondary": false
+            "button_label": "Our story",
+            "button_link": "shopify:\/\/pages\/contact"
           }
         }
       },
@@ -77,8 +74,7 @@
         "button"
       ],
       "settings": {
-        "color_scheme": "background-1",
-        "full_width": true
+        "text_aligment": "left"
       }
     },
     "featured_products": {
@@ -140,10 +136,9 @@
     "video": {
       "type": "video",
       "settings": {
-        "heading": "Video",
         "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
         "description": "",
-        "full_width": false
+        "layout": "full-width"
       }
     },
     "multi_column": {
