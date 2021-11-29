@@ -868,7 +868,7 @@
       }
     },
     "image-banner": {
-      "name": "Image banner",
+      "name": "Image with text overlay",
       "settings": {
         "section_height": {
           "label": "Section height",
@@ -1020,7 +1020,7 @@
         }
       },
       "presets": {
-        "name": "Image banner"
+        "name": "Image with text overlay"
       }
     },
     "image-with-text": {

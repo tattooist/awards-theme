@@ -135,7 +135,7 @@
       >
     </div>
   {%- endif -%}
-  <div class="banner__content banner__content--{{ section.settings.desktop_text_box_position }} page-width">
+  <div class="banner__content banner__content--{{ section.settings.desktop_text_box_position }} banner__content--{{ section.settings.mobile_text_box_position }}-mob page-width">
     <div class="banner__box">
       {%- for block in section.blocks -%}
         {%- case block.type -%}
@@ -280,7 +280,7 @@
     },
     {
       "type": "select",
-      "id": "desktop_text_box_position_mob",
+      "id": "mobile_text_box_position",
       "options": [
         {
         "value": "flex-start__flex-start",
@@ -353,7 +353,7 @@
         {
           "type": "text",
           "id": "subheading",
-          "default": "Image banner",
+          "default": "Image with text overlay",
           "label": "t:sections.image-banner.blocks.subheading.settings.subheading.label"
         }
       ]
@@ -422,7 +422,7 @@
         {
           "type": "checkbox",
           "id": "button_style_secondary_2",
-          "default": false,
+          "default": true,
           "label": "t:sections.image-banner.blocks.buttons.settings.button_style_secondary_2.label"
         }
       ]
