@@ -37,7 +37,7 @@
         "section_height": "fit-screen",
         "image": "shopify:\/\/shop_images\/Pic.jpg",
         "desktop_text_box_position": "center__flex-start",
-        "desktop_text_box_position_mob": "center__center",
+        "mobile_text_box_position": "center__center",
         "show_text_below": true,
         "bg_color": "#ffffff",
         "overlay_color": "#262626",
@@ -51,7 +51,7 @@
           "type": "heading",
           "settings": {
             "heading": "Each of your leather goods is crafted by hand, so it has a unique character resulting in beautiful lasting quality. The final result is always a surprise and you’ll never meet two similar goods. It compliments you, emphasises your style and perfectly matches your wardrobe.",
-            "heading_size": "h1"
+            "heading_size": "h0"
           }
         },
         "text": {
