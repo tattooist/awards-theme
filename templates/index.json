@@ -291,6 +291,37 @@
         "soft_background": false,
         "show_view_all": true
       }
+    },
+    "1638453507cc701dd2": {
+      "type": "newsletter",
+      "blocks": {
+        "1638453507e2064882-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Subscribe to our newsletter"
+          }
+        },
+        "1638453507e2064882-1": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Get updates about our newest products and special offers straight to your inbox.<\/p>"
+          }
+        },
+        "1638453507e2064882-2": {
+          "type": "email_form",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "1638453507e2064882-0",
+        "1638453507e2064882-1",
+        "1638453507e2064882-2"
+      ],
+      "settings": {
+        "color_scheme": "background-2",
+        "full_width": true
+      }
     }
   },
   "order": [
@@ -301,6 +332,7 @@
     "rich_text",
     "multi_column",
     "16384506284f6524aa",
-    "16384518484b682c0b"
+    "16384518484b682c0b",
+    "1638453507cc701dd2"
   ]
 }
