@@ -6,22 +6,22 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Meet Doris"
+            "heading": "Meet Riviera"
           }
         },
         "2b3133c8-2d96-4850-b190-f8d466290f0f": {
           "type": "text",
           "settings": {
-            "text": "Our signature handbag is finally here"
+            "text": "Multi-functional, spacious and stylish bag. Perfect for business, great for daily meetings."
           }
         },
         "button": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Shop all",
+            "button_label_1": "Shop bags",
             "button_link_1": "shopify:\/\/collections\/all",
             "button_style_secondary_1": true,
-            "button_label_2": "",
+            "button_label_2": "View all",
             "button_link_2": "",
             "button_style_secondary_2": false
           }
@@ -187,6 +187,50 @@
         "button_link": "",
         "swipe_on_mobile": false
       }
+    },
+    "16384482131f1c1f9a": {
+      "type": "image-with-text",
+      "blocks": {
+        "1638448213a98b8442-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Hand-made from a natural leather"
+          }
+        },
+        "1638448213a98b8442-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We always search for the balance between durability and uniqueness, so our products stay functional and stretch over time, becoming more beautiful and comfortable with every wear.<\/p>"
+          }
+        },
+        "1638448213a98b8442-2": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Choose accessory",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "Go to catalog",
+            "button_link_2": "",
+            "button_style_secondary_2": true
+          }
+        }
+      },
+      "block_order": [
+        "1638448213a98b8442-0",
+        "1638448213a98b8442-1",
+        "1638448213a98b8442-2"
+      ],
+      "settings": {
+        "layout": "boxed",
+        "section_height": "large",
+        "bg_color": "#FFF",
+        "desktop_text_position": "flex-start",
+        "desktop_text_aligment": "left",
+        "desktop_text_first": true,
+        "mobile_text_position": "flex-start",
+        "mobile_text_aligment": "left",
+        "show_text_below": true
+      }
     }
   },
   "order": [
@@ -195,6 +239,7 @@
     "featured_products",
     "collage",
     "video",
-    "multi_column"
+    "multi_column",
+    "16384482131f1c1f9a"
   ]
 }
