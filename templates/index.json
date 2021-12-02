@@ -235,8 +235,8 @@
         "column1": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "title": "My best bag",
+            "text": "<p>This bag is beautiful and exceeded my expectations, and details are much nicer then I expected for a bag of this price. The leather is strong and without imperfections, and the zippers are well made and easy to operate. Super comfortable to wear (I love to use is as a cross-body) and great for any tasks.<\/p><p><\/p><p><strong>Peter S.<\/strong><\/p>",
             "link_label": "",
             "link": ""
           }
@@ -244,8 +244,8 @@
         "column2": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "title": "Perfect slim wallet",
+            "text": "<p>Literally cut my old wallet in half in terms of pocket space. I can now easily carry in a jacket or front pants pocket with my keys. Beautiful wallet and great stitching. Slim and good looking. Looks like it will be my wallet for years to come.<\/p><p><\/p><p><strong>Ricardo G.<\/strong><\/p>",
             "link_label": "",
             "link": ""
           }
@@ -253,8 +253,8 @@
         "column3": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "title": "Great travel pal",
+            "text": "<p>Perfect for business travel or if you want to give off a classy vibe. And supple leather feels oh-so-good in the hands! It organizes all of my cash, boarding documents, and cards, as well as a passport or two (I’ve tested it with two passports). At the same time, it’s also quick and easy to whip out your passport when need be. My travel soulmate!<\/p><p><\/p><p><strong>Christina S.<\/strong><\/p>",
             "link_label": "",
             "link": ""
           }
@@ -266,12 +266,12 @@
         "column3"
       ],
       "settings": {
-        "title": "Multicolumn",
+        "title": "Reviews",
         "image_width": "full",
-        "image_ratio": "adapt",
+        "image_ratio": "square",
         "column_alignment": "left",
         "background_style": "primary",
-        "button_label": "Button label",
+        "button_label": "",
         "button_link": "",
         "swipe_on_mobile": false
       }
