@@ -181,54 +181,6 @@
         "text_aligment": "left"
       }
     },
-    "collage": {
-      "type": "collage",
-      "blocks": {
-        "video": {
-          "type": "video",
-          "settings": {
-            "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
-            "description": "Describe the video",
-            "image_padding": false
-          }
-        },
-        "product": {
-          "type": "product",
-          "settings": {
-            "product": "",
-            "second_image": false,
-            "image_padding": false,
-            "secondary_background": false
-          }
-        },
-        "collection": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "image_padding": false,
-            "color_scheme": "background-1"
-          }
-        }
-      },
-      "block_order": [
-        "video",
-        "product",
-        "collection"
-      ],
-      "settings": {
-        "heading": "Multimedia collage",
-        "desktop_layout": "left",
-        "mobile_layout": "collage"
-      }
-    },
-    "video": {
-      "type": "video",
-      "settings": {
-        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
-        "description": "",
-        "layout": "full-width"
-      }
-    },
     "multi_column": {
       "type": "multicolumn",
       "blocks": {
@@ -275,6 +227,57 @@
         "button_link": "",
         "swipe_on_mobile": false
       }
+    },
+    "16384506284f6524aa": {
+      "type": "image-banner",
+      "blocks": {
+        "1638450628dc78c808-0": {
+          "type": "subheading",
+          "settings": {
+            "subheading": ""
+          }
+        },
+        "1638450628dc78c808-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Tenderly crafted to guard your goods"
+          }
+        },
+        "1638450628dc78c808-2": {
+          "type": "text",
+          "settings": {
+            "text": "We know how it’s important for you to keep all your important goods by hand. That’s why our accessories are made with a strict quality control and individual approach to uplift your comfort. And this is our main goal behind the design process."
+          }
+        },
+        "1638450628dc78c808-3": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Read our story",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": true
+          }
+        }
+      },
+      "block_order": [
+        "1638450628dc78c808-0",
+        "1638450628dc78c808-1",
+        "1638450628dc78c808-2",
+        "1638450628dc78c808-3"
+      ],
+      "settings": {
+        "layout": "fullsized",
+        "section_height": "fit-screen",
+        "image": "shopify:\/\/shop_images\/1920x1300_web2.jpg",
+        "desktop_text_box_position": "flex-start__center",
+        "mobile_text_box_position": "flex-start__center",
+        "show_text_below": true,
+        "bg_color": "#262626",
+        "overlay_color": "#262626",
+        "image_overlay_opacity": 20
+      }
     }
   },
   "order": [
@@ -283,8 +286,7 @@
     "163844974624240ffc",
     "16384482131f1c1f9a",
     "rich_text",
-    "collage",
-    "video",
-    "multi_column"
+    "multi_column",
+    "16384506284f6524aa"
   ]
 }
