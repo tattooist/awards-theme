@@ -72,20 +72,27 @@
         "1638449745cb7354a6-1": {
           "type": "featured_collection",
           "settings": {
-            "collection": ""
+            "collection": "travel"
           }
         },
         "1638449745cb7354a6-2": {
           "type": "featured_collection",
           "settings": {
-            "collection": ""
+            "collection": "business"
+          }
+        },
+        "f37e2f51-1de1-4147-83e8-ca28af2c3848": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "storage"
           }
         }
       },
       "block_order": [
         "1638449745cb7354a6-0",
         "1638449745cb7354a6-1",
-        "1638449745cb7354a6-2"
+        "1638449745cb7354a6-2",
+        "f37e2f51-1de1-4147-83e8-ca28af2c3848"
       ],
       "settings": {
         "title": "Collections",
