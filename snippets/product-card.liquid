@@ -21,11 +21,11 @@
     <div class="card-information__wrapper">
       {%- if show_vendor -%}
         <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
-        <div class="caption-with-letter-spacing light">{{ product_card_product.vendor }}</div>
+        <div class="caption-with-letter-spacing-small light">{{ product_card_product.vendor }}</div>
       {%- endif -%}
 
       {%- if product_card_product.featured_media -%}
-        <h3 class="card-information__text h5">
+        <h3 class="card-information__text">
           <a href="{{ product_card_product.url | default: '#' }}" class="full-unstyled-link">
             {{ product_card_product.title | escape }}
           </a>
