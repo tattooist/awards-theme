@@ -6,10 +6,16 @@
   align-items: center;
   cursor: pointer;
   display: flex;
-  height: 4rem;
-  padding: 0 1.5rem 0 1.5rem;
-  font-size: 1.3rem;
-  background-color: transparent;
+  height: 3.8rem;
+  padding: 0 1.6rem 0 1.6rem;
+  font-size: 1.4rem;
+  background-color: #FFF;
+}
+
+@media screen and (max-width: 749px) {
+  .disclosure__button {
+    height: 4.8rem;
+  }
 }
 
 .disclosure__list {

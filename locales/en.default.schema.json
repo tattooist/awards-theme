@@ -424,24 +424,6 @@
           },
           "info": "Add images by editing your collections. [Learn more](https://help.shopify.com/en/manual/products/collections)"
         },
-        "color_scheme": {
-          "options__1": {
-            "label": "Accent 1"
-          },
-          "options__2": {
-            "label": "Accent 2"
-          },
-          "options__3": {
-            "label": "Background 1"
-          },
-          "options__4": {
-            "label": "Background 2"
-          },
-          "options__5": {
-            "label": "Inverse"
-          },
-          "label": "Color scheme"
-        },
         "swipe_on_mobile": {
           "label": "Enable swipe on mobile"
         },
@@ -450,7 +432,10 @@
         },
         "show_view_all": {
           "label": "Enable \"View all\" button if list includes more collections than shown"
-        }
+        },
+        "color_title": "Colors",
+        "bg_color": "Section background",
+        "text_color": "Text color"
       },
       "blocks": {
         "featured_collection": {
@@ -458,6 +443,10 @@
           "settings": {
             "collection": {
               "label": "Collection"
+            },
+            "image": {
+              "label": "Image",
+              "info": "1100 x 1400px .jpg recommended. If none is set, collection image is used."
             }
           }
         }
@@ -686,7 +675,7 @@
       "name": "Footer",
       "blocks": {
         "link_list": {
-          "name": "Menu",
+          "name": "Footer menu",
           "settings": {
             "heading": {
               "label": "Heading",
@@ -699,61 +688,46 @@
           }
         },
         "text": {
-          "name": "Text",
+          "name": "Text + social media icons",
           "settings": {
             "heading": {
               "label": "Heading"
             },
-            "subtext": {
-              "label": "Subtext"
+            "text": {
+              "label": "Text"
+            },
+            "show_social": {
+              "label": "Social media icons",
+              "info": "Make sure to have properly configured your social media in the theme settings."
+            }
+          }
+        },
+        "newsletter": {
+          "name": "Newsletter",
+          "settings": {
+            "heading": {
+              "label": "Heading"
+            },
+            "text": {
+              "label": "Text",
+              "info": "Customers who subscribe will have their email address added to the \"accepts marketing\""
             }
           }
         }
       },
       "settings": {
-        "color_scheme": {
-          "options__1": {
-            "label": "Accent 1"
-          },
-          "options__2": {
-            "label": "Accent 2"
-          },
-          "options__3": {
-            "label": "Background 1"
-          },
-          "options__4": {
-            "label": "Background 2"
-          },
-          "options__5": {
-            "label": "Inverse"
-          },
-          "label": "Color scheme"
-        },
-        "newsletter_enable": {
-          "label": "Show email signup"
-        },
-        "newsletter_heading": {
-          "label": "Heading"
-        },
         "header__1": {
           "content": "Email Signup",
           "info": "Subscribers added automatically to your “accepted marketing” customer list. [Learn more](https://help.shopify.com/en/manual/customers/manage-customers)"
         },
-        "header__2": {
-          "content": "Social media icons",
-          "info": "To display your social media accounts, link them in your theme settings."
-        },
-        "show_social": {
-          "label": "Show social media icons"
-        },
         "header__3": {
-          "content": "Country/region selector"
+          "content": "Currency selector"
         },
         "header__4": {
-          "info": "To add a country/region, go to your [payment settings.](/admin/settings/payments)"
+          "info": "To add a currency, go to your [payment settings.](/admin/settings/payments)"
         },
         "enable_country_selector": {
-          "label": "Enable country/region selector"
+          "label": "Currency selector"
         },
         "header__5": {
           "content": "Language selector"
@@ -769,7 +743,11 @@
         },
         "payment_enable": {
           "label": "Show payment icons"
-        }
+        },
+        "color_title": "Colors",
+        "bg_color": "Section background",
+        "text_color": "Text color",
+        "icons_color": "Icon color"
       }
     },
     "header": {
@@ -1816,37 +1794,45 @@
     "newsletter": {
       "name": "Email signup",
       "settings": {
-        "color_scheme": {
-          "label": "Color scheme",
-          "options__1": {
-            "label": "Accent 1"
-          },
-          "options__2": {
-            "label": "Accent 2"
-          },
-          "options__3": {
-            "label": "Background 1"
-          },
-          "options__4": {
-            "label": "Background 2"
-          },
-          "options__5": {
-            "label": "Inverse"
-          }
-        },
         "full_width": {
           "label": "Make section full width"
         },
         "paragraph": {
           "content": "Each email subscription creates a customer account. [Learn more](https://help.shopify.com/en/manual/customers)"
-        }
+        },
+        "color_title": "Colors",
+        "bg_color": "Section background",
+        "text_color": "Text color"
       },
       "blocks": {
+        "subheading": {
+          "name": "Subheading",
+          "settings": {
+            "subheading": {
+              "label": "Headline"
+            }
+          }
+        },
         "heading": {
           "name": "Heading",
           "settings": {
             "heading": {
               "label": "Heading"
+            },
+            "heading_size": {
+              "options__1": {
+                "label": "Small"
+              },
+              "options__2": {
+                "label": "Medium"
+              },
+              "options__3": {
+                "label": "Large"
+              },
+              "options__4": {
+                "label": "Extra large"
+              },
+              "label": "Heading font size"
             }
           }
         },

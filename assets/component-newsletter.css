@@ -46,10 +46,11 @@
 }
 
 .newsletter-form__button {
-  width: 4.4rem;
+  width: 5.6rem;
   margin: 0;
 }
 
 .newsletter-form__button .icon {
-  width: 1.5rem;
+  width: 2.4rem;
+  transform: rotate(180deg);
 }
