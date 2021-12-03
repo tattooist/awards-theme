@@ -878,8 +878,8 @@ summary::-webkit-details-marker {
 
 .title-wrapper--self-padded-tablet-down,
 .title-wrapper--self-padded-mobile {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
 }
 
 @media screen and (min-width: 750px) {
@@ -971,7 +971,7 @@ summary::-webkit-details-marker {
 @media screen and (min-width: 750px) {
   .grid__item {
     padding-left: 1.6rem;
-    padding-bottom: 1.6rem;
+    padding-bottom: 2.4rem;
     width: calc(25% - 1.6rem * 3 / 4);
     max-width: 50%;
   }
@@ -1077,11 +1077,11 @@ summary::-webkit-details-marker {
   }
 
   .grid--peek .grid__item:first-of-type {
-    padding-left: 1.5rem;
+    padding-left: 1.6rem;
   }
 
   .grid--peek .grid__item:last-of-type {
-    padding-right: 1.5rem;
+    padding-right: 1.6rem;
   }
 }
 
@@ -1099,11 +1099,11 @@ summary::-webkit-details-marker {
   }
 
   .slider--tablet.grid--peek .grid__item:first-of-type {
-    padding-left: 1.5rem;
+    padding-left: 1.6rem;
   }
 
   .slider--tablet.grid--peek .grid__item:last-of-type {
-    padding-right: 1.5rem;
+    padding-right: 1.6rem;
   }
 }
 
@@ -1245,7 +1245,7 @@ deferred-media {
 
 .button--tertiary {
   font-size: 1.2rem;
-  padding: 1rem 1.5rem;
+  padding: 1rem 1.6rem;
   min-width: 9rem;
   min-height: 3.5rem;
 }

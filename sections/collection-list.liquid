@@ -22,7 +22,7 @@
   </div>
 
   <slider-component class="slider-mobile-gutter">
-    <ul class="collection-list grid grid--1-col{% if section.blocks.size < 5 %} grid--{{ section.blocks.size }}-col-tablet{% else %} grid--3-col-tablet{% endif %}{% if section.settings.swipe_on_mobile %} slider slider--tablet grid--peek{% endif %} collection-list--{{ section.blocks.size }}-items{% if section.settings.show_view_all == false or section.blocks.size > collections.size %} negative-margin--small{% endif %}"
+    <ul class="collection-list grid{% if section.blocks.size < 5 %} grid--{{ section.blocks.size }}-col-tablet{% else %} grid--2-col-tablet grid--4-col-desktop{% endif %}{% if section.settings.swipe_on_mobile %} slider slider--tablet grid--peek{% endif %} collection-list--{{ section.blocks.size }}-items{% if section.settings.show_view_all == false or section.blocks.size > collections.size %} negative-margin--small{% endif %}"
       id="Slider-{{ section.id }}"
       role="list"
     >
@@ -34,7 +34,23 @@
         endif
       -%}
 
-      {%- for block in section.blocks -%}
+      {%- if section.settings.sort_collections == 'title_asc' -%}
+        {% assign sort_collections = section.blocks | sort: "title" %}
+      {% elsif section.settings.sort_collections == 'title_desc' %}
+        {% assign sort_collections = section.blocks | sort: "title" | reverse %}
+      {% elsif section.settings.sort_collections == 'date_asc' %}
+        {% assign sort_collections = section.blocks | sort: "published_at" | reverse %}
+      {% elsif section.settings.sort_collections == 'date_desc' %}
+        {% assign sort_collections = section.blocks | sort: "published_at"  %}
+      {% elsif section.settings.sort_collections == 'product_count_asc' %}
+        {% assign sort_collections = section.blocks | sort: "products_count" %}
+      {% elsif section.settings.sort_collections == 'product_count_desc' %}
+        {% assign sort_collections = section.blocks | sort: "products_count" | reverse %}
+      {% elsif section.settings.sort_collections == 'manual' %}
+        {% assign sort_collections = section.blocks %}
+      {%- endif -%}
+
+      {%- for block in sort_collections -%}
         <li class="collection-list__item grid__item{% if section.settings.swipe_on_mobile %} slider__slide{% endif %}" {{ block.shopify_attributes }}>
           <a{% if block.settings.collection != blank and block.settings.collection.all_products_count > 0 %} href="{{ block.settings.collection.url }}"{% else %} role="link" aria-disabled="true"{% endif %}
             class="card animate-arrow link{% if block.settings.collection.featured_image != blank or block.settings.collection.image != blank %} card--media{% else %}{% if section.settings.image_ratio != 'adapt' %} card--stretch{% endif %}{% endif %}"
@@ -74,15 +90,15 @@
                   </div>
                 </div>
 
-                <div class="card__text card__text-spacing card-colored card__text-hover">
+                <div class="card__text card-colored card__text-hover">
                   <div class="overlay-card"></div>
-                  <h3>
+                  <div class="collection-list__title collection-list__title--{{ section.settings.text_aligment }}">
                     {%- if block.settings.collection.title != blank -%}
                       {{- block.settings.collection.title | escape -}}
                     {%- else -%}
                       {{ 'onboarding.collection_title' | t }}
                     {%- endif -%}
-                  </h3>
+                  </div>
                 </div>
               {%- else -%}
                 <div class="overlay-card"></div>
@@ -115,12 +131,6 @@
       </div>
     {%- endif -%}
   </slider-component>
-
-  {%- if section.settings.show_view_all and section.blocks.size < collections.size -%}
-    <div class="center{% if section.settings.swipe_on_mobile %} small-hide medium-hide{% endif %}">
-      <a href="{{ routes.collections_url }}" class="button">{{ 'sections.collection_list.view_all' | t }}</a>
-    </div>
-  {%- endif -%}
 </div>
 
 {% schema %}
@@ -135,6 +145,58 @@
       "id": "title",
       "default": "Shop by category",
       "label": "t:sections.collection-list.settings.title.label"
+    },
+    {
+      "type": "select",
+      "id": "text_aligment",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.collection-list.settings.text_aligment.options__1.label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.collection-list.settings.text_aligment.options__2.label"
+        }
+      ],
+      "default": "left",
+      "label": "t:sections.collection-list.settings.text_aligment.label"
+    },
+    {
+      "type": "select",
+      "id": "sort_collections",
+      "options": [
+        {
+          "value": "title_asc",
+          "label": "t:sections.collection-list.settings.sort_collections.options__1.label"
+        },
+        {
+          "value": "title_desc",
+          "label": "t:sections.collection-list.settings.sort_collections.options__2.label"
+        },
+        {
+          "value": "date_asc",
+          "label": "t:sections.collection-list.settings.sort_collections.options__3.label"
+        },
+        {
+          "value": "date_desc",
+          "label": "t:sections.collection-list.settings.sort_collections.options__4.label"
+        },
+        {
+          "value": "product_count_asc",
+          "label": "t:sections.collection-list.settings.sort_collections.options__5.label"
+        },
+        {
+          "value": "product_count_desc",
+          "label": "t:sections.collection-list.settings.sort_collections.options__6.label"
+        },
+        {
+          "value": "manual",
+          "label": "t:sections.collection-list.settings.sort_collections.options__7.label"
+        }
+      ],
+      "default": "manual",
+      "label": "t:sections.collection-list.settings.sort_collections.label"
     },
     {
       "type": "select",
@@ -162,12 +224,6 @@
       "id": "swipe_on_mobile",
       "default": false,
       "label": "t:sections.collection-list.settings.swipe_on_mobile.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_view_all",
-      "default": false,
-      "label": "t:sections.collection-list.settings.show_view_all.label"
     },
     {
       "type": "header",

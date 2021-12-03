@@ -411,6 +411,39 @@
         "title": {
           "label": "Heading"
         },
+        "text_aligment": {
+          "options__1": {
+            "label": "Left"
+          },
+          "options__2": {
+            "label": "Center"
+          },
+          "label": "Text alignment"
+        },
+        "sort_collections": {
+          "options__1": {
+            "label": "Alphabetically, A-Z"
+          },
+          "options__2": {
+            "label": "Alphabetically, Z-A"
+          },
+          "options__3": {
+            "label": "Date, new to old"
+          },
+          "options__4": {
+            "label": "Date, old to new"
+          },
+          "options__5": {
+            "label": "Product count, high to low"
+          },
+          "options__6": {
+            "label": "Product count, low to hight"
+          },
+          "options__7": {
+            "label": "Manually"
+          },
+          "label": "Sort collections by:"
+        },
         "image_ratio": {
           "label": "Image ratio",
           "options__1": {
