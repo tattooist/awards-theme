@@ -61,8 +61,7 @@
           "footer-1": {
             "type": "text",
             "settings": {
-              "heading": "OUR PHILOSOPHY",
-              "subtext": "<p>Our hand-made leather goods were born to become exquisite – minimalist, highly functional pieces for travel and work that last the distance. They represent quality, durability, and functionality with modern design to provide you with effortless luxury.<\/p>"
+              "heading": "OUR PHILOSOPHY"
             }
           }
         },
@@ -71,13 +70,9 @@
           "footer-1"
         ],
         "settings": {
-          "color_scheme": "background-1",
-          "newsletter_enable": true,
-          "newsletter_heading": "Subscribe to our email",
-          "show_social": false,
+          "payment_enable": true,
           "enable_country_selector": true,
-          "enable_language_selector": true,
-          "payment_enable": true
+          "enable_language_selector": true
         }
       }
     },
