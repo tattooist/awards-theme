@@ -42,7 +42,7 @@
           "menu_mob": "",
           "enable_transparent_header": false,
           "transparent_text_color": "#000000",
-          "logo_position": "middle-left",
+          "logo_position": "center",
           "show_icons": false,
           "section_background_color": "#ffffff",
           "section_text_color": "#262626"
