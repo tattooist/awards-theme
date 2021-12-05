@@ -17,7 +17,7 @@
             "type": "announcement",
             "settings": {
               "text": "Complimentary shipping on all orders",
-              "link": ""
+              "link": "shopify:\/\/collections\/all"
             }
           }
         },
