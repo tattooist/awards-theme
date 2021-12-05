@@ -137,8 +137,8 @@
         "1638448213a98b8442-2"
       ],
       "settings": {
-        "layout": "boxed",
-        "section_height": "large",
+        "layout": "fullsized",
+        "section_height": "medium",
         "image": "shopify:\/\/shop_images\/234349874_1466972840345894_11058809195534943_n.jpg",
         "bg_color": "#ffffff",
         "desktop_text_position": "flex-start",
