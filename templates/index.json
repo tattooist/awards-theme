@@ -21,7 +21,7 @@
             "button_label_1": "Shop bags",
             "button_link_1": "shopify:\/\/collections\/all",
             "button_style_secondary_1": true,
-            "button_label_2": "View all",
+            "button_label_2": "",
             "button_link_2": "",
             "button_style_secondary_2": false
           }
@@ -100,7 +100,7 @@
         "sort_collections": "manual",
         "image_ratio": "portrait",
         "swipe_on_mobile": false,
-        "bg_color": "#FFF",
+        "bg_color": "#ffffff",
         "text_color": "#262626"
       }
     },
@@ -272,12 +272,12 @@
         "layout": "fullsized",
         "section_height": "fit-screen",
         "image": "shopify:\/\/shop_images\/1920x1300_web2.jpg",
-        "desktop_text_box_position": "flex-start__center",
+        "desktop_text_box_position": "flex-start__flex-start",
         "mobile_text_box_position": "flex-start__center",
         "show_text_below": true,
         "bg_color": "#262626",
         "overlay_color": "#262626",
-        "image_overlay_opacity": 20
+        "image_overlay_opacity": 0
       }
     },
     "16384518484b682c0b": {
@@ -322,7 +322,7 @@
       ],
       "settings": {
         "full_width": true,
-        "bg_color": "#FFF",
+        "bg_color": "#ffffff",
         "text_color": "#262626"
       }
     }
