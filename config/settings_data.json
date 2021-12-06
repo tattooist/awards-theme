@@ -55,27 +55,43 @@
             "type": "text",
             "settings": {
               "heading": "OUR PHILOSOPHY",
-              "text": "<p>Share store details, promotions, or brand content with your customers.<\/p>",
+              "text": "<p>Our hand-made leather goods were born to become exquisite – minimalist, highly functional pieces for travel and work that last the distance. They represent quality, durability, and functionality with modern design to provide you with effortless luxury.<\/p>",
               "show_social": false
             }
           },
           "footer-0": {
             "type": "link_list",
             "settings": {
+              "heading": "PRODUCTS",
+              "menu": "footer"
+            }
+          },
+          "a0ba0d74-061b-4629-82f2-13f176351d91": {
+            "type": "link_list",
+            "settings": {
               "heading": "Quick links",
               "menu": "footer"
+            }
+          },
+          "60c6a37f-3ed4-437d-9d09-951c9166fd42": {
+            "type": "newsletter",
+            "settings": {
+              "heading": "Newsletter",
+              "text": "<p>Be the first to hear about new launches, exclusive offers and expert beauty tips.<\/p>"
             }
           }
         },
         "block_order": [
           "footer-1",
-          "footer-0"
+          "footer-0",
+          "a0ba0d74-061b-4629-82f2-13f176351d91",
+          "60c6a37f-3ed4-437d-9d09-951c9166fd42"
         ],
         "settings": {
           "payment_enable": true,
           "enable_country_selector": true,
           "enable_language_selector": true,
-          "bg_color": "#FFF",
+          "bg_color": "#ffffff",
           "text_color": "#262626",
           "icons_color": "#262626"
         }
