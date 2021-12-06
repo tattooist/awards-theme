@@ -4,9 +4,54 @@
       "type": "main-page",
       "settings": {
       }
+    },
+    "163883011912715354": {
+      "type": "image-with-text",
+      "blocks": {
+        "16388301199ccdd6c3-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Image with text"
+          }
+        },
+        "16388301199ccdd6c3-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
+          }
+        },
+        "16388301199ccdd6c3-2": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "16388301199ccdd6c3-0",
+        "16388301199ccdd6c3-1",
+        "16388301199ccdd6c3-2"
+      ],
+      "settings": {
+        "layout": "boxed",
+        "section_height": "medium",
+        "bg_color": "#FFF",
+        "desktop_text_position": "flex-start",
+        "desktop_text_aligment": "left",
+        "desktop_text_first": false,
+        "mobile_text_position": "flex-start",
+        "mobile_text_aligment": "left",
+        "show_text_below": true
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "163883011912715354"
   ]
 }
