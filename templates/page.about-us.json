@@ -86,9 +86,9 @@
         "section_height": "medium",
         "image": "shopify:\/\/shop_images\/pexels-cottonbro-6660962.jpg",
         "bg_color": "#FFF",
-        "desktop_text_position": "flex-start",
+        "desktop_text_position": "center",
         "desktop_text_aligment": "left",
-        "desktop_text_first": false,
+        "desktop_text_first": true,
         "mobile_text_position": "flex-start",
         "mobile_text_aligment": "left",
         "show_text_below": true
