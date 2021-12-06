@@ -52,6 +52,7 @@
       "blocks": {
         "16388301199ccdd6c3-0": {
           "type": "heading",
+          "disabled": true,
           "settings": {
             "heading": "Image with text"
           }
@@ -59,11 +60,12 @@
         "16388301199ccdd6c3-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
+            "text": "<p>Values, traditions and ideas motivate us to move forward, today we are rapidly developing, expanding, improving and modernizing. New equipment and the use of high-grade materials make it possible to create more complex and functional goods. We make them “all-purpose” — for everyone, but unique. We care about functionality and order, think over various important little things and details, so that each garment plays its own role becoming a part of a personal history.<\/p>"
           }
         },
         "16388301199ccdd6c3-2": {
           "type": "buttons",
+          "disabled": true,
           "settings": {
             "button_label_1": "Button label",
             "button_link_1": "",
@@ -82,6 +84,7 @@
       "settings": {
         "layout": "boxed",
         "section_height": "medium",
+        "image": "shopify:\/\/shop_images\/pexels-cottonbro-6660962.jpg",
         "bg_color": "#FFF",
         "desktop_text_position": "flex-start",
         "desktop_text_aligment": "left",
