@@ -81,6 +81,15 @@
           "settings": {
             "share_label": "Share"
           }
+        },
+        "1ec18ba2-b48c-42bf-a199-848d5086f50e": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Compartments",
+            "content": "<p><strong>• Compartment for the up to 14-inch laptop and A4 docs<\/strong><br\/><br\/><strong>• Main compartment:<\/strong><br\/>- Zipped pocket for the passport and make-up tubes<br\/>- 2 compartments for a smartphone and a wallet<br\/>- large pocket for a tablet, notebook or a book<br\/>- pen holder<br\/><br\/><strong>• Large zipped compartment<\/strong><br\/>- internal pocket for a passport, smartphone or a wallet<br\/><br\/><strong>• Small zipped pocket for important little goods that need quick access (cards, lipstick, etc.)<\/strong><br\/><br\/><strong>• Two side pockets with a comfortable elastic band that holds both small and voluminous goods<\/strong><br\/>- carabiner for keys is in one of the side pockets<\/p>",
+            "page": "",
+            "icon": "check_mark"
+          }
         }
       },
       "block_order": [
@@ -95,7 +104,8 @@
         "04eeefb3-800d-4b40-ad64-532452479bbc",
         "d2ed1bf4-6860-4d6c-b8db-af214cbe70a8",
         "4f3722c1-10da-4ab8-bdac-15b0419b724c",
-        "share"
+        "share",
+        "1ec18ba2-b48c-42bf-a199-848d5086f50e"
       ],
       "settings": {
         "enable_sticky_info": true,
