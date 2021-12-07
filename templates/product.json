@@ -76,7 +76,7 @@
         "b0fff97c-a047-425e-8a94-0511ebc7f19a": {
           "type": "text",
           "settings": {
-            "text": "Text block",
+            "text": "{{ product.metafields.my_fields.info_text.value }}",
             "text_style": "body"
           }
         }
