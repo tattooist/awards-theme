@@ -159,6 +159,38 @@
         "show_text_below": true
       }
     },
+    "163888707049350b78": {
+      "type": "image-banner",
+      "blocks": {
+        "163888707002711e28-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Made from genuine leather with a membrane"
+          }
+        },
+        "163888707002711e28-2": {
+          "type": "text",
+          "settings": {
+            "text": "A modern material that gives backpack an ultra lightness and protection from moisture."
+          }
+        }
+      },
+      "block_order": [
+        "163888707002711e28-1",
+        "163888707002711e28-2"
+      ],
+      "settings": {
+        "layout": "fullsized",
+        "section_height": "fit-screen",
+        "image": "shopify:\/\/shop_images\/img_3159_pk-600x400_941ddfc2-c34e-4150-9a4f-f34d3740ec15.png",
+        "desktop_text_box_position": "flex-start__flex-start",
+        "mobile_text_box_position": "center__center",
+        "show_text_below": true,
+        "bg_color": "#262626",
+        "overlay_color": "#262626",
+        "image_overlay_opacity": 40
+      }
+    },
     "1638885471e1c01c3e": {
       "type": "featured-collection",
       "settings": {
@@ -173,12 +205,6 @@
         "show_image_outline": true,
         "show_vendor": false,
         "show_rating": false
-      }
-    },
-    "163888539843267808": {
-      "type": "page",
-      "settings": {
-        "page": "warranty"
       }
     },
     "product-recommendations": {
@@ -198,8 +224,8 @@
     "main",
     "1638885215c31107ca",
     "1638886100db6f2981",
+    "163888707049350b78",
     "1638885471e1c01c3e",
-    "163888539843267808",
     "product-recommendations"
   ]
 }
