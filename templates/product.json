@@ -58,10 +58,26 @@
             "icon": "leather"
           }
         },
+        "d2ed1bf4-6860-4d6c-b8db-af214cbe70a8": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Measurements",
+            "content": "<p>Size: 10 x 6 x 0,3 cm \\ 3.94 x 2,36 x 0.12 inch<\/p>",
+            "page": "",
+            "icon": "ruler"
+          }
+        },
         "share": {
           "type": "share",
           "settings": {
             "share_label": "Share"
+          }
+        },
+        "b0fff97c-a047-425e-8a94-0511ebc7f19a": {
+          "type": "text",
+          "settings": {
+            "text": "Text block",
+            "text_style": "body"
           }
         }
       },
@@ -75,7 +91,9 @@
         "buy_buttons",
         "description",
         "04eeefb3-800d-4b40-ad64-532452479bbc",
-        "share"
+        "d2ed1bf4-6860-4d6c-b8db-af214cbe70a8",
+        "share",
+        "b0fff97c-a047-425e-8a94-0511ebc7f19a"
       ],
       "settings": {
         "enable_sticky_info": true,
