@@ -49,6 +49,15 @@
           "settings": {
           }
         },
+        "04eeefb3-800d-4b40-ad64-532452479bbc": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Material",
+            "content": "<p>100% Leather<\/p>",
+            "page": "",
+            "icon": "leather"
+          }
+        },
         "share": {
           "type": "share",
           "settings": {
@@ -65,6 +74,7 @@
         "quantity_selector",
         "buy_buttons",
         "description",
+        "04eeefb3-800d-4b40-ad64-532452479bbc",
         "share"
       ],
       "settings": {
