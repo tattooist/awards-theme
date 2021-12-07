@@ -67,6 +67,15 @@
             "icon": "ruler"
           }
         },
+        "4f3722c1-10da-4ab8-bdac-15b0419b724c": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Warranty",
+            "content": "",
+            "page": "warranty",
+            "icon": "star"
+          }
+        },
         "share": {
           "type": "share",
           "settings": {
@@ -85,6 +94,7 @@
         "description",
         "04eeefb3-800d-4b40-ad64-532452479bbc",
         "d2ed1bf4-6860-4d6c-b8db-af214cbe70a8",
+        "4f3722c1-10da-4ab8-bdac-15b0419b724c",
         "share"
       ],
       "settings": {
