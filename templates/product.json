@@ -181,7 +181,7 @@
       ],
       "settings": {
         "layout": "fullsized",
-        "section_height": "fit-screen",
+        "section_height": "small",
         "image": "shopify:\/\/shop_images\/img_3159_pk-600x400_941ddfc2-c34e-4150-9a4f-f34d3740ec15.png",
         "desktop_text_box_position": "flex-start__flex-start",
         "mobile_text_box_position": "center__center",
