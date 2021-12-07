@@ -53,7 +53,7 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Material",
-            "content": "<p>100% Leather<\/p>",
+            "content": "<p>100% Leather & Membrane<\/p>",
             "page": "",
             "icon": "leather"
           }
@@ -62,7 +62,7 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Measurements",
-            "content": "<p>Size: 10 x 6 x 0,3 cm \\ 3.94 x 2,36 x 0.12 inch<\/p>",
+            "content": "<p><strong>Dimensions:<\/strong> 44.3 cm (rear wall) x 40.8 cm (front wall) x 30 cm x 12 cm \\ 17.4 (rear wall) x 16.1 (front wall) x 11.8 x 4\/7 inch<\/p><p><strong>Weight:<\/strong> 1 kg<\/p><p><strong>Capacity:<\/strong> 15 l<\/p>",
             "page": "",
             "icon": "ruler"
           }
@@ -128,7 +128,7 @@
       "settings": {
         "layout": "fullsized",
         "section_height": "fit-screen",
-        "bg_color": "#FFF",
+        "bg_color": "#ffffff",
         "desktop_text_position": "flex-start",
         "desktop_text_aligment": "left",
         "desktop_text_first": false,
