@@ -99,39 +99,61 @@
         "16388852151aaf5918-0": {
           "type": "heading",
           "settings": {
-            "heading": "Image with text"
+            "heading": "Perfect for your journeys"
           }
         },
         "16388852151aaf5918-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
-          }
-        },
-        "16388852151aaf5918-2": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Button label",
-            "button_link_1": "",
-            "button_style_secondary_1": false,
-            "button_label_2": "Button label",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "text": "<p>Big Shark is incredibly easy to travel with. Thanks to its spaciousness, you can put all the necessary goods in it to take it as a carry-on. On the side of the back, there’s a special strap with which the backpack can be put on the venting handle of the suitcase.<\/p>"
           }
         }
       },
       "block_order": [
         "16388852151aaf5918-0",
-        "16388852151aaf5918-1",
-        "16388852151aaf5918-2"
+        "16388852151aaf5918-1"
       ],
       "settings": {
-        "layout": "fullsized",
+        "layout": "boxed",
         "section_height": "fit-screen",
+        "image": "shopify:\/\/shop_images\/dsc_1161-600x400.png",
         "bg_color": "#ffffff",
         "desktop_text_position": "flex-start",
         "desktop_text_aligment": "left",
         "desktop_text_first": false,
+        "mobile_text_position": "flex-start",
+        "mobile_text_aligment": "left",
+        "show_text_below": true
+      }
+    },
+    "1638886100db6f2981": {
+      "type": "image-with-text",
+      "blocks": {
+        "16388861005ae295c3-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Comfortable to wear all day"
+          }
+        },
+        "16388861005ae295c3-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Shark perfectly holds its shape. Even after a while, it doesn’t deform. We also added metal studs to the backpack so that it can be placed on any surface without being scratched or become dirty. If features soft back, comfortable shoulder straps and lightweight construction.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "16388861005ae295c3-0",
+        "16388861005ae295c3-1"
+      ],
+      "settings": {
+        "layout": "boxed",
+        "section_height": "fit-screen",
+        "image": "shopify:\/\/shop_images\/img_3172_pk-600x400.png",
+        "bg_color": "#FFF",
+        "desktop_text_position": "center",
+        "desktop_text_aligment": "left",
+        "desktop_text_first": true,
         "mobile_text_position": "flex-start",
         "mobile_text_aligment": "left",
         "show_text_below": true
@@ -175,6 +197,7 @@
   "order": [
     "main",
     "1638885215c31107ca",
+    "1638886100db6f2981",
     "1638885471e1c01c3e",
     "163888539843267808",
     "product-recommendations"
