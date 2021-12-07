@@ -179,6 +179,22 @@
         "show_text_below": true
       }
     },
+    "1638885471e1c01c3e": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Available in 5 colors",
+        "collection": "",
+        "products_to_show": 6,
+        "show_view_all": true,
+        "swipe_on_mobile": false,
+        "image_ratio": "square",
+        "show_secondary_image": false,
+        "add_image_padding": false,
+        "show_image_outline": true,
+        "show_vendor": false,
+        "show_rating": false
+      }
+    },
     "163888707049350b78": {
       "type": "image-banner",
       "blocks": {
@@ -211,22 +227,6 @@
         "image_overlay_opacity": 40
       }
     },
-    "1638885471e1c01c3e": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Available in 5 colors",
-        "collection": "",
-        "products_to_show": 6,
-        "show_view_all": true,
-        "swipe_on_mobile": false,
-        "image_ratio": "square",
-        "show_secondary_image": false,
-        "add_image_padding": false,
-        "show_image_outline": true,
-        "show_vendor": false,
-        "show_rating": false
-      }
-    },
     "product-recommendations": {
       "type": "product-recommendations",
       "settings": {
@@ -244,8 +244,8 @@
     "main",
     "1638885215c31107ca",
     "1638886100db6f2981",
-    "163888707049350b78",
     "1638885471e1c01c3e",
+    "163888707049350b78",
     "product-recommendations"
   ]
 }
