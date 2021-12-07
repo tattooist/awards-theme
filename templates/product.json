@@ -72,13 +72,6 @@
           "settings": {
             "share_label": "Share"
           }
-        },
-        "b0fff97c-a047-425e-8a94-0511ebc7f19a": {
-          "type": "text",
-          "settings": {
-            "text": "{{ product.metafields.my_fields.info_text.value }}",
-            "text_style": "body"
-          }
         }
       },
       "block_order": [
@@ -92,13 +85,78 @@
         "description",
         "04eeefb3-800d-4b40-ad64-532452479bbc",
         "d2ed1bf4-6860-4d6c-b8db-af214cbe70a8",
-        "share",
-        "b0fff97c-a047-425e-8a94-0511ebc7f19a"
+        "share"
       ],
       "settings": {
         "enable_sticky_info": true,
         "hide_variants": false,
         "enable_video_looping": false
+      }
+    },
+    "1638885215c31107ca": {
+      "type": "image-with-text",
+      "blocks": {
+        "16388852151aaf5918-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Image with text"
+          }
+        },
+        "16388852151aaf5918-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
+          }
+        },
+        "16388852151aaf5918-2": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "16388852151aaf5918-0",
+        "16388852151aaf5918-1",
+        "16388852151aaf5918-2"
+      ],
+      "settings": {
+        "layout": "fullsized",
+        "section_height": "fit-screen",
+        "bg_color": "#FFF",
+        "desktop_text_position": "flex-start",
+        "desktop_text_aligment": "left",
+        "desktop_text_first": false,
+        "mobile_text_position": "flex-start",
+        "mobile_text_aligment": "left",
+        "show_text_below": true
+      }
+    },
+    "1638885471e1c01c3e": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Available in 5 colors",
+        "collection": "",
+        "products_to_show": 6,
+        "show_view_all": true,
+        "swipe_on_mobile": false,
+        "image_ratio": "square",
+        "show_secondary_image": false,
+        "add_image_padding": false,
+        "show_image_outline": true,
+        "show_vendor": false,
+        "show_rating": false
+      }
+    },
+    "163888539843267808": {
+      "type": "page",
+      "settings": {
+        "page": "warranty"
       }
     },
     "product-recommendations": {
@@ -116,6 +174,9 @@
   },
   "order": [
     "main",
+    "1638885215c31107ca",
+    "1638885471e1c01c3e",
+    "163888539843267808",
     "product-recommendations"
   ]
 }
