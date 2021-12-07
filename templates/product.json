@@ -193,7 +193,7 @@
       "type": "featured-collection",
       "settings": {
         "title": "Available in 5 colors",
-        "collection": "",
+        "collection": "big-shark-backpack",
         "products_to_show": 6,
         "show_view_all": true,
         "swipe_on_mobile": false,
