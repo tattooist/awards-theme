@@ -205,38 +205,6 @@
         "show_rating": false
       }
     },
-    "163889170337bc511d": {
-      "type": "rich-text",
-      "blocks": {
-        "16388917038b7ff2f9-0": {
-          "type": "subheading",
-          "settings": {
-            "subheading": "MANUFACTURING"
-          }
-        },
-        "16388917038b7ff2f9-1": {
-          "type": "heading",
-          "settings": {
-            "heading": "11 artisans, 102 details, 30 types of materials, 151 actions, 10 types of equipment and 72 cutters",
-            "heading_size": "h1"
-          }
-        },
-        "16388917038b7ff2f9-2": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Each of your leather goods is crafted by hand, so it has a unique character resulting in beautiful lasting quality. Our artisans and ideas collaborate together to cut and stitch, master pattern developing in final design. Choosing the right leather to us is an art — we search for a perfect shape, softness and colors. And, of course, details: each stud, zipper and button has its impact.<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "16388917038b7ff2f9-0",
-        "16388917038b7ff2f9-1",
-        "16388917038b7ff2f9-2"
-      ],
-      "settings": {
-        "text_aligment": "left"
-      }
-    },
     "163888707049350b78": {
       "type": "image-banner",
       "blocks": {
@@ -269,6 +237,38 @@
         "image_overlay_opacity": 40
       }
     },
+    "163889170337bc511d": {
+      "type": "rich-text",
+      "blocks": {
+        "16388917038b7ff2f9-0": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "MANUFACTURING"
+          }
+        },
+        "16388917038b7ff2f9-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "11 artisans, 102 details, 30 types of materials, 151 actions, 10 types of equipment and 72 cutters",
+            "heading_size": "h1"
+          }
+        },
+        "16388917038b7ff2f9-2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Each of your leather goods is crafted by hand, so it has a unique character resulting in beautiful lasting quality. Our artisans and ideas collaborate together to cut and stitch, master pattern developing in final design. Choosing the right leather to us is an art — we search for a perfect shape, softness and colors. And, of course, details: each stud, zipper and button has its impact.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "16388917038b7ff2f9-0",
+        "16388917038b7ff2f9-1",
+        "16388917038b7ff2f9-2"
+      ],
+      "settings": {
+        "text_aligment": "left"
+      }
+    },
     "product-recommendations": {
       "type": "product-recommendations",
       "settings": {
@@ -287,8 +287,8 @@
     "1638885215c31107ca",
     "1638886100db6f2981",
     "1638885471e1c01c3e",
-    "163889170337bc511d",
     "163888707049350b78",
+    "163889170337bc511d",
     "product-recommendations"
   ]
 }
