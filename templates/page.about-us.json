@@ -94,39 +94,6 @@
         "show_text_below": true
       }
     },
-    "16389572822d17afc8": {
-      "type": "image-with-text",
-      "blocks": {
-        "163895728285d82e91-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "DETAILS AND MATERIALS"
-          }
-        },
-        "163895728285d82e91-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Leather is not just leather. It has many sides and moods speaking through its age. Texture filled with wrinkles, flaws making it unique, each detail has its meaning. We love how leather plays in different shapes, so we try to reveal its character by pushing nature to new experiments.<\/p><p><\/p><p>We never try to change it, just add more protection with a special treatment to make it water-repellent and resistant to scratches and environmental factors. Zippers, carabiners, buttons, straps — the whole is formed from parts. We spend a lot of time seeking every little thing, so pay attention to the significance of every detail in a particular department of our product. After all, even one detail can make our bag or wallet more comfortable.<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "163895728285d82e91-0",
-        "163895728285d82e91-1"
-      ],
-      "settings": {
-        "layout": "boxed",
-        "section_height": "large",
-        "image": "shopify:\/\/shop_images\/pexels-cottonbro-6648408.jpg",
-        "bg_color": "#FFF",
-        "desktop_text_position": "flex-start",
-        "desktop_text_aligment": "left",
-        "desktop_text_first": false,
-        "mobile_text_position": "flex-start",
-        "mobile_text_aligment": "left",
-        "show_text_below": true
-      }
-    },
     "163895691938591547": {
       "type": "multicolumn",
       "blocks": {
@@ -172,6 +139,39 @@
         "button_label": "",
         "button_link": "",
         "swipe_on_mobile": false
+      }
+    },
+    "16389572822d17afc8": {
+      "type": "image-with-text",
+      "blocks": {
+        "163895728285d82e91-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "DETAILS AND MATERIALS"
+          }
+        },
+        "163895728285d82e91-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Leather is not just leather. It has many sides and moods speaking through its age. Texture filled with wrinkles, flaws making it unique, each detail has its meaning. We love how leather plays in different shapes, so we try to reveal its character by pushing nature to new experiments.<\/p><p><\/p><p>We never try to change it, just add more protection with a special treatment to make it water-repellent and resistant to scratches and environmental factors. Zippers, carabiners, buttons, straps — the whole is formed from parts. We spend a lot of time seeking every little thing, so pay attention to the significance of every detail in a particular department of our product. After all, even one detail can make our bag or wallet more comfortable.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "163895728285d82e91-0",
+        "163895728285d82e91-1"
+      ],
+      "settings": {
+        "layout": "boxed",
+        "section_height": "large",
+        "image": "shopify:\/\/shop_images\/pexels-cottonbro-6648408.jpg",
+        "bg_color": "#ffffff",
+        "desktop_text_position": "flex-start",
+        "desktop_text_aligment": "left",
+        "desktop_text_first": false,
+        "mobile_text_position": "flex-start",
+        "mobile_text_aligment": "left",
+        "show_text_below": true
       }
     },
     "163895692588b73636": {
@@ -246,8 +246,8 @@
     "main",
     "16388301972c4df46d",
     "163883011912715354",
-    "16389572822d17afc8",
     "163895691938591547",
+    "16389572822d17afc8",
     "163895692588b73636",
     "16389577248c7bac77"
   ]
