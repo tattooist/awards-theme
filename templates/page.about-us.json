@@ -94,36 +94,37 @@
         "show_text_below": true
       }
     },
-    "163895692588b73636": {
-      "type": "image-banner",
+    "16389572822d17afc8": {
+      "type": "image-with-text",
       "blocks": {
-        "163895692562a76c11-1": {
+        "163895728285d82e91-0": {
           "type": "heading",
           "settings": {
             "heading": "DETAILS AND MATERIALS"
           }
         },
-        "163895692562a76c11-2": {
+        "163895728285d82e91-1": {
           "type": "text",
           "settings": {
-            "text": "Leather is not just leather. It has many sides and moods speaking through its age. Texture filled with wrinkles, flaws making it unique, each detail has its meaning. We love how leather plays in different shapes, so we try to reveal its character by pushing nature to new experiments."
+            "text": "<p>Leather is not just leather. It has many sides and moods speaking through its age. Texture filled with wrinkles, flaws making it unique, each detail has its meaning. We love how leather plays in different shapes, so we try to reveal its character by pushing nature to new experiments.<\/p><p><\/p><p>We never try to change it, just add more protection with a special treatment to make it water-repellent and resistant to scratches and environmental factors. Zippers, carabiners, buttons, straps — the whole is formed from parts. We spend a lot of time seeking every little thing, so pay attention to the significance of every detail in a particular department of our product. After all, even one detail can make our bag or wallet more comfortable.<\/p>"
           }
         }
       },
       "block_order": [
-        "163895692562a76c11-1",
-        "163895692562a76c11-2"
+        "163895728285d82e91-0",
+        "163895728285d82e91-1"
       ],
       "settings": {
         "layout": "boxed",
-        "section_height": "small",
+        "section_height": "fit-screen",
         "image": "shopify:\/\/shop_images\/pexels-cottonbro-6648408.jpg",
-        "desktop_text_box_position": "flex-start__flex-start",
-        "mobile_text_box_position": "center__center",
-        "show_text_below": true,
-        "bg_color": "#262626",
-        "overlay_color": "#262626",
-        "image_overlay_opacity": 50
+        "bg_color": "#FFF",
+        "desktop_text_position": "flex-start",
+        "desktop_text_aligment": "left",
+        "desktop_text_first": false,
+        "mobile_text_position": "flex-start",
+        "mobile_text_aligment": "left",
+        "show_text_below": true
       }
     },
     "163895691938591547": {
@@ -189,14 +190,47 @@
       "settings": {
         "text_aligment": "left"
       }
+    },
+    "163895692588b73636": {
+      "type": "image-banner",
+      "blocks": {
+        "163895692562a76c11-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "DETAILS AND MATERIALS"
+          }
+        },
+        "163895692562a76c11-2": {
+          "type": "text",
+          "settings": {
+            "text": "Leather is not just leather. It has many sides and moods speaking through its age. Texture filled with wrinkles, flaws making it unique, each detail has its meaning. We love how leather plays in different shapes, so we try to reveal its character by pushing nature to new experiments."
+          }
+        }
+      },
+      "block_order": [
+        "163895692562a76c11-1",
+        "163895692562a76c11-2"
+      ],
+      "settings": {
+        "layout": "boxed",
+        "section_height": "small",
+        "image": "shopify:\/\/shop_images\/pexels-cottonbro-6648408.jpg",
+        "desktop_text_box_position": "flex-start__flex-start",
+        "mobile_text_box_position": "center__center",
+        "show_text_below": true,
+        "bg_color": "#262626",
+        "overlay_color": "#262626",
+        "image_overlay_opacity": 50
+      }
     }
   },
   "order": [
     "main",
     "16388301972c4df46d",
     "163883011912715354",
-    "163895692588b73636",
+    "16389572822d17afc8",
     "163895691938591547",
-    "16389572786ad2b4d8"
+    "16389572786ad2b4d8",
+    "163895692588b73636"
   ]
 }
