@@ -509,6 +509,9 @@
     "featured-blog": {
       "name": "Blog posts",
       "settings": {
+        "subheading": {
+          "label": "Subheading"
+        },
         "heading": {
           "label": "Heading"
         },
@@ -1749,8 +1752,20 @@
     "multicolumn": {
       "name": "Multicolumn",
       "settings": {
+        "subtitle": {
+          "label": "Subheading"
+        },
         "title": {
           "label": "Heading"
+        },
+        "text_aligment": {
+          "options__1": {
+            "label": "Left"
+          },
+          "options__2": {
+            "label": "Center"
+          },
+          "label": "Text alignment"
         },
         "image_width": {
           "label": "Image width",
@@ -1762,6 +1777,18 @@
           },
           "options__3": {
             "label": "Full width of column"
+          }
+        },
+        "column_size": {
+          "label": "Column size",
+          "options__1": {
+            "label": "Small"
+          },
+          "options__2": {
+            "label": "Medium"
+          },
+          "options__3": {
+            "label": "Large"
           }
         },
         "image_ratio": {
@@ -1786,18 +1813,6 @@
           },
           "options__2": {
             "label": "Center"
-          }
-        },
-        "background_style": {
-          "label": "Secondary background",
-          "options__1": {
-            "label": "None"
-          },
-          "options__2": {
-            "label": "Show as column background"
-          },
-          "options__3": {
-            "label": "Show as section background"
           }
         },
         "button_label": {

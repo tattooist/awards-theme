@@ -137,3 +137,24 @@
     margin-top: 5rem;
   }
 }
+
+.blog__subheading {
+  font-weight: normal;
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.blog__subheading + .title-wrapper-with-link {
+  margin-top: 1.6rem;
+}
+
+@media screen and (max-width: 749px) {
+  .blog__subheading {
+    padding: 0 1.6rem;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+  }
+}
