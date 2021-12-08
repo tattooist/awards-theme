@@ -174,53 +174,71 @@
         "swipe_on_mobile": false
       }
     },
-    "16389572786ad2b4d8": {
-      "type": "rich-text",
-      "blocks": {
-        "163895727836451df3-2": {
-          "type": "text",
-          "settings": {
-            "text": "<p>We never try to change it, just add more protection with a special treatment to make it water-repellent and resistant to scratches and environmental factors. Zippers, carabiners, buttons, straps — the whole is formed from parts. We spend a lot of time seeking every little thing, so pay attention to the significance of every detail in a particular department of our product. After all, even one detail can make our bag or wallet more comfortable.<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "163895727836451df3-2"
-      ],
-      "settings": {
-        "text_aligment": "left"
-      }
-    },
     "163895692588b73636": {
       "type": "image-banner",
       "blocks": {
         "163895692562a76c11-1": {
           "type": "heading",
           "settings": {
-            "heading": "DETAILS AND MATERIALS"
-          }
-        },
-        "163895692562a76c11-2": {
-          "type": "text",
-          "settings": {
-            "text": "Leather is not just leather. It has many sides and moods speaking through its age. Texture filled with wrinkles, flaws making it unique, each detail has its meaning. We love how leather plays in different shapes, so we try to reveal its character by pushing nature to new experiments."
+            "heading": "HAND-MADE IS PRIORITY"
           }
         }
       },
       "block_order": [
-        "163895692562a76c11-1",
-        "163895692562a76c11-2"
+        "163895692562a76c11-1"
       ],
       "settings": {
         "layout": "boxed",
         "section_height": "small",
-        "image": "shopify:\/\/shop_images\/pexels-cottonbro-6648408.jpg",
-        "desktop_text_box_position": "flex-start__flex-start",
+        "image": "shopify:\/\/shop_images\/pexels-cottonbro-6661911.jpg",
+        "desktop_text_box_position": "flex-start__center",
         "mobile_text_box_position": "center__center",
         "show_text_below": true,
         "bg_color": "#262626",
         "overlay_color": "#262626",
         "image_overlay_opacity": 50
+      }
+    },
+    "16389577248c7bac77": {
+      "type": "rich-text",
+      "blocks": {
+        "3e33df3c-1e72-44a2-9386-f2ffa9db6db3": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "subheading": "Each of your leather goods is crafted by hand, so it has a unique character resulting in beautiful lasting quality. The final result is always a surprise and you’ll never meet two similar goods. It compliments you, emphasises your style and perfectly matches your wardrobe."
+          }
+        },
+        "16389577241679ed36-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Each of your leather goods is crafted by hand, so it has a unique character resulting in beautiful lasting quality. The final result is always a surprise and you’ll never meet two similar goods. It compliments you, emphasises your style and perfectly matches your wardrobe.",
+            "heading_size": "h3"
+          }
+        },
+        "16389577241679ed36-2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>It seems that minimalistic leather products are simple to make. But that’s way more complex. Each of our products goes through its own way of \"birth\", so the manufacturing of any new garment is a whole story — tiered and time-consuming, but, for sure, creative and amusing. It’s a challenge to ourselves. With the help of professional equipment and caring hands of our craftsmen, scattered parts are transformed into finished products. We use lots of materials and details to make our products layered with a style, functionality and strong attitude. We truly believe you’ll find a product that will become your soulmate and share with you many years of exciting meetings, events and long journeys.<\/p>"
+          }
+        },
+        "16389577241679ed36-3": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "3e33df3c-1e72-44a2-9386-f2ffa9db6db3",
+        "16389577241679ed36-1",
+        "16389577241679ed36-2",
+        "16389577241679ed36-3"
+      ],
+      "settings": {
+        "text_aligment": "center"
       }
     }
   },
@@ -230,7 +248,7 @@
     "163883011912715354",
     "16389572822d17afc8",
     "163895691938591547",
-    "16389572786ad2b4d8",
-    "163895692588b73636"
+    "163895692588b73636",
+    "16389577248c7bac77"
   ]
 }
