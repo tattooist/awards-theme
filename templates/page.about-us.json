@@ -132,8 +132,8 @@
         "1638956919668946fd-0": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "title": "Mickey",
+            "text": "<p>Sleek and soft leather to emphasize its natural appearance<\/p>",
             "link_label": "",
             "link": ""
           }
@@ -141,8 +141,8 @@
         "1638956919668946fd-1": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "title": "Nappa",
+            "text": "<p>Thick and extremely durable leather with a solid color<\/p>",
             "link_label": "",
             "link": ""
           }
@@ -150,8 +150,8 @@
         "1638956919668946fd-2": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "title": "Prague",
+            "text": "<p>Textured embossed leather that is amazingly soft and pleasant to the touch<\/p>",
             "link_label": "",
             "link": ""
           }
@@ -163,7 +163,7 @@
         "1638956919668946fd-2"
       ],
       "settings": {
-        "title": "Multicolumn",
+        "title": "We use three types of leather",
         "image_width": "full",
         "image_ratio": "adapt",
         "column_alignment": "left",
@@ -172,6 +172,23 @@
         "button_link": "",
         "swipe_on_mobile": false
       }
+    },
+    "16389572786ad2b4d8": {
+      "type": "rich-text",
+      "blocks": {
+        "163895727836451df3-2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We never try to change it, just add more protection with a special treatment to make it water-repellent and resistant to scratches and environmental factors. Zippers, carabiners, buttons, straps — the whole is formed from parts. We spend a lot of time seeking every little thing, so pay attention to the significance of every detail in a particular department of our product. After all, even one detail can make our bag or wallet more comfortable.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "163895727836451df3-2"
+      ],
+      "settings": {
+        "text_aligment": "left"
+      }
     }
   },
   "order": [
@@ -179,6 +196,7 @@
     "16388301972c4df46d",
     "163883011912715354",
     "163895692588b73636",
-    "163895691938591547"
+    "163895691938591547",
+    "16389572786ad2b4d8"
   ]
 }
