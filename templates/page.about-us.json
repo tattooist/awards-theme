@@ -5,6 +5,61 @@
       "settings": {
       }
     },
+    "1638957984b9a79b5d": {
+      "type": "image-banner",
+      "blocks": {
+        "1638957984a87f2e9a-0": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "subheading": "Image with text overlay"
+          }
+        },
+        "1638957984a87f2e9a-1": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Image banner"
+          }
+        },
+        "1638957984a87f2e9a-2": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "Give customers details about the banner image(s) or content on the template."
+          }
+        },
+        "1638957984a87f2e9a-3": {
+          "type": "buttons",
+          "disabled": true,
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_style_secondary_2": true
+          }
+        }
+      },
+      "block_order": [
+        "1638957984a87f2e9a-0",
+        "1638957984a87f2e9a-1",
+        "1638957984a87f2e9a-2",
+        "1638957984a87f2e9a-3"
+      ],
+      "settings": {
+        "layout": "boxed",
+        "section_height": "fit-screen",
+        "image": "shopify:\/\/shop_images\/pexels-cottonbro-6660962.jpg",
+        "desktop_text_box_position": "flex-start__flex-start",
+        "mobile_text_box_position": "center__center",
+        "show_text_below": true,
+        "bg_color": "#262626",
+        "overlay_color": "#262626",
+        "image_overlay_opacity": 0
+      }
+    },
     "16388301972c4df46d": {
       "type": "rich-text",
       "blocks": {
@@ -84,7 +139,7 @@
       "settings": {
         "layout": "boxed",
         "section_height": "medium",
-        "image": "shopify:\/\/shop_images\/pexels-cottonbro-6660962.jpg",
+        "image": "shopify:\/\/shop_images\/lifetime-leather-X875kk9-rnU-unsplash.jpg",
         "bg_color": "#ffffff",
         "desktop_text_position": "center",
         "desktop_text_aligment": "left",
@@ -244,6 +299,7 @@
   },
   "order": [
     "main",
+    "1638957984b9a79b5d",
     "16388301972c4df46d",
     "163883011912715354",
     "163895691938591547",
