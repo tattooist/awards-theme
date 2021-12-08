@@ -116,7 +116,7 @@
       ],
       "settings": {
         "layout": "boxed",
-        "section_height": "fit-screen",
+        "section_height": "large",
         "image": "shopify:\/\/shop_images\/pexels-cottonbro-6648408.jpg",
         "bg_color": "#FFF",
         "desktop_text_position": "flex-start",
