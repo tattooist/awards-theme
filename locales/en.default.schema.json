@@ -531,9 +531,21 @@
         "show_date": {
           "label": "Show date"
         },
+        "swipe_on_mobile_header": {
+          "content": "Mobile layout"
+        },
+        "swipe_on_mobile": {
+          "label": "Enable swipe on mobile"
+        },
         "show_author": {
           "label": "Show author"
-        }
+        },
+        "colors_header": {
+          "content": "Colors"
+        },
+        "bg_color": "Section background",
+        "text_color": "Text color",
+        "item_color": "Item color"
       },
       "presets": {
         "name": "Blog posts"

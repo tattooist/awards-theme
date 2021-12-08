@@ -1,20 +1,24 @@
 .blog:not(.background-secondary) {
-  margin: 5rem 0;
+  margin: 3.2rem 0;
 }
 
+/*
 .blog.background-secondary {
   padding: 4rem 0 3rem;
 }
+ */
 
 @media screen and (min-width: 750px) {
   .blog:not(.background-secondary) {
-    margin: calc(5rem + var(--page-width-margin)) 0;
+    margin: calc(4.4rem + var(--page-width-margin)) 0;
   }
 
+  /*
   .blog.background-secondary {
-    padding-top: calc(5rem + var(--page-width-margin));
-    padding-bottom: calc(5rem + var(--page-width-margin));
+    padding-top: calc(4.4rem + var(--page-width-margin));
+    padding-bottom: calc(4.4rem + var(--page-width-margin));
   }
+   */
 }
 
 .blog-placeholder {
@@ -56,28 +60,25 @@
   color: rgba(var(--color-foreground), 0.75);
 }
 
-@media screen and (max-width: 749px) {
-  .blog:not(.no-heading) {
-    margin-top: -1rem;
-  }
-}
-
 @media screen and (min-width: 750px) {
   .blog.no-heading {
     margin-top: calc(6rem + var(--page-width-margin));
   }
 }
 
+
+/*
 .background-secondary .title-wrapper-with-link {
   margin-top: 0;
 }
+ */
 
 .blog__title {
   margin: 0;
 }
 
 .blog__posts.articles-wrapper {
-  margin-bottom: 1rem;
+  margin-bottom: 2.4rem;
 }
 
 @media screen and (min-width: 990px) {
@@ -92,21 +93,40 @@
 
 @media screen and (min-width: 750px) {
   .blog__posts .article + .article {
-    margin-left: 1rem;
+    margin-left: 1.6rem;
   }
 }
 
 @media screen and (max-width: 749px) {
   .blog__post.article {
-    width: calc(100% - 3rem);
-    padding-left: 0.5rem;
+    width: calc(100% - 5.2rem);
+    padding-left: 1.6rem;
+  }
+
+  .blog__posts.articles-wrapper:not(.slider) {
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+  }
+
+  .blog__posts.articles-wrapper:not(.slider) .blog__post.article {
+    min-width: 100%;
+  }
+
+  .blog__posts.articles-wrapper:not(.slider) .blog__post.article .article-card__excerpt {
+    margin-bottom: 4.8rem;
+  }
+
+  .blog__posts.articles-wrapper:not(.slider) .blog__post.article:last-child .article-card__excerpt {
+    margin-bottom: 3.2rem;
   }
 }
 
+/*
 .background-secondary .article-card,
 .background-secondary .blog-placeholder__content {
   background-color: rgb(var(--color-background));
 }
+ */
 
 .blog__button {
   margin-top: 3rem;
