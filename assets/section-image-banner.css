@@ -8,7 +8,7 @@
   .banner__media {
     display: none;
   }
-  .banner--fit-screen.banner--mobile-bottom {
+  /*.banner--fit-screen.banner--mobile-bottom {
     height: 100vh;
   }
 
@@ -18,7 +18,7 @@
 
   .shopify-section:first-child .banner--fit-screen.banner--transparent-header.banner--mobile-bottom {
     height: calc(100vh - 36px);
-  }
+  }*/
 
   .banner--fit-screen.banner--mobile-bottom:not(.banner--adapt) > .banner__media-mob,
   .banner--fit-screen.banner--stacked:not(.banner--mobile-bottom):not(.banner--adapt) > .banner__media-mob {
@@ -88,6 +88,18 @@
   .banner--mobile-bottom .button--secondary.color-inverse {
     --color-button:var(--color-base-accent-1);
     color:var(--color-base-accent-1);
+  }
+
+  .banner--mobile-bottom .banner__box {
+    padding: 0 1.6rem 3.2rem;
+  }
+
+  .banner--mobile-bottom .banner__box > * + .banner__buttons {
+    margin-top:2.4rem;
+  }
+
+  .banner--mobile-bottom .banner__content .button:not(:only-child) {
+    width: 100%;
   }
 }
 
