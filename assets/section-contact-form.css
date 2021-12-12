@@ -2,6 +2,15 @@
   max-width: 100%;
 }
 
+.contact .page-width--narrow form {
+  max-width: 63.2rem;
+  margin:0 auto;
+}
+
+.contact .title, .contact .contact__text {
+  text-align: center;
+}
+
 .contact .form__message {
   align-items: flex-start;
 }
@@ -11,22 +20,22 @@
 }
 
 .contact .field {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.6rem;
 }
 
 @media screen and (min-width: 750px) {
   .contact .field {
-    margin-bottom: 2rem;
+    margin-bottom: 1.6rem;
   }
 }
 
 .contact__button {
-  margin-top: 3rem;
+  margin-top: 1.6rem;
 }
 
 @media screen and (min-width: 750px) {
   .contact__button {
-    margin-top: 4rem;
+    margin-top: 1.6rem;
   }
 }
 
@@ -40,4 +49,56 @@
 
 .grecaptcha-badge {
   visibility: hidden;
+}
+
+.contact--with-bg {
+  padding: 3.2rem 0;
+  margin: 0 auto;
+}
+
+.contact--with-bg .title {
+  margin-top: 0;
+}
+
+.contact--with-bg.spaced-section:last-child {
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 750px) {
+  .contact--with-bg {
+    padding: 6.4rem 0;
+    margin: 0 auto;
+  }
+}
+
+.contact__text p {
+  margin: 0;
+}
+
+.contact__text p + p {
+  margin-top: 10px;
+}
+
+@media screen and (min-width: 990px) {
+  .contact--onecolumn-left .title,
+  .contact--twocolumns .title,
+  .contact--onecolumn-left .contact__text,
+  .contact--twocolumns .contact__text {
+    text-align: left;
+  }
+
+  .contact--onecolumn-left form {
+    max-width: 50%;
+  }
+
+  .contact__text {
+    font-weight: normal;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    letter-spacing: 0.02em;
+  }
+
+  .contact__text p {
+    margin-top: 0;
+  }
 }

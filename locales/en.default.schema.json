@@ -490,6 +490,33 @@
     },
     "contact-form": {
       "name": "Contact Form",
+      "settings": {
+        "layout": {
+          "label": "Layout",
+          "options__1": {
+            "label": "One column - center"
+          },
+          "options__2": {
+            "label": "One column - left"
+          },
+          "options__3": {
+            "label": "Two columns"
+          }
+        },
+        "headline": {
+          "label": "Headline"
+        },
+        "text": {
+          "label": "Text",
+          "info": "Automatically switches to two columns layout"
+        },
+        "is_full_width": {
+          "label": "Make section full width"
+        },
+        "color_title": "Colors",
+        "bg_color": "Section background",
+        "text_color": "Text color"
+      },
       "presets": {
         "name": "Contact form"
       }
