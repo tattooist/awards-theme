@@ -22,8 +22,8 @@
   {% endstyle %}
 {% endunless %}
 
-<div class="contact{% unless section.settings.bg_color == '#ffffff' %} contact--with-bg{% endunless %} contact--{{ section.settings.layout }}">
-  <div class="page-width{% if section.settings.layout == 'onecolumn-center' and section.settings.is_full_width == false %} page-width--narrow{% endif %}">
+<div class="contact{% unless section.settings.bg_color == '#ffffff' %} contact--with-bg{% endunless %} contact--{{ section.settings.layout }}{% if section.settings.text != blank %} contact--has-text{% endif %}">
+  <div class="page-width{% if section.settings.is_full_width == false %}{% if section.settings.layout == 'onecolumn-center'%} page-width--narrow{% endif %}{% else %} contact__full-width{% endif %}">
     <h2 class="title h1">{{ section.settings.heading | escape }}</h2>
     {% if section.settings.layout == 'twocolumns' or section.settings.text != blank  %}
       <div class="contact__grid grid grid--1-col grid--2-col-desktop">
