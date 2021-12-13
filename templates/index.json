@@ -219,11 +219,12 @@
         "column3"
       ],
       "settings": {
+        "subtitle": "Subheading",
         "title": "Reviews",
-        "image_width": "full",
+        "text_aligment": "left",
         "image_ratio": "square",
+        "column_size": "medium",
         "column_alignment": "left",
-        "background_style": "none",
         "button_label": "",
         "button_link": "",
         "swipe_on_mobile": false
@@ -283,14 +284,18 @@
     "16384518484b682c0b": {
       "type": "featured-blog",
       "settings": {
+        "subheading": "Subheading",
         "heading": "Blog posts",
         "blog": "news",
         "post_limit": 3,
         "show_image": true,
         "show_date": true,
         "show_author": false,
-        "soft_background": false,
-        "show_view_all": true
+        "show_view_all": true,
+        "swipe_on_mobile": false,
+        "bg_color": "#FFF",
+        "text_color": "#262626",
+        "item_color": "#FFF"
       }
     },
     "1638453507cc701dd2": {
@@ -325,6 +330,17 @@
         "bg_color": "#ffffff",
         "text_color": "#262626"
       }
+    },
+    "1639415634c5f4be3f": {
+      "type": "contact-form",
+      "settings": {
+        "layout": "onecolumn-center",
+        "heading": "Want to get in touch with us?",
+        "text": "",
+        "is_full_width": false,
+        "bg_color": "#FFF",
+        "text_color": "#262626"
+      }
     }
   },
   "order": [
@@ -336,6 +352,7 @@
     "multi_column",
     "16384506284f6524aa",
     "16384518484b682c0b",
-    "1638453507cc701dd2"
+    "1638453507cc701dd2",
+    "1639415634c5f4be3f"
   ]
 }
