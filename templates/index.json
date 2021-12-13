@@ -51,7 +51,7 @@
         "collection": "wallets",
         "products_to_show": 4,
         "show_view_all": true,
-        "swipe_on_mobile": false,
+        "swipe_on_mobile": true,
         "image_ratio": "square",
         "show_secondary_image": true,
         "add_image_padding": false,
@@ -99,7 +99,7 @@
         "text_aligment": "left",
         "sort_collections": "manual",
         "image_ratio": "portrait",
-        "swipe_on_mobile": false,
+        "swipe_on_mobile": true,
         "bg_color": "#ffffff",
         "text_color": "#262626"
       }
@@ -227,7 +227,7 @@
         "column_alignment": "left",
         "button_label": "",
         "button_link": "",
-        "swipe_on_mobile": false
+        "swipe_on_mobile": true
       }
     },
     "16384506284f6524aa": {
@@ -289,10 +289,10 @@
         "blog": "news",
         "post_limit": 3,
         "show_image": true,
-        "show_date": true,
+        "show_date": false,
         "show_author": false,
-        "show_view_all": true,
-        "swipe_on_mobile": false,
+        "show_view_all": false,
+        "swipe_on_mobile": true,
         "bg_color": "#FFF",
         "text_color": "#262626",
         "item_color": "#FFF"
