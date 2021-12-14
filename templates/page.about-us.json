@@ -186,11 +186,12 @@
         "1638956919668946fd-2"
       ],
       "settings": {
+        "subtitle": "",
         "title": "We use three types of leather",
-        "image_width": "full",
+        "text_aligment": "left",
         "image_ratio": "adapt",
+        "column_size": "medium",
         "column_alignment": "left",
-        "background_style": "primary",
         "button_label": "",
         "button_link": "",
         "swipe_on_mobile": false
