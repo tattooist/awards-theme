@@ -20,7 +20,7 @@
           "settings": {
             "button_label_1": "Shop now",
             "button_link_1": "shopify:\/\/collections\/all",
-            "button_style_secondary_1": false,
+            "button_style_secondary_1": true,
             "button_label_2": "",
             "button_link_2": "",
             "button_style_secondary_2": false
@@ -99,7 +99,7 @@
         "text_aligment": "left",
         "sort_collections": "manual",
         "image_ratio": "portrait",
-        "swipe_on_mobile": true,
+        "swipe_on_mobile": false,
         "bg_color": "#ffffff",
         "text_color": "#262626"
       }
@@ -274,7 +274,7 @@
         "section_height": "fit-screen",
         "image": "shopify:\/\/shop_images\/1920x1300_web2.jpg",
         "desktop_text_box_position": "flex-start__flex-start",
-        "mobile_text_box_position": "flex-start__center",
+        "mobile_text_box_position": "flex-start__flex-start",
         "show_text_below": true,
         "bg_color": "#ffffff",
         "overlay_color": "#262626",
@@ -293,9 +293,9 @@
         "show_author": false,
         "show_view_all": false,
         "swipe_on_mobile": true,
-        "bg_color": "#FFF",
+        "bg_color": "#ffffff",
         "text_color": "#262626",
-        "item_color": "#FFF"
+        "item_color": "#ffffff"
       }
     },
     "1638453507cc701dd2": {
@@ -338,7 +338,7 @@
         "heading": "Want to get in touch with us?",
         "text": "",
         "is_full_width": false,
-        "bg_color": "#FFF",
+        "bg_color": "#ffffff",
         "text_color": "#262626"
       }
     }
