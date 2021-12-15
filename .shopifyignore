@@ -1,0 +1,13 @@
+templates/404.json
+templates/article.json
+templates/blog.json
+templates/cart.json
+templates/collection.json
+templates/index.json
+templates/list-collections.json
+templates/page.about-us.json
+templates/page.contact.json
+templates/page.json
+templates/password.json
+templates/product.json
+templates/search.json
