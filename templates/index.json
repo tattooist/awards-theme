@@ -275,7 +275,7 @@
         "image": "shopify:\/\/shop_images\/1920x1300_web2.jpg",
         "desktop_text_box_position": "flex-start__flex-start",
         "mobile_text_box_position": "flex-start__flex-start",
-        "show_text_below": true,
+        "show_text_below": false,
         "bg_color": "#ffffff",
         "overlay_color": "#262626",
         "image_overlay_opacity": 0
