@@ -38,7 +38,7 @@
         "image": "shopify:\/\/shop_images\/Pic.jpg",
         "desktop_text_box_position": "flex-start__flex-start",
         "mobile_text_box_position": "flex-start__flex-start",
-        "show_text_below": false,
+        "show_text_below": true,
         "bg_color": "#ffffff",
         "overlay_color": "#262626",
         "image_overlay_opacity": 0
