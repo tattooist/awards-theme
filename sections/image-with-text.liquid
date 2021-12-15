@@ -26,7 +26,7 @@
   }
 {%- endstyle -%}
 
-<div id="image-with-text-{{ section.id }}" class="image-with-text image-with-text--{{ section.settings.section_height }} image-with-text--{{ section.settings.layout }}{% unless section.settings.bg_color == '#ffffff' %} image-with-text--with-bg{% endunless %}">
+<div id="image-with-text-{{ section.id }}" class="image-with-text image-with-text--{{ section.settings.section_height }} image-with-text--{{ section.settings.layout }}{% unless section.settings.layout == 'fullsized' %} page-width{% endunless %}{% unless section.settings.bg_color == '#ffffff' %} image-with-text--with-bg{% endunless %}">
   <div class="image-with-text__grid grid grid--gapless grid--1-col grid--2-col-tablet gradient{% if section.settings.desktop_text_first %} image-with-text__grid--reverse{% endif %}{% if section.settings.show_text_below %} image-with-text__grid--text-below{% endif %}">
     <div class="grid__item">
       <div class="image-with-text__media image-with-text__media--{{ section.settings.section_height }} {% if section.settings.image != blank %}media{% else %}image-with-text__media--placeholder placeholder{% endif %}"

@@ -1948,7 +1948,7 @@ input[type='checkbox'] {
   background-color: rgb(var(--color-background));
 }
 
-.header-wrapper--border-bottom > header {
+.header-wrapper--border-bottom {
   box-shadow: 0px 1px 0px rgba(38, 38, 38, 0.1);
 }
 

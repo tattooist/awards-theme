@@ -2,15 +2,6 @@
   background: var(--color-collection-list-bg);
 }
 
-.collection-list-wrapper {
-  padding-top: 6.4rem;
-  padding-bottom: 4rem;
-}
-
-.collection-list-wrapper .title-wrapper-with-link {
-  margin-top: 0;
-}
-
 .collection-list__title {
   font-size: 1.6rem;
   line-height: 2.4rem;
