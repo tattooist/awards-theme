@@ -53,7 +53,7 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Features",
-            "content": "<p>- Combination of natural leather and a dense waterproof membrane<br\/>- Laptop compartment<br\/>- Holder to attach backpack on the venting handle of the suitcase<br\/>- Multiple functional compartments<br\/>- Soft comfortable shoulder straps<br\/>- Soft back<br\/>- Metal studs<br\/>- Lightness<br\/>- Big capacity<\/p>",
+            "content": "<p>{{ product.metafields.my_fields.features | metafield_tag }}<\/p>",
             "page": "",
             "icon": "none"
           }
