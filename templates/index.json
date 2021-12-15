@@ -1,0 +1,358 @@
+{
+  "sections": {
+    "image_banner": {
+      "type": "image-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Meet Riviera"
+          }
+        },
+        "2b3133c8-2d96-4850-b190-f8d466290f0f": {
+          "type": "text",
+          "settings": {
+            "text": "Multi-functional, spacious and stylish bag. Perfect for business, great for daily meetings."
+          }
+        },
+        "button": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Shop now",
+            "button_link_1": "shopify:\/\/collections\/all",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "2b3133c8-2d96-4850-b190-f8d466290f0f",
+        "button"
+      ],
+      "settings": {
+        "layout": "fullsized",
+        "section_height": "fit-screen",
+        "image": "shopify:\/\/shop_images\/Pic.jpg",
+        "desktop_text_box_position": "flex-start__flex-start",
+        "mobile_text_box_position": "flex-start__flex-start",
+        "show_text_below": false,
+        "bg_color": "#ffffff",
+        "overlay_color": "#262626",
+        "image_overlay_opacity": 0
+      }
+    },
+    "featured_products": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Featured products",
+        "collection": "wallets",
+        "products_to_show": 10,
+        "show_view_all": true,
+        "swipe_on_mobile": true,
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "add_image_padding": false,
+        "show_image_outline": false,
+        "show_vendor": false,
+        "show_rating": false
+      }
+    },
+    "163844974624240ffc": {
+      "type": "collection-list",
+      "blocks": {
+        "1638449745cb7354a6-0": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "casual"
+          }
+        },
+        "1638449745cb7354a6-1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "travel"
+          }
+        },
+        "1638449745cb7354a6-2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "business"
+          }
+        },
+        "f37e2f51-1de1-4147-83e8-ca28af2c3848": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "storage"
+          }
+        }
+      },
+      "block_order": [
+        "1638449745cb7354a6-0",
+        "1638449745cb7354a6-1",
+        "1638449745cb7354a6-2",
+        "f37e2f51-1de1-4147-83e8-ca28af2c3848"
+      ],
+      "settings": {
+        "title": "Collections",
+        "text_aligment": "left",
+        "sort_collections": "manual",
+        "image_ratio": "portrait",
+        "swipe_on_mobile": false,
+        "bg_color": "#ffffff",
+        "text_color": "#262626"
+      }
+    },
+    "16384482131f1c1f9a": {
+      "type": "image-with-text",
+      "blocks": {
+        "1638448213a98b8442-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Hand-made from a natural leather"
+          }
+        },
+        "1638448213a98b8442-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We always search for the balance between durability and uniqueness, so our products stay functional and stretch over time, becoming more beautiful and comfortable with every wear.<\/p>"
+          }
+        },
+        "1638448213a98b8442-2": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Choose accessory",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "Go to catalog",
+            "button_link_2": "",
+            "button_style_secondary_2": true
+          }
+        }
+      },
+      "block_order": [
+        "1638448213a98b8442-0",
+        "1638448213a98b8442-1",
+        "1638448213a98b8442-2"
+      ],
+      "settings": {
+        "layout": "boxed",
+        "section_height": "medium",
+        "image": "shopify:\/\/shop_images\/234349874_1466972840345894_11058809195534943_n.jpg",
+        "bg_color": "#fafafa",
+        "desktop_text_position": "flex-start",
+        "desktop_text_aligment": "left",
+        "desktop_text_first": true,
+        "mobile_text_position": "flex-start",
+        "mobile_text_aligment": "left",
+        "show_text_below": true
+      }
+    },
+    "rich_text": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Each of your leather goods is crafted by hand, so it has a unique character resulting in beautiful lasting quality. The final result is always a surprise and you’ll never meet two similar goods. It compliments you, emphasises your style and perfectly matches your wardrobe.",
+            "heading_size": "h1"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Alex Miller, Founder<\/p>"
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "button_label": "Our story",
+            "button_link": "shopify:\/\/pages\/contact"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text",
+        "button"
+      ],
+      "settings": {
+        "text_aligment": "left"
+      }
+    },
+    "multi_column": {
+      "type": "multicolumn",
+      "blocks": {
+        "column1": {
+          "type": "column",
+          "settings": {
+            "title": "My best bag",
+            "text": "<p>This bag is beautiful and exceeded my expectations, and details are much nicer then I expected for a bag of this price. The leather is strong and without imperfections, and the zippers are well made and easy to operate. Super comfortable to wear (I love to use is as a cross-body) and great for any tasks.<\/p><p><\/p><p><strong>Peter S.<\/strong><\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column2": {
+          "type": "column",
+          "settings": {
+            "title": "Perfect slim wallet",
+            "text": "<p>Literally cut my old wallet in half in terms of pocket space. I can now easily carry in a jacket or front pants pocket with my keys. Beautiful wallet and great stitching. Slim and good looking. Looks like it will be my wallet for years to come.<\/p><p><\/p><p><strong>Ricardo G.<\/strong><\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column3": {
+          "type": "column",
+          "settings": {
+            "title": "Great travel pal",
+            "text": "<p>Perfect for business travel or if you want to give off a classy vibe. And supple leather feels oh-so-good in the hands! It organizes all of my cash, boarding documents, and cards, as well as a passport or two (I’ve tested it with two passports). At the same time, it’s also quick and easy to whip out your passport when need be. My travel soulmate!<\/p><p><\/p><p><strong>Christina S.<\/strong><\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column1",
+        "column2",
+        "column3"
+      ],
+      "settings": {
+        "subtitle": "Subheading",
+        "title": "Reviews",
+        "text_aligment": "left",
+        "image_ratio": "square",
+        "column_size": "medium",
+        "column_alignment": "left",
+        "button_label": "",
+        "button_link": "",
+        "swipe_on_mobile": true
+      }
+    },
+    "16384506284f6524aa": {
+      "type": "image-banner",
+      "blocks": {
+        "1638450628dc78c808-0": {
+          "type": "subheading",
+          "settings": {
+            "subheading": ""
+          }
+        },
+        "1638450628dc78c808-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Tenderly crafted to guard your goods"
+          }
+        },
+        "1638450628dc78c808-2": {
+          "type": "text",
+          "settings": {
+            "text": "We know how it’s important for you to keep all your important goods by hand. That’s why our accessories are made with a strict quality control and individual approach to uplift your comfort. And this is our main goal behind the design process."
+          }
+        },
+        "1638450628dc78c808-3": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Read our story",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": true
+          }
+        }
+      },
+      "block_order": [
+        "1638450628dc78c808-0",
+        "1638450628dc78c808-1",
+        "1638450628dc78c808-2",
+        "1638450628dc78c808-3"
+      ],
+      "settings": {
+        "layout": "fullsized",
+        "section_height": "fit-screen",
+        "image": "shopify:\/\/shop_images\/1920x1300_web2.jpg",
+        "desktop_text_box_position": "flex-start__flex-start",
+        "mobile_text_box_position": "flex-start__flex-start",
+        "show_text_below": false,
+        "bg_color": "#ffffff",
+        "overlay_color": "#262626",
+        "image_overlay_opacity": 0
+      }
+    },
+    "16384518484b682c0b": {
+      "type": "featured-blog",
+      "settings": {
+        "subheading": "Subheading",
+        "heading": "Blog posts",
+        "blog": "news",
+        "post_limit": 3,
+        "show_image": true,
+        "show_date": false,
+        "show_author": false,
+        "show_view_all": false,
+        "swipe_on_mobile": true,
+        "bg_color": "#ffffff",
+        "text_color": "#262626",
+        "item_color": "#ffffff"
+      }
+    },
+    "1638453507cc701dd2": {
+      "type": "newsletter",
+      "blocks": {
+        "1638453507e2064882-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Subscribe to our newsletter",
+            "heading_size": "h1"
+          }
+        },
+        "1638453507e2064882-1": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Get updates about our newest products and special offers straight to your inbox.<\/p>"
+          }
+        },
+        "1638453507e2064882-2": {
+          "type": "email_form",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "1638453507e2064882-0",
+        "1638453507e2064882-1",
+        "1638453507e2064882-2"
+      ],
+      "settings": {
+        "full_width": true,
+        "bg_color": "#ffffff",
+        "text_color": "#262626"
+      }
+    },
+    "1639415634c5f4be3f": {
+      "type": "contact-form",
+      "settings": {
+        "layout": "onecolumn-center",
+        "heading": "Want to get in touch with us?",
+        "text": "",
+        "is_full_width": false,
+        "bg_color": "#ffffff",
+        "text_color": "#262626"
+      }
+    }
+  },
+  "order": [
+    "image_banner",
+    "featured_products",
+    "163844974624240ffc",
+    "16384482131f1c1f9a",
+    "rich_text",
+    "multi_column",
+    "16384506284f6524aa",
+    "16384518484b682c0b",
+    "1638453507cc701dd2",
+    "1639415634c5f4be3f"
+  ]
+}
