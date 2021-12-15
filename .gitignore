@@ -8,7 +8,6 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
-templates/*
-!templates/customers
+templates/
+!templates/customers/
 !templates/gift_card.liquid
-
