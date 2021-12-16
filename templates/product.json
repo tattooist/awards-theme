@@ -230,7 +230,7 @@
         "section_height": "small",
         "image": "shopify:\/\/shop_images\/18-600x400.png",
         "desktop_text_box_position": "flex-start__flex-start",
-        "mobile_text_box_position": "center__center",
+        "mobile_text_box_position": "flex-start__flex-start",
         "show_text_below": true,
         "bg_color": "#f2f0ed",
         "overlay_color": "#262626",
