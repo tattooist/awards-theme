@@ -41,7 +41,7 @@
           "logo_width_mob": 100,
           "menu": "main-menu",
           "menu_mob": "",
-          "enable_transparent_header": true,
+          "enable_transparent_header": false,
           "transparent_text_color": "#000000",
           "logo_position": "center",
           "show_icons": false,
