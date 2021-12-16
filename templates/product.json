@@ -232,7 +232,7 @@
         "desktop_text_box_position": "flex-start__flex-start",
         "mobile_text_box_position": "center__center",
         "show_text_below": true,
-        "bg_color": "#262626",
+        "bg_color": "#f2f0ed",
         "overlay_color": "#262626",
         "image_overlay_opacity": 40
       }
