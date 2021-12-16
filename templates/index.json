@@ -284,8 +284,8 @@
     "16384518484b682c0b": {
       "type": "featured-blog",
       "settings": {
-        "subheading": "Subheading",
-        "heading": "Blog posts",
+        "subheading": "",
+        "heading": "Latest Stories",
         "blog": "news",
         "post_limit": 3,
         "show_image": true,
@@ -293,7 +293,7 @@
         "show_author": false,
         "show_view_all": false,
         "swipe_on_mobile": true,
-        "bg_color": "#ffffff",
+        "bg_color": "#ede9e6",
         "text_color": "#262626",
         "item_color": "#ffffff"
       }
