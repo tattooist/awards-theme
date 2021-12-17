@@ -49,20 +49,20 @@
           "settings": {
           }
         },
-        "8b2c0d66-d45e-4eda-b412-292d0810ada4": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Features",
-            "content": "<p>{{ product.metafields.my_fields.features | metafield_tag }}<\/p>",
-            "page": "",
-            "icon": "none"
-          }
-        },
         "04eeefb3-800d-4b40-ad64-532452479bbc": {
           "type": "collapsible_tab",
           "settings": {
             "heading": "Material",
             "content": "<p>{{ product.metafields.my_fields.material | metafield_tag }}<\/p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "8b2c0d66-d45e-4eda-b412-292d0810ada4": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Features",
+            "content": "<p>{{ product.metafields.my_fields.features | metafield_tag }}<\/p>",
             "page": "",
             "icon": "none"
           }
@@ -119,8 +119,8 @@
         "quantity_selector",
         "buy_buttons",
         "description",
-        "8b2c0d66-d45e-4eda-b412-292d0810ada4",
         "04eeefb3-800d-4b40-ad64-532452479bbc",
+        "8b2c0d66-d45e-4eda-b412-292d0810ada4",
         "d2ed1bf4-6860-4d6c-b8db-af214cbe70a8",
         "1ec18ba2-b48c-42bf-a199-848d5086f50e",
         "3664b01b-7b87-4704-a874-b2d51003d285",
