@@ -62,7 +62,7 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Material",
-            "content": "<p>100% Leather & Membrane<\/p>",
+            "content": "<p>{{ product.metafields.my_fields.material | metafield_tag }}<\/p>",
             "page": "",
             "icon": "none"
           }
@@ -71,7 +71,7 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Measurements",
-            "content": "<p><strong>Dimensions:<\/strong> 44.3 cm (rear wall) x 40.8 cm (front wall) x 30 cm x 12 cm \\ 17.4 (rear wall) x 16.1 (front wall) x 11.8 x 4\/7 inch<\/p><p><strong>Weight:<\/strong> 1 kg<\/p><p><strong>Capacity:<\/strong> 15 l<\/p>",
+            "content": "<p>{{ product.metafields.my_fields.measurements | metafield_tag }}<\/p>",
             "page": "",
             "icon": "none"
           }
@@ -80,7 +80,16 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Compartments",
-            "content": "<p>1st — compartment for an up to 15.6 laptop up to 15.6\"<br\/>2nd — main compartment:<br\/>- Pocket for A4 docs or tablet<br\/>- Zipped pocket for passport<br\/>- 2 pockets for smartphone, wallet<br\/>- Pen holder<br\/><br\/>1 — External zipped pocket for quick access to small goods<br\/>- Inside pocket for small goods<br\/>2 — Two side pockets<br\/>- compartment for pass<br\/>- carabiner for keys<\/p>",
+            "content": "<p>{{ product.metafields.my_fields.compartments | metafield_tag }}<\/p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "3664b01b-7b87-4704-a874-b2d51003d285": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Manufacturing",
+            "content": "<p>{{ product.metafields.my_fields.manufacturing | metafield_tag }}<\/p>",
             "page": "",
             "icon": "none"
           }
@@ -89,8 +98,8 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Warranty",
-            "content": "",
-            "page": "warranty",
+            "content": "<p>Quality control is an important part of our philosophy, but occasionally something might slip through our eyes and fingers (we’re all human).<br\/><br\/>If you found a flaw in our product or we sent you the wrong one by mistake, please send it back to us within 30 days of delivery for a full refund (including shipping).<br\/><br\/>If you change your mind by any reason or wish to return an unwanted gift, please contact us as we would love to help you exchange or refund your purchase within 30 days of delivery. Please note: shipping cost of a refund isn’t covered, so it need to be sent to the original purchaser’s method of payment. All items must be returned in original condition without any signs of use.<\/p>",
+            "page": "",
             "icon": "none"
           }
         },
@@ -114,6 +123,7 @@
         "04eeefb3-800d-4b40-ad64-532452479bbc",
         "d2ed1bf4-6860-4d6c-b8db-af214cbe70a8",
         "1ec18ba2-b48c-42bf-a199-848d5086f50e",
+        "3664b01b-7b87-4704-a874-b2d51003d285",
         "4f3722c1-10da-4ab8-bdac-15b0419b724c",
         "share"
       ],
