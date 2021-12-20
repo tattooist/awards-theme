@@ -1,5 +1,5 @@
 .collection-grid-section {
-  margin-top: 3rem;
+  margin-top: 4.6rem;
 }
 
 .collection {
@@ -15,11 +15,108 @@
   .collection .title:not(.title--no-heading) {
     margin-top: -1rem;
   }
+
+  .collection-grid-section {
+    margin-top: 0;
+  }
+
+  .facets__form-sort {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 750px) {
   .collection .title-wrapper-with-link--no-heading {
     margin-top: calc(6rem + var(--page-width-margin));
+  }
+
+  .grid .collection__sidebar {
+    width: 22%;
+    max-width: 308px;
+  }
+
+  .grid .collection__products-grid {
+    width: calc(78% - 3.2rem);
+    padding-left: 3.2rem;
+    margin-left: auto;
+  }
+
+  .grid .collection__sidebar .product-count,
+  .grid .collection__sidebar .facet-filters,
+  .grid .collection__sidebar .facets__form + .active-facets,
+  .grid .collection__sidebar .mobile-facets__close,
+  .grid .collection__sidebar .mobile-facets__open-wrapper {
+    display: none;
+  }
+
+  .grid .collection__sidebar .mobile-facets__disclosure,
+  .grid .collection__sidebar .mobile-facets__wrapper,
+  .grid .collection__sidebar .facets__form {
+    display: flex;
+    width: 100%;
+  }
+
+  .grid .collection__sidebar .mobile-facets__header {
+    border-bottom: none;
+    padding: 0 0 .8rem;
+  }
+
+  .grid .collection__sidebar .mobile-facets__summary {
+    padding: 1.6rem 0;
+    margin: 0;
+  }
+
+  .grid .collection__sidebar .mobile-facets .active-facets {
+    padding: 0;
+    margin: 0;
+  }
+
+  .grid .collection__sidebar .mobile-facets__submenu {
+    margin:0;
+  }
+
+  .grid .collection__sidebar .mobile-facets .facets__price {
+    padding: 0 1.6rem;
+  }
+
+  .grid .collection__sidebar .mobile-facets__footer {
+    padding: 3.2rem 0;
+  }
+
+  .grid .collection__sidebar .disclosure-has-popup:not(.menu-opening) .mobile-facets__inner {
+    transform: translateX(0);
+  }
+
+  .grid .collection__sidebar .mobile-facets__heading {
+    font-size: calc(var(--font-heading-scale) * 2rem);
+    line-height: 3.2rem;
+  }
+
+  .facets__form-sort {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .facets-sidebar {
+    display: none;
+  }
+
+  .collection__products-grid .grid__item {
+    max-width: 33.33%;
+  }
+
+  .collection-grid .mobile-facets {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    background: none;
+  }
+
+  .collection-grid .mobile-facets__inner {
+    max-width: 100%;
+    width: 100%;
   }
 }
 

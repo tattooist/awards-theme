@@ -299,6 +299,10 @@ class MenuDrawer extends HTMLElement {
   bindEvents() {
     this.querySelectorAll('summary').forEach(summary => summary.addEventListener('click', this.onSummaryClick.bind(this)));
     this.querySelectorAll('button').forEach(button => button.addEventListener('click', this.onCloseButtonClick.bind(this)));
+
+    document.querySelector('.mobile-facets__close').addEventListener('click', function() {
+      document.querySelector('.mobile-facets__open-wrapper').click();
+    });
   }
 
   onKeyUp(event) {
@@ -322,7 +326,6 @@ class MenuDrawer extends HTMLElement {
     }
 
     if (detailsElement === this.mainDetailsToggle) {
-      console.log(123123);
       if(isOpen) event.preventDefault();
       isOpen ? this.closeMenuDrawer(event, summaryElement) : this.openMenuDrawer(summaryElement);
     } else {
@@ -344,7 +347,6 @@ class MenuDrawer extends HTMLElement {
   }
 
   closeMenuDrawer(event, elementToFocus = false) {
-    console.log("close");
     if (event !== undefined) {
       this.mainDetailsToggle.classList.remove('menu-opening');
       this.mainDetailsToggle.querySelectorAll('details').forEach(details =>  {

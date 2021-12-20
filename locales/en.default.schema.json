@@ -1338,11 +1338,48 @@
           "content": "Add a description or image by editing your collection. [Learn more](https:\/\/help.shopify.com\/en\/manual\/products\/collections\/collection-layout)"
         },
         "show_collection_description": {
-          "label": "Show collection description"
+          "label": "Show collection description",
+          "info": "Add a description by editing your collection."
+        },
+        "text_aligment": {
+          "options__1": {
+            "label": "Left"
+          },
+          "options__2": {
+            "label": "Center"
+          },
+          "label": "Text alignment"
+        },
+        "layout": {
+          "label": "Layout",
+          "options__1": {
+            "label": "Fullsized"
+          },
+          "options__2": {
+            "label": "Boxed"
+          },
+          "options__3": {
+            "label": "Boxed radius"
+          }
         },
         "show_collection_image": {
           "label": "Show collection image",
           "info": "For best results, use an image with a 16:9 aspect ratio. [Learn more](https:\/\/help.shopify.com\/en\/manual\/shopify-admin\/productivity-tools\/image-editor#understanding-image-aspect-ratio)"
+        },
+        "color_h1": {
+          "content": "Colors"
+        },
+        "color_paragraph": {
+          "content": "Only applicable when collection image is used."
+        },
+        "text_color": {
+          "label": "Text"
+        },
+        "overlay_color": {
+          "label": "Overlay"
+        },
+        "image_overlay_opacity": {
+          "label": "Image overlay opacity"
         }
       }
     },
@@ -1374,12 +1411,6 @@
         "show_secondary_image": {
           "label": "Show second image on hover"
         },
-        "add_image_padding": {
-          "label": "Add image padding"
-        },
-        "show_image_outline": {
-          "label": "Show image border"
-        },
         "show_vendor": {
           "label": "Show vendor"
         },
@@ -1399,6 +1430,15 @@
         },
         "collapse_on_larger_devices": {
           "label": "Collapse on larger screens"
+        },
+        "layout": {
+          "label": "Position",
+          "options__1": {
+            "label": "Side bar"
+          },
+          "options__2": {
+            "label": "Top line"
+          }
         }
       }
     },
