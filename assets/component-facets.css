@@ -35,7 +35,7 @@
   margin: 0;
   z-index: 1;
   position: absolute;
-  background: #FFF;
+  background: none;
   padding: 0 6px 0 15px;
   right: 17px;
   white-space: nowrap;
@@ -83,6 +83,7 @@
   margin: 0;
   padding-left: 0;
   padding-right: 1.75rem;
+  opacity: 0;
 }
 
 @media screen and (forced-colors: active) {
