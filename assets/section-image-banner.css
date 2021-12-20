@@ -519,6 +519,10 @@
   .banner__box > * + * {
     margin-top: 1.6rem;
   }
+
+  .shopify-section:first-child .banner--fit-screen.banner--transparent-header {
+    padding-top: 8rem;
+  }
 }
 
 
@@ -553,6 +557,7 @@
 
   .shopify-section:first-child .banner--fit-screen.banner--transparent-header {
     height: calc(100vh - 36px);
+    padding-top: 8rem;
   }
 
   .shopify-section:first-child .banner--fit-screen.banner--transparent-header.banner--boxed-radius,
