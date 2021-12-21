@@ -229,14 +229,14 @@
         "16388917038b7ff2f9-1": {
           "type": "heading",
           "settings": {
-            "heading": "11 artisans, 102 details, 30 types of materials, 151 actions, 10 types of equipment and 72 cutters",
+            "heading": "{{ product.metafields.my_fields.rich_text_heading.value }}",
             "heading_size": "h1"
           }
         },
         "16388917038b7ff2f9-2": {
           "type": "text",
           "settings": {
-            "text": "<p>Each of your leather goods is crafted by hand, so it has a unique character resulting in beautiful lasting quality. Our artisans and ideas collaborate together to cut and stitch, master pattern developing in final design. Choosing the right leather to us is an art — we search for a perfect shape, softness and colors. And, of course, details: each stud, zipper and button has its impact.<\/p>"
+            "text": "<p>{{ product.metafields.my_fields.rich_text_text | metafield_tag }}<\/p>"
           }
         }
       },
