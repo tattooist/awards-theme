@@ -135,7 +135,6 @@
     },
     "1638885215c31107ca": {
       "type": "image-with-text",
-      "disabled": true,
       "blocks": {
         "16388852151aaf5918-0": {
           "type": "heading",
@@ -146,7 +145,7 @@
         "16388852151aaf5918-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Big Shark is incredibly easy to travel with. Thanks to its spaciousness, you can put all the necessary goods in it to take it as a carry-on. On the side of the back, there’s a special strap with which the backpack can be put on the venting handle of the suitcase.<\/p>"
+            "text": "<p>{{ product.metafields.my_fields.image_with_text_text | metafield_tag }}<\/p>"
           }
         }
       },
@@ -157,7 +156,7 @@
       "settings": {
         "layout": "boxed",
         "section_height": "fit-screen",
-        "image": "shopify:\/\/shop_images\/25-600x400.png",
+        "image": "{{ product.metafields.my_fields.image_with_text_img.value }}",
         "bg_color": "#ffffff",
         "desktop_text_position": "flex-start",
         "desktop_text_aligment": "left",
