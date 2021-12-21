@@ -229,7 +229,7 @@
         "163888707002711e28-2": {
           "type": "text",
           "settings": {
-            "text": ""
+            "text": "{{ product.metafields.my_fields.img_overlay_text.value }}"
           }
         }
       },
