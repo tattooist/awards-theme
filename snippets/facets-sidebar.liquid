@@ -26,7 +26,7 @@
     <form class="facets__form">
       <div class="facets__form facets__form--top">
         <menu-drawer class="mobile-facets__wrapper" data-breakpoint="mobile">
-          <details id="FacetsDisclosure" class="mobile-facets__disclosure disclosure-has-popup">
+          <details id="FacetsDisclosure" class="mobile-facets__disclosure disclosure-has-popup mobile-facets__disclosure-web" open>
             <summary class="mobile-facets__open-wrapper focus-offset">
               <span class="mobile-facets__open">
                 {% render 'icon-filter' %}
@@ -46,7 +46,7 @@
                         {{ 'products.facets.filter_button' | t }}
                       {%- endif -%}
                     </h2>
-                    <span tabindex="0" class="mobile-facets__close mobile-facets__close--no-js" aria-label="Close" role="button" aria-expanded="true">{%- render 'icon-close' -%}</span>
+                    <span tabindex="0" class="mobile-facets__close mobile-facets__close--no-js" aria-label="Close" role="button" aria-expanded="true" onclick="this.closest('.mobile-facets__wrapper').querySelector('summary').click()">{%- render 'icon-close' -%}</span>
                   </div>
                 </div>
                 <div class="active-facets active-facets-mobile">
@@ -282,8 +282,10 @@
 
     if(width > 750) {
       document.getElementById("FacetsDisclosure").open = true;
+      document.getElementById("FacetsDisclosure").classList.add("mobile-facets__disclosure-web");
     } else {
       document.getElementById("FacetsDisclosure").open = false;
+      document.getElementById("FacetsDisclosure").classList.remove("mobile-facets__disclosure-web");
     }
   }
 

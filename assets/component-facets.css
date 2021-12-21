@@ -35,7 +35,7 @@
   margin: 0;
   z-index: 1;
   position: absolute;
-  background: #FFF;
+  background: none;
   padding: 0 6px 0 15px;
   right: 17px;
   white-space: nowrap;
@@ -83,6 +83,7 @@
   margin: 0;
   padding-left: 0;
   padding-right: 1.75rem;
+  opacity: 0;
 }
 
 @media screen and (forced-colors: active) {
@@ -202,7 +203,7 @@
   text-underline-offset: 0.3rem;
 }
 
-.disclosure-has-popup[open] > .facets__summary::before {
+.disclosure-has-popup[open]:not(.mobile-facets__disclosure-web) > .facets__summary::before {
   z-index: 2;
 }
 
@@ -513,6 +514,7 @@ a.active-facets__button.focused .active-facets__button-inner,
   z-index: 100;
   background-color: rgba(var(--color-foreground), 0.5);
   pointer-events: none;
+  display: none;
 }
 
 .mobile-facets .active-facets__button {
@@ -532,11 +534,11 @@ a.active-facets__button.focused .active-facets__button-inner,
   transform: rotate(90deg);
 }
 
-.mobile-facets__details[open] summary {
+.mobile-facets__details[open]:not(.mobile-facets__disclosure-web) summary {
   border-bottom: none;
 }
 
-.mobile-facets__details[open] .mobile-facets__arrow svg {
+.mobile-facets__details[open]:not(.mobile-facets__disclosure-web) .mobile-facets__arrow svg {
   transform: rotate(-90deg);
 }
 
@@ -553,7 +555,7 @@ a.active-facets__button.focused .active-facets__button-inner,
   display: flex;
 }
 
-.mobile-facets__wrapper .disclosure-has-popup[open] > summary::before {
+.mobile-facets__wrapper .disclosure-has-popup[open]:not(.mobile-facets__disclosure-web) > summary::before {
   height: 100vh;
   z-index: 3;
 }
@@ -795,7 +797,7 @@ details.menu-opening .mobile-facets__close svg {
   flex-direction: column;
 }
 
-.mobile-facets__details[open] .icon-caret {
+.mobile-facets__details[open]:not(.mobile-facets__disclosure-web) .icon-caret {
   transform: rotate(180deg);
 }
 
@@ -847,7 +849,7 @@ details.menu-opening .mobile-facets__close svg {
   border-bottom: .1rem solid rgb(38 38 38 / 10%);
 }
 
-.js details[open] > .mobile-facets__submenu {
+.js details[open]:not(.mobile-facets__disclosure-web) > .mobile-facets__submenu {
   transition: max-height 0.4s cubic-bezier(0.29, 0.63, 0.44, 1),
     visibility 0.4s cubic-bezier(0.29, 0.63, 0.44, 1);
   max-height: 1000rem;
