@@ -299,10 +299,6 @@ class MenuDrawer extends HTMLElement {
   bindEvents() {
     this.querySelectorAll('summary').forEach(summary => summary.addEventListener('click', this.onSummaryClick.bind(this)));
     this.querySelectorAll('button').forEach(button => button.addEventListener('click', this.onCloseButtonClick.bind(this)));
-
-    document.querySelector('.mobile-facets__close').addEventListener('click', function() {
-      document.querySelector('.mobile-facets__open-wrapper').click();
-    });
   }
 
   onKeyUp(event) {
