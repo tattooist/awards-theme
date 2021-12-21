@@ -139,7 +139,7 @@
         "16388852151aaf5918-0": {
           "type": "heading",
           "settings": {
-            "heading": "Perfect for your journeys"
+            "heading": "{{ product.metafields.my_fields.image_with_text_heading.value }}"
           }
         },
         "16388852151aaf5918-1": {
