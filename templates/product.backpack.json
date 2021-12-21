@@ -87,6 +87,7 @@
         },
         "3664b01b-7b87-4704-a874-b2d51003d285": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "heading": "Manufacturing",
             "content": "<p>{{ product.metafields.my_fields.manufacturing | metafield_tag }}<\/p>",
@@ -168,18 +169,17 @@
     },
     "1638886100db6f2981": {
       "type": "image-with-text",
-      "disabled": true,
       "blocks": {
         "16388861005ae295c3-0": {
           "type": "heading",
           "settings": {
-            "heading": "Comfortable to wear all day"
+            "heading": "{{ product.metafields.my_fields.image_with_text_2_heading.value }}"
           }
         },
         "16388861005ae295c3-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Shark perfectly holds its shape. Even after a while, it doesn’t deform. We also added metal studs to the backpack so that it can be placed on any surface without being scratched or become dirty. If features soft back, comfortable shoulder straps and lightweight construction.<\/p>"
+            "text": "<p>{{ product.metafields.my_fields.image_with_text_1_text | metafield_tag }}<\/p>"
           }
         }
       },
@@ -190,7 +190,7 @@
       "settings": {
         "layout": "boxed",
         "section_height": "fit-screen",
-        "image": "shopify:\/\/shop_images\/19-600x400.png",
+        "image": "{{ product.metafields.my_fields.image_with_text_2_img.value }}",
         "bg_color": "#ffffff",
         "desktop_text_position": "center",
         "desktop_text_aligment": "left",
