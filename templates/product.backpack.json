@@ -223,13 +223,13 @@
         "163888707002711e28-1": {
           "type": "heading",
           "settings": {
-            "heading": "Dense membrane"
+            "heading": "{{ product.metafields.my_fields.img_overlay_heading.value }}"
           }
         },
         "163888707002711e28-2": {
           "type": "text",
           "settings": {
-            "text": "Made from a genuine leather and membrane, modern dense material that gives backpack an ultra lightness and protection from moisture."
+            "text": ""
           }
         }
       },
@@ -240,7 +240,7 @@
       "settings": {
         "layout": "fullsized",
         "section_height": "small",
-        "image": "shopify:\/\/shop_images\/18-600x400.png",
+        "image": "{{ product.metafields.my_fields.img_overlay_img.value }}",
         "desktop_text_box_position": "flex-start__flex-start",
         "mobile_text_box_position": "flex-start__flex-start",
         "show_text_below": true,
