@@ -22,44 +22,44 @@
 
   .banner--fit-screen.banner--mobile-bottom:not(.banner--adapt) > .banner__media-mob,
   .banner--fit-screen.banner--stacked:not(.banner--mobile-bottom):not(.banner--adapt) > .banner__media-mob {
-    height: 50vh;
+    min-height: 50vh;
   }
 
   .shopify-section:first-child .banner--fit-screen.banner--mobile-bottom:not(.banner--adapt) > .banner__media-mob.banner,
   .shopify-section:first-child .banner--fit-screen.banner--stacked:not(.banner--mobile-bottom):not(.banner--adapt) > .banner__media-mob {
-    height: calc(50vh - 92px);
+    min-height: calc(50vh - 92px);
   }
 
   .shopify-section:first-child .banner--fit-screen.banner--transparent-header.banner--mobile-bottom:not(.banner--adapt) > .banner__media-mob,
   .shopify-section:first-child .banner--fit-screen.banner--transparent-header.banner--stacked:not(.banner--mobile-bottom):not(.banner--adapt) > .banner__media-mob {
-    height: calc(50vh - 36px);
+    min-height: calc(50vh - 36px);
   }
 
   .banner--small.banner--mobile-bottom:not(.banner--adapt) > .banner__media-mob,
   .banner--small.banner--stacked:not(.banner--mobile-bottom):not(.banner--adapt) > .banner__media-mob {
-    height: 28rem;
+    min-height: 28rem;
   }
 
   .banner--medium.banner--mobile-bottom:not(.banner--adapt) > .banner__media-mob,
   .banner--medium.banner--stacked:not(.banner--mobile-bottom):not(.banner--adapt) > .banner__media-mob {
-    height: 34rem;
+    min-height: 34rem;
   }
 
   .banner--large.banner--mobile-bottom:not(.banner--adapt) > .banner__media-mob,
   .banner--large.banner--stacked:not(.banner--mobile-bottom):not(.banner--adapt) > .banner__media-mob {
-    height: 39rem;
+    min-height: 39rem;
   }
 
   .banner--fit-screen:not(.banner--mobile-bottom):not(.banner--adapt) .banner__content {
-    height: 50vh;
+    min-height: 50vh;
   }
 
   .shopify-section:first-child .banner--fit-screen:not(.banner--mobile-bottom):not(.banner--adapt) .banner__content {
-    height: 50vh;
+    min-height: 50vh;
   }
 
   .shopify-section:first-child .banner--fit-screen.banner--transparent-header:not(.banner--mobile-bottom):not(.banner--adapt) .banner__content {
-    height: 50vh;
+    min-height: 50vh;
   }
 
   .banner--small:not(.banner--mobile-bottom):not(.banner--adapt) .banner__content {
@@ -91,7 +91,7 @@
   }
 
   .banner--mobile-bottom .banner__box {
-    padding: 0 1.6rem 3.2rem;
+    padding:1.6rem 1.6rem 3.2rem;
   }
 
   .banner--mobile-bottom .banner__box > * + .banner__buttons {
@@ -521,7 +521,7 @@
   }
 
   .shopify-section:first-child .banner--fit-screen.banner--transparent-header {
-    padding-top: 8rem;
+    padding-top: 5.6rem;
   }
 }
 

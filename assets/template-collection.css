@@ -26,6 +26,11 @@
 }
 
 @media screen and (min-width: 750px) {
+  .collection__sidebar {
+    position: relative;
+    z-index: 1;
+  }
+
   .collection .title-wrapper-with-link--no-heading {
     margin-top: calc(6rem + var(--page-width-margin));
   }
@@ -92,6 +97,10 @@
     line-height: 3.2rem;
   }
 
+  .grid .collection__sidebar .mobile-facets__footer {
+    display: none;
+  }
+
   .facets__form-sort {
     display: flex;
     justify-content: space-between;
@@ -117,6 +126,13 @@
   .collection-grid .mobile-facets__inner {
     max-width: 100%;
     width: 100%;
+    overflow: inherit;
+  }
+
+  .facets__form--sticky {
+    position: sticky;
+    top: 3rem;
+    z-index: 2;
   }
 }
 
