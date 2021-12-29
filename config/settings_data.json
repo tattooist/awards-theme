@@ -1,15 +1,14 @@
 {
   "current": {
     "colors_solid_button_labels": "#FFFFFF",
-    "colors_accent_1": "#121212",
+    "colors_accent_1": "#262626",
     "colors_accent_2": "#334FB4",
     "colors_text": "#262626",
-    "colors_outline_button_labels": "#121212",
+    "colors_outline_button_labels": "#262626",
     "colors_background_1": "#FFFFFF",
     "colors_background_2": "#F3F3F3",
     "type_header_font": "poppins_n4",
     "type_body_font": "poppins_n4",
-    "currency_code_enabled": false,
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
@@ -17,8 +16,8 @@
           "announcement-bar-0": {
             "type": "announcement",
             "settings": {
-              "text": "Complimentary shipping on all orders",
-              "link": "shopify:\/\/collections\/all"
+              "text": "Welcome to our store",
+              "link": ""
             }
           }
         },
@@ -27,9 +26,9 @@
         ],
         "settings": {
           "position": "non-sticky",
-          "home_page_only": true,
-          "bg_color": "#f5f5f5",
-          "text_color": "#000000"
+          "home_page_only": false,
+          "bg_color": "#262626",
+          "text_color": "#ffffff"
         }
       },
       "header": {
@@ -40,11 +39,11 @@
           "logo_width": 100,
           "logo_width_mob": 100,
           "menu": "main-menu",
-          "menu_mob": "",
-          "enable_transparent_header": true,
-          "transparent_text_color": "#000000",
+          "menu_mob": "main-menu",
+          "enable_transparent_header": false,
+          "transparent_text_color": "#262626",
           "logo_position": "center",
-          "show_icons": false,
+          "show_icons": true,
           "section_background_color": "#ffffff",
           "section_text_color": "#262626"
         }
@@ -52,41 +51,41 @@
       "footer": {
         "type": "footer",
         "blocks": {
-          "footer-1": {
+          "footer-0": {
             "type": "text",
             "settings": {
-              "heading": "OUR PHILOSOPHY",
-              "text": "<p>Our hand-made leather goods were born to become exquisite – minimalist, highly functional pieces for travel and work that last the distance. They represent quality, durability, and functionality with modern design to provide you with effortless luxury.<\/p>",
+              "heading": "Heading",
+              "text": "<p>Share store details, promotions, or brand content with your customers.<\/p>",
               "show_social": false
             }
           },
-          "footer-0": {
+          "footer-1": {
             "type": "link_list",
             "settings": {
-              "heading": "PRODUCTS",
-              "menu": "products"
+              "heading": "Quick links",
+              "menu": "footer"
             }
           },
-          "a0ba0d74-061b-4629-82f2-13f176351d91": {
+          "footer-2": {
             "type": "link_list",
             "settings": {
-              "heading": "DISCOVER",
-              "menu": "discover"
+              "heading": "Quick links",
+              "menu": "footer"
             }
           },
-          "60c6a37f-3ed4-437d-9d09-951c9166fd42": {
+          "footer-3": {
             "type": "newsletter",
             "settings": {
               "heading": "Newsletter",
-              "text": "<p>Be the first to hear about our new products, exclusive offers and special editions.<\/p>"
+              "text": "<p>Be the first to hear about new launches, exclusive offers and expert beauty tips.<\/p>"
             }
           }
         },
         "block_order": [
-          "footer-1",
           "footer-0",
-          "a0ba0d74-061b-4629-82f2-13f176351d91",
-          "60c6a37f-3ed4-437d-9d09-951c9166fd42"
+          "footer-1",
+          "footer-2",
+          "footer-3"
         ],
         "settings": {
           "payment_enable": true,
@@ -105,14 +104,14 @@
   "presets": {
     "Default": {
       "colors_solid_button_labels": "#FFFFFF",
-      "colors_accent_1": "#262626",
+      "colors_accent_1": "#121212",
       "colors_accent_2": "#334FB4",
-      "colors_text": "#262626",
+      "colors_text": "#121212",
       "colors_outline_button_labels": "#121212",
       "colors_background_1": "#FFFFFF",
       "colors_background_2": "#F3F3F3",
-      "type_header_font": "poppins_n4",
-      "type_body_font": "poppins_n4",
+      "type_header_font": "assistant_n4",
+      "type_body_font": "assistant_n4",
       "sections": {
         "announcement-bar": {
           "type": "announcement-bar",

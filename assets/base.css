@@ -437,7 +437,7 @@ h4,
 .h4 {
   font-family: var(--font-heading-family);
   font-style: var(--font-heading-style);
-  font-size: calc(var(--font-heading-scale) * 1.5rem);
+  font-size: calc(var(--font-heading-scale) * 1.6rem);
 }
 
 h5,
@@ -698,6 +698,7 @@ details > * {
 
 .icon-arrow {
   width: 2.4rem;
+  height: 2.4rem;
 }
 
 h3 .icon-arrow,
@@ -724,9 +725,9 @@ summary {
 
 summary .icon-caret {
   position: absolute;
-  height: 0.6rem;
+  height: 0.8rem;
   right: 1.5rem;
-  top: calc(50% - 0.2rem);
+  top: calc(50% - 0.5rem);
 }
 
 summary::-webkit-details-marker {
@@ -756,6 +757,7 @@ summary::-webkit-details-marker {
 
 .disclosure-has-popup[open] > summary + * {
   z-index: 100;
+  display: flex;
 }
 
 @media screen and (min-width: 750px) {
@@ -1156,7 +1158,7 @@ summary::-webkit-details-marker {
 .media > img {
   object-fit: cover;
   object-position: center center;
-  transition: opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /*transition: opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);*/
 }
 
 .media--square {
@@ -1322,13 +1324,15 @@ deferred-media {
 }
 
 .share-button__button {
-  font-size: 1.4rem;
   display: flex;
   min-height: 2.4rem;
   align-items: center;
   color: rgb(var(--color-link));
   margin-left: 0;
   padding-left: 0;
+  font-weight: normal;
+  font-size: 1.6rem;
+  letter-spacing: 0.02em;
 }
 
 details[open] > .share-button__fallback {
@@ -1348,9 +1352,9 @@ details[open] > .share-button__fallback {
 }
 
 .share-button__button .icon-share {
-  height: 1.2rem;
-  margin-right: 1rem;
-  width: 1.3rem;
+  height: 2.4rem;
+  margin-right: 1.6rem;
+  width: 2.4rem;
 }
 
 .share-button__fallback {
@@ -1476,10 +1480,10 @@ details[open] > .share-button__fallback {
 
 .select .icon-caret,
 .customer select + svg {
-  height: 0.6rem;
+  height: 0.8rem;
   pointer-events: none;
   position: absolute;
-  top: calc(50% - 0.2rem);
+  top: calc(50% - 0.5rem);
   right: 1.5rem;
 }
 
@@ -1958,13 +1962,18 @@ input[type='checkbox'] {
 
 .header-wrapper--transparent.gradient {
   background-color: transparent;
-  position: absolute;
-  width: 100%;
+  transition: background .3s ease-in-out;
 }
 
+.shopify-section-header-sticky .header-wrapper--transparent.gradient {
+  background-color: #FFF;
+}
+
+/*
 .shopify-section-header-hidden .header-wrapper--transparent.gradient {
   transform: translateY(-100%);
 }
+ */
 
 .header {
   display: grid;

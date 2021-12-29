@@ -6,16 +6,14 @@
         "vendor": {
           "type": "text",
           "settings": {
-            "text": "{{ product.vendor }}",
-            "text_style": "uppercase"
+            "text_style": "uppercase",
+            "text": "{{ product.vendor }}"
           }
         },
         "title": {
-          "type": "title",
-          "settings": {
-          }
+          "type": "title"
         },
-        "subtitle": {
+        "caption": {
           "type": "text",
           "settings": {
             "text": "{{ product.metafields.descriptors.subtitle.value }}",
@@ -23,82 +21,22 @@
           }
         },
         "price": {
-          "type": "price",
-          "settings": {
-          }
+          "type": "price"
         },
         "variant_picker": {
-          "type": "variant_picker",
-          "settings": {
-            "picker_type": "button"
-          }
+          "type": "variant_picker"
         },
         "quantity_selector": {
-          "type": "quantity_selector",
-          "settings": {
-          }
+          "type": "quantity_selector"
         },
         "buy_buttons": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": true
-          }
+          "type": "buy_buttons"
         },
         "description": {
-          "type": "description",
-          "settings": {
-          }
-        },
-        "8b2c0d66-d45e-4eda-b412-292d0810ada4": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Features",
-            "content": "<p>{{ product.metafields.my_fields.features | metafield_tag }}<\/p>",
-            "page": "",
-            "icon": "none"
-          }
-        },
-        "04eeefb3-800d-4b40-ad64-532452479bbc": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Material",
-            "content": "<p>100% Leather & Membrane<\/p>",
-            "page": "",
-            "icon": "none"
-          }
-        },
-        "d2ed1bf4-6860-4d6c-b8db-af214cbe70a8": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Measurements",
-            "content": "<p><strong>Dimensions:<\/strong> 44.3 cm (rear wall) x 40.8 cm (front wall) x 30 cm x 12 cm \\ 17.4 (rear wall) x 16.1 (front wall) x 11.8 x 4\/7 inch<\/p><p><strong>Weight:<\/strong> 1 kg<\/p><p><strong>Capacity:<\/strong> 15 l<\/p>",
-            "page": "",
-            "icon": "none"
-          }
-        },
-        "1ec18ba2-b48c-42bf-a199-848d5086f50e": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Compartments",
-            "content": "<p>1st — compartment for an up to 15.6 laptop up to 15.6\"<br\/>2nd — main compartment:<br\/>- Pocket for A4 docs or tablet<br\/>- Zipped pocket for passport<br\/>- 2 pockets for smartphone, wallet<br\/>- Pen holder<br\/><br\/>1 — External zipped pocket for quick access to small goods<br\/>- Inside pocket for small goods<br\/>2 — Two side pockets<br\/>- compartment for pass<br\/>- carabiner for keys<\/p>",
-            "page": "",
-            "icon": "none"
-          }
-        },
-        "4f3722c1-10da-4ab8-bdac-15b0419b724c": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Warranty",
-            "content": "",
-            "page": "warranty",
-            "icon": "none"
-          }
+          "type": "description"
         },
         "share": {
-          "type": "share",
-          "settings": {
-            "share_label": "Share"
-          }
+          "type": "share"
         }
       },
       "block_order": [
@@ -110,185 +48,15 @@
         "quantity_selector",
         "buy_buttons",
         "description",
-        "8b2c0d66-d45e-4eda-b412-292d0810ada4",
-        "04eeefb3-800d-4b40-ad64-532452479bbc",
-        "d2ed1bf4-6860-4d6c-b8db-af214cbe70a8",
-        "1ec18ba2-b48c-42bf-a199-848d5086f50e",
-        "4f3722c1-10da-4ab8-bdac-15b0419b724c",
         "share"
-      ],
-      "settings": {
-        "enable_sticky_info": true,
-        "hide_variants": false,
-        "enable_video_looping": false
-      }
-    },
-    "1638885215c31107ca": {
-      "type": "image-with-text",
-      "blocks": {
-        "16388852151aaf5918-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "Perfect for your journeys"
-          }
-        },
-        "16388852151aaf5918-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Big Shark is incredibly easy to travel with. Thanks to its spaciousness, you can put all the necessary goods in it to take it as a carry-on. On the side of the back, there’s a special strap with which the backpack can be put on the venting handle of the suitcase.<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "16388852151aaf5918-0",
-        "16388852151aaf5918-1"
-      ],
-      "settings": {
-        "layout": "boxed",
-        "section_height": "fit-screen",
-        "image": "shopify:\/\/shop_images\/25-600x400.png",
-        "bg_color": "#ffffff",
-        "desktop_text_position": "flex-start",
-        "desktop_text_aligment": "left",
-        "desktop_text_first": false,
-        "mobile_text_position": "flex-start",
-        "mobile_text_aligment": "left",
-        "show_text_below": true
-      }
-    },
-    "1638886100db6f2981": {
-      "type": "image-with-text",
-      "blocks": {
-        "16388861005ae295c3-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "Comfortable to wear all day"
-          }
-        },
-        "16388861005ae295c3-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Shark perfectly holds its shape. Even after a while, it doesn’t deform. We also added metal studs to the backpack so that it can be placed on any surface without being scratched or become dirty. If features soft back, comfortable shoulder straps and lightweight construction.<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "16388861005ae295c3-0",
-        "16388861005ae295c3-1"
-      ],
-      "settings": {
-        "layout": "boxed",
-        "section_height": "fit-screen",
-        "image": "shopify:\/\/shop_images\/19-600x400.png",
-        "bg_color": "#ffffff",
-        "desktop_text_position": "center",
-        "desktop_text_aligment": "left",
-        "desktop_text_first": true,
-        "mobile_text_position": "flex-start",
-        "mobile_text_aligment": "left",
-        "show_text_below": true
-      }
-    },
-    "1638885471e1c01c3e": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Available in 5 colors",
-        "collection": "big-shark-backpack",
-        "products_to_show": 10,
-        "show_view_all": true,
-        "swipe_on_mobile": false,
-        "image_ratio": "square",
-        "show_secondary_image": false,
-        "add_image_padding": false,
-        "show_image_outline": true,
-        "show_vendor": false,
-        "show_rating": false
-      }
-    },
-    "163888707049350b78": {
-      "type": "image-banner",
-      "blocks": {
-        "163888707002711e28-1": {
-          "type": "heading",
-          "settings": {
-            "heading": "Dense membrane"
-          }
-        },
-        "163888707002711e28-2": {
-          "type": "text",
-          "settings": {
-            "text": "Made from a genuine leather and membrane, modern dense material that gives backpack an ultra lightness and protection from moisture."
-          }
-        }
-      },
-      "block_order": [
-        "163888707002711e28-1",
-        "163888707002711e28-2"
-      ],
-      "settings": {
-        "layout": "fullsized",
-        "section_height": "small",
-        "image": "shopify:\/\/shop_images\/18-600x400.png",
-        "desktop_text_box_position": "flex-start__flex-start",
-        "mobile_text_box_position": "center__center",
-        "show_text_below": true,
-        "bg_color": "#262626",
-        "overlay_color": "#262626",
-        "image_overlay_opacity": 40
-      }
-    },
-    "163889170337bc511d": {
-      "type": "rich-text",
-      "blocks": {
-        "16388917038b7ff2f9-0": {
-          "type": "subheading",
-          "settings": {
-            "subheading": "MANUFACTURING"
-          }
-        },
-        "16388917038b7ff2f9-1": {
-          "type": "heading",
-          "settings": {
-            "heading": "11 artisans, 102 details, 30 types of materials, 151 actions, 10 types of equipment and 72 cutters",
-            "heading_size": "h1"
-          }
-        },
-        "16388917038b7ff2f9-2": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Each of your leather goods is crafted by hand, so it has a unique character resulting in beautiful lasting quality. Our artisans and ideas collaborate together to cut and stitch, master pattern developing in final design. Choosing the right leather to us is an art — we search for a perfect shape, softness and colors. And, of course, details: each stud, zipper and button has its impact.<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "16388917038b7ff2f9-0",
-        "16388917038b7ff2f9-1",
-        "16388917038b7ff2f9-2"
-      ],
-      "settings": {
-        "text_aligment": "left"
-      }
+      ]
     },
     "product-recommendations": {
-      "type": "product-recommendations",
-      "settings": {
-        "heading": "You may also like",
-        "image_ratio": "adapt",
-        "show_secondary_image": true,
-        "add_image_padding": false,
-        "show_image_outline": true,
-        "show_vendor": true,
-        "show_rating": false
-      }
+      "type": "product-recommendations"
     }
   },
   "order": [
     "main",
-    "1638885215c31107ca",
-    "1638886100db6f2981",
-    "1638885471e1c01c3e",
-    "163888707049350b78",
-    "163889170337bc511d",
     "product-recommendations"
   ]
 }

@@ -1,6 +1,7 @@
 .search__input.field__input {
   padding-left: 3.2rem;
   box-shadow: none;
+  background: transparent;
 }
 
 .search__button {
@@ -15,9 +16,18 @@ input::-webkit-search-decoration {
 }
 
 .search-modal__form .field__label {
-  font-weight: 600;
+  font-weight: 400;
   font-size: 2.4rem;
   color: rgba(38, 38, 38, 0.5);
   top: .5rem;
   left: 3.2rem;
+}
+
+.search-modal__form .field__input:focus~.field__label {
+  opacity: 0;
+}
+
+.search-modal__form .field__input:focus {
+  padding:2rem 1.6rem 0.8rem;
+  padding-left: 3.2rem;
 }

@@ -2,8 +2,8 @@
   {
     "name": "theme_info",
     "theme_name": "Awards",
-    "theme_version": "2.3.0",
-    "theme_author": "Shopify",
+    "theme_version": "1.0.0",
+    "theme_author": "alekstar",
     "theme_documentation_url": "https:\/\/help.shopify.com\/manual\/online-store\/themes\/os20\/themes-by-shopify\/dawn",
     "theme_support_url": "https:\/\/support.shopify.com\/"
   },
@@ -24,7 +24,7 @@
       {
         "type": "color",
         "id": "colors_accent_1",
-        "default": "#121212",
+        "default": "#262626",
         "label": "t:settings_schema.colors.settings.colors_accent_1.label",
         "info": "t:settings_schema.colors.settings.colors_accent_1.info"
       },
@@ -58,7 +58,7 @@
       {
         "type": "color",
         "id": "colors_outline_button_labels",
-        "default": "#121212",
+        "default": "#262626",
         "label": "t:settings_schema.colors.settings.colors_outline_button_labels.label",
         "info": "t:settings_schema.colors.settings.colors_outline_button_labels.info"
       },

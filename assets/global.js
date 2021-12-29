@@ -322,7 +322,6 @@ class MenuDrawer extends HTMLElement {
     }
 
     if (detailsElement === this.mainDetailsToggle) {
-      console.log(123123);
       if(isOpen) event.preventDefault();
       isOpen ? this.closeMenuDrawer(event, summaryElement) : this.openMenuDrawer(summaryElement);
     } else {
@@ -344,7 +343,6 @@ class MenuDrawer extends HTMLElement {
   }
 
   closeMenuDrawer(event, elementToFocus = false) {
-    console.log("close");
     if (event !== undefined) {
       this.mainDetailsToggle.classList.remove('menu-opening');
       this.mainDetailsToggle.querySelectorAll('details').forEach(details =>  {
