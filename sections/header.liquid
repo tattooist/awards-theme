@@ -558,10 +558,17 @@
     createObserver() {
       let observer = new IntersectionObserver((entries, observer) => {
         this.headerBounds = entries[0].intersectionRect;
+
         observer.disconnect();
       });
 
-      observer.observe(this.header);
+      observer.observe(this.header.querySelector(".header-wrapper"));
+
+      this.transparentHeader = document.getElementsByClassName("header-wrapper--transparent");
+
+      if (this.transparentHeader.length) {
+        this.header.style.marginBottom = "-" + this.header.clientHeight + "px";
+      }
     }
 
     onScroll() {
