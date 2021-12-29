@@ -1,10 +1,10 @@
 {
   "current": {
     "colors_solid_button_labels": "#FFFFFF",
-    "colors_accent_1": "#121212",
+    "colors_accent_1": "#262626",
     "colors_accent_2": "#334FB4",
-    "colors_text": "#121212",
-    "colors_outline_button_labels": "#121212",
+    "colors_text": "#262626",
+    "colors_outline_button_labels": "#262626",
     "colors_background_1": "#FFFFFF",
     "colors_background_2": "#F3F3F3",
     "type_header_font": "poppins_n4",
@@ -28,7 +28,7 @@
           "position": "non-sticky",
           "home_page_only": false,
           "bg_color": "#262626",
-          "text_color": "#FFF"
+          "text_color": "#ffffff"
         }
       },
       "header": {
@@ -44,7 +44,7 @@
           "transparent_text_color": "#262626",
           "logo_position": "center",
           "show_icons": true,
-          "section_background_color": "#FFFFFF",
+          "section_background_color": "#ffffff",
           "section_text_color": "#262626"
         }
       },
@@ -91,7 +91,7 @@
           "payment_enable": true,
           "enable_country_selector": true,
           "enable_language_selector": true,
-          "bg_color": "#FFF",
+          "bg_color": "#ffffff",
           "text_color": "#262626",
           "icons_color": "#262626"
         }
