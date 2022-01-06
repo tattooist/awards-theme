@@ -169,7 +169,7 @@
           "type": "button",
           "settings": {
             "button_label": "Our story",
-            "button_link": "shopify:\/\/pages\/contact"
+            "button_link": "shopify:\/\/pages\/about-us"
           }
         }
       },
