@@ -326,7 +326,7 @@
         "1638453507e2064882-2"
       ],
       "settings": {
-        "full_width": true,
+        "full_width": false,
         "bg_color": "#ffffff",
         "text_color": "#262626"
       }
