@@ -326,7 +326,7 @@
         "1638453507e2064882-2"
       ],
       "settings": {
-        "full_width": false,
+        "full_width": true,
         "bg_color": "#ffffff",
         "text_color": "#262626"
       }
@@ -336,7 +336,7 @@
       "settings": {
         "layout": "onecolumn-center",
         "heading": "Want to get in touch with us?",
-        "text": "",
+        "text": "<p>If you have questions, let us know.<\/p>",
         "is_full_width": false,
         "bg_color": "#ffffff",
         "text_color": "#262626"
