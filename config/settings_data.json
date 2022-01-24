@@ -43,7 +43,7 @@
           "enable_transparent_header": false,
           "transparent_text_color": "#262626",
           "logo_position": "center",
-          "show_icons": true,
+          "show_icons": false,
           "section_background_color": "#ffffff",
           "section_text_color": "#262626"
         }
