@@ -200,8 +200,7 @@
     --alpha-button-background: 0;
   }
 
-  .banner--stacked:not(.banner--mobile-bottom):not(.banner--adapt)
-    .banner__content {
+  .banner--stacked:not(.banner--mobile-bottom):not(.banner--adapt) .banner__content {
     position: absolute;
     height: auto;
   }
@@ -520,7 +519,7 @@
     margin-top: 1.6rem;
   }
 
-  .shopify-section:first-child .banner--fit-screen.banner--transparent-header {
+  .shopify-section:first-child .banner--fit-screen.banner--transparent-header:not(.banner--mobile-bottom) {
     padding-top: 5.6rem;
   }
 }

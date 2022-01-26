@@ -1449,7 +1449,7 @@ details[open] > .share-button__fallback {
   font-style: var(--font-body-style);
   font-weight: var(--font-body-weight);
   font-size: 1.2rem;
-  color: rgba(var(--color-foreground), 0.75);
+  color: rgba(var(--color-foreground), 1);
 }
 
 .field__input:hover,
@@ -1457,7 +1457,7 @@ details[open] > .share-button__fallback {
 .customer .field input:hover,
 .customer select:hover,
 .localization-form__select:hover {
-  box-shadow: 0 0 0 0.2rem rgba(var(--color-foreground), 0.55);
+
 }
 
 .field__input:focus,
@@ -1465,7 +1465,6 @@ details[open] > .share-button__fallback {
 .customer .field input:focus,
 .customer select:focus,
 .localization-form__select:focus {
-  box-shadow: 0 0 0 0.2rem rgba(var(--color-foreground), 0.75);
   outline: transparent;
 }
 
@@ -1808,7 +1807,7 @@ input[type='checkbox'] {
 
 .cart-count-bubble {
   position: absolute;
-  background-color: rgb(var(--color-button));
+  background-color: var(--color-base-header-text);
   color: rgb(var(--color-button-text));
   height: 1.2rem;
   width: 1.2rem;
@@ -1966,7 +1965,7 @@ input[type='checkbox'] {
 }
 
 .shopify-section-header-sticky .header-wrapper--transparent.gradient {
-  background-color: #FFF;
+  background-color: var(--color-header-section-bg);
 }
 
 /*
@@ -2057,10 +2056,6 @@ input[type='checkbox'] {
   word-break: break-word;
 }
 
-.header__heading-link:hover .h2 {
-  color: rgb(var(--color-foreground));
-}
-
 .header__heading-link .h2 {
   line-height: 1;
   /*color: rgba(var(--color-foreground));*/
@@ -2144,8 +2139,18 @@ input[type='checkbox'] {
 }
 
 .header__icon {
-  color: rgb(var(--color-foreground));
+  color: var(--color-base-header-text);
   margin-left:4rem;
+}
+
+.shopify-section:not(.shopify-section-header-sticky) .header-wrapper--transparent .header__icon .icon:not(.icon-close),
+.shopify-section:not(.shopify-section-header-sticky) .header-wrapper--transparent .header__heading-link .h2,
+.shopify-section:not(.shopify-section-header-sticky) .header-wrapper--transparent .header__menu-item {
+  color: var(--color-transparent-header-text);
+}
+
+.shopify-section:not(.shopify-section-header-sticky) .header-wrapper--transparent .cart-count-bubble {
+  background: var(--color-transparent-header-text);
 }
 
 @media screen and (max-width: 749px) {
@@ -2523,6 +2528,11 @@ span.header__menu-item-text {
 
 .header__submenu .icon-caret {
   right: 2rem;
+}
+
+.header__submenu .header__menu-item,
+.shopify-section:not(.shopify-section-header-sticky) .header-wrapper--transparent .header__submenu .header__menu-item {
+  color:var(--color-base-header-text);
 }
 
 details-disclosure > details {

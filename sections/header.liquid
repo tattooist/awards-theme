@@ -69,7 +69,7 @@
 {% style %}
   :root {
     --color-transparent-header-text: {{ section.settings.transparent_text_color }};
-    --color-base-header-text: {% if section.settings.enable_transparent_header and request.page_type == 'index' %}var(--color-transparent-header-text){% else %}{{ section.settings.section_text_color }}{% endif %};
+    --color-base-header-text: {{ section.settings.section_text_color }};
     --color-header-section-bg: {{ section.settings.section_background_color }};
   }
 {% endstyle %}
@@ -568,6 +568,12 @@
 
       if (this.transparentHeader.length) {
         this.header.style.marginBottom = "-" + this.header.clientHeight + "px";
+      }
+
+      this.announcement = document.querySelector("#shopify-section-announcement-bar");
+
+      if (this.announcement.length) {
+        document.querySelector('#shopify-section-header').classList.add("shopify-section-header--has-announcement");
       }
     }
 
