@@ -6,7 +6,7 @@
   position: absolute;
   min-width: 100%;
   width: 21.2rem;
-  background-color: rgb(var(--color-background));
+  background-color: var(--color-header-section-bg);
 }
 
 .list-menu--disclosure:focus {

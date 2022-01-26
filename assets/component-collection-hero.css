@@ -1,8 +1,3 @@
-.collection-hero--with-image .collection-hero__inner,
-.collection-hero--without-image .collection-hero__inner{
-  background-color: rgba(var(--color-foreground), 0.04);
-}
-
 .collection-hero__inner {
   display: flex;
   margin-bottom: 2rem;
