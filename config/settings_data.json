@@ -35,7 +35,7 @@
           "announcement-bar-0"
         ],
         "settings": {
-          "position": "everywhere",
+          "position": "non-sticky",
           "home_page_only": false,
           "bg_color": "#eaded4",
           "text_color": "#000000"
