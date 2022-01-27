@@ -2145,7 +2145,8 @@ input[type='checkbox'] {
 
 .shopify-section:not(.shopify-section-header-sticky) .header-wrapper--transparent .header__icon .icon:not(.icon-close),
 .shopify-section:not(.shopify-section-header-sticky) .header-wrapper--transparent .header__heading-link .h2,
-.shopify-section:not(.shopify-section-header-sticky) .header-wrapper--transparent .header__menu-item {
+.shopify-section:not(.shopify-section-header-sticky) .header-wrapper--transparent .header__menu-item,
+.shopify-section:not(.shopify-section-header-sticky) .header-wrapper--transparent .header__icon--disabled {
   color: var(--color-transparent-header-text);
 }
 
