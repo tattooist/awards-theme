@@ -859,8 +859,8 @@
           "unit": "px",
           "label": "Mobile image width"
         },
-        "destop_header_h1": {
-          "content": "Destop"
+        "desktop_header_h1": {
+          "content": "Desktop"
         },
         "logo_position": {
           "label": "Layout",
