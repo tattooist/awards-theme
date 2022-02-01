@@ -64,6 +64,12 @@
       padding-top: 0.5rem;
     }
   }
+
+  {% if section.settings.transparent_text_color == '#ffffff' %}
+  .shopify-section:not(.shopify-section-header-sticky) .header-wrapper--transparent .cart-count-bubble {
+    color: #262626;
+  }
+  {% endif %}
 </style>
 
 {% style %}
