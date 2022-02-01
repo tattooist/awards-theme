@@ -2151,7 +2151,8 @@ input[type='checkbox'] {
   color: var(--color-transparent-header-text);
 }
 
-.shopify-section:not(.shopify-section-header-sticky) .header-wrapper--transparent .cart-count-bubble {
+.shopify-section:not(.shopify-section-header-sticky) .header-wrapper--transparent .cart-count-bubble,
+.shopify-section:not(.shopify-section-header-sticky) .header-wrapper--transparent .header__menu-item:hover span:before {
   background: var(--color-transparent-header-text);
 }
 
