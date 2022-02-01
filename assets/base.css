@@ -2471,8 +2471,20 @@ details[open] > .header__icon--menu .icon-hamburger {
 }
 
 .header__menu-item:hover span {
-  text-decoration: underline;
-  text-underline-offset: 0.3rem;
+  position: relative;
+}
+
+.header__menu-item:hover span:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -12px;
+  margin: auto;
+  width: 8px;
+  height: 8px;
+  background: var(--color-base-header-text);
+  border-radius: 100%;
 }
 
 span.header__menu-item-text {
