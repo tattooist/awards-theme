@@ -2153,7 +2153,7 @@ input[type='checkbox'] {
 
 .shopify-section:not(.shopify-section-header-sticky) .header-wrapper--transparent .cart-count-bubble,
 .shopify-section:not(.shopify-section-header-sticky) .header-wrapper--transparent .header__menu-item:hover span:before,
-.shopify-section:not(.shopify-section-header-sticky) .header-wrapper--transparent .header__icon--disabled:hover span:before {
+.shopify-section:not(.shopify-section-header-sticky) .header-wrapper--transparent .header__icon--disabled:hover .header__menu-item-text span:before {
   background: var(--color-transparent-header-text);
 }
 
@@ -2448,7 +2448,7 @@ details[open] > .header__icon--menu .icon-hamburger {
     position: relative;
   }
 
-  .header__icon--disabled:hover span:before {
+  .header__icon--disabled:hover .header__menu-item-text span:before {
     content: "";
     position: absolute;
     left: 0;
