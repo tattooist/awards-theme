@@ -1,5 +1,50 @@
 {
   "sections": {
+    "16384482131f1c1f9a": {
+      "type": "image-with-text",
+      "blocks": {
+        "1638448213a98b8442-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Hand-made from a natural leather"
+          }
+        },
+        "1638448213a98b8442-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We always search for the balance between durability and uniqueness, so our products stay functional and stretch over time, becoming more beautiful and comfortable with every wear.<\/p>"
+          }
+        },
+        "1638448213a98b8442-2": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Choose accessory",
+            "button_link_1": "shopify:\/\/collections\/accessories",
+            "button_style_secondary_1": false,
+            "button_label_2": "Go to catalog",
+            "button_link_2": "shopify:\/\/collections",
+            "button_style_secondary_2": true
+          }
+        }
+      },
+      "block_order": [
+        "1638448213a98b8442-0",
+        "1638448213a98b8442-1",
+        "1638448213a98b8442-2"
+      ],
+      "settings": {
+        "layout": "boxed",
+        "section_height": "medium",
+        "image": "shopify:\/\/shop_images\/242785278_1165681497490643_6274462903799703073_n.jpg",
+        "bg_color": "#fafafa",
+        "desktop_text_position": "flex-start",
+        "desktop_text_aligment": "left",
+        "desktop_text_first": true,
+        "mobile_text_position": "flex-start",
+        "mobile_text_aligment": "left",
+        "show_text_below": true
+      }
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -102,51 +147,6 @@
         "swipe_on_mobile": false,
         "bg_color": "#f2f0ed",
         "text_color": "#262626"
-      }
-    },
-    "16384482131f1c1f9a": {
-      "type": "image-with-text",
-      "blocks": {
-        "1638448213a98b8442-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "Hand-made from a natural leather"
-          }
-        },
-        "1638448213a98b8442-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>We always search for the balance between durability and uniqueness, so our products stay functional and stretch over time, becoming more beautiful and comfortable with every wear.<\/p>"
-          }
-        },
-        "1638448213a98b8442-2": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Choose accessory",
-            "button_link_1": "shopify:\/\/collections\/accessories",
-            "button_style_secondary_1": false,
-            "button_label_2": "Go to catalog",
-            "button_link_2": "shopify:\/\/collections",
-            "button_style_secondary_2": true
-          }
-        }
-      },
-      "block_order": [
-        "1638448213a98b8442-0",
-        "1638448213a98b8442-1",
-        "1638448213a98b8442-2"
-      ],
-      "settings": {
-        "layout": "boxed",
-        "section_height": "medium",
-        "image": "shopify:\/\/shop_images\/242785278_1165681497490643_6274462903799703073_n.jpg",
-        "bg_color": "#fafafa",
-        "desktop_text_position": "flex-start",
-        "desktop_text_aligment": "left",
-        "desktop_text_first": true,
-        "mobile_text_position": "flex-start",
-        "mobile_text_aligment": "left",
-        "show_text_below": true
       }
     },
     "rich_text": {
@@ -344,10 +344,10 @@
     }
   },
   "order": [
+    "16384482131f1c1f9a",
     "image_banner",
     "featured_products",
     "163844974624240ffc",
-    "16384482131f1c1f9a",
     "rich_text",
     "multi_column",
     "16384506284f6524aa",
