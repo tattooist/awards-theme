@@ -64,6 +64,7 @@
   .grid .collection__sidebar .mobile-facets__header {
     border-bottom: none;
     padding: 0 0 .8rem;
+    background: none;
   }
 
   .grid .collection__sidebar .mobile-facets__summary {
@@ -74,6 +75,7 @@
   .grid .collection__sidebar .mobile-facets .active-facets {
     padding: 0;
     margin: 0;
+    align-items: baseline;
   }
 
   .grid .collection__sidebar .mobile-facets__submenu {

@@ -407,7 +407,7 @@ span.active-facets__button-inner {
 @media screen and (min-width: 990px) {
   .active-facets__button {
     margin-top: 1.2rem;
-    margin-right: 2.4rem;
+    margin-right: 1.6rem;
   }
 
   .active-facets__button-wrapper *,
@@ -519,16 +519,25 @@ a.active-facets__button.focused .active-facets__button-inner,
 }
 
 .mobile-facets .active-facets__button {
+  margin-top: 0;
+  margin-bottom: 1.6rem;
+}
+
+.mobile-facets facet-remove:first-child {
   margin-top: 1.6rem;
 }
 
 .mobile-facets .active-facets {
-  padding: 3.2rem 3.2rem 0;
+  padding: 2.4rem 3.2rem 0;
   margin: 0;
 }
 
 .mobile-facets .active-facets__button-wrapper {
-  padding-top: 1.6rem;
+  padding-top: 0;
+  min-width: 100%;
+  justify-content: flex-start;
+  padding-bottom: 2.4rem;
+  border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.1);
 }
 
 .mobile-facets .mobile-facets__arrow svg {
@@ -544,7 +553,7 @@ a.active-facets__button.focused .active-facets__button-inner,
 }
 
 .mobile-facets .mobile-facets__main {
-  padding: 2.3rem 0 0;
+  padding: 0;
 }
 
 .mobile-facets__disclosure {
@@ -585,7 +594,7 @@ a.active-facets__button.focused .active-facets__button-inner,
 .mobile-facets__header {
   background-color: rgb(var(--color-background));
   border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.1);
-  padding: 3.2rem 3.2rem 1.6rem;
+  padding: 2.4rem 3.2rem 1.6rem;
   display: flex;
   position: sticky;
   top: 0;
@@ -603,6 +612,7 @@ a.active-facets__button.focused .active-facets__button-inner,
   position: relative;
   justify-content: space-between;
   display: flex;
+  align-items: center;
 }
 
 .mobile-facets__heading {
@@ -610,10 +620,6 @@ a.active-facets__button.focused .active-facets__button-inner,
   margin: 0;
   font-weight: 600;
   line-height: 3.6rem;
-}
-
-.mobile-facets__details:first-child .mobile-facets__summary {
-  border-top: .1rem solid rgb(38 38 38 / 10%);
 }
 
 .mobile-facets__count {
@@ -1022,7 +1028,7 @@ input.mobile-facets__checkbox {
 
 @media screen and (max-width: 749px) {
   .mobile-facets .active-facets {
-    padding: .8rem 1.6rem 0;
+    padding: 1.6rem 1.6rem 0;
   }
 
   .mobile-facets__footer {
