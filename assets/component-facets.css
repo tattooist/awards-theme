@@ -225,18 +225,42 @@
   width: 35rem;
   max-height: 55rem;
   overflow-y: auto;
+  flex-direction: column;
+}
+
+.facets__display .facets__list {
+  padding: 2.4rem 2rem;
+}
+
+.facets__display .facets__list--color,
+.facets__display .facets__price {
+  padding: 2rem;
+}
+
+.facets__display .facets__price .field__label {
+  padding: 0 .8rem;
 }
 
 .facets__header {
   border-bottom: 1px solid rgba(var(--color-foreground), 0.2);
-  padding: 1.5rem 2rem;
+  padding: 1.6rem 2rem 1.5rem;
   display: flex;
   justify-content: space-between;
-  font-size: 1.4rem;
   position: sticky;
   top: 0;
   background-color: rgb(var(--color-background));
   z-index: 1;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  letter-spacing: 0.02em;
+  color: #868686;
+}
+
+.facets__header .facets__reset {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  letter-spacing: 0.02em;
+  color: #868686;
 }
 
 .facets__list {
@@ -344,10 +368,6 @@
   margin-right: 0.6rem;
 }
 
-.facets__price .field__label {
-  left: 1.5rem;
-}
-
 button.facets__button {
   min-height: 0;
   margin: 0 0 0 0.5rem;
@@ -423,7 +443,7 @@ span.active-facets__button-inner {
 
 @media screen and (max-width: 989px) {
   .active-facets {
-    margin: 0 -.4rem -.4rem;
+    margin:0 -.4rem -2rem;
   }
 
   .active-facets__button,
@@ -524,12 +544,13 @@ a.active-facets__button.focused .active-facets__button-inner,
 }
 
 .mobile-facets facet-remove:first-child {
-  margin-top: 1.6rem;
+  margin-top: 2.4rem;
 }
 
 .mobile-facets .active-facets {
   padding: 2.4rem 3.2rem 0;
   margin: 0;
+  align-items: baseline;
 }
 
 .mobile-facets .active-facets__button-wrapper {
@@ -862,7 +883,7 @@ details.menu-opening .mobile-facets__close svg {
     visibility 0.4s cubic-bezier(0.29, 0.63, 0.44, 1);
   max-height: 1000rem;
   visibility: visible;
-  padding-bottom: 1rem;
+  padding-bottom: 2.4rem;
 }
 
 .js .menu-drawer__submenu .mobile-facets__submenu {
@@ -871,6 +892,10 @@ details.menu-opening .mobile-facets__close svg {
 
 .mobile-facets__item {
   position: relative;
+}
+
+.mobile-facets__item:last-child .mobile-facets__label {
+  padding: 0;
 }
 
 input.mobile-facets__checkbox {
@@ -887,7 +912,7 @@ input.mobile-facets__checkbox {
 }
 
 .mobile-facets__label {
-  padding: 0 0 1.6rem;
+  padding: 0 0 1.2rem;
   width: 100%;
   background-color: rgb(var(--color-background));
   transition: background-color 0.2s ease;
@@ -937,7 +962,7 @@ input.mobile-facets__checkbox {
 
 .mobile-facets__footer {
   background-color: rgb(var(--color-background));
-  padding: 3.2rem;
+  padding: 3.2rem 3.2rem 4rem;
   bottom: 0;
   position: sticky;
   display: flex;
@@ -1028,7 +1053,39 @@ input.mobile-facets__checkbox {
 
 @media screen and (max-width: 749px) {
   .mobile-facets .active-facets {
-    padding: 1.6rem 1.6rem 0;
+    padding: 1.2rem 1.6rem 0;
+  }
+
+  .mobile-facets facet-remove:first-child {
+    margin-top: 1.2rem;
+  }
+
+  .mobile-facets .active-facets__button {
+    margin: 0 1.6rem 1.6rem 0;
+    padding: 0;
+  }
+
+  .mobile-facets .active-facets__button-remove {
+    margin: 0;
+    padding: 0;
+  }
+
+  .mobile-facets__label {
+    align-items: center;
+    line-height: 2rem;
+  }
+
+  .mobile-facets__label > svg {
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-right: .8rem;
+  }
+
+  .mobile-facets__label .icon-checkmark {
+    top: 0.6rem;
+    left: 0.2rem;
+    width: 1.2rem;
+    height: .8rem;
   }
 
   .mobile-facets__footer {
@@ -1047,5 +1104,80 @@ input.mobile-facets__checkbox {
   .mobile-facets__heading {
     font-size: 2rem;
     line-height: 3.2rem;
+  }
+}
+
+.mobile-facets__list--color, .facets__list--color {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.mobile-facets__list--color .mobile-facets__label,
+.facets__list--color .mobile-facets__label {
+  padding: 0;
+}
+
+.color-checkbox {
+  width:32px;
+  height: 32px;
+  border: 1px solid #ACACAC;
+  border-radius: 100%;
+  overflow:hidden;
+}
+
+.color-checkbox__color {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.mobile-facets__label>input[type=checkbox]:checked~.color-checkbox {
+  border-color: #262626;
+}
+
+.facets__price .field {
+  height: 3.8rem;
+}
+
+.facets__price .field__input {
+  height: 3.8rem;
+  box-shadow: 0 0 0 0.1rem #868686;
+  padding: 0 0 0 20px;
+  text-align: right;
+}
+
+.facets__price  .field-currency {
+  position: absolute;
+  left: 8px;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  color: #868686;
+}
+
+.facets__price .field__label {
+  left: auto;
+  right: auto;
+  top: auto;
+  bottom: auto;
+  position: relative;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  color: #262626;
+  display: flex;
+  align-items: center;
+  padding: 0 3.2rem;
+}
+
+@media screen and (max-width: 749px) {
+  .facets__price .field__input {
+    padding: 0 .8rem 0 2rem;
+  }
+
+  .facets__price .field__label {
+    padding: 0 .8rem;
   }
 }

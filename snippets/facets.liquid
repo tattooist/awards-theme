@@ -61,31 +61,67 @@
                       </facet-remove>
                     </div>
 
-                    <ul class="facets__list list-unstyled" role="list">
-                      {%- for value in filter.values -%}
-                        <li class="list-menu__item facets__item">
-                          <label for="Filter-{{ filter.label | escape }}-{{ forloop.index }}" class="facet-checkbox{% if value.count == 0 and value.active == false %} facet-checkbox--disabled{% endif %}">
-                            <input type="checkbox"
-                              name="{{ value.param_name }}"
-                              value="{{ value.value }}"
-                              id="Filter-{{ filter.label | escape }}-{{ forloop.index }}"
-                              {% if value.active %}checked{% endif %}
-                              {% if value.count == 0 and value.active == false %}disabled{% endif %}
-                            >
+                    {% if filter.param_name != 'filter.v.option.color' %}
+                      <ul class="facets__list list-unstyled" role="list">
+                        {%- for value in filter.values -%}
+                          <li class="mobile-facets__item list-menu__item">
+                            <label for="Filter-{{ filter.label | escape }}-mobile-{{ forloop.index }}" class="mobile-facets__label{% if value.count == 0 and value.active == false %} mobile-facets__label--disabled{% endif %}">
+                              <input class="mobile-facets__checkbox" type="checkbox" name="{{ value.param_name }}" value="{{ value.value }}" id="Filter-{{ filter.label | escape }}-mobile-{{ forloop.index }}"
+                                     {% if value.active %}checked{% endif %}
+                                {% if value.count == 0 and value.active == false %}disabled{% endif %}
+                              >
 
-                            <svg class="icon icon-checkbox" width="2rem" height="2rem" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <rect x="0.5" y="0.5" width="19" height="19" rx="1.5" stroke="#868686"/>
-                            </svg>
+                              <svg class="icon icon-checkbox" width="2rem" height="2rem" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="0.5" y="0.5" width="19" height="19" rx="1.5" stroke="#868686"/>
+                              </svg>
 
-                            <svg class="icon icon-checkmark" width="1.6rem" height="1.2rem" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M1 5L6 10L15 1" stroke="white" stroke-width="2"/>
-                            </svg>
 
-                            {{ value.label | escape }} ({{ value.count }})
-                          </label>
-                        </li>
-                      {%- endfor -%}
-                    </ul>
+                              <svg class="icon icon-checkmark" width="1.6rem" height="1.2rem" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 5L6 10L15 1" stroke="white" stroke-width="2"/>
+                              </svg>
+
+                              {{ value.label | escape }} ({{ value.count }})
+                            </label>
+                          </li>
+                        {%- endfor -%}
+                      </ul>
+                    {% else %}
+                      {% comment %}
+                        There we start Color Array for swatches.
+                        We must add here all variables manually
+                      {% endcomment %}
+                      {% assign colors_array = "Beige#F5F5DC,
+                                                        Black#262626,
+                                                        Blue#0000FF,
+                                                        Bordo#7b002c,
+                                                        Brown#A52A2A,
+                                                        Green#008000,
+                                                        Grey-Blue#B0C4DE" | split: "," %}
+                      <ul class="facets__list facets__list--color list-unstyled" role="list">
+                        {%- for value in filter.values -%}
+                          <li class="mobile-facets__item list-menu__item">
+                            <label for="Filter-{{ filter.label | escape }}-mobile-{{ forloop.index }}" class="mobile-facets__label{% if value.count == 0 and value.active == false %} mobile-facets__label--disabled{% endif %}">
+                              <input class="mobile-facets__checkbox" type="checkbox" name="{{ value.param_name }}" value="{{ value.value }}" id="Filter-{{ filter.label | escape }}-mobile-{{ forloop.index }}"
+                                     {% if value.active %}checked{% endif %}
+                                {% if value.count == 0 and value.active == false %}disabled{% endif %}
+                              >
+
+                              {% for item in colors_array %}
+                                {% assign color_vals = item | strip | split: '#' %}
+
+                                {% if color_vals[0] == value.label  %}
+                                  {% assign color_code = color_vals[1] | prepend: '#' %}
+                                {% endif %}
+                              {% endfor %}
+
+                              <div class="color-checkbox" title="{{ value.label | escape }}">
+                                <span class="color-checkbox__color" style="background-color: {{ color_code }}"></span>
+                              </div>
+                            </label>
+                          </li>
+                        {%- endfor -%}
+                      </ul>
+                    {% endif %}
                   </div>
                 </details>
               {% when 'price_range' %}
@@ -114,7 +150,6 @@
                       </facet-remove>
                     </div>
                     <price-range class="facets__price">
-                      <span class="field-currency">{{ cart.currency.symbol }}</span>
                       <div class="field">
                         <input class="field__input"
                           name="{{ filter.min_value.param_name }}"
@@ -127,9 +162,9 @@
                           min="0"
                           {%- if uses_comma_decimals -%}max="{{ filter.range_max | money_without_currency | replace: '.', '' | replace: ',', '.' }}"{%- else -%}max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"{% endif %}
                         >
-                        <label class="field__label" for="Filter-{{ filter.label | escape }}-GTE">{{ 'products.facets.from' | t }}</label>
+                        <span class="field-currency">{{ cart.currency.symbol }}</span>
                       </div>
-                      <span class="field-currency">{{ cart.currency.symbol }}</span>
+                      <div class="field__label">to</div>
                       <div class="field">
                         <input class="field__input"
                           name="{{ filter.max_value.param_name }}"
@@ -146,7 +181,7 @@
                             max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
                           {% endif %}
                         >
-                        <label class="field__label" for="Filter-{{ filter.label | escape }}-LTE">{{ 'products.facets.to' | t }}</label>
+                        <span class="field-currency">{{ cart.currency.symbol }}</span>
                       </div>
                     </price-range>
                   </div>
@@ -316,29 +351,66 @@
                           </div>
                         </summary>
                         <div id="FacetMobile-{{ forloop.index }}-{{ section.id }}" class="mobile-facets__submenu">
-                          <ul class="mobile-facets__list list-unstyled" role="list">
-                            {%- for value in filter.values -%}
-                              <li class="mobile-facets__item list-menu__item">
-                                <label for="Filter-{{ filter.label | escape }}-mobile-{{ forloop.index }}" class="mobile-facets__label{% if value.count == 0 and value.active == false %} mobile-facets__label--disabled{% endif %}">
-                                  <input class="mobile-facets__checkbox" type="checkbox" name="{{ value.param_name }}" value="{{ value.value }}" id="Filter-{{ filter.label | escape }}-mobile-{{ forloop.index }}"
-                                    {% if value.active %}checked{% endif %}
-                                    {% if value.count == 0 and value.active == false %}disabled{% endif %}
-                                  >
+                          {% if filter.param_name != 'filter.v.option.color' %}
+                            <ul class="mobile-facets__list list-unstyled" role="list">
+                              {%- for value in filter.values -%}
+                                <li class="mobile-facets__item list-menu__item">
+                                  <label for="Filter-{{ filter.label | escape }}-mobile-{{ forloop.index }}" class="mobile-facets__label{% if value.count == 0 and value.active == false %} mobile-facets__label--disabled{% endif %}">
+                                    <input class="mobile-facets__checkbox" type="checkbox" name="{{ value.param_name }}" value="{{ value.value }}" id="Filter-{{ filter.label | escape }}-mobile-{{ forloop.index }}"
+                                           {% if value.active %}checked{% endif %}
+                                      {% if value.count == 0 and value.active == false %}disabled{% endif %}
+                                    >
 
-                                  <svg class="icon icon-checkbox" width="2rem" height="2rem" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="0.5" y="0.5" width="19" height="19" rx="1.5" stroke="#868686"/>
-                                  </svg>
+                                    <svg class="icon icon-checkbox" width="2rem" height="2rem" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <rect x="0.5" y="0.5" width="19" height="19" rx="1.5" stroke="#868686"/>
+                                    </svg>
 
+                                    <svg class="icon icon-checkmark" width="1.6rem" height="1.2rem" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M1 5L6 10L15 1" stroke="white" stroke-width="2"/>
+                                    </svg>
 
-                                  <svg class="icon icon-checkmark" width="1.6rem" height="1.2rem" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1 5L6 10L15 1" stroke="white" stroke-width="2"/>
-                                  </svg>
+                                    {{ value.label | escape }} ({{ value.count }})
+                                  </label>
+                                </li>
+                              {%- endfor -%}
+                            </ul>
+                          {% else %}
+                            {% comment %}
+                              There we start Color Array for swatches.
+                              We must add here all variables manually
+                            {% endcomment %}
+                            {% assign colors_array = "Beige#F5F5DC,
+                                                        Black#262626,
+                                                        Blue#0000FF,
+                                                        Bordo#7b002c,
+                                                        Brown#A52A2A,
+                                                        Green#008000,
+                                                        Grey-Blue#B0C4DE" | split: "," %}
+                            <ul class="mobile-facets__list mobile-facets__list--color list-unstyled" role="list">
+                              {%- for value in filter.values -%}
+                                <li class="mobile-facets__item list-menu__item">
+                                  <label for="Filter-{{ filter.label | escape }}-mobile-{{ forloop.index }}" class="mobile-facets__label{% if value.count == 0 and value.active == false %} mobile-facets__label--disabled{% endif %}">
+                                    <input class="mobile-facets__checkbox" type="checkbox" name="{{ value.param_name }}" value="{{ value.value }}" id="Filter-{{ filter.label | escape }}-mobile-{{ forloop.index }}"
+                                           {% if value.active %}checked{% endif %}
+                                      {% if value.count == 0 and value.active == false %}disabled{% endif %}
+                                    >
 
-                                  {{ value.label | escape }} ({{ value.count }})
-                                </label>
-                              </li>
-                            {%- endfor -%}
-                          </ul>
+                                    {% for item in colors_array %}
+                                      {% assign color_vals = item | strip | split: '#' %}
+
+                                      {% if color_vals[0] == value.label  %}
+                                        {% assign color_code = color_vals[1] | prepend: '#' %}
+                                      {% endif %}
+                                    {% endfor %}
+
+                                    <div class="color-checkbox" title="{{ value.label | escape }}">
+                                      <span class="color-checkbox__color" style="background-color: {{ color_code }}"></span>
+                                    </div>
+                                  </label>
+                                </li>
+                              {%- endfor -%}
+                            </ul>
+                          {% endif %}
                         </div>
                       </details>
                     {% when 'price_range' %}
@@ -351,46 +423,42 @@
                           </div>
                         </summary>
                         <div id="FacetMobile-{{ forloop.index }}-{{ section.id }}" class="mobile-facets__submenu">
-                          <p class="mobile-facets__info">{{ "products.facets.max_price" | t: price: max_price_amount }}</p>
-
                           <price-range class="facets__price">
-                            <span class="field-currency">{{ cart.currency.symbol }}</span>
                             <div class="field">
                               <input class="field__input"
-                                name="{{ filter.min_value.param_name }}"
-                                id="Mobile-Filter-{{ filter.label | escape }}-GTE"
-                                {%- if filter.min_value.value -%}
-                                  {%- if uses_comma_decimals -%}value="{{ filter.min_value.value | money_without_currency | replace: '.', '' | replace: ',', '.' }}"{%- else -%}value="{{ filter.min_value.value | money_without_currency | replace: ',', '' }}"{% endif %}
-                                {%- endif -%}
-                                type="number"
-                                placeholder="0"
-                                min="0"
-                                inputmode="decimal"
+                                     name="{{ filter.min_value.param_name }}"
+                                     id="Mobile-Filter-{{ filter.label | escape }}-GTE"
+                                      {%- if filter.min_value.value -%}
+                                          {%- if uses_comma_decimals -%}value="{{ filter.min_value.value | money_without_currency | replace: '.', '' | replace: ',', '.' }}"{%- else -%}value="{{ filter.min_value.value | money_without_currency | replace: ',', '' }}"{% endif %}
+                                      {%- endif -%}
+                                     type="number"
+                                     placeholder="0"
+                                     min="0"
+                                     inputmode="decimal"
                                 {%- if uses_comma_decimals -%}max="{{ filter.range_max | money_without_currency | replace: '.', '' | replace: ',', '.' }}"{%- else -%}max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"{% endif %}
                               >
-                              <label class="field__label" for="Mobile-Filter-{{ filter.label | escape }}-GTE">{{ 'products.facets.from' | t }}</label>
+                              <span class="field-currency">{{ cart.currency.symbol }}</span>
                             </div>
-
-                            <span class="field-currency">{{ cart.currency.symbol }}</span>
+                            <div class="field__label">to</div>
                             <div class="field">
                               <input class="field__input"
-                                name="{{ filter.max_value.param_name }}"
-                                id="Mobile-Filter-{{ filter.label | escape }}-LTE"
-                                {%- if filter.max_value.value -%}
-                                  {%- if uses_comma_decimals -%}value="{{ filter.max_value.value | money_without_currency | replace: '.', '' | replace: ',', '.' }}"{%- else -%}value="{{ filter.max_value.value | money_without_currency | replace: ',', '' }}"{% endif %}
-                                {%- endif -%}
-                                type="number"
-                                min="0"
-                                inputmode="decimal"
-                                {%- if uses_comma_decimals -%}
-                                  placeholder="{{ filter.range_max | money_without_currency | replace: '.', '' | replace: ',', '.' }}"
-                                  max="{{ filter.range_max | money_without_currency | replace: '.', '' | replace: ',', '.' }}"
-                                {%- else -%}
-                                  placeholder="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
-                                  max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
-                                {% endif %}
+                                     name="{{ filter.max_value.param_name }}"
+                                     id="Mobile-Filter-{{ filter.label | escape }}-LTE"
+                                      {%- if filter.max_value.value -%}
+                                          {%- if uses_comma_decimals -%}value="{{ filter.max_value.value | money_without_currency | replace: '.', '' | replace: ',', '.' }}"{%- else -%}value="{{ filter.max_value.value | money_without_currency | replace: ',', '' }}"{% endif %}
+                                      {%- endif -%}
+                                     type="number"
+                                     min="0"
+                                     inputmode="decimal"
+                                      {%- if uses_comma_decimals -%}
+                                        placeholder="{{ filter.range_max | money_without_currency | replace: '.', '' | replace: ',', '.' }}"
+                                        max="{{ filter.range_max | money_without_currency | replace: '.', '' | replace: ',', '.' }}"
+                                      {%- else -%}
+                                        placeholder="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                                        max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                                      {% endif %}
                               >
-                              <label class="field__label" for="Mobile-Filter-{{ filter.label | escape }}-LTE">{{ 'products.facets.to' | t }}</label>
+                              <span class="field-currency">{{ cart.currency.symbol }}</span>
                             </div>
                           </price-range>
                         </div>

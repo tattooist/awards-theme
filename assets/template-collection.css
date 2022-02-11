@@ -82,10 +82,6 @@
     margin:0;
   }
 
-  .grid .collection__sidebar .mobile-facets .facets__price {
-    padding: 0 1.6rem;
-  }
-
   .grid .collection__sidebar .mobile-facets__footer {
     padding: 3.2rem 0;
   }
@@ -101,6 +97,10 @@
 
   .grid .collection__sidebar .mobile-facets__footer {
     display: none;
+  }
+
+  .grid .collection__sidebar .mobile-facets facet-remove:first-child {
+    margin-top: 1.6rem;
   }
 
   .facets__form-sort {
