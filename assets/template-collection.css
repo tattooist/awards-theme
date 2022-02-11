@@ -64,6 +64,7 @@
   .grid .collection__sidebar .mobile-facets__header {
     border-bottom: none;
     padding: 0 0 .8rem;
+    background: none;
   }
 
   .grid .collection__sidebar .mobile-facets__summary {
@@ -74,14 +75,11 @@
   .grid .collection__sidebar .mobile-facets .active-facets {
     padding: 0;
     margin: 0;
+    align-items: baseline;
   }
 
   .grid .collection__sidebar .mobile-facets__submenu {
     margin:0;
-  }
-
-  .grid .collection__sidebar .mobile-facets .facets__price {
-    padding: 0 1.6rem;
   }
 
   .grid .collection__sidebar .mobile-facets__footer {
@@ -99,6 +97,10 @@
 
   .grid .collection__sidebar .mobile-facets__footer {
     display: none;
+  }
+
+  .grid .collection__sidebar .mobile-facets facet-remove:first-child {
+    margin-top: 1.6rem;
   }
 
   .facets__form-sort {
