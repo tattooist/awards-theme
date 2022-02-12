@@ -34,7 +34,7 @@
       ],
       "settings": {
         "layout": "fullsized",
-        "section_height": "large",
+        "section_height": "fit-screen",
         "desktop_text_box_position": "flex-start__flex-start",
         "mobile_text_box_position": "flex-start__flex-start",
         "show_text_below": true,
@@ -157,12 +157,6 @@
             "heading_size": "h1"
           }
         },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Alex Miller, Founder<\/p>"
-          }
-        },
         "button": {
           "type": "button",
           "settings": {
@@ -173,7 +167,6 @@
       },
       "block_order": [
         "heading",
-        "text",
         "button"
       ],
       "settings": {
@@ -217,7 +210,7 @@
         "column3"
       ],
       "settings": {
-        "subtitle": "Subheading",
+        "subtitle": "",
         "title": "Reviews",
         "text_aligment": "left",
         "image_ratio": "square",
