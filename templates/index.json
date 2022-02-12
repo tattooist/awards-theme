@@ -35,6 +35,7 @@
       "settings": {
         "layout": "fullsized",
         "section_height": "fit-screen",
+        "image": "shopify:\/\/shop_images\/Pic_2000x_560ac941-f9af-4f50-baf6-f0bb8bc5bbea.jpg",
         "desktop_text_box_position": "flex-start__flex-start",
         "mobile_text_box_position": "flex-start__flex-start",
         "show_text_below": true,
