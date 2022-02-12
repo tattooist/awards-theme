@@ -40,7 +40,7 @@
         "show_text_below": true,
         "bg_color": "#ffffff",
         "overlay_color": "#262626",
-        "image_overlay_opacity": 0
+        "image_overlay_opacity": 10
       }
     },
     "featured_products": {
