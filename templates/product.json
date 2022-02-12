@@ -3,23 +3,9 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "vendor": {
-          "type": "text",
-          "settings": {
-            "text": "{{ product.vendor }}",
-            "text_style": "uppercase"
-          }
-        },
         "title": {
           "type": "title",
           "settings": {
-          }
-        },
-        "subtitle": {
-          "type": "text",
-          "settings": {
-            "text": "{{ product.metafields.descriptors.subtitle.value }}",
-            "text_style": "subtitle"
           }
         },
         "price": {
@@ -49,60 +35,6 @@
           "settings": {
           }
         },
-        "04eeefb3-800d-4b40-ad64-532452479bbc": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Material",
-            "content": "<p>{{ product.metafields.my_fields.material | metafield_tag }}<\/p>",
-            "page": "",
-            "icon": "none"
-          }
-        },
-        "8b2c0d66-d45e-4eda-b412-292d0810ada4": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Features",
-            "content": "<p>{{ product.metafields.my_fields.features | metafield_tag }}<\/p>",
-            "page": "",
-            "icon": "none"
-          }
-        },
-        "d2ed1bf4-6860-4d6c-b8db-af214cbe70a8": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Measurements",
-            "content": "<p>{{ product.metafields.my_fields.measurements | metafield_tag }}<\/p>",
-            "page": "",
-            "icon": "none"
-          }
-        },
-        "1ec18ba2-b48c-42bf-a199-848d5086f50e": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Compartments",
-            "content": "<p>{{ product.metafields.my_fields.compartments | metafield_tag }}<\/p>",
-            "page": "",
-            "icon": "none"
-          }
-        },
-        "3664b01b-7b87-4704-a874-b2d51003d285": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Manufacturing",
-            "content": "<p>{{ product.metafields.my_fields.manufacturing | metafield_tag }}<\/p>",
-            "page": "",
-            "icon": "none"
-          }
-        },
-        "4f3722c1-10da-4ab8-bdac-15b0419b724c": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Warranty",
-            "content": "<p>Quality control is an important part of our philosophy, but occasionally something might slip through our eyes and fingers (we’re all human).<br\/><br\/>If you found a flaw in our product or we sent you the wrong one by mistake, please send it back to us within 30 days of delivery for a full refund (including shipping).<br\/><br\/>If you change your mind by any reason or wish to return an unwanted gift, please contact us as we would love to help you exchange or refund your purchase within 30 days of delivery. Please note: shipping cost of a refund isn’t covered, so it need to be sent to the original purchaser’s method of payment. All items must be returned in original condition without any signs of use.<\/p>",
-            "page": "",
-            "icon": "none"
-          }
-        },
         "share": {
           "type": "share",
           "settings": {
@@ -111,20 +43,12 @@
         }
       },
       "block_order": [
-        "vendor",
         "title",
-        "subtitle",
         "price",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
         "description",
-        "04eeefb3-800d-4b40-ad64-532452479bbc",
-        "8b2c0d66-d45e-4eda-b412-292d0810ada4",
-        "d2ed1bf4-6860-4d6c-b8db-af214cbe70a8",
-        "1ec18ba2-b48c-42bf-a199-848d5086f50e",
-        "3664b01b-7b87-4704-a874-b2d51003d285",
-        "4f3722c1-10da-4ab8-bdac-15b0419b724c",
         "share"
       ],
       "settings": {
@@ -138,10 +62,10 @@
       "settings": {
         "heading": "You may also like",
         "image_ratio": "adapt",
-        "show_secondary_image": true,
+        "show_secondary_image": false,
         "add_image_padding": false,
         "show_image_outline": true,
-        "show_vendor": true,
+        "show_vendor": false,
         "show_rating": false
       }
     }
