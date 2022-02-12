@@ -25,6 +25,7 @@
         "blocks": {
           "announcement-bar-0": {
             "type": "announcement",
+            "disabled": true,
             "settings": {
               "text": "Complimentary shipping on all orders",
               "link": "shopify:\/\/collections\/all"
