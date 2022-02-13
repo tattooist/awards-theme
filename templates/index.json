@@ -49,12 +49,12 @@
       "settings": {
         "title": "Featured products",
         "collection": "wallets",
-        "products_to_show": 4,
+        "products_to_show": 8,
         "show_view_all": true,
         "swipe_on_mobile": true,
         "image_ratio": "square",
         "show_secondary_image": true,
-        "add_image_padding": false,
+        "add_image_padding": true,
         "show_image_outline": false,
         "show_vendor": false,
         "show_rating": false
