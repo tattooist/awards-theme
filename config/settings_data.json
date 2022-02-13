@@ -102,7 +102,7 @@
           "payment_enable": true,
           "enable_country_selector": true,
           "enable_language_selector": true,
-          "bg_color": "#ede9e6",
+          "bg_color": "#ffffff",
           "text_color": "#262626",
           "icons_color": "#262626"
         }
