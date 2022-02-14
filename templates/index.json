@@ -95,6 +95,7 @@
       "settings": {
         "layout": "boxed",
         "section_height": "medium",
+        "image": "shopify:\/\/shop_images\/242785278_1165681497490643_6274462903799703073_n.jpg",
         "bg_color": "#fafafa",
         "desktop_text_position": "flex-start",
         "desktop_text_aligment": "left",
@@ -110,7 +111,8 @@
         "1638449745cb7354a6-0": {
           "type": "featured_collection",
           "settings": {
-            "collection": "casual"
+            "collection": "casual",
+            "image": "shopify:\/\/shop_images\/01.png"
           }
         },
         "1638449745cb7354a6-1": {
