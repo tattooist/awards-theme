@@ -149,7 +149,7 @@
         "sort_collections": "manual",
         "image_ratio": "portrait",
         "swipe_on_mobile": false,
-        "bg_color": "#ffffff",
+        "bg_color": "#f2f0ed",
         "text_color": "#262626"
       }
     },
@@ -239,7 +239,7 @@
         "1638450628dc78c808-1": {
           "type": "heading",
           "settings": {
-            "heading": "Tenderly crafted to guard your goods"
+            "heading": "Tenderly crafted"
           }
         },
         "1638450628dc78c808-2": {
