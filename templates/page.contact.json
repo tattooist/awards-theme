@@ -10,7 +10,7 @@
       "settings": {
         "layout": "onecolumn-center",
         "heading": "",
-        "text": "",
+        "text": "<p>If you have any questions, make sure to write us via this form. We will provide you with any information as soon as possible.<\/p>",
         "is_full_width": false,
         "bg_color": "rgba(0,0,0,0)",
         "text_color": "#262626"
