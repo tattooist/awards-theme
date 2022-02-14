@@ -118,19 +118,22 @@
         "1638449745cb7354a6-1": {
           "type": "featured_collection",
           "settings": {
-            "collection": "travel"
+            "collection": "travel",
+            "image": "shopify:\/\/shop_images\/02.png"
           }
         },
         "1638449745cb7354a6-2": {
           "type": "featured_collection",
           "settings": {
-            "collection": "business"
+            "collection": "business",
+            "image": "shopify:\/\/shop_images\/03.png"
           }
         },
         "f37e2f51-1de1-4147-83e8-ca28af2c3848": {
           "type": "featured_collection",
           "settings": {
-            "collection": "storage"
+            "collection": "storage",
+            "image": "shopify:\/\/shop_images\/04.png"
           }
         }
       },
@@ -266,6 +269,7 @@
       "settings": {
         "layout": "fullsized",
         "section_height": "fit-screen",
+        "image": "shopify:\/\/shop_images\/1920x1300_web2.jpg",
         "desktop_text_box_position": "flex-start__flex-start",
         "mobile_text_box_position": "flex-start__flex-start",
         "show_text_below": false,
