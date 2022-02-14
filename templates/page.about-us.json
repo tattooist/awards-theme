@@ -220,6 +220,7 @@
       "settings": {
         "layout": "boxed",
         "section_height": "large",
+        "image": "shopify:\/\/shop_images\/pexels-cottonbro-6648408.jpg",
         "bg_color": "#ffffff",
         "desktop_text_position": "flex-start",
         "desktop_text_aligment": "left",
