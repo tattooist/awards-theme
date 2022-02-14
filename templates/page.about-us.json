@@ -246,6 +246,7 @@
       "settings": {
         "layout": "boxed",
         "section_height": "small",
+        "image": "shopify:\/\/shop_images\/pexels-cottonbro-6661911.jpg",
         "desktop_text_box_position": "flex-start__center",
         "mobile_text_box_position": "center__center",
         "show_text_below": true,
