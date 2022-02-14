@@ -139,7 +139,6 @@
       "settings": {
         "layout": "boxed",
         "section_height": "medium",
-        "image": "shopify:\/\/shop_images\/lifetime-leather-X875kk9-rnU-unsplash.jpg",
         "bg_color": "#ffffff",
         "desktop_text_position": "center",
         "desktop_text_aligment": "left",
@@ -220,7 +219,6 @@
       "settings": {
         "layout": "boxed",
         "section_height": "large",
-        "image": "shopify:\/\/shop_images\/pexels-cottonbro-6648408.jpg",
         "bg_color": "#ffffff",
         "desktop_text_position": "flex-start",
         "desktop_text_aligment": "left",
@@ -246,7 +244,6 @@
       "settings": {
         "layout": "boxed",
         "section_height": "small",
-        "image": "shopify:\/\/shop_images\/pexels-cottonbro-6661911.jpg",
         "desktop_text_box_position": "flex-start__center",
         "mobile_text_box_position": "center__center",
         "show_text_below": true,
