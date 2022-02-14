@@ -149,7 +149,7 @@
         "sort_collections": "manual",
         "image_ratio": "portrait",
         "swipe_on_mobile": false,
-        "bg_color": "#f2f0ed",
+        "bg_color": "#ffffff",
         "text_color": "#262626"
       }
     },
