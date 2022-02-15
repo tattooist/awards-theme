@@ -450,8 +450,17 @@
               assign variant_image = false
             endif
 
+            assign media_variant = media.alt | split: '_'
+            assign media_variant = media_variant[1] | downcase
+
+            if media_variant != selected_variant
+              assign is_show = false
+            else
+              assign is_show = true
+            endif
+
             unless media.id == product.selected_or_first_available_variant.featured_media.id
-              render 'product-media', media: media, loop: section.settings.enable_video_looping, variant_image: variant_image
+              render 'product-media', media: media, loop: section.settings.enable_video_looping, variant_image: variant_image, is_show: is_show, media_variant: media_variant
             endunless
           -%}
         {%- endfor -%}
