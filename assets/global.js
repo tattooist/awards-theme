@@ -622,6 +622,17 @@ class VariantSelects extends HTMLElement {
       }
     });
 
+    const bigThumbs = document.querySelector('product-modal').querySelectorAll('img');
+
+    bigThumbs.forEach(function(el, index) {
+      el.removeAttribute('style');
+
+      if(current_variant != el.getAttribute('data-variant').toLowerCase()) {
+        el.setAttribute('style', 'display: none');
+      }
+    });
+
+
     this.stickyHeader = this.stickyHeader || document.querySelector('sticky-header');
     if(this.stickyHeader) {
       this.stickyHeader.dispatchEvent(new Event('preventHeaderReveal'));
