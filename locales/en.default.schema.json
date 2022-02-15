@@ -678,6 +678,18 @@
               "options__2": {
                 "label": "Button"
               }
+            },
+            "swatch_type": {
+              "label": "Color selector type",
+              "options__1": {
+                "label": "Default"
+              },
+              "options__2": {
+                "label": "Color swatch"
+              },
+              "options__3": {
+                "label": "Variant image"
+              }
             }
           }
         },
@@ -1603,6 +1615,18 @@
               },
               "options__2": {
                 "label": "Button"
+              }
+            },
+            "swatch_type": {
+              "label": "Color selector type",
+              "options__1": {
+                "label": "Default"
+              },
+              "options__2": {
+                "label": "Color swatch"
+              },
+              "options__3": {
+                "label": "Variant image"
               }
             }
           }
