@@ -53,8 +53,8 @@
           "menu_mob": "",
           "enable_transparent_header": false,
           "transparent_text_color": "#ffffff",
-          "logo_position": "center",
-          "show_icons": false,
+          "logo_position": "middle-left",
+          "show_icons": true,
           "section_background_color": "#ffffff",
           "section_text_color": "#262626"
         }
