@@ -27,7 +27,13 @@
         </a>
         <ul class="product__media-list grid grid--peek list-unstyled slider slider--mobile" role="list">
           {%- assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' -%}
-          {%- assign selected_variant = product.selected_variant.title | downcase -%}
+          {%- liquid
+            if product.selected_variant != nil
+              assign selected_variant = product.selected_variant.title | downcase
+            else
+              assign selected_variant = product.variants[0].title | downcase
+            endif
+          -%}
 
           {%- if product.selected_or_first_available_variant.featured_media != null -%}
             {%- assign media = product.selected_or_first_available_variant.featured_media -%}
@@ -43,7 +49,7 @@
             {%- assign media_variant = media_variant[1] | downcase -%}
 
             {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
-              <li class="product__media-item grid__item slider__slide{% if media.media_type != 'image' %} product__media-item--full{% endif %}{% if section.settings.hide_variants and variant_images contains media.src %} product__media-item--variant{% endif %}" data-media-id="{{ section.id }}-{{ media.id }}" data-variant="{{ media_variant }}"{% if media_variant != selected_variant %} style="display:none;"{% endif %}>
+              <li class="product__media-item grid__item slider__slide{% if media.media_type != 'image' %} product__media-item--full{% endif %}{% if section.settings.hide_variants and variant_images contains media.src %} product__media-item--variant{% endif %}" data-media-id="{{ section.id }}-{{ media.id }}" data-variant="{{ media_variant }}"{% if media_variant != selected_variant and media.alt contains '#color_' %} style="display:none;"{% endif %}>
                 {% render 'product-thumbnail', media: media, position: forloop.index, loop: section.settings.enable_video_looping, modal_id: section.id, xr_button: true %}
               </li>
             {%- endunless -%}
@@ -453,7 +459,7 @@
             assign media_variant = media.alt | split: '_'
             assign media_variant = media_variant[1] | downcase
 
-            if media_variant != selected_variant
+            if media_variant != selected_variant and media.alt contains '#color_'
               assign is_show = false
             else
               assign is_show = true
