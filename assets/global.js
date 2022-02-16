@@ -617,7 +617,7 @@ class VariantSelects extends HTMLElement {
     thumbs.forEach(function(el, index) {
       el.removeAttribute('style');
 
-      if(current_variant != el.getAttribute('data-variant').toLowerCase()) {
+      if(current_variant != el.getAttribute('data-variant').toLowerCase()  && el.getAttribute('data-variant') != undefined && el.getAttribute('data-variant') != '') {
         el.setAttribute('style', 'display: none');
       }
     });
@@ -627,7 +627,7 @@ class VariantSelects extends HTMLElement {
     bigThumbs.forEach(function(el, index) {
       el.removeAttribute('style');
 
-      if(current_variant != el.getAttribute('data-variant').toLowerCase()) {
+      if(current_variant != el.getAttribute('data-variant').toLowerCase() && el.getAttribute('data-variant') != undefined && el.getAttribute('data-variant') != '') {
         el.setAttribute('style', 'display: none');
       }
     });
