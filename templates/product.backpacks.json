@@ -210,6 +210,47 @@
         "show_text_below": true
       }
     },
+    "164501214127189238": {
+      "type": "rich-text",
+      "blocks": {
+        "16450121410c2071b7-0": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "MANUFACTURING"
+          }
+        },
+        "16450121410c2071b7-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ product.metafields.my_fields.rich_text_heading.value }}",
+            "heading_size": "h1"
+          }
+        },
+        "16450121410c2071b7-2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>{{ product.metafields.my_fields.rich_text_text | metafield_tag }}<\/p>"
+          }
+        },
+        "16450121410c2071b7-3": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "16450121410c2071b7-0",
+        "16450121410c2071b7-1",
+        "16450121410c2071b7-2",
+        "16450121410c2071b7-3"
+      ],
+      "settings": {
+        "text_aligment": "left"
+      }
+    },
     "product-recommendations": {
       "type": "product-recommendations",
       "settings": {
@@ -227,6 +268,7 @@
     "main",
     "16450097794283d0a1",
     "1645011894915f18f7",
+    "164501214127189238",
     "product-recommendations"
   ]
 }
