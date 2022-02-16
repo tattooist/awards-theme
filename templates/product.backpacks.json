@@ -1,0 +1,137 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+          }
+        },
+        "93d95fff-dad3-42f0-abd1-3dee1daa1553": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Material",
+            "content": "<p>{{ product.metafields.my_fields.material | metafield_tag }}<\/p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "c6d2ab2a-2cfb-4981-a5e7-d3945349bf0e": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Features",
+            "content": "<p>{{ product.metafields.my_fields.features | metafield_tag }}<\/p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "88cfe2fb-50e0-4e3a-93fe-32be87823dee": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Measurements",
+            "content": "<p>{{ product.metafields.my_fields.measurements | metafield_tag }}<\/p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "2cee0bfb-4445-4936-b324-3ffa44fcbb37": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Compartments",
+            "content": "<p>{{ product.metafields.my_fields.compartments | metafield_tag }}<\/p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "b514e67a-44c2-401e-9a1b-113ea9afc261": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Manufacturing",
+            "content": "<p>{{ product.metafields.my_fields.manufacturing | metafield_tag }}<\/p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "5bb7b50d-f0e9-47f7-afd3-100181b3c770": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Warranty",
+            "content": "<p>Quality control is an important part of our philosophy, but occasionally something might slip through our eyes and fingers (we’re all human).<br\/><br\/>If you found a flaw in our product or we sent you the wrong one by mistake, please send it back to us within 30 days of delivery for a full refund (including shipping).<br\/><br\/>If you change your mind by any reason or wish to return an unwanted gift, please contact us as we would love to help you exchange or refund your purchase within 30 days of delivery. Please note: shipping cost of a refund isn’t covered, so it need to be sent to the original purchaser’s method of payment. All items must be returned in original condition without any signs of use.<\/p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "description",
+        "93d95fff-dad3-42f0-abd1-3dee1daa1553",
+        "c6d2ab2a-2cfb-4981-a5e7-d3945349bf0e",
+        "88cfe2fb-50e0-4e3a-93fe-32be87823dee",
+        "2cee0bfb-4445-4936-b324-3ffa44fcbb37",
+        "b514e67a-44c2-401e-9a1b-113ea9afc261",
+        "5bb7b50d-f0e9-47f7-afd3-100181b3c770",
+        "share"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "hide_variants": false,
+        "enable_video_looping": false
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "heading": "You may also like",
+        "image_ratio": "adapt",
+        "show_secondary_image": false,
+        "add_image_padding": false,
+        "show_image_outline": true,
+        "show_vendor": false,
+        "show_rating": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product-recommendations"
+  ]
+}
