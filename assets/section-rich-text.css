@@ -1,6 +1,8 @@
 .rich-text {
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
+  z-index: 1;
 }
 
 .rich-text.rich-text--full-width {
@@ -10,7 +12,8 @@
 
 .rich-text__blocks {
   margin: auto;
-  width: 100%;
+  /* 2.5rem margin on left & right */
+  width: calc(100% - 5rem / var(--font-body-scale));
 }
 
 .rich-text__blocks * {
@@ -18,51 +21,24 @@
 }
 
 .rich-text--full-width .rich-text__blocks {
-  width: 100%;
-}
-
-.rich-text:not(.rich-text--full-width),
-.rich-text--full-width.color-background-1 {
-  margin-top: 6.4rem;
-  margin-bottom: 6.4rem;
-}
-
-.rich-text--left {
-  text-align: left;
-}
-
-.rich-text--left .rich-text__blocks {
-  margin: 0;
+  /* 4rem (1.5rem + 2.5rem) margin on left & right */
+  width: calc(100% - 8rem / var(--font-body-scale));
 }
 
 @media screen and (min-width: 750px) {
-  .rich-text:not(.rich-text--full-width),
-  .rich-text--full-width.color-background-1 {
-    margin-top: calc(4.4rem + var(--page-width-margin));
-    margin-bottom: calc(4.4rem + var(--page-width-margin));
-  }
-
-  .rich-text:not(.color-background-1) {
-    padding-top: calc(4.4rem + var(--page-width-margin));
-    padding-bottom: calc(4.4rem + var(--page-width-margin));
+  .rich-text__blocks {
+    max-width: 50rem;
   }
 
   .rich-text--full-width .rich-text__blocks {
-    width: 100%;
+    /* 7.5rem (5rem + 2.5rem) margin on left & right */
+    width: calc(100% - 15rem);
   }
+}
 
-  .rich-text__subheading {
-    font-size: 1.8rem;
-    line-height: 2.8rem;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    font-weight: normal;
-  }
-
-  .rich-text__text {
-    font-size: 1.6rem;
-    line-height: 2.4rem;
-    letter-spacing: 0.02em;
+@media screen and (min-width: 990px) {
+  .rich-text__blocks {
+    max-width: 78rem;
   }
 }
 
@@ -74,52 +50,9 @@
 }
 
 .rich-text__blocks > * + * {
-  margin-top: 2.4rem;
+  margin-top: 2rem;
 }
 
 .rich-text__blocks > * + a {
-  margin-top: 4rem;
-}
-
-.rich-text__subheading + * {
-  margin-top: 1.6rem;
-}
-
-@media screen and (max-width: 749px) {
-  .rich-text {
-    padding-top: 3.2rem;
-    padding-bottom: 3.2rem;
-  }
-
-  .rich-text__blocks > * + * {
-    margin-top: 1.6rem;
-  }
-
-  .rich-text__blocks > * + a {
-    margin-top: 2.4rem;
-  }
-
-  .rich-text__subheading {
-    font-size: 1.2rem;
-    line-height: 1.6rem;
-    text-transform: uppercase;
-    font-weight: normal;
-  }
-
-  .rich-text__text {
-    font-size: 1.4rem;
-    line-height: 2rem;
-  }
-
-  .rich-text--full-width .rich-text__blocks {
-    width: 100%;
-  }
-
-  .button {
-    width: 100%;
-  }
-
-  .rich-text--left .button {
-    width: auto;
-  }
+  margin-top: 3rem;
 }
