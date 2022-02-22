@@ -1,3 +1,13 @@
+@media screen and (min-width: 750px) {
+  .articles-wrapper.grid {
+    margin: 0 0 5rem 0;
+  }
+
+  .articles-wrapper.grid {
+    margin-bottom: 7rem;
+  }
+}
+
 @media screen and (max-width: 749px) {
   .articles-wrapper .article {
     width: 100%;
@@ -17,13 +27,74 @@
   box-sizing: border-box;
 }
 
+.article-card__info {
+  padding: 1.6rem 0 0;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.article-card__header .caption-with-letter-spacing {
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  letter-spacing: 0.04em;
+  color: rgba(var(--color-foreground));
+}
+
+.article-card__header .circle-divider::after {
+  content: '\2022';
+  margin: 0 0.8rem;
+}
+
+@media (max-width: 749px) {
+  .article-card__header .caption-with-letter-spacing {
+    font-size: 1rem;
+    line-height: 1.2rem;
+  }
+}
+
+.article-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+}
+
+.article-content:hover .article-card__title {
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+}
+
+.article-card__image {
+  overflow: hidden;
+}
+
+.article-content img {
+  transition: transform var(--duration-long) ease;
+}
+
+.article-content:hover img {
+  transform: scale(1.07);
+}
+
 .article-card__image-wrapper > a {
   display: block;
 }
 
 .article-card__title {
   text-decoration: none;
-  word-break: break-word;
+  font-weight: 600;
+  font-size: 2.4rem;
+  line-height: 3.6rem;
+}
+
+@media (max-width: 749px) {
+  .article-card__title {
+    font-size: 2rem;
+    line-height: 3.2rem;
+  }
 }
 
 .article-card__title a:after {
@@ -47,7 +118,12 @@
 }
 
 .article-card .card__heading {
-  margin-bottom: 0.6rem;
+  margin-bottom: line-height: calc(0.8 / var(--font-body-scale));
+  margin-bottom: 1.2rem;
+}
+
+.article-content:hover .article-card__link {
+  text-decoration-thickness: 0.2rem;
 }
 
 .blog-articles .article-card .card__information,
@@ -75,7 +151,10 @@
 
 .article-card__excerpt {
   width: 100%;
-  margin-top: 1.2rem;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 3.2rem;
 }
 
 .article-card__link:not(:only-child) {

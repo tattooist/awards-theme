@@ -5,6 +5,16 @@
   text-decoration: none;
 }
 
+.card-information + .card {
+  margin-bottom: .8rem;
+}
+
+@media screen and (min-width: 750px) {
+  .card-information + .card {
+    margin-bottom: .8rem;
+  }
+}
+
 .card {
   text-align: var(--card-text-alignment);
   text-decoration: none;
@@ -206,8 +216,8 @@
 
   .card-wrapper:hover .media.media--hover-effect > img + img {
     opacity: 1;
-    transition: transform var(--duration-long) ease;
-    transform: scale(1.03);
+    /*transition: transform var(--duration-long) ease;
+    transform: scale(1.03);*/
   }
 
   .underline-links-hover:hover a {

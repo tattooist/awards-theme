@@ -5,6 +5,11 @@
 <noscript>{{ 'component-slider.css' | asset_url | stylesheet_tag }}</noscript>
 
 {%- style -%}
+  :root {
+    --color-collection-list-text: {{ section.settings.text_color.red  }}, {{ section.settings.text_color.green  }}, {{ section.settings.text_color.blue  }};
+    --color-collection-list-bg: {{ section.settings.bg_color }};
+  }
+
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
@@ -18,56 +23,71 @@
   }
 {%- endstyle -%}
 
-<div class="color-{{ section.settings.color_scheme }} gradient">
-  <div class="collection-list-wrapper page-width isolate{% if section.settings.swipe_on_mobile == true %} page-width-desktop{% endif %}{% if section.settings.title == blank %} no-heading{% endif %}{% if section.settings.show_view_all == false or section.blocks.size > collections.size %} no-mobile-link{% endif %} section-{{ section.id }}-padding">
-    {% unless section.settings.title == blank %}
-      <div class="title-wrapper-with-link{% if section.settings.swipe_on_mobile == true %} title-wrapper--self-padded-tablet-down{% else %} title-wrapper--self-padded-mobile{% endif %}{% if section.settings.title == blank %} title-wrapper-with-link--no-heading{% endif %} title-wrapper--no-top-margin">
-        <h2 class="collection-list-title">{{ section.settings.title | escape }}</h2>
+<div class="collection-list-wrapper page-width isolate{% if section.settings.swipe_on_mobile == true %} page-width-desktop{% endif %}{% if section.settings.title == blank %} no-heading{% endif %}{% if section.settings.show_view_all == false or section.blocks.size > collections.size %} no-mobile-link{% endif %} section-{{ section.id }}-padding">
+  {% unless section.settings.title == blank %}
+    <div class="title-wrapper-with-link{% if section.settings.swipe_on_mobile == true %} title-wrapper--self-padded-tablet-down{% else %} title-wrapper--self-padded-mobile{% endif %}{% if section.settings.title == blank %} title-wrapper-with-link--no-heading{% endif %} title-wrapper--no-top-margin">
+      <h2 class="collection-list-title h1">{{ section.settings.title | escape }}</h2>
   
-        {%- if section.settings.show_view_all and section.settings.swipe_on_mobile -%}
-          <a href="{{ routes.collections_url }}" class="link underlined-link large-up-hide">{{ 'sections.collection_list.view_all' | t }}</a>
-        {%- endif -%}
-      </div>
-    {% endunless %}
-  
-    <slider-component class="slider-mobile-gutter">
-      <ul class="collection-list contains-card{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid grid--1-col{% if section.settings.columns_desktop == 1 %} grid--full-width{% else %} grid--{{ section.settings.columns_desktop }}-col-desktop{% endif %} grid--{{ section.blocks.size }}-col-tablet{% if section.settings.swipe_on_mobile %} slider slider--tablet grid--peek{% endif %} collection-list--{{ section.blocks.size }}-items"
-        id="Slider-{{ section.id }}"
-        role="list"
-      >
-        {%- liquid
-          assign columns = section.blocks.size
-          if columns > 3
-            assign columns = 3
-          endif
-        -%}
-        {%- for block in section.blocks -%}
-          <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="collection-list__item grid__item{% if section.settings.swipe_on_mobile %} slider__slide{% endif %}{% if block.settings.collection.featured_image == nil %} collection-list__item--no-media{% endif %}" {{ block.shopify_attributes }}>
-            {% render 'card-collection', card_collection: block.settings.collection , media_aspect_ratio: section.settings.image_ratio, columns: columns %}
-          </li>
-        {%- endfor -%}
-      </ul>
-  
-      {%- if section.settings.swipe_on_mobile -%}
-        <div class="slider-buttons no-js-hidden{% if section.blocks.size < 5 %} medium-hide{% endif %}{% if section.blocks.size < 2 %} small-hide{% endif %}">
-          <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'general.slider.previous_slide' | t }}">{% render 'icon-caret' %}</button>
-          <div class="slider-counter caption">
-            <span class="slider-counter--current">1</span>
-              <span aria-hidden="true"> / </span>
-              <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
-            <span class="slider-counter--total">{{ section.blocks.size }}</span>
-          </div>
-          <button type="button" class="slider-button slider-button--next" name="next" aria-label="{{ 'general.slider.next_slide' | t }}">{% render 'icon-caret' %}</button>
-        </div>
+      {%- if section.settings.show_view_all and section.settings.swipe_on_mobile -%}
+        <a href="{{ routes.collections_url }}" class="link underlined-link large-up-hide">{{ 'sections.collection_list.view_all' | t }}</a>
       {%- endif -%}
-    </slider-component>
+    </div>
+  {% endunless %}
   
-    {%- if section.settings.show_view_all and section.blocks.size < collections.size -%}
-      <div class="center collection-list-view-all{% if section.settings.swipe_on_mobile %} small-hide medium-hide{% endif %}">
-        <a href="{{ routes.collections_url }}" class="button">{{ 'sections.collection_list.view_all' | t }}</a>
+  <slider-component class="slider-mobile-gutter">
+    <ul class="collection-list contains-card{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid grid--1-col{% if section.settings.columns_desktop == 1 %} grid--full-width{% else %} grid--{{ section.settings.columns_desktop }}-col-desktop{% endif %} grid--{{ section.blocks.size }}-col-tablet{% if section.settings.swipe_on_mobile %} slider slider--tablet grid--peek{% endif %} collection-list--{{ section.blocks.size }}-items"
+      id="Slider-{{ section.id }}"
+      role="list"
+    >
+      {%- liquid
+        assign columns = section.blocks.size
+        if columns > 3
+          assign columns = 3
+        endif
+      -%}
+
+      {%- if section.settings.sort_collections == 'title_asc' -%}
+        {% assign sort_collections = section.blocks | sort: "title" %}
+      {% elsif section.settings.sort_collections == 'title_desc' %}
+        {% assign sort_collections = section.blocks | sort: "title" | reverse %}
+      {% elsif section.settings.sort_collections == 'date_asc' %}
+        {% assign sort_collections = section.blocks | sort: "published_at" | reverse %}
+      {% elsif section.settings.sort_collections == 'date_desc' %}
+        {% assign sort_collections = section.blocks | sort: "published_at"  %}
+      {% elsif section.settings.sort_collections == 'product_count_asc' %}
+        {% assign sort_collections = section.blocks | sort: "products_count" %}
+      {% elsif section.settings.sort_collections == 'product_count_desc' %}
+        {% assign sort_collections = section.blocks | sort: "products_count" | reverse %}
+      {% elsif section.settings.sort_collections == 'manual' %}
+        {% assign sort_collections = section.blocks %}
+      {%- endif -%}
+
+      {%- for block in sort_collections -%}
+        <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="collection-list__item grid__item{% if section.settings.swipe_on_mobile %} slider__slide{% endif %}{% if block.settings.collection.featured_image == nil %} collection-list__item--no-media{% endif %}" {{ block.shopify_attributes }}>
+          {% render 'card-collection', card_collection: block.settings.collection , media_aspect_ratio: section.settings.image_ratio, columns: columns %}
+        </li>
+      {%- endfor -%}
+    </ul>
+  
+    {%- if section.settings.swipe_on_mobile -%}
+      <div class="slider-buttons no-js-hidden{% if section.blocks.size < 5 %} medium-hide{% endif %}{% if section.blocks.size < 2 %} small-hide{% endif %}">
+        <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'general.slider.previous_slide' | t }}">{% render 'icon-caret' %}</button>
+        <div class="slider-counter caption">
+          <span class="slider-counter--current">1</span>
+          <span aria-hidden="true"> / </span>
+          <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
+          <span class="slider-counter--total">{{ section.blocks.size }}</span>
+        </div>
+        <button type="button" class="slider-button slider-button--next" name="next" aria-label="{{ 'general.slider.next_slide' | t }}">{% render 'icon-caret' %}</button>
       </div>
     {%- endif -%}
-  </div>
+  </slider-component>
+  
+  {%- if section.settings.show_view_all and section.blocks.size < collections.size -%}
+    <div class="center collection-list-view-all{% if section.settings.swipe_on_mobile %} small-hide medium-hide{% endif %}">
+      <a href="{{ routes.collections_url }}" class="button">{{ 'sections.collection_list.view_all' | t }}</a>
+    </div>
+  {%- endif -%}
 </div>
 
 {% schema %}
@@ -75,34 +95,29 @@
   "name": "t:sections.collection-list.name",
   "tag": "section",
   "class": "section section-collection-list",
-  "max_blocks": 15,
+  "max_blocks": 16,
   "settings": [
     {
       "type": "text",
       "id": "title",
-      "default": "Collections",
+      "default": "Shop by category",
       "label": "t:sections.collection-list.settings.title.label"
     },
     {
       "type": "select",
-      "id": "image_ratio",
+      "id": "text_aligment",
       "options": [
         {
-          "value": "adapt",
-          "label": "t:sections.collection-list.settings.image_ratio.options__1.label"
+          "value": "left",
+          "label": "t:sections.collection-list.settings.text_aligment.options__1.label"
         },
         {
-          "value": "portrait",
-          "label": "t:sections.collection-list.settings.image_ratio.options__2.label"
-        },
-        {
-          "value": "square",
-          "label": "t:sections.collection-list.settings.image_ratio.options__3.label"
+          "value": "center",
+          "label": "t:sections.collection-list.settings.text_aligment.options__2.label"
         }
       ],
-      "default": "square",
-      "label": "t:sections.collection-list.settings.image_ratio.label",
-      "info": "t:sections.collection-list.settings.image_ratio.info"
+      "default": "left",
+      "label": "t:sections.collection-list.settings.text_aligment.label"
     },
     {
       "type": "range",
@@ -115,38 +130,83 @@
     },
     {
       "type": "select",
-      "id": "color_scheme",
+      "id": "sort_collections",
       "options": [
         {
-          "value": "accent-1",
-          "label": "t:sections.all.colors.accent_1.label"
+          "value": "title_asc",
+          "label": "t:sections.collection-list.settings.sort_collections.options__1.label"
         },
         {
-          "value": "accent-2",
-          "label": "t:sections.all.colors.accent_2.label"
+          "value": "title_desc",
+          "label": "t:sections.collection-list.settings.sort_collections.options__2.label"
         },
         {
-          "value": "background-1",
-          "label": "t:sections.all.colors.background_1.label"
+          "value": "date_asc",
+          "label": "t:sections.collection-list.settings.sort_collections.options__3.label"
         },
         {
-          "value": "background-2",
-          "label": "t:sections.all.colors.background_2.label"
+          "value": "date_desc",
+          "label": "t:sections.collection-list.settings.sort_collections.options__4.label"
         },
         {
-          "value": "inverse",
-          "label": "t:sections.all.colors.inverse.label"
+          "value": "product_count_asc",
+          "label": "t:sections.collection-list.settings.sort_collections.options__5.label"
+        },
+        {
+          "value": "product_count_desc",
+          "label": "t:sections.collection-list.settings.sort_collections.options__6.label"
+        },
+        {
+          "value": "manual",
+          "label": "t:sections.collection-list.settings.sort_collections.options__7.label"
         }
       ],
-      "default": "background-1",
-      "label": "t:sections.all.colors.label",
-      "info": "t:sections.all.colors.has_cards_info"
+      "default": "manual",
+      "label": "t:sections.collection-list.settings.sort_collections.label"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "options": [
+        {
+          "value": "square",
+          "label": "t:sections.collection-list.settings.image_ratio.options__3.label"
+        },
+        {
+          "value": "portrait",
+          "label": "t:sections.collection-list.settings.image_ratio.options__2.label"
+        },
+        {
+          "value": "adapt",
+          "label": "t:sections.collection-list.settings.image_ratio.options__1.label"
+        }
+      ],
+      "default": "square",
+      "label": "t:sections.collection-list.settings.image_ratio.label",
+      "info": "t:sections.collection-list.settings.image_ratio.info"
+
     },
     {
       "type": "checkbox",
       "id": "swipe_on_mobile",
       "default": false,
       "label": "t:sections.collection-list.settings.swipe_on_mobile.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.collection-list.settings.color_title"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "t:sections.collection-list.settings.bg_color",
+      "default": "#FFF"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:sections.collection-list.settings.text_color",
+      "default": "#262626"
     },
     {
       "type": "checkbox",
@@ -188,6 +248,12 @@
           "type": "collection",
           "id": "collection",
           "label": "t:sections.collection-list.blocks.featured_collection.settings.collection.label"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.collection-list.blocks.featured_collection.settings.image.label",
+          "info": "t:sections.collection-list.blocks.featured_collection.settings.image.info"
         }
       ]
     }
