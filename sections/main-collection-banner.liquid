@@ -6,21 +6,20 @@
       padding-bottom: calc({{ settings.media_shadow_vertical_offset | at_least: 0 }}px + 2rem);
     }
   }
+
+  #collection-hero-{{ section.id }} .collection-hero__inner::after {
+    opacity: {{ section.settings.image_overlay_opacity | divided_by: 100.0 }};
+    background: {{ section.settings.overlay_color }};
+  }
+
+  #collection-hero-{{ section.id }} .collection-hero__title,
+  #collection-hero-{{ section.id }} .collection-hero__description {
+    color: {{ section.settings.text_color }};
+  }
 {%- endstyle -%}
 
-<div class="collection-hero{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% endif %} color-{{ section.settings.color_scheme }} gradient">
-  <div class="collection-hero__inner page-width">
-    <div class="collection-hero__text-wrapper">
-      <h1 class="collection-hero__title">
-        <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
-        {{- collection.title | escape -}}
-      </h1>
-
-      {%- if section.settings.show_collection_description -%}
-        <div class="collection-hero__description rte">{{ collection.description }}</div>
-      {%- endif -%}
-    </div>
-
+<div id="collection-hero-{{ section.id }}" class="collection-hero{% if section.settings.show_collection_image and collection.image %} collection-hero--with-image{% else %} collection-hero--without-image{% endif %} collection-hero--{{ section.settings.layout }} color-{{ section.settings.color_scheme }} gradient">
+  <div class="collection-hero__inner">
     {%- if section.settings.show_collection_image and collection.image -%}
       <div class="collection-hero__image-container media gradient">
         <img
@@ -32,13 +31,23 @@
             {%- if collection.image.width >= 1500 -%}{{ collection.image | img_url: '1500x' }} 1500w,{%- endif -%}
             {{ collection.image | img_url: 'master' }} {{ collection.image.width }}w"
           src="{{ collection.image | img_url: '750x' }}"
-          sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc(50vw - 130px), calc(50vw - 55px)"
+          sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc(100vw - 130px), calc(100vw - 55px)"
           alt="{{ collection.title | escape }}"
           width="{{ collection.image.width }}"
           height="{{ collection.image.height }}"
         >
       </div>
     {%- endif -%}
+    <div class="collection-hero__text-wrapper page-width {{ section.settings.text_aligment }}">
+      <h1 class="collection-hero__title">
+        <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
+        {{- collection.title | escape -}}
+      </h1>
+
+      {%- if section.settings.show_collection_description -%}
+        <div class="collection-hero__description rte">{{ collection.description }}</div>
+      {%- endif -%}
+    </div>
   </div>
 </div>
 
@@ -55,7 +64,24 @@
       "type": "checkbox",
       "id": "show_collection_description",
       "default": true,
-      "label": "t:sections.main-collection-banner.settings.show_collection_description.label"
+      "label": "t:sections.main-collection-banner.settings.show_collection_description.label",
+      "info": "t:sections.main-collection-banner.settings.show_collection_description.info"
+    },
+    {
+      "type": "select",
+      "id": "text_aligment",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.main-collection-banner.settings.text_aligment.options__1.label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.main-collection-banner.settings.text_aligment.options__2.label"
+        }
+      ],
+      "default": "left",
+      "label": "t:sections.main-collection-banner.settings.text_aligment.label"
     },
     {
       "type": "checkbox",
@@ -63,6 +89,56 @@
       "default": false,
       "label": "t:sections.main-collection-banner.settings.show_collection_image.label",
       "info": "t:sections.main-collection-banner.settings.show_collection_image.info"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "options": [
+        {
+          "value": "fullsized",
+          "label": "t:sections.main-collection-banner.settings.layout.options__1.label"
+        },
+        {
+          "value": "boxed",
+          "label": "t:sections.main-collection-banner.settings.layout.options__2.label"
+        },
+        {
+          "value": "boxed-radius",
+          "label": "t:sections.main-collection-banner.settings.layout.options__3.label"
+        }
+      ],
+      "default": "fullsized",
+      "label": "t:sections.main-collection-banner.settings.layout.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.main-collection-banner.settings.color_h1.content"
+    },
+    {
+      "type": "paragraph",
+      "content": "t:sections.main-collection-banner.settings.color_paragraph.content"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:sections.main-collection-banner.settings.text_color.label",
+      "default": "#262626"
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "t:sections.main-collection-banner.settings.overlay_color.label",
+      "default": "#262626"
+    },
+    {
+      "type": "range",
+      "id": "image_overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "%",
+      "label": "t:sections.main-collection-banner.settings.image_overlay_opacity.label",
+      "default": 0
     },
     {
       "type": "select",

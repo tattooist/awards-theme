@@ -1,5 +1,106 @@
 {
-  "current": "Default",
+  "current": {
+    "colors_solid_button_labels": "#FFFFFF",
+    "colors_accent_1": "#262626",
+    "colors_accent_2": "#334FB4",
+    "colors_text": "#262626",
+    "colors_outline_button_labels": "#262626",
+    "colors_background_1": "#FFFFFF",
+    "colors_background_2": "#F3F3F3",
+    "type_header_font": "poppins_n4",
+    "type_body_font": "poppins_n4",
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "blocks": {
+          "announcement-bar-0": {
+            "type": "announcement",
+            "settings": {
+              "text": "Welcome to our store",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "announcement-bar-0"
+        ],
+        "settings": {
+          "position": "non-sticky",
+          "home_page_only": false,
+          "bg_color": "#262626",
+          "text_color": "#ffffff"
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "enable_sticky_header": true,
+          "show_line_separator": true,
+          "logo_width": 100,
+          "logo_width_mob": 100,
+          "menu": "main-menu",
+          "menu_mob": "main-menu",
+          "enable_transparent_header": false,
+          "transparent_text_color": "#262626",
+          "logo_position": "center",
+          "show_icons": true,
+          "section_background_color": "#ffffff",
+          "section_text_color": "#262626"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "footer-0": {
+            "type": "text",
+            "settings": {
+              "heading": "Heading",
+              "text": "<p>Share store details, promotions, or brand content with your customers.<\/p>",
+              "show_social": false
+            }
+          },
+          "footer-1": {
+            "type": "link_list",
+            "settings": {
+              "heading": "Quick links",
+              "menu": "footer"
+            }
+          },
+          "footer-2": {
+            "type": "link_list",
+            "settings": {
+              "heading": "Quick links",
+              "menu": "footer"
+            }
+          },
+          "footer-3": {
+            "type": "newsletter",
+            "settings": {
+              "heading": "Newsletter",
+              "text": "<p>Be the first to hear about new launches, exclusive offers and expert beauty tips.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "footer-0",
+          "footer-1",
+          "footer-2",
+          "footer-3"
+        ],
+        "settings": {
+          "payment_enable": true,
+          "enable_country_selector": true,
+          "enable_language_selector": true,
+          "bg_color": "#ffffff",
+          "text_color": "#262626",
+          "icons_color": "#262626"
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
+  },
   "presets": {
     "Default": {
       "sections": {
@@ -9,7 +110,6 @@
             "announcement-bar-0": {
               "type": "announcement",
               "settings": {
-                "color_scheme": "background-1"
               }
             }
           },
@@ -43,9 +143,8 @@
             }
           },
           "block_order": [
-            "footer-0",
-            "footer-1",
-            "footer-2"
+            "menu",
+            "text"
           ],
           "settings": {
             "show_social": true,
@@ -59,6 +158,34 @@
         },
         "main-password-footer": {
           "type": "main-password-footer"
+        }
+      }
+    },
+    "Craft": {
+      "colors_solid_button_labels": "#EFECEC",
+      "colors_accent_1": "#2A332F",
+      "colors_accent_2": "#476154",
+      "colors_text": "#1C1A1A",
+      "colors_outline_button_labels": "#7B8382",
+      "colors_background_1": "#EFECEC",
+      "colors_background_2": "#C1BCAE",
+      "type_header_font": "americana_n4",
+      "type_body_font": "quattrocento_sans_n4",
+      "sections": {
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "menu": {
+              "type": "link_list",
+              "settings": {
+              }
+            },
+            "text": {
+              "type": "text",
+              "settings": {
+              }
+            }
+          }
         }
       }
     }

@@ -27,13 +27,13 @@
   {% unless section.settings.title == blank %}
     <div class="title-wrapper-with-link{% if section.settings.swipe_on_mobile == true %} title-wrapper--self-padded-tablet-down{% else %} title-wrapper--self-padded-mobile{% endif %}{% if section.settings.title == blank %} title-wrapper-with-link--no-heading{% endif %} title-wrapper--no-top-margin">
       <h2 class="collection-list-title h1">{{ section.settings.title | escape }}</h2>
-  
+
       {%- if section.settings.show_view_all and section.settings.swipe_on_mobile -%}
         <a href="{{ routes.collections_url }}" class="link underlined-link large-up-hide">{{ 'sections.collection_list.view_all' | t }}</a>
       {%- endif -%}
     </div>
   {% endunless %}
-  
+
   <slider-component class="slider-mobile-gutter">
     <ul class="collection-list contains-card{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid grid--1-col{% if section.settings.columns_desktop == 1 %} grid--full-width{% else %} grid--{{ section.settings.columns_desktop }}-col-desktop{% endif %} grid--{{ section.blocks.size }}-col-tablet{% if section.settings.swipe_on_mobile %} slider slider--tablet grid--peek{% endif %} collection-list--{{ section.blocks.size }}-items"
       id="Slider-{{ section.id }}"
@@ -68,7 +68,7 @@
         </li>
       {%- endfor -%}
     </ul>
-  
+
     {%- if section.settings.swipe_on_mobile -%}
       <div class="slider-buttons no-js-hidden{% if section.blocks.size < 5 %} medium-hide{% endif %}{% if section.blocks.size < 2 %} small-hide{% endif %}">
         <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'general.slider.previous_slide' | t }}">{% render 'icon-caret' %}</button>
@@ -82,7 +82,7 @@
       </div>
     {%- endif -%}
   </slider-component>
-  
+
   {%- if section.settings.show_view_all and section.blocks.size < collections.size -%}
     <div class="center collection-list-view-all{% if section.settings.swipe_on_mobile %} small-hide medium-hide{% endif %}">
       <a href="{{ routes.collections_url }}" class="button">{{ 'sections.collection_list.view_all' | t }}</a>
