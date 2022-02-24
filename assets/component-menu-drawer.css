@@ -28,15 +28,24 @@ menu-drawer > details[open] > summary::before {
     visibility var(--duration-default) ease;
 }
 
+.menu-drawer-container.menu-opening .header__icon {
+  position: absolute;
+  z-index: 5;
+  top: 1.6rem;
+  right: 1.6rem;
+  margin: 0;
+}
+
 .menu-drawer {
   position: absolute;
   transform: translateX(-100%);
   visibility: hidden;
   z-index: 3;
   left: 0;
-  top: 100%;
-  width: calc(100vw - 4rem);
+  top: 0;
+  width: calc(100vw);
   padding: 0;
+  border-left: 0;
   border-width: 0 var(--drawer-border-width) 0 0;
   background-color: rgb(var(--color-background));
   overflow-x: hidden;
@@ -51,17 +60,16 @@ menu-drawer > details[open] > summary::before {
 }
 
 .js .menu-drawer {
-  height: calc(100vh - 100%);
-  height: calc(
-    var(--viewport-height, 100vh) - (var(--header-bottom-position, 100%))
-  );
+  height: 100vh;
 }
 
+/*
 .js details[open] > .menu-drawer,
 .js details[open] > .menu-drawer__submenu {
   transition: transform var(--duration-default) ease,
     visibility var(--duration-default) ease;
 }
+ */
 
 .no-js details[open] > .menu-drawer,
 .js details[open].menu-opening > .menu-drawer,
@@ -95,6 +103,7 @@ details[open].menu-opening > .menu-drawer__submenu {
 
 .menu-drawer__navigation {
   padding: 5.6rem 0;
+  position: relative;
 }
 
 .menu-drawer__inner-submenu {
@@ -115,14 +124,30 @@ details[open].menu-opening > .menu-drawer__submenu {
   border-top: 0.1rem solid rgba(var(--color-foreground), 0.04);
 }
 
-.js .menu-drawer__menu li {
-  margin-bottom: 0.2rem;
+.menu-drawer__menu-title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  display: flex;
+  align-items: center;
+  color:var(--color-base-header-text);
+  padding: 2.4rem 1.6rem 0.4rem;
 }
 
 .menu-drawer__menu-item {
-  padding: 1.1rem 3.2rem;
+  padding: 1.8rem 1.6rem;
   text-decoration: none;
-  font-size: 1.8rem;
+  font-weight: normal;
+  font-size: 1.6rem;
+  letter-spacing: 0.02em;
+  color:var(--color-base-header-text);
+  border-bottom: 1px solid rgba(38, 38, 38, 0.1);
+}
+
+.menu-drawer__inner-submenu .menu-drawer__menu-item {
+  font-size: 1.4rem;
+  border-bottom: none;
+  padding: 1.3rem 1.6rem;
 }
 
 .no-js .menu-drawer__menu-item {
@@ -138,7 +163,7 @@ details[open].menu-opening > .menu-drawer__submenu {
 }
 
 .menu-drawer summary.menu-drawer__menu-item {
-  padding-right: 5.2rem;
+  padding-right: 1.6rem;
 }
 
 .no-js .menu-drawer__menu-item .icon-caret {
@@ -151,11 +176,6 @@ details[open].menu-opening > .menu-drawer__submenu {
 .menu-drawer__menu-item:hover,
 .menu-drawer__close-button:hover {
   color: rgb(var(--color-foreground));
-  background-color: rgba(var(--color-foreground), 0.04);
-}
-
-.menu-drawer__menu-item--active:hover {
-  background-color: rgba(var(--color-foreground), 0.08);
 }
 
 .js .menu-drawer__menu-item .icon-caret,
@@ -165,7 +185,7 @@ details[open].menu-opening > .menu-drawer__submenu {
 
 .menu-drawer__menu-item > .icon-arrow {
   position: absolute;
-  right: 2.5rem;
+  right: 1.6rem;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -177,7 +197,6 @@ details[open].menu-opening > .menu-drawer__submenu {
   bottom: 0;
   left: 0;
   background-color: rgb(var(--color-background));
-  border-left: 0.1rem solid rgba(var(--color-foreground), 0.2);
   z-index: 1;
   transform: translateX(100%);
   visibility: hidden;
@@ -188,16 +207,19 @@ details[open].menu-opening > .menu-drawer__submenu {
 }
 
 .menu-drawer__close-button {
-  margin-top: 1.5rem;
-  padding: 1.2rem 2.6rem;
+  margin-top: 0;
+  padding: 1.6rem 1.6rem;
   text-decoration: none;
   display: flex;
   align-items: center;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   width: 100%;
   background-color: transparent;
   font-family: var(--font-body-family);
   font-style: var(--font-body-style);
+  font-weight: normal;
+  line-height: 2.4rem;
+  letter-spacing: 0.02em;
 }
 
 .no-js .menu-drawer__close-button {
@@ -205,23 +227,32 @@ details[open].menu-opening > .menu-drawer__submenu {
 }
 
 .menu-drawer__close-button .icon-arrow {
-  transform: rotate(180deg);
-  margin-right: 1rem;
+  margin-right: .8rem;
 }
 
 .menu-drawer__utility-links {
-  padding: 2rem;
-  background-color: rgba(var(--color-foreground), 0.03);
+  padding: 0.8rem 1.6rem;
+  background-color: #FFFFFF;
+  box-shadow: inset 0px 1px 0px rgb(38 38 38 / 10%);
+}
+
+.menu-drawer__utility-links .list-social__link {
+  color: var(--color-base-header-text);
+  opacity: 0.5;
 }
 
 .menu-drawer__account {
   display: inline-flex;
   align-items: center;
   text-decoration: none;
-  padding: 1.2rem;
-  margin-left: -1.2rem;
+  padding: .8rem;
+  margin-left: -.8rem;
   font-size: 1.4rem;
-  color: rgb(var(--color-foreground));
+  font-weight: normal;
+  line-height: 2rem;
+  letter-spacing: 0.02em;
+  color: var(--color-base-header-text);
+  opacity: 0.5;
 }
 
 .menu-drawer__account .icon-account {
@@ -237,7 +268,8 @@ details[open].menu-opening > .menu-drawer__submenu {
 .menu-drawer .list-social {
   justify-content: flex-start;
   margin-left: -1.25rem;
-  margin-top: 2rem;
+  margin-top: 0.8rem;
+  margin-bottom: -.5rem;
 }
 
 .menu-drawer .list-social:empty {

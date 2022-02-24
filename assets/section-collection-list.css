@@ -1,3 +1,40 @@
+.collection-list-section {
+  background: var(--color-collection-list-bg);
+}
+
+.collection-list__title {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  letter-spacing: 0.02em;
+  margin-top: .8rem;
+}
+
+.collection-list__title--left {
+  text-align: left;
+}
+
+.collection-list__title--center {
+  text-align: center;
+}
+
+@media screen and (max-width: 749px) {
+  .collection-list-wrapper {
+    padding-top: 3.2rem;
+    padding-bottom: 3.2rem;
+  }
+  .collage-section + .collection-list-section .no-heading.no-mobile-link {
+    margin-top: -7rem;
+  }
+  .collage-section + .collection-list-section .no-heading:not(.no-mobile-link) {
+    margin-top: -1rem;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .collage-section + .collection-list-section .no-heading {
+    margin-top: calc(-4rem - var(--page-width-margin));
+  }
+}
 .collection-list {
   margin-top: 0;
   margin-bottom: 0;
@@ -8,6 +45,11 @@
 }
 
 @media screen and (max-width: 749px) {
+  .collection-list-wrapper.page-width {
+    padding: 0;
+    padding-top: 3.2rem;
+    padding-bottom: 1.6rem;
+  }
   .collection-list:not(.slider) {
     padding-left: 0;
     padding-right: 0;
@@ -18,9 +60,15 @@
     padding-right: 0;
   }
 
-  .section-collection-list .collection-list:not(.slider) {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+  .collection-list-section .collection-list:not(.slider) {
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .collection-list-wrapper.no-heading {
+    margin-top: calc(6rem + var(--page-width-margin));
   }
 }
 
@@ -32,6 +80,10 @@
 @media screen and (max-width: 749px) {
   .collection-list .collection-list__item {
     width: calc(100% - 3rem);
+  }
+
+  .collection-list__item.grid__item {
+    padding-bottom: 1.6rem;
   }
 
   .slider.collection-list--1-items {
@@ -51,6 +103,10 @@
 @media screen and (min-width: 750px) {
   .collection-list__item a:hover {
     box-shadow: none;
+  }
+
+  .collection-list.grid--4-col-desktop .grid__item {
+    max-width: 25%;
   }
 }
 

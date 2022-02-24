@@ -7,6 +7,16 @@
 }
 
 @media screen and (min-width: 750px) {
+  .image-with-text--boxed-radius.image-with-text--with-bg .image-with-text__grid {
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .image-with-text--boxed-radius:not(.image-with-text--with-bg) .image-with-text__media {
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
   .image-with-text__grid--reverse {
     flex-direction: row-reverse;
   }
@@ -21,6 +31,10 @@
   height: 19.4rem;
 }
 
+.image-with-text__media--medium {
+  height: 33.5rem;
+}
+
 .image-with-text__media--large {
   height: 43.5rem;
 }
@@ -30,8 +44,23 @@
     height: 31.4rem;
   }
 
+  .image-with-text__media--medium {
+    height: 45.4rem;
+  }
+
   .image-with-text__media--large {
     height: 69.5rem;
+  }
+
+  .image-with-text--boxed.image-with-text--fit-screen,
+  .image-with-text--boxed .image-with-text__media--fit-screen,
+  .image-with-text--boxed-radius.image-with-text--fit-screen,
+  .image-with-text--boxed-radius .image-with-text__media--fit-screen {
+    height: calc(100vh - 160px);
+  }
+
+  .image-with-text--fit-screen, .image-with-text__media--fit-screen {
+    height: 100vh;
   }
 }
 
@@ -169,6 +198,10 @@
 }
 
 @media screen and (min-width: 750px) {
+  .image-with-text__content {
+    max-width: calc(var(--page-width) / 2);
+  }
+
   .image-with-text__grid--reverse .image-with-text__content {
     margin-left: auto;
   }
@@ -264,6 +297,37 @@
   }
 }
 
+@media screen and (max-width: 749px) {
+  .image-with-text__media--fit-screen {
+    height: 50vh;
+  }
+
+  .image-with-text__content-mob--flex-start {
+    justify-content: flex-start;
+  }
+
+  .image-with-text__content-mob--center {
+    justify-content: center;
+  }
+
+  .image-with-text__content-mob--flex-end {
+    justify-content: flex-end;
+  }
+
+  .image-with-text__content-mob--align-left {
+    text-align: left;
+  }
+
+  .image-with-text__content-mob--align-left .image-with-text__buttons {
+    justify-content: flex-start;
+  }
+
+  .image-with-text__content-mob--align-center {
+    text-align: center;
+    align-items: center;
+  }
+}
+
 .image-with-text:not(.collapse-corners, .image-with-text--overlap) .image-with-text__media-item {
   z-index: 2;
 }
@@ -278,7 +342,7 @@
 
 @media screen and (min-width: 990px) {
   .image-with-text__content {
-    padding: 6rem 7rem 7rem;
+    padding: 8rem;
   }
 }
 
@@ -305,19 +369,102 @@
   margin-top: 2rem;
 }
 
-.image-with-text__content .image-with-text__text + .button {
+.image-with-text__content .image-with-text__text + .buttons {
   margin-top: 3rem;
 }
 
 .image-with-text__heading {
   word-break: break-word;
   margin-bottom: 0;
+  font-weight: 600;
+  font-size: 4.8rem;
+  line-height: 6.4rem;
+  letter-spacing: -0.01em;
+}
+
+.image-with-text__text {
+  font-weight: normal;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  letter-spacing: 0.02em;
+  color: #262626;
+  margin-top: 2.4rem;
 }
 
 .image-with-text__text p {
   word-break: break-word;
   margin-top: 0;
   margin-bottom: 1rem;
+}
+
+.image-with-text__buttons {
+  display: flex;
+  align-items: baseline;
+  gap: 3.2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 4rem;
+}
+
+@media screen and (max-width: 749px) {
+  .image-with-text .grid:not(.image-with-text__grid--text-below) {
+    flex-direction: column-reverse;
+  }
+
+  .image-with-text__content {
+    padding:1.6rem 1.6rem 2.4rem;
+  }
+
+  .image-with-text--fullsized .image-with-text__grid:not(.image-with-text__grid--text-below) .grid__item:nth-child(2) .image-with-text__content {
+    padding-top: 4rem;
+  }
+
+  .image-with-text--boxed,
+  .image-with-text--boxed-radius {
+    padding: 2.4rem 1.6rem;
+  }
+
+  .image-with-text--boxed-radius.image-with-text--with-bg .image-with-text__grid,
+  .image-with-text--boxed-radius:not(.image-with-text--with-bg) .image-with-text__media {
+    border-radius: 16px;
+    overflow:hidden;
+  }
+
+  .image-with-text--boxed:not(.image-with-text--with-bg) .image-with-text__content,
+  .image-with-text--boxed-radius:not(.image-with-text--with-bg) .image-with-text__content {
+    padding-left:0;
+    padding-right:0;
+  }
+
+  .image-with-text--boxed.image-with-text--with-bg .image-with-text__content,
+  .image-with-text--boxed-radius.image-with-text--with-bg .image-with-text__content {
+    padding-left:1.6rem;
+    padding-right:1.6rem;
+  }
+
+  .image-with-text__heading {
+    font-size: 3.2rem;
+    line-height: 4rem;
+  }
+
+  .image-with-text__text {
+    font-size: 1.4rem;
+    line-height: 2rem;
+    margin-top: 1.6rem;
+  }
+
+  .image-with-text__buttons {
+    margin-top: 2.4rem;
+    gap: 1.6rem;
+  }
+
+  .image-with-text__buttons .button {
+    width: 100%;
+  }
+
+  .image-with-text__buttons .button + .image-with-text__buttons .button {
+    margin-top: 1.6rem;
+  }
 }
 
 /* check for flexbox gap in older Safari versions */

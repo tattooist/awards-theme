@@ -25,7 +25,7 @@
     {% endif %}
     {% unless section.settings.title == blank %}
       <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin{% if section.settings.title == blank %} title-wrapper-with-link--no-heading{% endif %}">
-        <h2 class="title">
+        <h2 class="title h1">
           {{ section.settings.title | escape }}
         </h2>
         {%- if section.settings.button_label != blank and section.settings.swipe_on_mobile -%}
