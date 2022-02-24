@@ -20,7 +20,7 @@
 
 <div class="isolate{% unless section.settings.full_width %} page-width{% endunless %}">
   <div class="rich-text content-container color-{{ section.settings.color_scheme }} gradient{% if section.settings.full_width %} rich-text--full-width content-container--full-width{% endif %} section-{{ section.id }}-padding rich-text--{{ section.settings.text_aligment }}">
-    <div class="rich-text__blocks">
+    <div class="rich-text__blocks{% if section.settings.full_width %} page-width{% endif %}">
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when 'subheading' -%}
@@ -107,7 +107,7 @@
       "step": 4,
       "unit": "px",
       "label": "t:sections.all.padding.padding_top",
-      "default": 40
+      "default": 32
     },
     {
       "type": "range",
@@ -117,7 +117,7 @@
       "step": 4,
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
-      "default": 52
+      "default": 32
     }
   ],
   "blocks": [
