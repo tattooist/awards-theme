@@ -6,18 +6,26 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Talk about your brand"
+            "heading": "Talk about your brand",
+            "heading_size": "medium"
           }
         },
         "text": {
-          "type": "text"
+          "type": "text",
+          "settings": {
+            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text_style": "body"
+          }
         },
         "button": {
           "type": "buttons",
           "settings": {
             "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_label_2": ""
+            "button_link_1": "shopify:\/\/collections\/all",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
           }
         }
       },
@@ -27,32 +35,103 @@
         "button"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
+        "layout": "fullsized",
+        "section_height": "fit-screen",
         "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
         "show_text_box": false,
+        "mobile_text_box_position": "center__center",
+        "mobile_content_alignment": "center",
+        "show_text_below": false,
         "stack_images_on_mobile": false,
-        "show_text_below": false
+        "bg_color": "#FFFFFF",
+        "overlay_color": "#262626",
+        "image_overlay_opacity": 40,
+        "color_scheme": "background-1"
       }
     },
     "rich_text": {
       "type": "rich-text",
       "blocks": {
         "heading": {
-          "type": "heading"
+          "type": "heading",
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h1"
+          }
         },
         "text": {
-          "type": "text"
+          "type": "text",
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+          }
         },
         "button": {
-          "type": "button"
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
+          }
         }
       },
       "block_order": [
         "heading",
         "text",
         "button"
-      ]
+      ],
+      "settings": {
+        "color_scheme": "background-2",
+        "text_aligment": "center",
+        "full_width": false,
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    },
+    "16457737116de3d4b1": {
+      "type": "rich-text",
+      "blocks": {
+        "16457737114999b286-0": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Subheading"
+          }
+        },
+        "16457737114999b286-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h1"
+          }
+        },
+        "16457737114999b286-2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+          }
+        },
+        "16457737114999b286-3": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "16457737114999b286-0",
+        "16457737114999b286-1",
+        "16457737114999b286-2",
+        "16457737114999b286-3"
+      ],
+      "settings": {
+        "color_scheme": "background-2",
+        "text_aligment": "center",
+        "full_width": false,
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
     },
     "featured_collection": {
       "type": "featured-collection",
@@ -60,47 +139,94 @@
         "title": "Featured products",
         "collection": "all",
         "products_to_show": 8,
+        "columns_desktop": 4,
+        "color_scheme": "background-1",
         "show_view_all": false,
+        "swipe_on_mobile": false,
+        "image_ratio": "adapt",
         "show_secondary_image": true,
-        "padding_top": 28
+        "show_vendor": false,
+        "show_rating": false,
+        "padding_top": 28,
+        "padding_bottom": 32
       }
     },
     "collage": {
       "type": "collage",
       "blocks": {
         "collection-0": {
-          "type": "collection"
+          "type": "collection",
+          "settings": {
+            "collection": ""
+          }
         },
         "product": {
-          "type": "product"
+          "type": "product",
+          "settings": {
+            "product": "",
+            "second_image": false
+          }
         },
         "collection-1": {
-          "type": "collection"
+          "type": "collection",
+          "settings": {
+            "collection": ""
+          }
         }
       },
       "block_order": [
         "collection-0",
         "product",
         "collection-1"
-      ]
+      ],
+      "settings": {
+        "heading": "Multimedia collage",
+        "desktop_layout": "left",
+        "mobile_layout": "collage",
+        "color_scheme": "background-1",
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
     },
     "video": {
       "type": "video",
       "settings": {
-        "heading": ""
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "description": "",
+        "layout": "full-width",
+        "padding_top": 32,
+        "padding_bottom": 32
       }
     },
     "multicolumn": {
       "type": "multicolumn",
       "blocks": {
         "column1": {
-          "type": "column"
+          "type": "column",
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
         },
         "column2": {
-          "type": "column"
+          "type": "column",
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
         },
         "column3": {
-          "type": "column"
+          "type": "column",
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
         }
       },
       "block_order": [
@@ -109,17 +235,28 @@
         "column3"
       ],
       "settings": {
+        "subtitle": "Subheading",
         "title": "",
+        "text_aligment": "left",
         "image_width": "third",
+        "image_ratio": "adapt",
+        "columns_desktop": 4,
+        "column_size": "medium",
         "column_alignment": "center",
         "background_style": "none",
-        "button_label": ""
+        "button_label": "",
+        "button_link": "",
+        "swipe_on_mobile": false,
+        "color_scheme": "background-1",
+        "padding_top": 32,
+        "padding_bottom": 32
       }
     }
   },
   "order": [
     "image_banner",
     "rich_text",
+    "16457737116de3d4b1",
     "featured_collection",
     "collage",
     "video",
