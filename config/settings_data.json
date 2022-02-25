@@ -11,6 +11,7 @@
     "heading_scale": 130,
     "type_body_font": "poppins_n4",
     "body_scale": 110,
+    "page_width": 1600,
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
