@@ -17,7 +17,7 @@
             "type": "announcement",
             "settings": {
               "text": "Welcome to our store",
-              "link": ""
+              "link": "shopify:\/\/products\/big-shark-black"
             }
           }
         },
@@ -45,7 +45,8 @@
           "logo_position": "center",
           "show_icons": true,
           "section_background_color": "#ffffff",
-          "section_text_color": "#262626"
+          "section_text_color": "#262626",
+          "margin_bottom": 0
         }
       },
       "footer": {
@@ -93,7 +94,10 @@
           "enable_language_selector": true,
           "bg_color": "#ffffff",
           "text_color": "#262626",
-          "icons_color": "#262626"
+          "icons_color": "#262626",
+          "margin_top": 0,
+          "padding_top": 32,
+          "padding_bottom": 32
         }
       }
     },
@@ -115,7 +119,9 @@
           },
           "block_order": [
             "announcement-bar-0"
-          ]
+          ],
+          "settings": {
+          }
         },
         "header": {
           "type": "header",
@@ -127,7 +133,9 @@
           "type": "footer",
           "blocks": {
             "footer-0": {
-              "type": "link_list"
+              "type": "link_list",
+              "settings": {
+              }
             },
             "footer-1": {
               "type": "link_list",
@@ -142,22 +150,21 @@
               }
             }
           },
-          "block_order": [
-            "menu",
-            "text"
-          ],
           "settings": {
-            "show_social": true,
             "enable_country_selector": false,
             "enable_language_selector": false,
             "margin_top": 48
           }
         },
         "main-password-header": {
-          "type": "main-password-header"
+          "type": "main-password-header",
+          "settings": {
+          }
         },
         "main-password-footer": {
-          "type": "main-password-footer"
+          "type": "main-password-footer",
+          "settings": {
+          }
         }
       }
     },
@@ -185,6 +192,8 @@
               "settings": {
               }
             }
+          },
+          "settings": {
           }
         }
       }
