@@ -8,9 +8,7 @@
     "colors_background_1": "#FFFFFF",
     "colors_background_2": "#F3F3F3",
     "type_header_font": "poppins_n4",
-    "heading_scale": 130,
     "type_body_font": "poppins_n4",
-    "body_scale": 110,
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
@@ -47,8 +45,7 @@
           "logo_position": "center",
           "show_icons": true,
           "section_background_color": "#ffffff",
-          "section_text_color": "#262626",
-          "margin_bottom": 0
+          "section_text_color": "#262626"
         }
       },
       "footer": {
@@ -96,10 +93,7 @@
           "enable_language_selector": true,
           "bg_color": "#ffffff",
           "text_color": "#262626",
-          "icons_color": "#262626",
-          "margin_top": 0,
-          "padding_top": 32,
-          "padding_bottom": 32
+          "icons_color": "#262626"
         }
       }
     },
@@ -121,9 +115,7 @@
           },
           "block_order": [
             "announcement-bar-0"
-          ],
-          "settings": {
-          }
+          ]
         },
         "header": {
           "type": "header",
@@ -135,9 +127,7 @@
           "type": "footer",
           "blocks": {
             "footer-0": {
-              "type": "link_list",
-              "settings": {
-              }
+              "type": "link_list"
             },
             "footer-1": {
               "type": "link_list",
@@ -152,21 +142,22 @@
               }
             }
           },
+          "block_order": [
+            "menu",
+            "text"
+          ],
           "settings": {
+            "show_social": true,
             "enable_country_selector": false,
             "enable_language_selector": false,
             "margin_top": 48
           }
         },
         "main-password-header": {
-          "type": "main-password-header",
-          "settings": {
-          }
+          "type": "main-password-header"
         },
         "main-password-footer": {
-          "type": "main-password-footer",
-          "settings": {
-          }
+          "type": "main-password-footer"
         }
       }
     },
@@ -194,8 +185,6 @@
               "settings": {
               }
             }
-          },
-          "settings": {
           }
         }
       }
