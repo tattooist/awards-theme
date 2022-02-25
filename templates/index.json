@@ -10,15 +10,13 @@
           }
         },
         "text": {
-          "type": "text",
-          "settings": {
-          }
+          "type": "text"
         },
         "button": {
           "type": "buttons",
           "settings": {
             "button_label_1": "Shop all",
-            "button_link_1": "shopify:\/\/collections\/all",
+            "button_link_1": "shopify://collections/all",
             "button_label_2": ""
           }
         }
@@ -29,39 +27,32 @@
         "button"
       ],
       "settings": {
+        "image_overlay_opacity": 40,
+        "image_height": "large",
         "desktop_content_position": "middle-center",
         "show_text_box": false,
-        "show_text_below": false,
         "stack_images_on_mobile": false,
-        "image_overlay_opacity": 40
+        "show_text_below": false
       }
     },
     "rich_text": {
       "type": "rich-text",
       "blocks": {
         "heading": {
-          "type": "heading",
-          "settings": {
-          }
+          "type": "heading"
         },
         "text": {
-          "type": "text",
-          "settings": {
-          }
+          "type": "text"
         },
         "button": {
-          "type": "button",
-          "settings": {
-          }
+          "type": "button"
         }
       },
       "block_order": [
         "heading",
         "text",
         "button"
-      ],
-      "settings": {
-      }
+      ]
     },
     "featured_collection": {
       "type": "featured-collection",
@@ -78,51 +69,38 @@
       "type": "collage",
       "blocks": {
         "collection-0": {
-          "type": "collection",
-          "settings": {
-          }
+          "type": "collection"
         },
         "product": {
-          "type": "product",
-          "settings": {
-          }
+          "type": "product"
         },
         "collection-1": {
-          "type": "collection",
-          "settings": {
-          }
+          "type": "collection"
         }
       },
       "block_order": [
         "collection-0",
         "product",
         "collection-1"
-      ],
-      "settings": {
-      }
+      ]
     },
     "video": {
       "type": "video",
       "settings": {
+        "heading": ""
       }
     },
     "multicolumn": {
       "type": "multicolumn",
       "blocks": {
         "column1": {
-          "type": "column",
-          "settings": {
-          }
+          "type": "column"
         },
         "column2": {
-          "type": "column",
-          "settings": {
-          }
+          "type": "column"
         },
         "column3": {
-          "type": "column",
-          "settings": {
-          }
+          "type": "column"
         }
       },
       "block_order": [
