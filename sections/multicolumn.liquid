@@ -24,17 +24,14 @@
       </h2>
     {% endif %}
     {% unless section.settings.title == blank %}
-      <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin{% if section.settings.title == blank %} title-wrapper-with-link--no-heading{% endif %}">
+      <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin{% if section.settings.title == blank %} title-wrapper-with-link--no-heading{% endif %} {{ section.settings.text_aligment }}">
         <h2 class="title h1">
           {{ section.settings.title | escape }}
         </h2>
-        {%- if section.settings.button_label != blank and section.settings.swipe_on_mobile -%}
-          <a href="{{ section.settings.button_link }}" class="link underlined-link large-up-hide">{{ section.settings.button_label | escape }}</a>
-        {%- endif -%}
       </div>
     {% endunless %}
     <slider-component class="slider-mobile-gutter">
-      <ul class="multicolumn-list contains-content-container grid grid--1-col{% if section.settings.columns_desktop == 1 %} grid--full-width{% else %} grid--{{ section.settings.columns_desktop }}-col-desktop{% endif %}{% if section.blocks.size > 3 and section.settings.column_size != 'large' %} grid--2-col-tablet grid--4-col-desktop{% elsif section.blocks.size > 3 and section.settings.column_size == 'large' %} grid--2-col-tablet{% else %} grid--3-col-tablet{% endif %}{% if section.settings.swipe_on_mobile and section.blocks.size > 1 %} slider slider--mobile grid--peek{% endif %}"
+      <ul class="multicolumn-list contains-content-container grid grid--1-col{% if section.settings.columns_desktop == 1 %} grid--full-width{% else %} grid--{{ section.settings.columns_desktop }}-col-desktop{% endif %}{% if section.settings.swipe_on_mobile and section.blocks.size > 1 %} slider slider--mobile grid--peek{% endif %}"
         id="Slider-{{ section.id }}"
         role="list"
       >
@@ -205,24 +202,8 @@
       "min": 1,
       "max": 6,
       "step": 1,
-      "default": 4,
+      "default": 3,
       "label": "t:sections.multicolumn.settings.columns_desktop.label"
-    },
-    {
-      "type": "select",
-      "id": "column_size",
-      "options": [
-        {
-          "value": "medium",
-          "label": "t:sections.multicolumn.settings.column_size.options__2.label"
-        },
-        {
-          "value": "large",
-          "label": "t:sections.multicolumn.settings.column_size.options__3.label"
-        }
-      ],
-      "default": "medium",
-      "label": "t:sections.multicolumn.settings.column_size.label"
     },
     {
       "type": "select",

@@ -109,9 +109,7 @@
         "column3"
       ],
       "settings": {
-        "title": "",
         "image_width": "third",
-        "column_alignment": "center",
         "background_style": "none",
         "button_label": ""
       }

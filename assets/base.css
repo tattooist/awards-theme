@@ -1304,14 +1304,11 @@ button.shopify-payment-button__button--unbranded {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  border: 0;
-  padding: 0 3rem;
   cursor: pointer;
   font: inherit;
   padding: 1.2rem 4rem 1.1rem;
   text-decoration: none;
   border: 0.1rem solid rgba(var(--color-button));
-  border-radius: 0;
   background-color: rgba(var(--color-button), var(--alpha-button-background));
   color: rgb(var(--color-button-text));
   min-width: 12rem;
@@ -1319,7 +1316,6 @@ button.shopify-payment-button__button--unbranded {
   transition: all var(--duration-short) ease;
   -webkit-appearance: none;
   appearance: none;
-  background-color: rgba(var(--color-button), var(--alpha-button-background));
 }
 
 .button:before,
