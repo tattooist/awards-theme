@@ -33,7 +33,7 @@
         "button"
       ],
       "settings": {
-        "layout": "fullsized",
+        "layout": "boxed",
         "section_height": "fit-screen",
         "image": "shopify:\/\/shop_images\/Pic.jpg",
         "desktop_text_box_position": "center__center",
