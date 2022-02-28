@@ -2579,7 +2579,7 @@ details[open] .modal-overlay {
 details[open] .modal-overlay::after {
   position: absolute;
   content: '';
-  background-color: var(--color-header-section-bg);
+  background-color: rgb(var(--color-foreground), 0.5);
   top: 100%;
   left: 0;
   right: 0;
@@ -2637,10 +2637,6 @@ details[open] .modal-overlay::after {
 }
 
 @media screen and (min-width: 990px) {
-  .search-modal__form {
-    max-width: 47.8rem;
-  }
-
   .search-modal__close-button {
     position: initial;
     margin-left: 0.5rem;

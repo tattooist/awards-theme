@@ -1,4 +1,5 @@
-{% if request.page_type == 'index' %}
+{% unless section.settings.home_page_only and request.page_type != 'index' %}
+
   {% style %}
     :root {
     --color-announcement-bar-text: {{ section.settings.text_color }};
@@ -33,7 +34,7 @@
       document.getElementById("shopify-section-announcement-bar").classList.add("announcement-bar-sticky--{{ section.settings.position }}");
     </script>
   {%- endif -%}
-{%- endif -%}
+{%- endunless -%}
 
 {% schema %}
 {
