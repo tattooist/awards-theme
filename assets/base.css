@@ -2524,17 +2524,6 @@ input[type='checkbox'] {
   }
 }
 
-.header__icon--menu[aria-expanded="true"]::before {
-  content: "";
-  top: 100%;
-  left: 0;
-  height: calc(var(--viewport-height, 100vh) - (var(--header-bottom-position, 100%)));
-  width: 100%;
-  display: block;
-  position: absolute;
-  background: rgba(var(--color-foreground), 0.5);
-}
-
 /* Search */
 menu-drawer + .header__search {
   display: none;
@@ -2590,7 +2579,7 @@ details[open] .modal-overlay {
 details[open] .modal-overlay::after {
   position: absolute;
   content: '';
-  background-color: rgb(var(--color-foreground), 0.5);
+  background-color: var(--color-header-section-bg);
   top: 100%;
   left: 0;
   right: 0;
