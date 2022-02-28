@@ -6,7 +6,7 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Meet Riviera"
+            "heading": "Meet Riviera Meet Riviera"
           }
         },
         "2b3133c8-2d96-4850-b190-f8d466290f0f": {
@@ -21,9 +21,9 @@
             "button_label_1": "Shop now",
             "button_link_1": "shopify:\/\/products\/riviera-black",
             "button_style_secondary_1": false,
-            "button_label_2": "",
+            "button_label_2": "jhgjhg",
             "button_link_2": "",
-            "button_style_secondary_2": false
+            "button_style_secondary_2": true
           }
         }
       },
@@ -38,7 +38,7 @@
         "image": "shopify:\/\/shop_images\/Pic.jpg",
         "desktop_text_box_position": "center__center",
         "mobile_text_box_position": "flex-start__flex-start",
-        "show_text_below": true,
+        "show_text_below": false,
         "bg_color": "#ffffff",
         "overlay_color": "#262626",
         "image_overlay_opacity": 0
