@@ -8,14 +8,6 @@
   color: rgba(var(--color-newsletter-text));
 }
 
-
-
-.newsletter--narrow .newsletter__wrapper,
-.newsletter:not(.newsletter--narrow) .newsletter__wrapper.color-background-1 {
-  margin-top: 5rem;
-  margin-bottom: 5rem;
-}
-
 @media screen and (min-width: 750px) {
   .newsletter-text__subheading {
     font-size: 1.8rem;
@@ -32,21 +24,6 @@
     line-height: 1.6rem;
     text-transform: uppercase;
     font-weight: normal;
-  }
-}
-
-.newsletter__wrapper {
-  padding-top: 6.4rem;
-  padding-bottom: 6.4rem;
-}
-
-
-
-@media screen and (min-width: 750px) {
-  .newsletter--narrow .newsletter__wrapper,
-  .newsletter:not(.newsletter--narrow) .newsletter__wrapper.color-background-1 {
-    margin-top: calc(5rem + var(--page-width-margin));
-    margin-bottom: calc(5rem + var(--page-width-margin));
   }
 }
 
