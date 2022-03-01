@@ -23,7 +23,17 @@
   }
 {%- endstyle -%}
 
-<div class="contact{% unless section.settings.bg_color == '#ffffff' %} contact--with-bg{% endunless %} contact--{{ section.settings.layout }}{% if section.settings.text != blank %} contact--has-text{% endif %}">
+{% unless section.settings.bg_color == '#ffffff' %}
+  {% style %}
+    #shopify-section-{{ section.id }} {
+      background:var(--color-contact-form-bg);
+      color:rgba(var(--color-contact-form-text));
+      margin:0;
+    }
+  {% endstyle %}
+{% endunless %}
+
+<div class="contact{% unless section.settings.bg_color == '#ffffff' %} contact--with-bg{% endunless %} contact--{{ section.settings.layout }}{% if section.settings.text != blank %} contact--has-text{% endif %} section-{{ section.id }}-padding">
   <div class="page-width{% if section.settings.is_full_width == false %}{% if section.settings.layout == 'onecolumn-center'%} page-width--narrow{% endif %}{% else %} contact__full-width{% endif %}">
     <h2 class="title h1">{{ section.settings.heading | escape }}</h2>
   {% if section.settings.layout == 'twocolumns' or section.settings.text != blank  %}
