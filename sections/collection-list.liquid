@@ -21,7 +21,22 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  #shopify-section-{{ section.id }} .collection-list-title,
+  #shopify-section-{{ section.id }} .card__heading,
+  #shopify-section-{{ section.id }} .card__caption {
+    color:rgba(var(--color-collection-list-text));
+  }
 {%- endstyle -%}
+
+{% unless section.settings.bg_color == '#ffffff' %}
+  {% style %}
+    #shopify-section-{{ section.id }} {
+      background:var(--color-collection-list-bg);
+      color:rgba(var(--color-collection-list-text));
+    }
+  {% endstyle %}
+{% endunless %}
 
 <div class="collection-list-wrapper page-width isolate{% if section.settings.swipe_on_mobile == true %} page-width-desktop{% endif %}{% if section.settings.title == blank %} no-heading{% endif %}{% if section.settings.show_view_all == false or section.blocks.size > collections.size %} no-mobile-link{% endif %} section-{{ section.id }}-padding">
   {% unless section.settings.title == blank %}
@@ -60,7 +75,7 @@
 
       {%- for block in sort_collections -%}
         <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="collection-list__item grid__item{% if section.settings.swipe_on_mobile %} slider__slide{% endif %}{% if block.settings.collection.featured_image == nil %} collection-list__item--no-media{% endif %}" {{ block.shopify_attributes }}>
-          {% render 'card-collection', card_collection: block.settings.collection , media_aspect_ratio: section.settings.image_ratio, columns: columns %}
+          {% render 'card-collection', card_collection: block.settings.collection , media_aspect_ratio: section.settings.image_ratio, columns: columns, text_align: section.settings.text_aligment %}
         </li>
       {%- endfor -%}
     </ul>

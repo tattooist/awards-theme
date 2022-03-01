@@ -6,6 +6,7 @@
     - media_aspect_ratio: {String} Size of the product image card. Values are "square" and "portrait". Default is "square" (optional)
     - columns: {Number} 
     - extend_height: {Boolean} Card height extends to available container space. Default: false (optional)
+    - text_align
     
     Usage:
     {% render 'card-collection' %}
@@ -60,20 +61,19 @@
         </div>
       {%- endif -%}
       <div class="card__content">        
-        <div class="card__information">
-          <h3 class="card__heading h1">
+        <div class="card__information {{ text_align }}">
+          <h3 class="card__heading">
             <a{% if card_collection == blank %} role="link" aria-disabled="true"{% else %} href="{{ card_collection.url }}"{% endif %} class="full-unstyled-link">
               {%- if card_collection.title != blank -%}
                 {{- card_collection.title | escape -}}
               {%- else -%}
                 {{ 'onboarding.collection_title' | t }}
               {%- endif -%}
-              {%- if card_collection.description == blank -%}<span class="icon-wrap">{% render 'icon-arrow' %}</span>{% endif %}
             </a>
           </h3>
           {%- if card_collection.description != blank -%}
             <p class="card__caption">
-              {{- card_collection.description | strip_html | truncatewords: 12 -}}<span class="icon-wrap">&nbsp;{% render 'icon-arrow' %}</span>
+              {{- card_collection.description | strip_html | truncatewords: 12 -}}
             </p>
           {%- endif -%}
         </div>   
@@ -81,20 +81,19 @@
     </div>
     {% if settings.card_style == 'card' or card_collection.featured_image %} 
       <div class="card__content">
-        <div class="card__information">
-          <h3 class="card__heading h1">
+        <div class="card__information {{ text_align }}">
+          <h3 class="card__heading">
             <a href="{{ card_collection.url }}" class="full-unstyled-link">
               {%- if card_collection.title != blank -%}
                 {{- card_collection.title | escape -}}
               {%- else -%}
                 {{ 'onboarding.collection_title' | t }}
               {%- endif -%}
-              {%- if card_collection.featured_image or card_collection.description == blank -%}<span class="icon-wrap">{% render 'icon-arrow' %}</span>{% endif %}
             </a>
           </h3>
           {%- if card_collection.featured_image == nil and card_collection.description != blank -%}
             <p class="card__caption">
-              {{- card_collection.description | strip_html | truncatewords: 12 -}}<span class="icon-wrap">&nbsp;{% render 'icon-arrow' %}</span>
+              {{- card_collection.description | strip_html | truncatewords: 12 -}}
             </p>
           {%- endif -%}
         </div>
