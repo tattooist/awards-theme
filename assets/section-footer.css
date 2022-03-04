@@ -261,6 +261,7 @@
 .localization-form:only-child .localization-form__select {
   margin: 0 1rem;
   flex-grow: 1;
+  width: auto;
 }
 
 .footer__localization h2 {
@@ -316,7 +317,6 @@
 }
 
 .localization-form__select {
-  box-shadow: 0 0 0 0.1rem rgba(var(--color-footer-text), 0.55);
   border-radius: var(--inputs-radius-outset);
   position: relative;
   margin-bottom: 1.5rem;
@@ -374,7 +374,7 @@ noscript .localization-selector.link {
 }
 
 .localization-selector + .disclosure__list-wrapper {
-  margin-left: 1rem;
+  margin-left: 2.4rem;
   opacity: 1;
   animation: animateLocalization var(--duration-default) ease;
 }
@@ -432,10 +432,6 @@ noscript .localization-selector.link {
 }
 
 @media screen and (min-width: 750px) {
-  .footer-block__details-content {
-    margin-bottom: 0;
-  }
-
   .footer-block__details-content > p,
   .footer-block__details-content > li {
     padding: 0;
@@ -540,26 +536,21 @@ noscript .localization-selector.link {
   color: rgb(var(--color-footer-text));
 }
 
-.footer .disclosure__link--active {
-  text-decoration: underline;
-}
-
-.footer .field__input,
-.footer .select__select {
-  color: rgb(var(--color-footer-text));
-  box-shadow: 0 0 0 0.1rem rgba(var(--color-footer-text), 0.55);
+.footer .field:hover.field:after,
+.footer .select:hover.select:after,
+.footer .select__select:hover.select__select:after,
+.footer .customer .field:hover.field:after,
+.footer .customer select:hover.select:after,
+.footer .localization-form__select:hover.localization-form__select:after {
+  box-shadow: 0 0 0 calc(0.1rem + var(--inputs-border-width)) rgba(var(--color-footer-text),var(--inputs-border-opacity));
 }
 
 .footer .field__input:focus,
-.footer .select__select:focus {
-  box-shadow: 0 0 0 .2rem rgba(var(--color-foreground));
-  outline: transparent;
-}
-
-.footer .field__input:hover,
-.footer .select__select:hover {
-  box-shadow: 0 0 0 .2rem rgba(var(--color-foreground));
-  outline: transparent;
+.footer .select__select:focus,
+.footer .customer .field input:focus,
+.footer .customer select:focus,
+.footer .localization-form__select:focus.localization-form__select:after {
+  box-shadow: 0 0 0 calc(0.1rem + var(--inputs-border-width)) rgba(var(--color-footer-text));
 }
 
 .footer .newsletter-form__button .icon path {
