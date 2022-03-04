@@ -170,7 +170,7 @@
         "min": 4,
         "max": 40,
         "step": 4,
-        "default": 8,
+        "default": 16,
         "unit": "px",
         "label": "t:settings_schema.layout.settings.spacing_grid_horizontal.label"
       },
@@ -180,7 +180,7 @@
         "min": 4,
         "max": 40,
         "step": 4,
-        "default": 8,
+        "default": 16,
         "unit": "px",
         "label": "t:settings_schema.layout.settings.spacing_grid_vertical.label"
       }

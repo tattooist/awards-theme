@@ -42,7 +42,7 @@
 
 @media screen and (min-width: 750px) {
   .multicolumn .button {
-    margin-top: 4rem;
+    margin-top: 4.8rem;
   }
 }
 
@@ -75,9 +75,9 @@
 }
 
 .multicolumn-card-spacing {
-  padding-top: 2.5rem;
-  margin-left: 2.5rem;
-  margin-right: 2.5rem;
+  padding-top: 1.6rem;
+  margin-left: 1.6rem;
+  margin-right: 1.6rem;
 }
 
 .multicolumn-card__info > :nth-child(2) {
@@ -123,10 +123,6 @@
   .multicolumn-list.slider .multicolumn-list__item {
     width: calc(100% - 5.2rem);
   }
-
-  .multicolumn-list.slider .multicolumn-list__item + .multicolumn-list__item {
-    padding-left: 1.6rem;
-  }
 }
 
 
@@ -152,7 +148,7 @@
 }
 
 .multicolumn-card__info {
-  padding: 2.5rem 2.5rem;
+  padding: 1.6rem 1.6rem;
 }
 
 .background-none .multicolumn-card__info {

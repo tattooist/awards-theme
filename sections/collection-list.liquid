@@ -46,7 +46,7 @@
   {% endunless %}
 
   <slider-component class="slider-mobile-gutter">
-    <ul class="collection-list contains-card{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid grid--1-col{% if section.settings.columns_desktop == 1 %} grid--full-width{% else %} grid--{{ section.settings.columns_desktop }}-col-desktop{% endif %} grid--{{ section.blocks.size }}-col-tablet{% if section.settings.swipe_on_mobile %} slider slider--tablet grid--peek{% endif %} collection-list--{{ section.blocks.size }}-items"
+    <ul class="collection-list contains-card{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid grid--2-col{% if section.settings.columns_desktop == 1 %} grid--full-width{% else %} grid--{{ section.settings.columns_desktop }}-col-desktop{% endif %} grid--{{ section.blocks.size }}-col-tablet{% if section.settings.swipe_on_mobile %} slider slider--mobile grid--peek{% endif %} collection-list--{{ section.blocks.size }}-items"
       id="Slider-{{ section.id }}"
       role="list"
     >
@@ -80,16 +80,21 @@
       {%- endfor -%}
     </ul>
 
-    {%- if section.settings.swipe_on_mobile -%}
-      <div class="slider-buttons no-js-hidden{% if section.blocks.size < 5 %} medium-hide{% endif %}{% if section.blocks.size < 2 %} small-hide{% endif %}">
-        <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'general.slider.previous_slide' | t }}">{% render 'icon-caret' %}</button>
-        <div class="slider-counter caption">
-          <span class="slider-counter--current">1</span>
-          <span aria-hidden="true"> / </span>
-          <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
-          <span class="slider-counter--total">{{ section.blocks.size }}</span>
+    {%- if sort_collections.size > 2 and section.settings.swipe_on_mobile -%}
+      <div class="slider__controls large-up-hide">
+        {%- if section.settings.show_view_all and section.blocks.size < collections.size -%}
+          <a href="{{ routes.collections_url }}" class="link underlined-link large-up-hide">{{ 'sections.collection_list.view_all' | t }}</a>
+        {%- endif -%}
+        <div class="slider-buttons no-js-hidden{% if section.blocks.size < 5 %} medium-hide{% endif %}{% if section.blocks.size < 2 %} small-hide{% endif %}">
+          <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'general.slider.previous_slide' | t }}">{% render 'icon-arrow' %}</button>
+          <div class="slider-counter caption">
+            <span class="slider-counter--current">1</span>
+            <span aria-hidden="true"> / </span>
+            <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
+            <span class="slider-counter--total">{{ section.blocks.size }}</span>
+          </div>
+          <button type="button" class="slider-button slider-button--next" name="next" aria-label="{{ 'general.slider.next_slide' | t }}">{% render 'icon-arrow' %}</button>
         </div>
-        <button type="button" class="slider-button slider-button--next" name="next" aria-label="{{ 'general.slider.next_slide' | t }}">{% render 'icon-caret' %}</button>
       </div>
     {%- endif -%}
   </slider-component>
@@ -136,7 +141,7 @@
       "min": 1,
       "max": 5,
       "step": 1,
-      "default": 3,
+      "default": 4,
       "label": "t:sections.collection-list.settings.columns_desktop.label"
     },
     {
@@ -192,7 +197,7 @@
           "label": "t:sections.collection-list.settings.image_ratio.options__1.label"
         }
       ],
-      "default": "square",
+      "default": "portrait",
       "label": "t:sections.collection-list.settings.image_ratio.label",
       "info": "t:sections.collection-list.settings.image_ratio.info"
 
@@ -222,7 +227,7 @@
     {
       "type": "checkbox",
       "id": "show_view_all",
-      "default": false,
+      "default": true,
       "label": "t:sections.collection-list.settings.show_view_all.label"
     },
     {

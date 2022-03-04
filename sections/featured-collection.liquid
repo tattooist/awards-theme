@@ -59,7 +59,7 @@
         {%- endfor -%}
       </ul>
       {%- if section.settings.collection.all_products_count > 2 and section.settings.swipe_on_mobile and section.settings.products_to_show > 2 -%}
-        <div class="slider__controls page-width large-up-hide">
+        <div class="slider__controls large-up-hide">
           {%- if section.settings.show_view_all and section.settings.swipe_on_mobile and more_in_collection -%}
             <a href="{{ section.settings.collection.url }}" class="link underlined-link large-up-hide">{{ 'sections.featured_collection.view_all' | t }}</a>
           {%- endif -%}
@@ -163,7 +163,7 @@
     {
       "type": "checkbox",
       "id": "swipe_on_mobile",
-      "default": false,
+      "default": true,
       "label": "t:sections.featured-collection.settings.swipe_on_mobile.label"
     },
     {
@@ -187,19 +187,19 @@
           "label": "t:sections.featured-collection.settings.image_ratio.options__3.label"
         }
       ],
-      "default": "adapt",
+      "default": "square",
       "label": "t:sections.featured-collection.settings.image_ratio.label"
     },
     {
       "type": "checkbox",
       "id": "show_secondary_image",
-      "default": false,
+      "default": true,
       "label": "t:sections.featured-collection.settings.show_secondary_image.label"
     },
     {
       "type": "checkbox",
       "id": "show_vendor",
-      "default": false,
+      "default": true,
       "label": "t:sections.featured-collection.settings.show_vendor.label"
     },
     {
