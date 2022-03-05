@@ -108,7 +108,7 @@
         </div>
       {%- endif -%}
     </slider-component>
-    <div class="center page-width{% if section.settings.swipe_on_mobile %} small-hide medium-hide{% endif %}">
+    <div class="center{% if section.settings.swipe_on_mobile %} small-hide medium-hide{% endif %} btn-view-all">
       {%- if section.settings.button_label != blank -%}
         <a class="button button--primary"{% if section.settings.button_link == blank %} role="link" aria-disabled="true"{% else %} href="{{ section.settings.button_link }}"{% endif %}>
           {{ section.settings.button_label | escape }}

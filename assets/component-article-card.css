@@ -29,25 +29,22 @@
 
 .article-card__info {
   padding: 1.6rem 0 0;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
 }
 
-.article-card__header .caption-with-letter-spacing {
+.card__information .caption-with-letter-spacing {
   font-size: 1.2rem;
   line-height: 1.6rem;
   letter-spacing: 0.04em;
   color: rgba(var(--color-foreground));
 }
 
-.article-card__header .circle-divider::after {
+.card__information .circle-divider::after {
   content: '\2022';
   margin: 0 0.8rem;
 }
 
 @media (max-width: 749px) {
-  .article-card__header .caption-with-letter-spacing {
+  .card__information .caption-with-letter-spacing {
     font-size: 1rem;
     line-height: 1.2rem;
   }
@@ -83,32 +80,6 @@
   display: block;
 }
 
-.article-card__title {
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 2.4rem;
-  line-height: 3.6rem;
-}
-
-@media (max-width: 749px) {
-  .article-card__title {
-    font-size: 2rem;
-    line-height: 3.2rem;
-  }
-}
-
-.article-card__title a:after {
-  bottom: 0;
-  content: "";
-  height: 100%;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 100%;
-  z-index: 1;
-}
-
 .article-card__link.link {
   padding: 0;
 }
@@ -118,22 +89,19 @@
 }
 
 .article-card .card__heading {
-  margin-bottom: line-height: calc(0.8 / var(--font-body-scale));
-  margin-bottom: 1.2rem;
+  margin-top: .8rem;
+  margin-bottom: 1.6rem;
+  text-decoration: none;
+}
+
+@media (max-width: 749px) {
+  .article-card .card__heading {
+    margin-bottom: 0.8rem;
+  }
 }
 
 .article-content:hover .article-card__link {
   text-decoration-thickness: 0.2rem;
-}
-
-.blog-articles .article-card .card__information,
-.blog__posts .article-card .card__information {
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
-.article-card__info {
-  padding-top: 0.4rem;
 }
 
 .article-card__footer {
@@ -150,11 +118,16 @@
 }
 
 .article-card__excerpt {
-  width: 100%;
-  font-size: 1.6rem;
-  line-height: 2.4rem;
+  font-size: 1.5rem;
+  line-height: calc(1.7 / var(--font-body-scale));
   letter-spacing: 0.02em;
-  margin-bottom: 3.2rem;
+}
+
+@media (max-width: 749px) {
+  .article-card__excerpt {
+    font-size: 1.4rem;
+    line-height: calc(1.7 / var(--font-body-scale));
+  }
 }
 
 .article-card__link:not(:only-child) {

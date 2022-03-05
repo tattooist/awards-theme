@@ -38,13 +38,13 @@
 -%}
 
 <div class="blog{% if section.settings.heading == blank %} no-heading{% endif %}">
-  <div class="page-width page-width-desktop{% if posts_displayed < 3 %} page-width-tablet{% endif %}">
+  <div class="page-width page-width-desktop{% if posts_displayed < 3 %} page-width-tablet{% endif %} section-{{ section.id }}-padding">
     {% if section.settings.subheading != blank %}
       <h2 class="blog__subheading">
         {{ section.settings.subheading | escape }}
       </h2>
     {% endif %}
-    <div class="title-wrapper-with-link{% if section.settings.heading == blank %} title-wrapper-with-link--no-heading{% endif %} {% if posts_displayed > 2 or section.settings.swipe_on_mobile == true %}title-wrapper--self-padded-tablet-down{% else %}title-wrapper--self-padded-mobile{% endif %}">
+    <div class="title-wrapper-with-link{% if section.settings.heading == blank %} title-wrapper-with-link--no-heading{% endif %} {% if posts_displayed > 2 or section.settings.swipe_on_mobile == true %}title-wrapper--self-padded-tablet-down{% else %}title-wrapper--self-padded-mobile{% endif %} title-wrapper--no-top-margin">
       <h2 class="blog__title h1">{{ section.settings.heading | escape }}</h2>
     </div>
     {%- if section.settings.blog != blank and section.settings.blog.articles_count > 0 -%}
@@ -85,8 +85,8 @@
         {%- endif -%}
       </slider-component>
 
-      {%- if section.settings.show_view_all and section.settings.post_limit < section.settings.blog.articles_count and section.settings.swipe_on_mobile -%}
-        <div class="blog__view-all center small-hide medium-hide">
+      {%- if section.settings.show_view_all and section.settings.post_limit < section.settings.blog.articles_count -%}
+        <div class="blog__view-all center {% if section.settings.swipe_on_mobile %} small-hide medium-hide{% endif %} btn-view-all">
           <a href="{{ section.settings.blog.url }}" class="blog__button button button--secondary">
             {{ 'sections.featured_blog.view_all' | t }}
           </a>

@@ -10,7 +10,7 @@ slider-component {
 }
 
 .slider__slide {
-  --focus-outline-padding: 0.5rem;
+  --focus-outline-padding: 0;
   --shadow-padding-top: calc(var(--shadow-vertical-offset) * -1 + var(--shadow-blur-radius));
   --shadow-padding-bottom: calc(var(--shadow-vertical-offset) + var(--shadow-blur-radius));
   scroll-snap-align: start;

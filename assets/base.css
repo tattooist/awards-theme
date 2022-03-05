@@ -3142,3 +3142,11 @@ details-disclosure > details {
     }
   }
 }
+
+
+@media screen and (max-width: 749px) {
+  .btn-view-all {
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+  }
+}
