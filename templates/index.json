@@ -341,6 +341,23 @@
         "bg_color": "#ffffff",
         "text_color": "#262626"
       }
+    },
+    "1646495675bed8496c": {
+      "type": "featured-blog",
+      "settings": {
+        "subheading": "Subheading",
+        "heading": "Blog posts",
+        "blog": "news",
+        "post_limit": 3,
+        "show_image": true,
+        "show_date": true,
+        "show_author": false,
+        "show_view_all": true,
+        "swipe_on_mobile": false,
+        "bg_color": "#FFF",
+        "text_color": "#262626",
+        "item_color": "#FFF"
+      }
     }
   },
   "order": [
@@ -353,6 +370,7 @@
     "16384506284f6524aa",
     "16384518484b682c0b",
     "1638453507cc701dd2",
-    "1639415634c5f4be3f"
+    "1639415634c5f4be3f",
+    "1646495675bed8496c"
   ]
 }
