@@ -351,12 +351,12 @@
         "post_limit": 3,
         "show_image": true,
         "show_date": true,
-        "show_author": false,
+        "show_author": true,
         "show_view_all": true,
         "swipe_on_mobile": false,
-        "bg_color": "#FFF",
+        "bg_color": "#ffffff",
         "text_color": "#262626",
-        "item_color": "#FFF"
+        "item_color": "#ffffff"
       }
     }
   },
