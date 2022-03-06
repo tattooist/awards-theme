@@ -3150,3 +3150,13 @@ details-disclosure > details {
     padding-right: 1.6rem;
   }
 }
+
+.product-grid {
+  margin-top: 0;
+}
+
+@media screen and (min-width: 750px) {
+  .product-grid {
+    margin-top: 2.4rem;
+  }
+}

@@ -1710,6 +1710,14 @@
           },
           "label": "Text alignment"
         },
+        "image": {
+          "label": "Destop image",
+          "info": "For best results, use an image with a 16:9 aspect ratio."
+        },
+        "image_mob": {
+          "label": "Mobile image",
+          "info": "For best results, use an image with a 3:2 aspect ratio."
+        },
         "layout": {
           "label": "Layout",
           "options__1": {

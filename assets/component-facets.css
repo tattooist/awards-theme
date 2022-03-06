@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(2, auto);
   grid-template-rows: repeat(2, auto);
-  padding-top: 1rem;
+  padding-top: 0;
 }
 
 @media screen and (min-width: 750px) {
@@ -250,6 +250,7 @@
   max-height: 55rem;
   overflow-y: auto;
   flex-direction: column;
+  border-width: 1px;
 }
 
 .facets__display .facets__list {
@@ -491,7 +492,7 @@ span.active-facets__button-inner:after {
 }
 
 .active-facets__button--light .active-facets__button-inner {
-  box-shadow: 0 0 0 0.2rem rgba(var(--color-foreground), 0.2);
+  box-shadow:none;
 }
 
 .active-facets__button--light:hover .active-facets__button-inner {
@@ -635,9 +636,6 @@ a.active-facets__button.focused .active-facets__button-inner,
   max-width: 35.6rem;
   display: flex;
   flex-direction: column;
-  border-color: rgba(var(--color-foreground), var(--drawer-border-opacity));
-  border-style: solid;
-  border-width: 0 0 0 var(--drawer-border-width);
   filter: drop-shadow(
     var(--drawer-shadow-horizontal-offset)
     var(--drawer-shadow-vertical-offset)
@@ -1188,8 +1186,7 @@ input.mobile-facets__checkbox {
 
 .facets__price .field__input {
   height: 3.8rem;
-  box-shadow: 0 0 0 0.1rem #868686;
-  padding: 0 0 0 20px;
+  padding: 0 5px 0 20px;
   text-align: right;
 }
 
@@ -1214,7 +1211,7 @@ input.mobile-facets__checkbox {
   color: #262626;
   display: flex;
   align-items: center;
-  padding: 0 3.2rem;
+  padding: 0 10%;
 }
 
 @media screen and (max-width: 749px) {

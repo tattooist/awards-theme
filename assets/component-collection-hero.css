@@ -23,8 +23,6 @@
 
 @media screen and (min-width: 750px) {
   .collection-hero.collection-hero--with-image {
-    padding: calc(4rem + var(--page-width-margin)) 0
-    calc(4rem + var(--page-width-margin));
     overflow: hidden;
   }
 
@@ -118,6 +116,10 @@
   .collection-hero--without-image .collection-hero__text-wrapper {
     padding: 2rem 1.6em;
   }
+
+  .collection-hero__image-container--web {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 750px) {
@@ -138,5 +140,9 @@
   .collection-hero--without-image.collection-hero--boxed-radius .collection-hero__text-wrapper {
     padding: 4rem 6.4rem;
     width: calc(100% - 6.4rem);
+  }
+
+  .collection-hero__image-container--mob {
+    display: none;
   }
 }
