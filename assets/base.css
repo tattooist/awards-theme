@@ -2404,7 +2404,6 @@ input[type='checkbox'] {
   color: var(--color-base-header-text);
   letter-spacing: normal;
   font-weight: 600;
-  font-size: 3.2rem;
   transition: color .3s ease-in-out;
 }
 
@@ -3158,5 +3157,11 @@ details-disclosure > details {
 @media screen and (min-width: 750px) {
   .product-grid {
     margin-top: 2.4rem;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .collection__products-grid .grid--2-col-tablet-down .grid__item {
+    flex-grow: inherit;
   }
 }

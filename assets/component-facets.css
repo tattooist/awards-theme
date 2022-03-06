@@ -714,7 +714,7 @@ a.active-facets__button.focused .active-facets__button-inner,
   .facets__form--top {
     grid-template-columns: 1fr 0 1fr;
     margin: 0 -1.6rem;
-    border-bottom: 1px solid #D2D2D2;
+    border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.1);
     height: 4rem;
     align-items: center;
     margin-bottom: 1.9rem;
@@ -722,7 +722,7 @@ a.active-facets__button.focused .active-facets__button-inner,
 
   .mobile-facets__wrapper {
     justify-content: center;
-    border-right: 1px solid #D2D2D2;
+    border-right: 0.1rem solid rgba(var(--color-foreground), 0.1);
     align-items: center;
     padding-left: 1.6rem;
   }

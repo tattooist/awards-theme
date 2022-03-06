@@ -49,7 +49,7 @@
                     <span tabindex="0" class="mobile-facets__close mobile-facets__close--no-js" aria-label="Close" role="button" aria-expanded="true" onclick="this.closest('.mobile-facets__wrapper').querySelector('summary').click()">{%- render 'icon-close' -%}</span>
                   </div>
                 </div>
-                <div class="active-facets active-facets-mobile">
+                <div class="active-facets active-facets-mobile-popup">
                   {%- for filter in results.filters -%}
                     {%- for value in filter.active_values -%}
                       <facet-remove>

@@ -9,7 +9,7 @@
 
 {%- style -%}
   .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-top: 0;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
@@ -36,7 +36,15 @@
   <div{% if section.settings.layout == 'topline'  %} id="ProductGridContainer"{%  endif %}>
 
     {% if section.settings.layout == 'sidebar'  %}
-      {% assign products_per_page = section.settings.products_per_page | divided_by: 3 | times: 3 %}
+      {% if section.settings.columns_desktop == 1 %}
+        {% assign columns_desktop = 2 %}
+      {% elsif section.settings.columns_desktop == 5 %}
+        {% assign columns_desktop = 4 %}
+      {% else %}
+        {% assign columns_desktop = section.settings.columns_desktop %}
+      {%  endif %}
+
+      {% assign products_per_page = section.settings.products_per_page | divided_by: 3 | times: columns_desktop %}
     {%- else -%}
       {% assign products_per_page = section.settings.products_per_page %}
     {%  endif %}
@@ -70,21 +78,25 @@
                 {% endif %}
 
                   <ul id="product-grid" data-id="{{ section.id }}" class="
-                    grid grid--2-col negative-margin product-grid
+                    grid product-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down
                     {% if section.settings.layout == 'sidebar'  %}
                       {% if collection.products_count < 3 %} grid--{{ collection.products_count }}-col-tablet{% else %}
-                        {% if collection.products_count == 3 %} grid--3-col-desktop{% else %} grid--3-col-tablet grid--one-third-max grid--3-col-desktop grid--quarter-max{% endif %}
+                        {% if collection.products_count == 3 %}
+                          grid--3-col-desktop
+                        {% else %}
+                          {% if section.settings.columns_desktop == 1 %}
+                            grid--2-col-desktop
+                          {% elsif section.settings.columns_desktop == 5 %}
+                            grid--4-col-desktop
+                          {% else %}
+                            grid--{{ section.settings.columns_desktop }}-col-desktop
+                          {% endif %}
+                        {% endif %}
                       {% endif %}
                     {% else %}
-                      {% if collection.products_count < 4 %} grid--{{ collection.products_count }}-col-tablet{% else %}
-                        {% if collection.products_count == 4 %} grid--4-col-desktop{% else %} grid--3-col-tablet grid--one-third-max grid--4-col-desktop grid--quarter-max{% endif %}
+                      {% if section.settings.columns_desktop == 1 %} grid--full-width{% else %}
+                        grid--{{ section.settings.columns_desktop }}-col-desktop
                       {% endif %}
-                    {% endif %}
-                    {% if section.settings.columns_desktop == 1 %} grid--full-width{% else %}
-                      grid--{{ section.settings.columns_desktop }}-col-desktop
-                    {% endif %}
-                    {% if collection.products_count < 4 %} grid--{{ collection.products_count }}-col-tablet
-                      grid--{{ collection.products_count }}-col-desktop
                     {% endif %}">
                     {%- for product in collection.products -%}
                       {% assign lazy_load = false %}
@@ -124,6 +136,22 @@
   "name": "t:sections.main-collection-product-grid.name",
   "class": "section",
   "settings": [
+    {
+      "type": "select",
+      "id": "layout",
+      "options": [
+        {
+          "value": "sidebar",
+          "label": "t:sections.main-collection-product-grid.settings.layout.options__1.label"
+        },
+        {
+          "value": "topline",
+          "label": "t:sections.main-collection-product-grid.settings.layout.options__2.label"
+        }
+      ],
+      "default": "topline",
+      "label": "t:sections.main-collection-product-grid.settings.layout.label"
+    },
     {
       "type": "range",
       "id": "products_per_page",
@@ -209,20 +237,24 @@
       "label": "t:sections.main-collection-product-grid.settings.collapse_on_larger_devices.label"
     },
     {
+      "type": "header",
+      "content": "t:sections.main-collection-product-grid.settings.header_mobile.content"
+    },
+    {
       "type": "select",
-      "id": "layout",
+      "id": "columns_mobile",
+      "default": "2",
+      "label": "t:sections.main-collection-product-grid.settings.columns_mobile.label",
       "options": [
         {
-          "value": "sidebar",
-          "label": "t:sections.main-collection-product-grid.settings.layout.options__1.label"
+          "value": "1",
+          "label": "t:sections.main-collection-product-grid.settings.columns_mobile.options__1.label"
         },
         {
-          "value": "topline",
-          "label": "t:sections.main-collection-product-grid.settings.layout.options__2.label"
+          "value": "2",
+          "label": "t:sections.main-collection-product-grid.settings.columns_mobile.options__2.label"
         }
-      ],
-      "default": "topline",
-      "label": "t:sections.main-collection-product-grid.settings.layout.label"
+      ]
     },
     {
       "type": "header",
