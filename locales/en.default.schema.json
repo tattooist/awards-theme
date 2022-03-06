@@ -1313,7 +1313,6 @@
       "name": "Image with text",
       "settings": {
         "section_height": {
-          "label": "Section height",
           "options__1": {
             "label": "Fit screen height"
           },
@@ -1329,7 +1328,7 @@
           "options__5": {
             "label": "Original image ratio"
           },
-          "label": "Image height"
+          "label": "Section height"
         },
         "desktop_image_width": {
           "options__1": {
