@@ -9,6 +9,8 @@
     "colors_background_2": "#F3F3F3",
     "type_header_font": "poppins_n4",
     "type_body_font": "poppins_n4",
+    "inputs_shadow_vertical_offset": 0,
+    "accent_icons": "text",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
@@ -34,7 +36,7 @@
       "header": {
         "type": "header",
         "settings": {
-          "enable_sticky_header": true,
+          "enable_sticky_header": false,
           "show_line_separator": true,
           "logo_width": 100,
           "logo_width_mob": 100,
@@ -43,9 +45,10 @@
           "enable_transparent_header": false,
           "transparent_text_color": "#262626",
           "logo_position": "center",
-          "show_icons": true,
+          "show_icons": false,
           "section_background_color": "#ffffff",
-          "section_text_color": "#262626"
+          "section_text_color": "#000000",
+          "margin_bottom": 0
         }
       },
       "footer": {
@@ -93,7 +96,10 @@
           "enable_language_selector": true,
           "bg_color": "#ffffff",
           "text_color": "#262626",
-          "icons_color": "#262626"
+          "icons_color": "#262626",
+          "margin_top": 0,
+          "padding_top": 32,
+          "padding_bottom": 32
         }
       }
     },
@@ -115,7 +121,9 @@
           },
           "block_order": [
             "announcement-bar-0"
-          ]
+          ],
+          "settings": {
+          }
         },
         "header": {
           "type": "header",
@@ -127,7 +135,9 @@
           "type": "footer",
           "blocks": {
             "footer-0": {
-              "type": "link_list"
+              "type": "link_list",
+              "settings": {
+              }
             },
             "footer-1": {
               "type": "link_list",
@@ -142,22 +152,21 @@
               }
             }
           },
-          "block_order": [
-            "menu",
-            "text"
-          ],
           "settings": {
-            "show_social": true,
             "enable_country_selector": false,
             "enable_language_selector": false,
             "margin_top": 48
           }
         },
         "main-password-header": {
-          "type": "main-password-header"
+          "type": "main-password-header",
+          "settings": {
+          }
         },
         "main-password-footer": {
-          "type": "main-password-footer"
+          "type": "main-password-footer",
+          "settings": {
+          }
         }
       }
     },
@@ -185,6 +194,8 @@
               "settings": {
               }
             }
+          },
+          "settings": {
           }
         }
       }
