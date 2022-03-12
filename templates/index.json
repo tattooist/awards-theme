@@ -42,7 +42,7 @@
         "show_text_box": false,
         "mobile_text_box_position": "flex-start__flex-start",
         "mobile_content_alignment": "center",
-        "show_text_below": false,
+        "show_text_below": true,
         "stack_images_on_mobile": false,
         "bg_color": "#ffffff",
         "overlay_color": "#262626",
@@ -89,17 +89,17 @@
         "layout": "boxed",
         "section_height": "medium",
         "image": "shopify:\/\/shop_images\/242785278_1165681497490643_6274462903799703073_n.jpg",
-        "bg_color": "rgba(0,0,0,0)",
+        "bg_color": "#f3f3f3",
         "desktop_image_width": "medium",
         "desktop_content_position": "top",
         "desktop_content_alignment": "left",
         "desktop_text_first": true,
-        "content_layout": "no-overlap",
+        "content_layout": "overlap",
         "mobile_text_position": "flex-start",
         "mobile_content_alignment": "left",
         "show_text_below": true,
         "color_scheme": "background-1",
-        "padding_top": 32,
+        "padding_top": 0,
         "padding_bottom": 32
       }
     },
@@ -370,6 +370,26 @@
         "padding_top": 32,
         "padding_bottom": 32
       }
+    },
+    "16470959394f468014": {
+      "type": "featured-blog",
+      "settings": {
+        "subheading": "Subheading",
+        "heading": "Blog posts",
+        "blog": "news",
+        "post_limit": 3,
+        "columns_desktop": 3,
+        "show_image": true,
+        "show_date": true,
+        "show_author": false,
+        "show_view_all": true,
+        "swipe_on_mobile": false,
+        "bg_color": "#FFF",
+        "text_color": "#262626",
+        "item_color": "#FFF",
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
     }
   },
   "order": [
@@ -381,6 +401,7 @@
     "video",
     "multicolumn",
     "16469346652bb6e824",
-    "164693517812204bc7"
+    "164693517812204bc7",
+    "16470959394f468014"
   ]
 }
