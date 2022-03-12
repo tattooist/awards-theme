@@ -44,7 +44,7 @@
         "mobile_content_alignment": "center",
         "show_text_below": false,
         "stack_images_on_mobile": false,
-        "bg_color": "#FFFFFF",
+        "bg_color": "#ffffff",
         "overlay_color": "#262626",
         "image_overlay_opacity": 40,
         "color_scheme": "background-1"
@@ -69,6 +69,7 @@
         },
         "16469350868bfef871-2": {
           "type": "buttons",
+          "disabled": true,
           "settings": {
             "button_label_1": "Button label",
             "button_link_1": "",
@@ -85,15 +86,15 @@
         "16469350868bfef871-2"
       ],
       "settings": {
-        "layout": "fullsized",
-        "section_height": "large",
+        "layout": "boxed",
+        "section_height": "medium",
         "image": "shopify:\/\/shop_images\/242785278_1165681497490643_6274462903799703073_n.jpg",
-        "bg_color": "#dddddd",
-        "desktop_image_width": "small",
-        "desktop_content_position": "middle",
+        "bg_color": "rgba(0,0,0,0)",
+        "desktop_image_width": "medium",
+        "desktop_content_position": "top",
         "desktop_content_alignment": "left",
         "desktop_text_first": true,
-        "content_layout": "overlap",
+        "content_layout": "no-overlap",
         "mobile_text_position": "flex-start",
         "mobile_content_alignment": "left",
         "show_text_below": true,
@@ -292,7 +293,7 @@
         "sort_collections": "manual",
         "image_ratio": "portrait",
         "swipe_on_mobile": false,
-        "bg_color": "#FFF",
+        "bg_color": "#ffffff",
         "text_color": "#262626",
         "show_view_all": true,
         "padding_top": 32,

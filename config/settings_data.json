@@ -10,6 +10,10 @@
     "type_header_font": "poppins_n4",
     "type_body_font": "poppins_n4",
     "inputs_shadow_vertical_offset": 0,
+    "card_style": "card",
+    "card_text_alignment": "center",
+    "text_boxes_border_thickness": 0,
+    "text_boxes_radius": 10,
     "accent_icons": "text",
     "sections": {
       "announcement-bar": {
