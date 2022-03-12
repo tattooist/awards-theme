@@ -1,0 +1,8 @@
+.text-with-icons .multicolumn-card__info>:nth-child(2) {
+  margin-top: 0.8rem;
+}
+
+.text-with-icons .icon {
+  width: 10rem;
+  height: 10rem;
+}
