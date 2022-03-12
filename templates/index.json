@@ -383,7 +383,7 @@
         "show_date": true,
         "show_author": false,
         "show_view_all": true,
-        "swipe_on_mobile": false,
+        "swipe_on_mobile": true,
         "bg_color": "#FFF",
         "text_color": "#262626",
         "item_color": "#FFF",
