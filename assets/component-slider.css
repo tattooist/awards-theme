@@ -131,6 +131,10 @@ slider-component {
     padding: 0 1.6rem;
   }
 
+  .slider__controls--center {
+    justify-content: center;
+  }
+
   .slider__controls .underlined-link, .slider__controls .customer a {
     letter-spacing: 0.02em;
   }

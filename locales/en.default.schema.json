@@ -2620,7 +2620,7 @@
       },
       "blocks": {
         "column": {
-          "name": "Column",
+          "name": "Logo",
           "settings": {
             "image": {
               "label": "Image"
@@ -2642,6 +2642,114 @@
       },
       "presets": {
         "name": "Logo list"
+      }
+    },
+    "testimonials": {
+      "name": "Testimonials",
+      "settings": {
+        "subtitle": {
+          "label": "Subheading"
+        },
+        "title": {
+          "label": "Heading"
+        },
+        "text_aligment": {
+          "options__1": {
+            "label": "Left"
+          },
+          "options__2": {
+            "label": "Center"
+          },
+          "label": "Text alignment"
+        },
+        "column_size": {
+          "label": "Column size",
+          "options__1": {
+            "label": "Small"
+          },
+          "options__2": {
+            "label": "Medium"
+          },
+          "options__3": {
+            "label": "Large"
+          }
+        },
+        "image_ratio": {
+          "label": "Image ratio",
+          "options__1": {
+            "label": "Adapt to image"
+          },
+          "options__2": {
+            "label": "Portrait"
+          },
+          "options__3": {
+            "label": "Square"
+          },
+          "options__4": {
+            "label": "Circle"
+          }
+        },
+        "columns_desktop": {
+          "label": "Number of columns on desktop"
+        },
+        "column_alignment": {
+          "label": "Column alignment",
+          "options__1": {
+            "label": "Left"
+          },
+          "options__2": {
+            "label": "Center"
+          }
+        },
+        "background_style": {
+          "label": "Secondary background",
+          "options__1": {
+            "label": "None"
+          },
+          "options__2": {
+            "label": "Show as column background"
+          }
+        },
+        "button_label": {
+          "label": "Button label"
+        },
+        "button_link": {
+          "label": "Button link"
+        },
+        "swipe_on_mobile": {
+          "label": "Enable swipe on mobile"
+        }
+      },
+      "blocks": {
+        "column": {
+          "name": "Testimonials",
+          "settings": {
+            "image": {
+              "label": "Image"
+            },
+            "title": {
+              "label": "Heading"
+            },
+            "text": {
+              "label": "Quote"
+            },
+            "rating": {
+              "label": "Rating"
+            },
+            "author": {
+              "label": "Author"
+            },
+            "location": {
+              "label": "Location"
+            },
+            "product_about": {
+              "label": "About"
+            }
+          }
+        }
+      },
+      "presets": {
+        "name": "Testimonials"
       }
     },
     "newsletter": {
