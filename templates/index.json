@@ -500,25 +500,13 @@
             "link_label": "",
             "link": ""
           }
-        },
-        "ad86ad39-36e6-413a-af86-de64317271d3": {
-          "type": "column",
-          "disabled": true,
-          "settings": {
-            "icon": "box",
-            "title": "Icon",
-            "text": "<p>Pair text with an icon.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
         }
       },
       "block_order": [
         "16471420027c4ddc86-0",
         "16471420027c4ddc86-1",
         "16471420027c4ddc86-2",
-        "16471420027c4ddc86-3",
-        "ad86ad39-36e6-413a-af86-de64317271d3"
+        "16471420027c4ddc86-3"
       ],
       "settings": {
         "subtitle": "",
@@ -528,7 +516,7 @@
         "image_ratio": "square",
         "columns_desktop": 4,
         "column_alignment": "center",
-        "background_style": "none",
+        "background_style": "primary",
         "button_label": "",
         "button_link": "",
         "swipe_on_mobile": true,
