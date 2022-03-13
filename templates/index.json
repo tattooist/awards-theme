@@ -461,8 +461,9 @@
           "type": "column",
           "settings": {
             "icon": "truck",
-            "title": "Free shipping",
-            "text": "<p>On all orders over $300 and more<\/p>",
+            "image": "shopify:\/\/shop_images\/Image.png",
+            "title": "Safe on all ages",
+            "text": "<p>Everyone naturally benefits from a healthy balance<\/p>",
             "link_label": "",
             "link": ""
           }
@@ -471,8 +472,9 @@
           "type": "column",
           "settings": {
             "icon": "heart",
-            "title": "Made with love",
-            "text": "<p>Carefully hand crafted<\/p>",
+            "image": "shopify:\/\/shop_images\/Image_cf604353-430f-42aa-baa6-7ff743af4aee.png",
+            "title": "100% Drug-Free",
+            "text": "<p>Restore natural balance with bio-frequencies, not chemicals<\/p>",
             "link_label": "",
             "link": ""
           }
@@ -481,8 +483,9 @@
           "type": "column",
           "settings": {
             "icon": "chat_bubble",
-            "title": "24\/7 support",
-            "text": "<p>Talk us anytime<\/p>",
+            "image": "shopify:\/\/shop_images\/Image_6b7da92f-3a35-47c4-bd8f-8258a652e1b0.png",
+            "title": "Worldwide shipping",
+            "text": "<p>On all UK and Europ orders over £50<\/p>",
             "link_label": "",
             "link": ""
           }
@@ -491,8 +494,9 @@
           "type": "column",
           "settings": {
             "icon": "lock",
-            "title": "Secure checkout",
-            "text": "<p>Protected from data loss<\/p>",
+            "image": "shopify:\/\/shop_images\/Image_9dc6689c-420d-4290-b93c-2b62139dc214.png",
+            "title": "Easy returns",
+            "text": "<p>Within 30 days of recovering your purchase<\/p>",
             "link_label": "",
             "link": ""
           }
@@ -524,7 +528,7 @@
         "image_ratio": "square",
         "columns_desktop": 4,
         "column_alignment": "center",
-        "background_style": "primary",
+        "background_style": "none",
         "button_label": "",
         "button_link": "",
         "swipe_on_mobile": true,
