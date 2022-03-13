@@ -453,6 +453,147 @@
         "show_text_below": true,
         "accessibility_info": "Slideshow about our brand"
       }
+    },
+    "16471420033a62c7e9": {
+      "type": "text-with-icons",
+      "blocks": {
+        "16471420027c4ddc86-0": {
+          "type": "column",
+          "settings": {
+            "icon": "truck",
+            "title": "Free shipping",
+            "text": "<p>On all orders over $300 and more<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "16471420027c4ddc86-1": {
+          "type": "column",
+          "settings": {
+            "icon": "box",
+            "title": "Icon",
+            "text": "<p>Pair text with an icon.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "16471420027c4ddc86-2": {
+          "type": "column",
+          "settings": {
+            "icon": "box",
+            "title": "Icon",
+            "text": "<p>Pair text with an icon.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "16471420027c4ddc86-3": {
+          "type": "column",
+          "settings": {
+            "icon": "box",
+            "title": "Icon",
+            "text": "<p>Pair text with an icon.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "ad86ad39-36e6-413a-af86-de64317271d3": {
+          "type": "column",
+          "disabled": true,
+          "settings": {
+            "icon": "box",
+            "title": "Icon",
+            "text": "<p>Pair text with an icon.<\/p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "16471420027c4ddc86-0",
+        "16471420027c4ddc86-1",
+        "16471420027c4ddc86-2",
+        "16471420027c4ddc86-3",
+        "ad86ad39-36e6-413a-af86-de64317271d3"
+      ],
+      "settings": {
+        "subtitle": "let's start",
+        "title": "Features",
+        "text_aligment": "center",
+        "image_width": "third",
+        "image_ratio": "square",
+        "columns_desktop": 4,
+        "column_alignment": "center",
+        "background_style": "none",
+        "button_label": "",
+        "button_link": "",
+        "swipe_on_mobile": true,
+        "color_scheme": "background-1",
+        "padding_top": 56,
+        "padding_bottom": 56
+      }
+    },
+    "1647142322cc56ee5b": {
+      "type": "logo-list",
+      "blocks": {
+        "16471423227a415602-0": {
+          "type": "column",
+          "settings": {
+            "link": ""
+          }
+        },
+        "16471423227a415602-1": {
+          "type": "column",
+          "settings": {
+            "link": ""
+          }
+        },
+        "16471423227a415602-2": {
+          "type": "column",
+          "settings": {
+            "link": ""
+          }
+        },
+        "16471423227a415602-3": {
+          "type": "column",
+          "settings": {
+            "link": ""
+          }
+        },
+        "16471423227a415602-4": {
+          "type": "column",
+          "settings": {
+            "link": ""
+          }
+        },
+        "16471423227a415602-5": {
+          "type": "column",
+          "settings": {
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "16471423227a415602-0",
+        "16471423227a415602-1",
+        "16471423227a415602-2",
+        "16471423227a415602-3",
+        "16471423227a415602-4",
+        "16471423227a415602-5"
+      ],
+      "settings": {
+        "subtitle": "Subtitle",
+        "title": "Press",
+        "text_aligment": "center",
+        "image_ratio": "square",
+        "columns_desktop": 6,
+        "button_label": "",
+        "button_link": "",
+        "swipe_on_mobile": false,
+        "color_scheme": "background-2",
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
@@ -466,6 +607,8 @@
     "16469346652bb6e824",
     "164693517812204bc7",
     "16470959394f468014",
-    "1647098252cc59b5e2"
+    "1647098252cc59b5e2",
+    "16471420033a62c7e9",
+    "1647142322cc56ee5b"
   ]
 }
