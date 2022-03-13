@@ -521,8 +521,8 @@
         "button_link": "",
         "swipe_on_mobile": true,
         "color_scheme": "background-1",
-        "padding_top": 56,
-        "padding_bottom": 56
+        "padding_top": 32,
+        "padding_bottom": 32
       }
     },
     "1647142322cc56ee5b": {
