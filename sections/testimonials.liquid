@@ -48,10 +48,6 @@
         {%- for block in section.blocks -%}
           <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="multicolumn-list__item grid__item{% if section.settings.swipe_on_mobile %} slider__slide{% endif %}{% if section.settings.column_alignment == 'center' %} center{% endif %}" {{ block.shopify_attributes }}>
             <div class="multicolumn-card content-container">
-              {% if block.settings.product_about.url != nil %}
-                <a href="{{ block.settings.product_about.url }}" class="multicolumn-card content-container">
-              {% endif %}
-
               {% liquid
                 assign rating_decimal = 0
                 assign decimal = block.settings.rating | modulo: 1
@@ -102,9 +98,6 @@
                   </div>
                 </div>
               </div>
-            {% if block.settings.product_about.url != nil %}
-              </a>
-            {% endif %}
             </div>
           </li>
         {%- endfor -%}
@@ -342,11 +335,6 @@
           "id": "location",
           "default": "Location",
           "label": "t:sections.testimonials.blocks.column.settings.location.label"
-        },
-        {
-          "type": "product",
-          "id": "product_about",
-          "label": "t:sections.testimonials.blocks.column.settings.product_about.label"
         }
       ]
     }

@@ -1,8 +1,15 @@
 .logo-list__no-image {
   color: rgba(var(--color-foreground));
   font-weight: 600;
-  font-size: 24px;
-  line-height: 36px;
+  font-size: 2.4rem;
+  line-height: 3.6rem;
+}
+
+@media screen and (max-width: 749px) {
+  .logo-list__no-image {
+    font-size: 2rem;
+    line-height: 3.2rem;
+  }
 }
 
 .logo-list__link {

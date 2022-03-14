@@ -1013,6 +1013,14 @@ summary::-webkit-details-marker {
   margin-top: 0;
 }
 
+.title-wrapper--no-bottom-margin {
+  margin-bottom: 0;
+}
+
+.title-wrapper--no-bottom-margin > .title {
+  margin-bottom: 0;
+}
+
 .subtitle {
   font-size: 1.8rem;
   line-height: calc(1 + 0.8 / var(--font-body-scale));
