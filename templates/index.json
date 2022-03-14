@@ -591,6 +591,63 @@
         "padding_top": 52,
         "padding_bottom": 52
       }
+    },
+    "1647241437c14b1665": {
+      "type": "testimonials",
+      "blocks": {
+        "16472414377936b3a9-0": {
+          "type": "column",
+          "settings": {
+            "title": "Testimonial",
+            "text": "<p>This is now my HG concealer. The shade match is perfect and the coverage is there whilst being skinlike. All the ‘creamy’ concealer, like Kosas or PML happen to crease under my eyes unless I prime it and this does not, even without priming.<\/p>",
+            "rating": "5",
+            "author": "Author",
+            "location": "Location",
+            "product_about": ""
+          }
+        },
+        "16472414377936b3a9-1": {
+          "type": "column",
+          "settings": {
+            "title": "Testimonial",
+            "text": "<p>This is now my HG concealer. The shade match is perfect and the coverage is there whilst being skinlike. All the ‘creamy’ concealer, like Kosas or PML happen to crease under my eyes unless I prime it and this does not, even without priming.<\/p>",
+            "rating": "5",
+            "author": "Author",
+            "location": "Location",
+            "product_about": ""
+          }
+        },
+        "16472414377936b3a9-2": {
+          "type": "column",
+          "settings": {
+            "title": "Testimonial",
+            "text": "<p>This is now my HG concealer. The shade match is perfect and the coverage is there whilst being skinlike. All the ‘creamy’ concealer, like Kosas or PML happen to crease under my eyes unless I prime it and this does not, even without priming.<\/p>",
+            "rating": "5",
+            "author": "Author",
+            "location": "Location",
+            "product_about": ""
+          }
+        }
+      },
+      "block_order": [
+        "16472414377936b3a9-0",
+        "16472414377936b3a9-1",
+        "16472414377936b3a9-2"
+      ],
+      "settings": {
+        "subtitle": "",
+        "title": "Reviews",
+        "text_aligment": "left",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "swipe_on_mobile": true,
+        "color_scheme": "background-1",
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
     }
   },
   "order": [
@@ -606,6 +663,7 @@
     "16470959394f468014",
     "1647098252cc59b5e2",
     "16471420033a62c7e9",
-    "1647142322cc56ee5b"
+    "1647142322cc56ee5b",
+    "1647241437c14b1665"
   ]
 }
