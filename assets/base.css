@@ -454,35 +454,47 @@ h3,
 
 h4,
 .h4 {
-  font-family: var(--font-heading-family);
-  font-style: var(--font-heading-style);
-  font-size: calc(var(--font-heading-scale) * 1.4rem);
+  font-size: calc(var(--font-heading-scale) * 1.8rem);
+  font-weight: 600;
+  line-height: 2.8rem;
 }
 
 @media only screen and (min-width: 750px) {
   h4,
   .h4 {
-    font-size: calc(var(--font-heading-scale) * 1.5rem);
+    font-size: calc(var(--font-heading-scale) * 2rem);
+    line-height: 3.2rem;
   }
 }
 
 h5,
 .h5 {
-  font-size: calc(var(--font-heading-scale) * 1.2rem);
+  font-size: calc(var(--font-heading-scale) * 1.6rem);
+  font-weight: 600;
+  line-height: 2.8rem;
 }
 
 @media only screen and (min-width: 750px) {
   h5,
   .h5 {
-    font-size: calc(var(--font-heading-scale) * 1.3rem);
+    font-size: calc(var(--font-heading-scale) * 1.8rem);
+    line-height: 2.8rem;
   }
 }
 
 h6,
 .h6 {
-  color: rgba(var(--color-foreground), 0.75);
-  margin-block-start: 1.67em;
-  margin-block-end: 1.67em;
+  font-size: calc(var(--font-heading-scale) * 1.4rem);
+  font-weight: 600;
+  line-height: 2rem;
+}
+
+@media only screen and (min-width: 750px) {
+  h6,
+  .h6 {
+    font-size: calc(var(--font-heading-scale) * 1.6rem);
+    line-height: 2.4rem;
+  }
 }
 
 blockquote {
@@ -1248,6 +1260,10 @@ summary::-webkit-details-marker {
   }
 }
 
+.grid--center {
+  justify-content: center;
+}
+
 /* component-media */
 .media {
   display: block;
@@ -1275,6 +1291,10 @@ summary::-webkit-details-marker {
   object-fit: cover;
   object-position: center center;
   /*transition: opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);*/
+}
+
+.media--contain > img {
+  object-fit: contain;
 }
 
 .media--square {

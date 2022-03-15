@@ -107,7 +107,7 @@
   }
 
   .multicolumn-list__item {
-    margin: 0 0 var(--grid-mobile-vertical-spacing);
+    margin: 0 0;
     padding: 0;
   }
 

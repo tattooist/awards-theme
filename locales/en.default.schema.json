@@ -351,6 +351,30 @@
         },
         "label": "Color scheme",
         "has_cards_info": "To change the card color scheme, update your theme settings."
+      },
+      "section_colors": {
+        "section_colors_heading": "Colors",
+        "bg_color": {
+          "label": "Background"
+        },
+        "text_color": {
+          "label": "Text color"
+        },
+        "card_color": {
+          "label": "Card background"
+        }
+      },
+      "heading_size": {
+        "label": "Heading size",
+        "options__1": {
+          "label": "Small"
+        },
+        "options__2": {
+          "label": "Medium"
+        },
+        "options__3": {
+          "label": "Large"
+        }
       }
     },
     "announcement-bar": {
@@ -550,11 +574,23 @@
         "columns_desktop": {
           "label": "Number of columns on desktop"
         },
-        "swipe_on_mobile": {
-          "label": "Enable swipe on mobile"
-        },
         "show_view_all": {
           "label": "Enable \"View all\" button if list includes more collections than shown"
+        },
+        "header_mobile": {
+          "content": "Mobile Layout"
+        },
+        "columns_mobile": {
+          "label": "Number of columns on mobile",
+          "options__1": {
+            "label": "1 column"
+          },
+          "options__2": {
+            "label": "2 columns"
+          }
+        },
+        "swipe_on_mobile": {
+          "label": "Enable swipe on mobile"
         },
         "color_title": "Colors",
         "bg_color": "Section background",
@@ -677,6 +713,24 @@
         "title": {
           "label": "Heading"
         },
+        "description": {
+          "label": "Description"
+        },
+        "show_description": {
+          "label": "Show collection description from the admin"
+        },
+        "description_style": {
+          "label": "Description style",
+          "options__1": {
+            "label": "Body"
+          },
+          "options__2": {
+            "label": "Subtitle"
+          },
+          "options__3": {
+            "label": "Uppercase"
+          }
+        },
         "collection": {
           "label": "Collection"
         },
@@ -687,10 +741,25 @@
           "label": "Number of columns on desktop"
         },
         "show_view_all": {
-          "label": "Enable \"View all\" button if collection has more products than shown"
+          "label": "Enable \"View all\" if collection has more products than shown"
         },
-        "swipe_on_mobile": {
-          "label": "Enable swipe on mobile"
+        "view_all_style": {
+          "label": "\"View all\" style",
+          "options__1": {
+            "label": "Link"
+          },
+          "options__2": {
+            "label": "Outline button"
+          },
+          "options__3": {
+            "label": "Solid button"
+          }
+        },
+        "enable_desktop_slider": {
+          "label": "Enable carousel on desktop"
+        },
+        "full_width": {
+          "label": "Make products full width"
         },
         "header": {
           "content": "Product card"
@@ -716,6 +785,21 @@
         "show_rating": {
           "label": "Show product rating",
           "info": "To display a rating, add a product rating app. [Learn more](https://help.shopify.com/manual/online-store/themes/os20/themes-by-shopify/dawn/sections#featured-collection-show-product-rating)"
+        },
+        "header_mobile": {
+          "content": "Mobile Layout"
+        },
+        "columns_mobile": {
+          "label": "Number of columns on mobile",
+          "options__1": {
+            "label": "1 column"
+          },
+          "options__2": {
+            "label": "2 columns"
+          }
+        },
+        "swipe_on_mobile": {
+          "label": "Enable swipe on mobile"
         }
       },
       "presets": {
@@ -1014,6 +1098,16 @@
         "menu": {
           "header": "Navigation",
           "label": "Menu"
+        },
+        "menu_type_desktop": {
+          "label": "Desktop menu type",
+          "info": "Menu type is automatically optimized for mobile.",
+          "options__1": {
+            "label": "Dropdown"
+          },
+          "options__2": {
+            "label": "Mega menu"
+          }
         },
         "menu_mob": {
           "label": "Mobile menu",
@@ -1865,6 +1959,21 @@
           },
           "info": "Add images by editing your collections. [Learn more](https://help.shopify.com/en/manual/products/collections)"
         },
+        "columns_desktop": {
+          "label": "Number of columns on desktop"
+        },
+        "header_mobile": {
+          "content": "Mobile Layout"
+        },
+        "columns_mobile": {
+          "label": "Number of columns on mobile",
+          "options__1": {
+            "label": "1 column"
+          },
+          "options__2": {
+            "label": "2 columns"
+          }
+        },
         "color_scheme": {
           "options__1": {
             "label": "Accent 1"
@@ -2299,6 +2408,18 @@
         },
         "article_show_author": {
           "label": "Show author"
+        },
+        "header_mobile": {
+          "content": "Mobile Layout"
+        },
+        "columns_mobile": {
+          "label": "Number of columns on mobile",
+          "options__1": {
+            "label": "1 column"
+          },
+          "options__2": {
+            "label": "2 columns"
+          }
         }
       }
     },
@@ -2386,6 +2507,18 @@
         "button_link": {
           "label": "Button link"
         },
+        "header_mobile": {
+          "content": "Mobile Layout"
+        },
+        "columns_mobile": {
+          "label": "Number of columns on mobile",
+          "options__1": {
+            "label": "1 column"
+          },
+          "options__2": {
+            "label": "2 columns"
+          }
+        },
         "swipe_on_mobile": {
           "label": "Enable swipe on mobile"
         }
@@ -2419,11 +2552,14 @@
     "text_with_icons": {
       "name": "Text with icons",
       "settings": {
-        "subtitle": {
-          "label": "Subheading"
-        },
-        "title": {
-          "label": "Heading"
+        "background_style": {
+          "label": "Style",
+          "options__1": {
+            "label": "Standart"
+          },
+          "options__2": {
+            "label": "Card"
+          }
         },
         "text_aligment": {
           "options__1": {
@@ -2437,40 +2573,10 @@
         "image_width": {
           "label": "Image width",
           "options__1": {
-            "label": "One-third width of column"
-          },
-          "options__2": {
-            "label": "Half width of column"
-          },
-          "options__3": {
-            "label": "Full width of column"
-          }
-        },
-        "column_size": {
-          "label": "Column size",
-          "options__1": {
-            "label": "Small"
-          },
-          "options__2": {
-            "label": "Medium"
-          },
-          "options__3": {
             "label": "Large"
-          }
-        },
-        "image_ratio": {
-          "label": "Image ratio",
-          "options__1": {
-            "label": "Adapt to image"
           },
           "options__2": {
-            "label": "Portrait"
-          },
-          "options__3": {
-            "label": "Square"
-          },
-          "options__4": {
-            "label": "Circle"
+            "label": "Small"
           }
         },
         "columns_desktop": {
@@ -2485,20 +2591,14 @@
             "label": "Center"
           }
         },
-        "background_style": {
-          "label": "Secondary background",
-          "options__1": {
-            "label": "None"
-          },
-          "options__2": {
-            "label": "Show as column background"
-          }
-        },
         "button_label": {
           "label": "Button label"
         },
         "button_link": {
           "label": "Button link"
+        },
+        "heading_size": {
+          "label": "Item heading size"
         },
         "swipe_on_mobile": {
           "label": "Enable swipe on mobile"
@@ -2979,6 +3079,9 @@
         "heading": {
           "label": "Heading"
         },
+        "products_to_show": {
+          "label": "Maximum products to show"
+        },
         "columns_desktop": {
           "label": "Number of columns on desktop"
         },
@@ -3009,6 +3112,18 @@
         "show_rating": {
           "label": "Show product rating",
           "info": "To display a rating, add a product rating app. [Learn more](https://help.shopify.com/manual/online-store/themes/os20/themes-by-shopify/dawn/page-types#product-recommendations-show-product-rating)"
+        },
+        "header_mobile": {
+          "content": "Mobile Layout"
+        },
+        "columns_mobile": {
+          "label": "Number of columns on mobile",
+          "options__1": {
+            "label": "1 column"
+          },
+          "options__2": {
+            "label": "2 columns"
+          }
         }
       }
     },
