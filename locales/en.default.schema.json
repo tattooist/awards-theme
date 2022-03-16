@@ -2555,7 +2555,7 @@
         "background_style": {
           "label": "Style",
           "options__1": {
-            "label": "Standart"
+            "label": "Standard"
           },
           "options__2": {
             "label": "Card"
@@ -2571,7 +2571,7 @@
           "label": "Text alignment"
         },
         "image_width": {
-          "label": "Image width",
+          "label": "Icon size",
           "options__1": {
             "label": "Large"
           },
@@ -2606,7 +2606,7 @@
       },
       "blocks": {
         "column": {
-          "name": "Column",
+          "name": "Item",
           "settings": {
             "image": {
               "label": "Image"
