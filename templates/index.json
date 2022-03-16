@@ -460,44 +460,33 @@
         "16471420027c4ddc86-0": {
           "type": "column",
           "settings": {
-            "icon": "truck",
+            "icon": "leaf",
             "title": "Safe on all ages",
-            "text": "<p>Everyone naturally benefits from a healthy balance<\/p>",
-            "link_label": "",
-            "link": ""
+            "text": "<p>Everyone naturally benefits from a healthy balance<\/p>"
           }
         },
         "16471420027c4ddc86-1": {
           "type": "column",
           "settings": {
             "icon": "heart",
-            "image": "shopify:\/\/shop_images\/Image_cf604353-430f-42aa-baa6-7ff743af4aee.png",
             "title": "100% Drug-Free",
-            "text": "<p>Restore natural balance with bio-frequencies, not chemicals<\/p>",
-            "link_label": "",
-            "link": ""
+            "text": "<p>Restore natural balance with bio-frequencies, not chemicals<\/p>"
           }
         },
         "16471420027c4ddc86-2": {
           "type": "column",
           "settings": {
-            "icon": "chat_bubble",
-            "image": "shopify:\/\/shop_images\/Image_6b7da92f-3a35-47c4-bd8f-8258a652e1b0.png",
+            "icon": "map_pin",
             "title": "Worldwide shipping",
-            "text": "<p>On all UK and Europ orders over £50<\/p>",
-            "link_label": "",
-            "link": ""
+            "text": "<p>On all UK and Europ orders over £50<\/p>"
           }
         },
         "16471420027c4ddc86-3": {
           "type": "column",
           "settings": {
-            "icon": "lock",
-            "image": "shopify:\/\/shop_images\/Image_9dc6689c-420d-4290-b93c-2b62139dc214.png",
+            "icon": "return",
             "title": "Easy returns",
-            "text": "<p>Within 30 days of recovering your purchase<\/p>",
-            "link_label": "",
-            "link": ""
+            "text": "<p>Within 30 days of recovering your purchase<\/p>"
           }
         }
       },
@@ -508,18 +497,13 @@
         "16471420027c4ddc86-3"
       ],
       "settings": {
-        "subtitle": "",
-        "title": "",
-        "text_aligment": "center",
-        "image_width": "third",
-        "image_ratio": "square",
-        "columns_desktop": 4,
-        "column_alignment": "center",
         "background_style": "primary",
-        "button_label": "",
-        "button_link": "",
+        "image_width": "small",
+        "heading_size": "h6",
         "swipe_on_mobile": true,
-        "color_scheme": "background-1",
+        "bg_color": "",
+        "text_color": "",
+        "card_color": "",
         "padding_top": 32,
         "padding_bottom": 32
       }
@@ -557,14 +541,12 @@
         },
         "16471423227a415602-4": {
           "type": "column",
-          "disabled": true,
           "settings": {
             "link": ""
           }
         },
         "16471423227a415602-5": {
           "type": "column",
-          "disabled": true,
           "settings": {
             "link": ""
           }
@@ -583,7 +565,7 @@
         "title": "Press",
         "text_aligment": "center",
         "image_ratio": "adapt",
-        "columns_desktop": 4,
+        "columns_desktop": 5,
         "button_label": "",
         "button_link": "",
         "swipe_on_mobile": true,
@@ -602,8 +584,7 @@
             "text": "<p>This is now my HG concealer. The shade match is perfect and the coverage is there whilst being skinlike. All the ‘creamy’ concealer, like Kosas or PML happen to crease under my eyes unless I prime it and this does not, even without priming.<\/p>",
             "rating": "5",
             "author": "Author",
-            "location": "Location",
-            "product_about": ""
+            "location": "Location"
           }
         },
         "16472414377936b3a9-1": {
@@ -613,8 +594,7 @@
             "text": "<p>This is now my HG concealer. The shade match is perfect and the coverage is there whilst being skinlike. All the ‘creamy’ concealer, like Kosas or PML happen to crease under my eyes unless I prime it and this does not, even without priming.<\/p>",
             "rating": "5",
             "author": "Author",
-            "location": "Location",
-            "product_about": ""
+            "location": "Location"
           }
         },
         "16472414377936b3a9-2": {
@@ -624,8 +604,7 @@
             "text": "<p>This is now my HG concealer. The shade match is perfect and the coverage is there whilst being skinlike. All the ‘creamy’ concealer, like Kosas or PML happen to crease under my eyes unless I prime it and this does not, even without priming.<\/p>",
             "rating": "5",
             "author": "Author",
-            "location": "Location",
-            "product_about": ""
+            "location": "Location"
           }
         }
       },
