@@ -2,6 +2,12 @@
   margin-top: 0.8rem;
 }
 
+.text-with-icons .multicolumn-card__image-wrapper,
+.text-with-icons .multicolumn-card__image-wrapper:not(.multicolumn-card__image-wrapper--full-width) {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .text-with-icons .multicolumn-card-spacing {
   padding-top: 3.2rem;
 }
@@ -27,5 +33,11 @@
   .text-with-icons .rte {
     font-size: 1.5rem;
     line-height: 2.6rem;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .text-with-icons .grid__item {
+    width: calc(100% - 5.2rem);
   }
 }

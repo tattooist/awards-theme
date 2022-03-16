@@ -15,13 +15,36 @@
   }
 {%- endstyle -%}
 
-<slideshow-component class="press page-width section-{{ section.id }}-padding" role="region" aria-roledescription="{{ 'sections.slideshow.carousel' | t }}" aria-label="{{ section.settings.accessibility_info | escape }}">
+{% unless section.settings.bg_color == blank %}
+  {%- style -%}
+    #press-{{ section.id }} {
+      background: {{ section.settings.bg_color }};
+    }
+  {%- endstyle -%}
+{% endunless %}
+
+{% unless section.settings.text_color == blank %}
+  {%- style -%}
+    #press-{{ section.id }} .press__logo,
+    #press-{{ section.id }} .press__subheading,
+    #press-{{ section.id }} .title {
+      color: {{ section.settings.text_color }};
+    }
+
+    #press-{{ section.id }}  .press__subheading:before {
+      background: {{ section.settings.text_color }};
+    }
+  {%- endstyle -%}
+{% endunless %}
+
+<slideshow-component id="press-{{ section.id }}" class="press page-width section-{{ section.id }}-padding">
   <div class="slideshow banner grid grid--1-col slider slider--everywhere"
     id="Slider-{{ section.id }}"
     aria-live="polite"
     aria-atomic="true"
     data-autoplay="{{ section.settings.auto_rotate }}"
     data-speed="{{ section.settings.change_slides_speed }}"
+    data-looping="true"
   >
     {%- for block in section.blocks -%}
       <div class="slideshow__slide grid__item grid--1-col slider__slide"
@@ -52,9 +75,9 @@
 
   <div class="no-js-hidden">
     <slider-component class="slider-mobile-gutter">
-      <div id="Slider-thumb-{{ section.id }}" class="slider-buttons press-list contains-content-container grid grid--2-col grid--{{ section.blocks.size }}-col-desktop slider slider--mobile grid--peek">
+      <div id="Slider-thumb-{{ section.id }}" class="slider-buttons press-list contains-content-container grid grid--2-col{% if section.blocks.size <= 4 %}  grid--center grid--4-col-desktop{% elsif section.blocks.size > 6 %} grid--6-col-desktop{% else %} grid--{{ section.blocks.size }}-col-desktop{% endif %} slider slider--mobile grid--peek">
         {%- for block in section.blocks -%}
-          <div id="Slide-thumb-{{ section.id }}-{{ forloop.index }}" class="grid__item slider__slide slider-counter__link" aria-label="{{ 'sections.slideshow.load_slide' | t }} {{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}" aria-controls="Slider-{{ section.id }}">
+          <div id="Slide-thumb-{{ section.id }}-{{ forloop.index }}" class="grid__item slider__slide slider-counter__link">
             <div class="press__logo center">
               {%- if block.settings.image -%}
                 <img
@@ -91,9 +114,9 @@
 
   <noscript>
     <div class="slider-buttons">
-      <div class="press-list grid grid--2-col grid--{{ section.blocks.size }}-col-desktop">
+      <div class="press-list grid grid--2-col {% if section.blocks.size <= 4 %}  grid--center grid--4-col-desktop{% elsif section.blocks.size > 6 %} grid--6-col-desktop{% else %} grid--{{ section.blocks.size }}-col-desktop{% endif %}">
         {%- for block in section.blocks -%}
-          <a href="#Slide-{{ section.id }}-{{ forloop.index }}" class="slider-counter__link grid__item slider__slide" aria-label="{{ 'sections.slideshow.load_slide' | t }} {{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}">
+          <a href="#Slide-{{ section.id }}-{{ forloop.index }}" class="slider-counter__link grid__item slider__slide">
             <div class="press__logo center">
               {%- if block.settings.image -%}
                 <img
@@ -151,14 +174,17 @@
     },
     {
       "type": "header",
-      "content": "t:sections.press.settings.accessibility.content"
+      "content": "t:sections.all.section_colors.section_colors_heading"
     },
     {
-      "type": "text",
-      "id": "accessibility_info",
-      "label": "t:sections.press.settings.accessibility.label",
-      "info": "t:sections.press.settings.accessibility.info",
-      "default": "press about our brand"
+      "type": "color",
+      "id": "bg_color",
+      "label": "t:sections.all.section_colors.bg_color.label"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:sections.all.section_colors.text_color.label"
     },
     {
       "type": "header",
@@ -185,6 +211,7 @@
       "default": 32
     }
   ],
+  "max_blocks": 6,
   "blocks": [
     {
       "type": "testimonial",
@@ -194,7 +221,8 @@
         {
           "type": "image_picker",
           "id": "image",
-          "label": "t:sections.press.blocks.testimonial.settings.image.label"
+          "label": "t:sections.press.blocks.testimonial.settings.image.label",
+          "info": "t:sections.press.blocks.testimonial.settings.image.info"
         },
         {
           "type": "text",
@@ -227,35 +255,6 @@
           "id": "subheading",
           "default": "Some kind of magazine",
           "label": "t:sections.press.blocks.testimonial.settings.subheading.label"
-        },
-        {
-          "type": "select",
-          "id": "color_scheme",
-          "options": [
-            {
-              "value": "accent-1",
-              "label": "t:sections.all.colors.accent_1.label"
-            },
-            {
-              "value": "accent-2",
-              "label": "t:sections.all.colors.accent_2.label"
-            },
-            {
-              "value": "background-1",
-              "label": "t:sections.all.colors.background_1.label"
-            },
-            {
-              "value": "background-2",
-              "label": "t:sections.all.colors.background_2.label"
-            },
-            {
-              "value": "inverse",
-              "label": "t:sections.all.colors.inverse.label"
-            }
-          ],
-          "default": "background-1",
-          "label": "t:sections.all.colors.label",
-          "info": "t:sections.press.blocks.testimonial.settings.color_scheme.info"
         }
       ]
     }

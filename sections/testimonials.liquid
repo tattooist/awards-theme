@@ -18,7 +18,51 @@
   }
 {%- endstyle -%}
 
-<div class="multicolumn testimonials color-{{ section.settings.color_scheme }} gradient{% unless section.settings.background_style == 'none' and settings.text_boxes_border_thickness > 0 or settings.text_boxes_shadow_opacity > 0 %} background-{{ section.settings.background_style }}{% endunless %}{% if section.settings.title == blank %} no-heading{% endif %}">
+{% unless section.settings.card_color == blank %}
+  {%- style -%}
+    #testimonials-{{ section.id }}.multicolumn.background-primary .multicolumn-card {
+      background: {{ section.settings.card_color }};
+    }
+  {%- endstyle -%}
+{% endunless %}
+
+{% unless section.settings.bg_color == blank %}
+  {%- style -%}
+    #testimonials-{{ section.id }} {
+      background: {{ section.settings.bg_color }};
+    }
+  {%- endstyle -%}
+{% endunless %}
+
+{% unless section.settings.text_color == blank %}
+  {%- style -%}
+    #testimonials-{{ section.id }} .multicolumn-list h3,
+    #testimonials-{{ section.id }} .multicolumn-list p,
+    #testimonials-{{ section.id }} .title,
+    #testimonials-{{ section.id }} .multicolumn__subheading,
+    #testimonials-{{ section.id }} .testimonials__author {
+      color: {{ section.settings.text_color }};
+    }
+
+    #testimonials-{{ section.id }} .testimonials__location {
+      color: rgba({{ section.settings.text_color.red }}, {{ section.settings.text_color.green }}, {{ section.settings.text_color.blue }},.5);
+    }
+
+    #testimonials-{{ section.id }}.testimonials .placeholder-svg {
+      border:1px solid rgba({{ section.settings.text_color.red }}, {{ section.settings.text_color.green }}, {{ section.settings.text_color.blue }},.5);
+    }
+
+    #testimonials-{{ section.id }} .rating-star:before {
+      -webkit-text-fill-color: {{ section.settings.text_color }};
+    }
+
+    #testimonials-{{ section.id }} .placeholder-svg {
+      fill: {{ section.settings.text_color }};
+    }
+  {%- endstyle -%}
+{% endunless %}
+
+<div id="testimonials-{{ section.id }}" class="multicolumn testimonials color-{{ section.settings.color_scheme }} gradient{% unless section.settings.background_style == 'none' and settings.text_boxes_border_thickness > 0 or settings.text_boxes_shadow_opacity > 0 %} background-{{ section.settings.background_style }}{% endunless %}{% if section.settings.title == blank %} no-heading{% endif %}">
   <div class="page-width section-{{ section.id }}-padding isolate">
     {% if section.settings.subtitle != blank %}
       <h2 class="multicolumn__subheading {{ section.settings.text_aligment }}">
@@ -33,7 +77,7 @@
       </div>
     {% endunless %}
     <slider-component class="slider-mobile-gutter">
-      <ul class="multicolumn-list contains-content-container grid grid--1-col{% if section.settings.columns_desktop == 1 %} grid--full-width{% else %} grid--{{ section.settings.columns_desktop }}-col-desktop{% endif %}{% if section.settings.swipe_on_mobile and section.blocks.size > 1 %} slider slider--mobile grid--peek{% endif %}"
+      <ul class="multicolumn-list contains-content-container grid grid--1-col{% if section.blocks.size <= 3 %} grid--center grid--3-col-desktop{% elsif section.blocks.size > 3 %} grid--3-col-desktop{% endif %}{% if section.settings.swipe_on_mobile and section.blocks.size > 1 %} slider slider--mobile grid--peek{% endif %}"
         id="Slider-{{ section.id }}"
         role="list"
       >
@@ -48,19 +92,20 @@
         {%- for block in section.blocks -%}
           <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="multicolumn-list__item grid__item{% if section.settings.swipe_on_mobile %} slider__slide{% endif %}{% if section.settings.column_alignment == 'center' %} center{% endif %}" {{ block.shopify_attributes }}>
             <div class="multicolumn-card content-container">
-              {% liquid
-                assign rating_decimal = 0
-                assign decimal = block.settings.rating | modulo: 1
-                if decimal >= 0.3 and decimal <= 0.7
-                  assign rating_decimal = 0.5
-                elsif decimal > 0.7
-                  assign rating_decimal = 1
-                endif
-              %}
-              <div class="rating" role="img" aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: block.settings.rating, rating_max: 5 }}">
-                <span aria-hidden="true" class="rating-star color-icon-{{ settings.accent_icons }}" style="--rating: {{ block.settings.rating }}; --rating-max: 5; --rating-decimal: {{ rating_decimal }};"></span>
-              </div>
               <div class="multicolumn-card__info">
+                {% liquid
+                  assign rating_decimal = 0
+                  assign decimal = block.settings.rating | modulo: 1
+                  if decimal >= 0.3 and decimal <= 0.7
+                    assign rating_decimal = 0.5
+                  elsif decimal > 0.7
+                    assign rating_decimal = 1
+                  endif
+                %}
+                <div class="rating" role="img" aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: block.settings.rating, rating_max: 5 }}">
+                  <span aria-hidden="true" class="rating-star color-icon-{{ settings.accent_icons }}" style="--rating: {{ block.settings.rating }}; --rating-max: 5; --rating-decimal: {{ rating_decimal }};"></span>
+                </div>
+
                 {%- if block.settings.title != blank -%}
                   <h3>{{ block.settings.title | escape }}</h3>
                 {%- endif -%}
@@ -105,9 +150,6 @@
 
       {%- if section.settings.swipe_on_mobile -%}
         <div class="slider__controls slider__controls--center large-up-hide">
-          {%- if section.settings.button_label != blank and section.settings.swipe_on_mobile -%}
-            <a href="{{ section.settings.button_link }}" class="link underlined-link large-up-hide">{{ section.settings.button_label | escape }}</a>
-          {%- endif -%}
           <div class="slider-buttons no-js-hidden medium-hide{% if section.blocks.size < 2 %} small-hide{% endif %}">
             <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'general.slider.previous_slide' | t }}">{% render 'icon-arrow' %}</button>
             <div class="slider-counter caption">
@@ -121,13 +163,6 @@
         </div>
       {%- endif -%}
     </slider-component>
-    <div class="center{% if section.settings.swipe_on_mobile %} small-hide medium-hide{% endif %} btn-view-all">
-      {%- if section.settings.button_label != blank -%}
-        <a class="button button--primary"{% if section.settings.button_link == blank %} role="link" aria-disabled="true"{% else %} href="{{ section.settings.button_link }}"{% endif %}>
-          {{ section.settings.button_label | escape }}
-        </a>
-      {%- endif-%}
-    </div>
   </div>
 </div>
 
@@ -165,15 +200,6 @@
       "label": "t:sections.testimonials.settings.text_aligment.label"
     },
     {
-      "type": "range",
-      "id": "columns_desktop",
-      "min": 1,
-      "max": 6,
-      "step": 1,
-      "default": 3,
-      "label": "t:sections.testimonials.settings.columns_desktop.label"
-    },
-    {
       "type": "select",
       "id": "column_alignment",
       "options": [
@@ -206,48 +232,29 @@
       "label": "t:sections.testimonials.settings.background_style.label"
     },
     {
-      "type": "text",
-      "id": "button_label",
-      "label": "t:sections.testimonials.settings.button_label.label"
-    },
-    {
-      "type": "url",
-      "id": "button_link",
-      "label": "t:sections.testimonials.settings.button_link.label"
-    },
-    {
       "type": "checkbox",
       "id": "swipe_on_mobile",
       "default": true,
       "label": "t:sections.testimonials.settings.swipe_on_mobile.label"
     },
     {
-      "type": "select",
-      "id": "color_scheme",
-      "options": [
-        {
-          "value": "accent-1",
-          "label": "t:sections.all.colors.accent_1.label"
-        },
-        {
-          "value": "accent-2",
-          "label": "t:sections.all.colors.accent_2.label"
-        },
-        {
-          "value": "background-1",
-          "label": "t:sections.all.colors.background_1.label"
-        },
-        {
-          "value": "background-2",
-          "label": "t:sections.all.colors.background_2.label"
-        },
-        {
-          "value": "inverse",
-          "label": "t:sections.all.colors.inverse.label"
-        }
-      ],
-      "default": "background-1",
-      "label": "t:sections.all.colors.label"
+      "type": "header",
+      "content": "t:sections.all.section_colors.section_colors_heading"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "t:sections.all.section_colors.bg_color.label"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:sections.all.section_colors.text_color.label"
+    },
+    {
+      "type": "color",
+      "id": "card_color",
+      "label": "t:sections.all.section_colors.card_color.label"
     },
     {
       "type": "header",
@@ -274,6 +281,7 @@
       "default": 32
     }
   ],
+  "max_blocks": 6,
   "blocks": [
     {
       "type": "column",
@@ -289,7 +297,8 @@
           "type": "richtext",
           "id": "text",
           "default": "<p>This is now my HG concealer. The shade match is perfect and the coverage is there whilst being skinlike. All the ‘creamy’ concealer, like Kosas or PML happen to crease under my eyes unless I prime it and this does not, even without priming.</p>",
-          "label": "t:sections.testimonials.blocks.column.settings.text.label"
+          "label": "t:sections.testimonials.blocks.column.settings.text.label",
+          "info": "t:sections.testimonials.blocks.column.settings.text.info"
         },
         {
           "type": "select",
@@ -322,7 +331,8 @@
         {
           "type": "image_picker",
           "id": "image",
-          "label": "t:sections.testimonials.blocks.column.settings.image.label"
+          "label": "t:sections.testimonials.blocks.column.settings.image.label",
+          "info": "t:sections.testimonials.blocks.column.settings.image.info"
         },
         {
           "type": "text",

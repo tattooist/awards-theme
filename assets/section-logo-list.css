@@ -33,7 +33,7 @@
 }
 
 @media screen and (max-width: 749px) {
-  .multicolumn-list__item:last-child {
-    margin: 0 0 var(--grid-mobile-vertical-spacing);
+  .logo-list .grid__item {
+    width: calc(50% - var(--grid-mobile-horizontal-spacing) - 3.1rem);
   }
 }

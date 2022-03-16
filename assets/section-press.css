@@ -40,6 +40,11 @@ slider-component.press {
     opacity: .5;
 }
 
+.press__logo img {
+    max-width: 100%;
+    height: auto;
+}
+
 @media screen and (max-width: 749px) {
     .press__logo {
         font-size: 2rem;
@@ -59,6 +64,11 @@ slider-component.press {
 }
 
 @media screen and (max-width: 749px) {
+    .press .press-list  .grid__item {
+        width: calc(50% - var(--grid-mobile-horizontal-spacing) - 5.1rem);
+        min-width: auto;
+    }
+
     .press-list.slider {
         margin-top: 2.3rem;
     }

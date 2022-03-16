@@ -36,6 +36,10 @@
   margin-right: auto;
 }
 
+.multicolumn-list__item.center .link {
+  justify-content: center;
+}
+
 .multicolumn .button {
   margin-top: 2.4rem;
 }
@@ -202,6 +206,7 @@
   text-decoration: none;
   font-size: inherit;
   margin-top: 1.5rem;
+  display: flex;
 }
 
 .multicolumn-card__info .icon-wrap {
