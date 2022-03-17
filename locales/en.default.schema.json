@@ -355,13 +355,23 @@
       "section_colors": {
         "section_colors_heading": "Colors",
         "bg_color": {
-          "label": "Background"
+          "label": "Background",
+          "info": "Used while image is loading"
         },
         "text_color": {
           "label": "Text color"
         },
         "card_color": {
           "label": "Card background"
+        },
+        "button_bg": {
+          "label": "Button background"
+        },
+        "button_text": {
+          "label": "Button text"
+        },
+        "overlay_color": {
+          "label": "Overlay"
         }
       },
       "heading_size": {
@@ -1188,9 +1198,6 @@
           },
           "options__2": {
             "label": "Boxed"
-          },
-          "options__3": {
-            "label": "Boxed radius"
           }
         },
         "desktop_content_position": {
@@ -1221,22 +1228,10 @@
           "options__9": {
             "label": "Bottom Right"
           },
-          "label": "Desktop content position"
+          "label": "Text position"
         },
         "show_text_box": {
           "label": "Show container on desktop"
-        },
-        "desktop_content_alignment": {
-          "options__1": {
-            "label": "Left"
-          },
-          "options__2": {
-            "label": "Center"
-          },
-          "options__3": {
-            "label": "Right"
-          },
-          "label": "Desktop content alignment"
         },
         "image_mob": {
           "label": "Mobile image",
@@ -1245,44 +1240,11 @@
         "desktop_text_box_header_h1": {
           "content": "Desktop layout"
         },
-        "desktop_text_box_position": {
-          "options__1": {
-            "label": "Top left"
-          },
-          "options__2": {
-            "label": "Top center"
-          },
-          "options__3": {
-            "label": "Middle left"
-          },
-          "options__4": {
-            "label": "Middle center"
-          },
-          "options__5": {
-            "label": "Bottom left"
-          },
-          "options__6": {
-            "label": "Bottom center"
-          },
-          "label": "Text position"
-        },
         "image_overlay_opacity": {
           "label": "Image overlay opacity"
         },
         "header": {
           "content": "Mobile Layout"
-        },
-        "mobile_content_alignment": {
-          "options__1": {
-            "label": "Left"
-          },
-          "options__2": {
-            "label": "Center"
-          },
-          "options__3": {
-            "label": "Right"
-          },
-          "label": "Mobile content alignment"
         },
         "stack_images_on_mobile": {
           "label": "Stack images on mobile"

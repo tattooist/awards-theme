@@ -18,8 +18,14 @@
 {%- if section.settings.section_height == 'original' and section.settings.image != blank -%}
   {%- style -%}
   @media screen and (max-width: 749px) {
+    #Banner-{{ section.id }}::before {
+      background:#CCC;
+      padding-bottom: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%;
+      content: '';
+      display: block;
+    }
     #Banner-{{ section.id }}::before,
-    #Banner-{{ section.id }} .banner__media::before,
+    #Banner-{{ section.id }} .banner__media-mob::before,
     #Banner-{{ section.id }}:not(.banner--mobile-bottom) .banner__content::before {
       padding-bottom: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%;
       content: '';
@@ -44,6 +50,57 @@
     background: {{ section.settings.overlay_color }};
   }
 {%- endstyle -%}
+
+{% unless section.settings.bg_color == blank or section.settings.bg_color contains 'rgba(0,0,0,0)' %}
+  {%- style -%}
+    #Banner-{{ section.id }} {
+      background: {{ section.settings.bg_color }};
+    }
+
+    @media screen and (max-width: 749px) {
+      #Banner-{{ section.id }}.banner--mobile-bottom .banner__box {
+        background: {{ section.settings.bg_color }};
+      }
+    }
+  {%- endstyle -%}
+{% else %}
+  {%- style -%}
+    @media screen and (max-width: 749px) {
+      #Banner-{{ section.id }}.banner--boxed .media {
+        border-radius: var(--text-boxes-radius);
+      }
+
+      #Banner-{{ section.id }}.banner--mobile-bottom.banner--boxed .banner__box {
+        padding-left:0;
+        padding-right:0;
+      }
+    }
+  {%- endstyle -%}
+{% endunless %}
+
+{% unless section.settings.text_color == blank %}
+  {%- style -%}
+    #Banner-{{ section.id }} .banner__box {
+    --color-foreground: {{ section.settings.text_color.red }}, {{ section.settings.text_color.green }}, {{ section.settings.text_color.blue }};
+    }
+  {%- endstyle -%}
+{% endunless %}
+
+{% unless section.settings.button_bg == blank %}
+  {%- style -%}
+    #Banner-{{ section.id }} .banner__box {
+      --color-button: {{ section.settings.button_bg.red }}, {{ section.settings.button_bg.green }}, {{ section.settings.button_bg.blue }};
+    }
+  {%- endstyle -%}
+{% endunless %}
+
+{% unless section.settings.button_text == blank %}
+  {%- style -%}
+    #Banner-{{ section.id }} .banner__box {
+      --color-button-text: {{ section.settings.button_text.red }}, {{ section.settings.button_text.green }}, {{ section.settings.button_text.blue }};
+    }
+  {%- endstyle -%}
+{% endunless %}
 
 {%- capture var_image1 -%}
     <img srcset="{%- if section.settings.image.width >= 375 -%}{{ section.settings.image | img_url: '375x' }} 375w,{%- endif -%}
@@ -110,18 +167,13 @@
         height="{{ image_mob.width | divided_by: image_mob.aspect_ratio }}"
   >
 {%- endcapture -%}
-
+{% if section.settings.layout == 'boxed' %}<div class="page-width">{% endif %}
 <div id="Banner-{{ section.id }}" class="banner
-   banner--content-align-{{ section.settings.desktop_content_alignment }}
-   banner--content-align-mobile-{{ section.settings.mobile_content_alignment }}
+   banner--desktop-transparent
    banner--{{ section.settings.section_height }}
-   banner--{{ section.settings.layout }}
-   {% if section.settings.stack_images_on_mobile and section.settings.image != blank and section.settings.image_2 != blank %} banner--stacked{% endif %}
-   {% if section.settings.section.settings.section_height == 'original' and section.settings.image != blank %} banner--adapt{% endif %}
-   {% if section.settings.show_text_below %} banner--mobile-bottom{%- endif -%}
-   {% if section.settings.show_text_box == false %} banner--desktop-transparent{% endif %}"
-   style="background-color: {{ section.settings.bg_color }};"
-  >
+   {% if section.settings.layout == 'boxed' %} banner--boxed content-container{% endif %}
+   {% if section.settings.section_height == 'original' and section.settings.image != blank %} banner--adapt{% endif %}
+   {% if section.settings.show_text_below %} banner--mobile-bottom{%- endif -%}">
   {%- if section.settings.image != blank -%}
     <div class="banner__media media{% if section.settings.image == blank and section.settings.image_2 == blank %} placeholder{% endif %}{% if section.settings.image_2 != blank %} banner__media-half{% endif %}">
       {{ var_image1 }}
@@ -148,8 +200,8 @@
     </div>
   {%- endif -%}
 
-  <div class="banner__content banner__content--{{ section.settings.desktop_content_position }} banner__content--{{ section.settings.mobile_text_box_position }}-mob page-width">
-    <div class="banner__box content-container content-container--full-width-mobile color-{{ section.settings.color_scheme }}">
+  <div class="banner__content banner__content--{{ section.settings.desktop_content_position }} banner__content--{{ section.settings.mobile_content_position }}-mob page-width">
+    <div class="banner__box content-container content-container--full-width-mobile color-background-1">
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when 'subheading' -%}
@@ -179,6 +231,7 @@
     </div>
   </div>
 </div>
+{% if section.settings.layout == 'boxed' %}</div>{% endif %}
 
 {% schema %}
 {
@@ -197,10 +250,6 @@
         {
           "value": "boxed",
           "label": "t:sections.image-banner.settings.layout.options__2.label"
-        },
-        {
-          "value": "boxed-radius",
-          "label": "t:sections.image-banner.settings.layout.options__3.label"
         }
       ],
       "default": "fullsized",
@@ -301,86 +350,52 @@
       "label": "t:sections.image-banner.settings.desktop_content_position.label"
     },
     {
-      "type": "select",
-      "id": "desktop_content_alignment",
-      "options": [
-        {
-          "value": "left",
-          "label": "t:sections.image-banner.settings.desktop_content_alignment.options__1.label"
-        },
-        {
-          "value": "center",
-          "label": "t:sections.image-banner.settings.desktop_content_alignment.options__2.label"
-        },
-        {
-          "value": "right",
-          "label": "t:sections.image-banner.settings.desktop_content_alignment.options__3.label"
-        }
-      ],
-      "default": "center",
-      "label": "t:sections.image-banner.settings.desktop_content_alignment.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_text_box",
-      "default": true,
-      "label": "t:sections.image-banner.settings.show_text_box.label"
-    },
-    {
       "type": "header",
       "content": "t:sections.image-banner.settings.header.content"
     },
     {
       "type": "select",
-      "id": "mobile_text_box_position",
+      "id": "mobile_content_position",
       "options": [
         {
-        "value": "flex-start__flex-start",
-        "label": "t:sections.image-banner.settings.desktop_text_box_position.options__1.label"
+          "value": "top-left",
+          "label": "t:sections.image-banner.settings.desktop_content_position.options__1.label"
         },
         {
-        "value": "flex-start__center",
-        "label": "t:sections.image-banner.settings.desktop_text_box_position.options__2.label"
+          "value": "top-center",
+          "label": "t:sections.image-banner.settings.desktop_content_position.options__2.label"
         },
         {
-        "value": "center__flex-start",
-        "label": "t:sections.image-banner.settings.desktop_text_box_position.options__3.label"
+          "value": "top-right",
+          "label": "t:sections.image-banner.settings.desktop_content_position.options__3.label"
         },
         {
-        "value": "center__center",
-        "label": "t:sections.image-banner.settings.desktop_text_box_position.options__4.label"
+          "value": "middle-left",
+          "label": "t:sections.image-banner.settings.desktop_content_position.options__4.label"
         },
         {
-        "value": "flex-end__flex-start",
-        "label": "t:sections.image-banner.settings.desktop_text_box_position.options__5.label"
+          "value": "middle-center",
+          "label": "t:sections.image-banner.settings.desktop_content_position.options__5.label"
         },
         {
-        "value": "flex-end__center",
-        "label": "t:sections.image-banner.settings.desktop_text_box_position.options__6.label"
+          "value": "middle-right",
+          "label": "t:sections.image-banner.settings.desktop_content_position.options__6.label"
+        },
+        {
+          "value": "bottom-left",
+          "label": "t:sections.image-banner.settings.desktop_content_position.options__7.label"
+        },
+        {
+          "value": "bottom-center",
+          "label": "t:sections.image-banner.settings.desktop_content_position.options__8.label"
+        },
+        {
+          "value": "bottom-right",
+          "label": "t:sections.image-banner.settings.desktop_content_position.options__9.label"
         }
       ],
-      "default": "center__center",
-      "label": "t:sections.image-banner.settings.desktop_text_box_position.label"
-    },
-    {
-      "type": "select",
-      "id": "mobile_content_alignment",
-      "options": [
-        {
-          "value": "left",
-          "label": "t:sections.image-banner.settings.mobile_content_alignment.options__1.label"
-        },
-        {
-          "value": "center",
-          "label": "t:sections.image-banner.settings.mobile_content_alignment.options__2.label"
-        },
-        {
-          "value": "right",
-          "label": "t:sections.image-banner.settings.mobile_content_alignment.options__3.label"
-        }
-      ],
-      "default": "center",
-      "label": "t:sections.image-banner.settings.mobile_content_alignment.label"
+      "default": "middle-center",
+      "label": "t:sections.image-banner.settings.desktop_content_position.label"
     },
     {
       "type": "checkbox",
@@ -389,26 +404,34 @@
       "label": "t:sections.image-banner.settings.show_text_below.label"
     },
     {
-      "type": "checkbox",
-      "id": "stack_images_on_mobile",
-      "default": true,
-      "label": "t:sections.image-banner.settings.stack_images_on_mobile.label"
-    },
-    {
       "type": "header",
-      "content": "t:sections.image-banner.settings.color_h1.content"
+      "content": "t:sections.all.section_colors.section_colors_heading"
     },
     {
       "type": "color",
       "id": "bg_color",
-      "label": "t:sections.image-banner.settings.bg_color.label",
-      "info": "t:sections.image-banner.settings.bg_color.info",
-      "default": "#FFFFFF"
+      "label": "t:sections.all.section_colors.bg_color.label",
+      "info": "t:sections.all.section_colors.bg_color.info"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:sections.all.section_colors.text_color.label"
+    },
+    {
+      "type": "color",
+      "id": "button_bg",
+      "label": "t:sections.all.section_colors.button_bg.label"
+    },
+    {
+      "type": "color",
+      "id": "button_text",
+      "label": "t:sections.all.section_colors.button_text.label"
     },
     {
       "type": "color",
       "id": "overlay_color",
-      "label": "t:sections.image-banner.settings.overlay_color.label",
+      "label": "t:sections.all.section_colors.overlay_color.label",
       "default": "#262626"
     },
     {
@@ -420,35 +443,6 @@
       "unit": "%",
       "label": "t:sections.image-banner.settings.image_overlay_opacity.label",
       "default": 0
-    },
-    {
-      "type": "select",
-      "id": "color_scheme",
-      "options": [
-        {
-          "value": "accent-1",
-          "label": "t:sections.image-banner.settings.color_scheme.options__1.label"
-        },
-        {
-          "value": "accent-2",
-          "label": "t:sections.image-banner.settings.color_scheme.options__2.label"
-        },
-        {
-          "value": "background-1",
-          "label": "t:sections.image-banner.settings.color_scheme.options__3.label"
-        },
-        {
-          "value": "background-2",
-          "label": "t:sections.image-banner.settings.color_scheme.options__4.label"
-        },
-        {
-          "value": "inverse",
-          "label": "t:sections.image-banner.settings.color_scheme.options__5.label"
-        }
-      ],
-      "default": "background-1",
-      "label": "t:sections.image-banner.settings.color_scheme.label",
-      "info": "t:sections.image-banner.settings.color_scheme.info"
     }
   ],
   "blocks": [
