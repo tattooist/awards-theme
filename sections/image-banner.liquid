@@ -19,7 +19,6 @@
   {%- style -%}
   @media screen and (max-width: 749px) {
     #Banner-{{ section.id }}::before {
-      background:#CCC;
       padding-bottom: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%;
       content: '';
       display: block;
@@ -104,7 +103,7 @@
 
 {%- capture var_image1 -%}
     <img srcset="{%- if section.settings.image.width >= 375 -%}{{ section.settings.image | img_url: '375x' }} 375w,{%- endif -%}
-        {%- if block.settings.image.width >= 550 -%}{{ block.settings.image | img_url: '550x' }} 550w,{%- endif -%}
+        {%- if section.settings.image.width >= 550 -%}{{ section.settings.image | img_url: '550x' }} 550w,{%- endif -%}
         {%- if section.settings.image.width >= 750 -%}{{ section.settings.image | img_url: '750x' }} 750w,{%- endif -%}
         {%- if section.settings.image.width >= 1100 -%}{{ section.settings.image | img_url: '1100x' }} 1100w,{%- endif -%}
         {%- if section.settings.image.width >= 1500 -%}{{ section.settings.image | img_url: '1500x' }} 1500w,{%- endif -%}
@@ -113,7 +112,7 @@
         {%- if section.settings.image.width >= 3000 -%}{{ section.settings.image | img_url: '3000x' }} 3000w,{%- endif -%}
         {%- if section.settings.image.width >= 3840 -%}{{ section.settings.image | img_url: '3840x' }} 3840w,{%- endif -%}
         {{ section.settings.image | img_url: 'master' }} {{ section.settings.image.width }}w"
-        sizes="{% if section.settings.image_2 != blank and section.settings.stack_images_on_mobile %}(min-width: 750px) 50vw, 100vw{% elsif section.settings.image_2 != blank %}50vw{% else %}100vw{% endif %}"
+        sizes="{% if section.settings.image_2 != blank %}50vw{% else %}100vw{% endif %}"
         src="{{ section.settings.image | img_url: '1500x' }}"
         loading="lazy"
         alt="{{ section.settings.image.alt | escape }}"
@@ -133,7 +132,7 @@
         {%- if section.settings.image_2.width >= 3000 -%}{{ section.settings.image_2 | img_url: '3000x' }} 3000w,{%- endif -%}
         {%- if section.settings.image_2.width >= 3840 -%}{{ section.settings.image_2 | img_url: '3840x' }} 3840w,{%- endif -%}
         {{ section.settings.image_2 | img_url: 'master' }} {{ section.settings.image_2.width }}w"
-        sizes="{% if section.settings.image != blank and section.settings.stack_images_on_mobile %}(min-width: 750px) 50vw, 100vw{% elsif section.settings.image != blank %}50vw{% else %}100vw{% endif %}"
+        sizes="{% if section.settings.image != blank %}50vw{% else %}100vw{% endif %}"
         src="{{ section.settings.image_2 | img_url: '1500x' }}"
         loading="lazy"
         alt="{{ section.settings.image_2.alt | escape }}"
@@ -171,7 +170,7 @@
 <div id="Banner-{{ section.id }}" class="banner
    banner--desktop-transparent
    banner--{{ section.settings.section_height }}
-   {% if section.settings.layout == 'boxed' %} banner--boxed content-container{% endif %}
+   {% if section.settings.layout == 'boxed' %} banner--boxed{% endif %}
    {% if section.settings.section_height == 'original' and section.settings.image != blank %} banner--adapt{% endif %}
    {% if section.settings.show_text_below %} banner--mobile-bottom{%- endif -%}">
   {%- if section.settings.image != blank -%}
@@ -311,43 +310,43 @@
       "options": [
         {
           "value": "top-left",
-          "label": "t:sections.image-banner.settings.desktop_content_position.options__1.label"
+          "label": "t:sections.image-banner.settings.content_position.options__1.label"
         },
         {
           "value": "top-center",
-          "label": "t:sections.image-banner.settings.desktop_content_position.options__2.label"
+          "label": "t:sections.image-banner.settings.content_position.options__2.label"
         },
         {
           "value": "top-right",
-          "label": "t:sections.image-banner.settings.desktop_content_position.options__3.label"
+          "label": "t:sections.image-banner.settings.content_position.options__3.label"
         },
         {
           "value": "middle-left",
-          "label": "t:sections.image-banner.settings.desktop_content_position.options__4.label"
+          "label": "t:sections.image-banner.settings.content_position.options__4.label"
         },
         {
           "value": "middle-center",
-          "label": "t:sections.image-banner.settings.desktop_content_position.options__5.label"
+          "label": "t:sections.image-banner.settings.content_position.options__5.label"
         },
         {
           "value": "middle-right",
-          "label": "t:sections.image-banner.settings.desktop_content_position.options__6.label"
+          "label": "t:sections.image-banner.settings.content_position.options__6.label"
         },
         {
           "value": "bottom-left",
-          "label": "t:sections.image-banner.settings.desktop_content_position.options__7.label"
+          "label": "t:sections.image-banner.settings.content_position.options__7.label"
         },
         {
           "value": "bottom-center",
-          "label": "t:sections.image-banner.settings.desktop_content_position.options__8.label"
+          "label": "t:sections.image-banner.settings.content_position.options__8.label"
         },
         {
           "value": "bottom-right",
-          "label": "t:sections.image-banner.settings.desktop_content_position.options__9.label"
+          "label": "t:sections.image-banner.settings.content_position.options__9.label"
         }
       ],
       "default": "middle-center",
-      "label": "t:sections.image-banner.settings.desktop_content_position.label"
+      "label": "t:sections.image-banner.settings.content_position.label"
     },
     {
       "type": "header",
@@ -359,43 +358,43 @@
       "options": [
         {
           "value": "top-left",
-          "label": "t:sections.image-banner.settings.desktop_content_position.options__1.label"
+          "label": "t:sections.image-banner.settings.content_position.options__1.label"
         },
         {
           "value": "top-center",
-          "label": "t:sections.image-banner.settings.desktop_content_position.options__2.label"
+          "label": "t:sections.image-banner.settings.content_position.options__2.label"
         },
         {
           "value": "top-right",
-          "label": "t:sections.image-banner.settings.desktop_content_position.options__3.label"
+          "label": "t:sections.image-banner.settings.content_position.options__3.label"
         },
         {
           "value": "middle-left",
-          "label": "t:sections.image-banner.settings.desktop_content_position.options__4.label"
+          "label": "t:sections.image-banner.settings.content_position.options__4.label"
         },
         {
           "value": "middle-center",
-          "label": "t:sections.image-banner.settings.desktop_content_position.options__5.label"
+          "label": "t:sections.image-banner.settings.content_position.options__5.label"
         },
         {
           "value": "middle-right",
-          "label": "t:sections.image-banner.settings.desktop_content_position.options__6.label"
+          "label": "t:sections.image-banner.settings.content_position.options__6.label"
         },
         {
           "value": "bottom-left",
-          "label": "t:sections.image-banner.settings.desktop_content_position.options__7.label"
+          "label": "t:sections.image-banner.settings.content_position.options__7.label"
         },
         {
           "value": "bottom-center",
-          "label": "t:sections.image-banner.settings.desktop_content_position.options__8.label"
+          "label": "t:sections.image-banner.settings.content_position.options__8.label"
         },
         {
           "value": "bottom-right",
-          "label": "t:sections.image-banner.settings.desktop_content_position.options__9.label"
+          "label": "t:sections.image-banner.settings.content_position.options__9.label"
         }
       ],
       "default": "middle-center",
-      "label": "t:sections.image-banner.settings.desktop_content_position.label"
+      "label": "t:sections.image-banner.settings.content_position.label"
     },
     {
       "type": "checkbox",

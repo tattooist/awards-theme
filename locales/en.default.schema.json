@@ -1200,7 +1200,7 @@
             "label": "Boxed"
           }
         },
-        "desktop_content_position": {
+        "content_position": {
           "options__1": {
             "label": "Top Left"
           },
@@ -3068,19 +3068,10 @@
     "slideshow": {
       "name": "Slideshow",
       "settings": {
-        "layout": {
-          "label": "Layout",
+        "section_height": {
+          "label": "Section height",
           "options__1": {
-            "label": "Full width"
-          },
-          "options__2": {
-            "label": "Grid"
-          }
-        },
-        "slide_height": {
-          "label": "Slide height",
-          "options__1": {
-            "label": "Adapt to first image"
+            "label": "Fit screen height"
           },
           "options__2": {
             "label": "Small"
@@ -3090,18 +3081,19 @@
           },
           "options__4": {
             "label": "Large"
-          }
+          },
+          "options__5": {
+            "label": "Original image ratio"
+          },
+          "info": "For best results, use an image with a 3:2 aspect ratio. [Learn more](https://help.shopify.com/en/manual/shopify-admin/productivity-tools/image-editor#understanding-image-aspect-ratio)"
         },
-        "slider_visual": {
-          "label": "Pagination style",
+        "layout": {
+          "label": "Layout",
           "options__1": {
-            "label": "Counter"
+            "label": "Fullsized"
           },
           "options__2": {
-            "label": "Dots"
-          },
-          "options__3": {
-            "label": "Numbers"
+            "label": "Boxed"
           }
         },
         "auto_rotate": {
@@ -3112,9 +3104,6 @@
         },
         "mobile": {
           "content": "Mobile layout"
-        },
-        "show_text_below": {
-          "label": "Show content below images on mobile"
         },
         "accessibility": {
           "content": "Accessibility",
@@ -3127,23 +3116,19 @@
           "name": "Slide",
           "settings": {
             "image": {
-              "label": "Image"
+              "label": "Image",
+              "info": "2160 x 1080px recommended, 1080 x 1080px recommended if split."
+            },
+            "image_2": {
+              "label": "Split image",
+              "info": "1080 x 1080px .jpg recommended. Won't show up on mobile."
+            },
+            "image_mob": {
+              "label": "Mobile image",
+              "info": "1000 x 1400px .jpg recommended. If none is set, desktop image will be used."
             },
             "heading": {
               "label": "Heading"
-            },
-            "subheading": {
-              "label": "Subheading"
-            },
-            "button_label": {
-              "label": "Button label",
-              "info": "Leave the label blank to hide the button."
-            },
-            "link": {
-              "label": "Button link"
-            },
-            "secondary_style": {
-              "label": "Use outline button style"
             },
             "heading_size": {
               "label": "Heading size",
@@ -3157,85 +3142,85 @@
                 "label": "Large"
               }
             },
-            "box_align": {
-              "label": "Desktop content position",
-              "info": "Position is automatically optimized for mobile.",
+            "subheading": {
+              "label": "Subheading"
+            },
+            "subheading_size": {
+              "label": "Heading font size"
+            },
+            "text": {
+              "label": "Description"
+            },
+            "text_style": {
               "options__1": {
-                "label": "Top left"
+                "label": "Body"
               },
               "options__2": {
-                "label": "Top center"
+                "label": "Subtitle"
               },
               "options__3": {
-                "label": "Top right"
+                "label": "Uppercase"
+              },
+              "label": "Text style"
+            },
+            "button_label_1": {
+              "label": "First button label",
+              "info": "Leave the label blank to hide the button."
+            },
+            "button_link_1": {
+              "label": "First button link"
+            },
+            "button_style_secondary_1": {
+              "label": "Use outline button style"
+            },
+            "button_label_2": {
+              "label": "Second button label",
+              "info": "Leave the label blank to hide the button."
+            },
+            "button_link_2": {
+              "label": "Second button link"
+            },
+            "button_style_secondary_2": {
+              "label": "Use outline button style"
+            },
+            "desktop_text_box_header_h1": {
+              "content": "Desktop layout"
+            },
+            "content_position": {
+              "options__1": {
+                "label": "Top Left"
+              },
+              "options__2": {
+                "label": "Top Center"
+              },
+              "options__3": {
+                "label": "Top Right"
               },
               "options__4": {
-                "label": "Middle left"
+                "label": "Middle Left"
               },
               "options__5": {
-                "label": "Middle center"
+                "label": "Middle Center"
               },
               "options__6": {
-                "label": "Middle right"
+                "label": "Middle Right"
               },
               "options__7": {
-                "label": "Bottom left"
+                "label": "Bottom Left"
               },
               "options__8": {
-                "label": "Bottom center"
+                "label": "Bottom Center"
               },
               "options__9": {
-                "label": "Bottom right"
-              }
-            },
-            "show_text_box": {
-              "label": "Show container on desktop"
-            },
-            "text_alignment": {
-              "label": "Desktop content alignment",
-              "option_1": {
-                "label": "Left"
+                "label": "Bottom Right"
               },
-              "option_2": {
-                "label": "Center"
-              },
-              "option_3": {
-                "label": "Right"
-              }
+              "label": "Text position"
+            },
+            "header": {
+              "content": "Mobile Layout"
             },
             "image_overlay_opacity": {
               "label": "Image overlay opacity"
-            },
-            "color_scheme": {
-              "label": "Color scheme",
-              "info": "Visible when container displayed.",
-              "options__1": {
-                "label": "Accent 1"
-              },
-              "options__2": {
-                "label": "Accent 2"
-              },
-              "options__3": {
-                "label": "Background 1"
-              },
-              "options__4": {
-                "label": "Background 2"
-              },
-              "options__5": {
-                "label": "Inverse"
-              }
-            },
-            "text_alignment_mobile": {
-              "label": "Mobile content alignment",
-              "options__1": {
-                "label": "Left"
-              },
-              "options__2": {
-                "label": "Center"
-              },
-              "options__3": {
-                "label": "Right"
-              }
             }
           }
         }
