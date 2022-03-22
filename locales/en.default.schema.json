@@ -358,6 +358,9 @@
           "label": "Background",
           "info": "Used while image is loading"
         },
+        "bg_color_accent": {
+          "label": "Accent background"
+        },
         "text_color": {
           "label": "Text color"
         },
@@ -1350,37 +1353,6 @@
           },
           "label": "Section height"
         },
-        "desktop_image_width": {
-          "options__1": {
-            "label": "Small"
-          },
-          "options__2": {
-            "label": "Medium"
-          },
-          "options__3": {
-            "label": "Large"
-          },
-          "label": "Desktop image width",
-          "info": "Image is automatically optimized for mobile."
-        },
-        "color_scheme": {
-          "options__1": {
-            "label": "Background 1"
-          },
-          "options__2": {
-            "label": "Background 2"
-          },
-          "options__3": {
-            "label": "Inverse"
-          },
-          "options__4": {
-            "label": "Accent 1"
-          },
-          "options__5": {
-            "label": "Accent 2"
-          },
-          "label": "Color scheme"
-        },
         "layout": {
           "label": "Layout",
           "options__1": {
@@ -1388,22 +1360,16 @@
           },
           "options__2": {
             "label": "Boxed"
-          },
-          "options__3": {
-            "label": "Boxed radius"
           }
         },
         "image": {
           "label": "Image",
-          "info": "2160 x 1080px recommended, 1080 x 1080px recommended if split."
-        },
-        "bg_color": {
-          "label": "Accent background"
+          "info": "1080 x 1080px .jpg recommended. Won't show up on mobile."
         },
         "desktop_text_header_h1": {
           "content": "Desktop layout"
         },
-        "desktop_text_position": {
+        "text_position": {
           "options__1": {
             "label": "Top"
           },
@@ -1415,12 +1381,15 @@
           },
           "label": "Text position"
         },
-        "desktop_text_aligment": {
+        "text_aligment": {
           "options__1": {
             "label": "Left"
           },
           "options__2": {
             "label": "Center"
+          },
+          "options__3": {
+            "label": "Right"
           },
           "label": "Text alignment"
         },
@@ -1433,30 +1402,6 @@
         "show_text_below": {
           "label": "Show text below images"
         },
-        "desktop_content_alignment": {
-          "options__1": {
-            "label": "Left"
-          },
-          "options__2": {
-            "label": "Center"
-          },
-          "options__3": {
-            "label": "Right"
-          },
-          "label": "Desktop content alignment"
-        },
-        "desktop_content_position": {
-          "options__1": {
-            "label": "Top"
-          },
-          "options__2": {
-            "label": "Middle"
-          },
-          "options__3": {
-            "label": "Bottom"
-          },
-          "label": "Desktop content position"
-        },
         "content_layout": {
           "options__1": {
             "label": "No overlap"
@@ -1465,18 +1410,6 @@
             "label": "Overlap"
           },
           "label": "Content layout"
-        },
-        "mobile_content_alignment": {
-          "options__1": {
-            "label": "Left"
-          },
-          "options__2": {
-            "label": "Center"
-          },
-          "options__3": {
-            "label": "Right"
-          },
-          "label": "Mobile content alignment"
         }
       },
       "blocks": {
@@ -1508,35 +1441,6 @@
                 "label": "Large"
               },
               "label": "Heading size"
-            }
-          }
-        },
-        "caption": {
-          "name": "Caption",
-          "settings": {
-            "text": {
-              "label": "Text"
-            },
-            "text_style": {
-              "label": "Text style",
-              "options__1": {
-                "label": "Subtitle"
-              },
-              "options__2": {
-                "label": "Uppercase"
-              }
-            },
-            "caption_size": {
-              "label": "Text size",
-              "options__1": {
-                "label": "Small"
-              },
-              "options__2": {
-                "label": "Medium"
-              },
-              "options__3": {
-                "label": "Large"
-              }
             }
           }
         },
@@ -3133,12 +3037,9 @@
             "heading_size": {
               "label": "Heading size",
               "options__1": {
-                "label": "Small"
-              },
-              "options__2": {
                 "label": "Medium"
               },
-              "options__3": {
+              "options__2": {
                 "label": "Large"
               }
             },

@@ -161,7 +161,17 @@
 .image-with-text:not(.image-with-text--overlap) .image-with-text__media-item > *,
 .image-with-text:not(.image-with-text--overlap) .image-with-text__text-item > * {
   box-shadow: none;
+  border: none;
+  border-radius: 0;
+}
+
+.image-with-text:not(.image-with-text--overlap) .image-with-text__grid {
+  border: var(--text-boxes-border-width) solid rgba(var(--color-foreground),var(--text-boxes-border-opacity));
   border-radius: var(--text-boxes-radius);
+  box-shadow: var(--text-boxes-shadow-horizontal-offset)
+  var(--text-boxes-shadow-vertical-offset)
+  var(--text-boxes-shadow-blur-radius)
+  rgba(var(--color-shadow), var(--text-boxes-shadow-opacity));
 }
 
 @media screen and (max-width: 749px) {
@@ -429,7 +439,6 @@
   font-size: 1.6rem;
   line-height: 2.4rem;
   letter-spacing: 0.02em;
-  color: #262626;
   margin-top: 2.4rem;
 }
 
