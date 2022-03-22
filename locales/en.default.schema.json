@@ -2944,7 +2944,7 @@
         "video_url": {
           "label": "URL",
           "placeholder": "Use a YouTube or Vimeo URL",
-          "info": "Video plays in the page."
+          "info": "Accepts Video or YouTube links"
         },
         "cover_image": {
           "label": "Cover image",
@@ -2966,6 +2966,10 @@
           "options__2": {
             "label": "Boxed"
           }
+        },
+        "autoplay": {
+          "label": "Autoplay",
+          "info": "Video is muted automatically to allow autoplay."
         }
       },
       "presets": {
