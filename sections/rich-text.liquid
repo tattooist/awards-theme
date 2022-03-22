@@ -24,6 +24,11 @@
     #rich-text-{{ section.id }} {
       background: {{ section.settings.bg_color }};
     }
+
+    #rich-text-{{ section.id }}.image-with-text--boxed.image-with-text--with-bg .image-with-text__content {
+      padding-left:1.6rem;
+      padding-right:1.6rem;
+    }
   {%- endstyle -%}
 {% endunless %}
 
@@ -90,6 +95,10 @@
         {
           "value": "center",
           "label": "t:sections.rich-text.settings.text_aligment.options__2.label"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.rich-text.settings.text_aligment.options__3.label"
         }
       ],
       "default": "center",

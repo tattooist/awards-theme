@@ -32,12 +32,16 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
-
-  #image-with-text-{{ section.id }} .image-with-text__content,
-  #image-with-text-{{ section.id }} .image-with-text__media {
-    background: {{ section.settings.bg_color }};
-  }
 {%- endstyle -%}
+
+{% unless section.settings.bg_color == blank or section.settings.bg_color contains 'rgba(0,0,0,0)' %}
+  {%- style -%}
+    #image-with-text-{{ section.id }} .image-with-text__content,
+    #image-with-text-{{ section.id }} .image-with-text__media {
+      background: {{ section.settings.bg_color }};
+    }
+  {%- endstyle -%}
+{% endunless %}
 
 {% unless section.settings.text_color == blank %}
   {%- style -%}
@@ -64,7 +68,7 @@
   {%- endstyle -%}
 {% endunless %}
 
-<div id="image-with-text-{{ section.id }}" class="image-with-text image-with-text--{{ section.settings.content_layout }}{% unless section.settings.layout == 'fullsized' %} page-width{% endunless %} isolate{% if settings.text_boxes_border_thickness > 0 and settings.text_boxes_border_opacity > 0 and settings.media_border_thickness > 0 and settings.media_border_opacity > 0 %} collapse-borders{% endif %}{% unless section.settings.color_scheme == 'background-1' and settings.media_border_thickness > 0 and settings.text_boxes_shadow_opacity == 0 and settings.text_boxes_border_thickness == 0 or settings.text_boxes_border_opacity == 0 %} collapse-corners{% endunless %} section-{{ section.id }}-padding image-with-text--{{ section.settings.section_height }} image-with-text--{{ section.settings.layout }}{% unless section.settings.bg_color == '#ffffff' %} image-with-text--with-bg{% endunless %}">
+<div id="image-with-text-{{ section.id }}" class="image-with-text image-with-text--{{ section.settings.content_layout }}{% unless section.settings.layout == 'fullsized' %} page-width{% endunless %} isolate{% if settings.text_boxes_border_thickness > 0 and settings.text_boxes_border_opacity > 0 and settings.media_border_thickness > 0 and settings.media_border_opacity > 0 %} collapse-borders{% endif %}{% unless settings.media_border_thickness > 0 and settings.text_boxes_shadow_opacity == 0 and settings.text_boxes_border_thickness == 0 or settings.text_boxes_border_opacity == 0 %} collapse-corners{% endunless %} section-{{ section.id }}-padding image-with-text--{{ section.settings.section_height }} image-with-text--{{ section.settings.layout }}">
   <div class="image-with-text__grid grid grid--gapless grid--1-col grid--2-col-tablet{% if section.settings.desktop_text_first %} image-with-text__grid--reverse{% endif %} image-with-text__grid--text-below">
     <div class="image-with-text__media-item image-with-text__media-item--medium image-with-text__media-item--{{ section.settings.desktop_content_position }} grid__item">
       <div class="image-with-text__media image-with-text__media--{{ section.settings.section_height }} gradient color-background-1 global-media-settings {% if section.settings.image != blank %}media{% else %}image-with-text__media--placeholder placeholder{% endif %}"

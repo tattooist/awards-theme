@@ -28,8 +28,13 @@
   text-align: left;
 }
 
-.rich-text--left .rich-text__blocks {
+.rich-text--left .rich-text__blocks,
+.rich-text--right .rich-text__blocks {
   margin: 0 auto;
+}
+
+.rich-text--right {
+  text-align: right;
 }
 
 @media screen and (min-width: 750px) {
@@ -101,7 +106,8 @@
     width: 100%;
   }
 
-  .rich-text--left .button {
+  .rich-text--left .button,
+  .rich-text--right .button {
     width: auto;
   }
 }
