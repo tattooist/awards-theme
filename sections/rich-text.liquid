@@ -18,8 +18,42 @@
   }
 {%- endstyle -%}
 
+
+{% unless section.settings.bg_color == blank %}
+  {%- style -%}
+    #rich-text-{{ section.id }} {
+      background: {{ section.settings.bg_color }};
+    }
+  {%- endstyle -%}
+{% endunless %}
+
+{% unless section.settings.text_color == blank %}
+  {%- style -%}
+    #rich-text-{{ section.id }} h2,
+    #rich-text-{{ section.id }} .rich-text__text {
+      color: {{ section.settings.text_color }};
+    }
+  {%- endstyle -%}
+{% endunless %}
+
+{% unless section.settings.button_bg == blank %}
+  {%- style -%}
+    #rich-text-{{ section.id }} .button {
+      --color-button: {{ section.settings.button_bg.red }}, {{ section.settings.button_bg.green }}, {{ section.settings.button_bg.blue }};
+    }
+  {%- endstyle -%}
+{% endunless %}
+
+{% unless section.settings.button_text == blank %}
+  {%- style -%}
+    #rich-text-{{ section.id }} .button {
+      --color-button-text: {{ section.settings.button_text.red }}, {{ section.settings.button_text.green }}, {{ section.settings.button_text.blue }};
+    }
+  {%- endstyle -%}
+{% endunless %}
+
 <div class="isolate{% unless section.settings.full_width %} page-width{% endunless %}">
-  <div class="rich-text content-container color-{{ section.settings.color_scheme }} gradient{% if section.settings.full_width %} rich-text--full-width content-container--full-width{% endif %} section-{{ section.id }}-padding rich-text--{{ section.settings.text_aligment }}">
+  <div id="rich-text-{{ section.id }}" class="rich-text content-container color-background-1 gradient{% if section.settings.full_width %} rich-text--full-width content-container--full-width{% endif %} section-{{ section.id }}-padding rich-text--{{ section.settings.text_aligment }}">
     <div class="rich-text__blocks{% if section.settings.full_width %} page-width{% endif %}">
       {%- for block in section.blocks -%}
         {%- case block.type -%}
@@ -47,34 +81,6 @@
   "settings": [
     {
       "type": "select",
-      "id": "color_scheme",
-      "options": [
-        {
-          "value": "accent-1",
-          "label": "t:sections.rich-text.settings.color_scheme.options__1.label"
-        },
-        {
-          "value": "accent-2",
-          "label": "t:sections.rich-text.settings.color_scheme.options__2.label"
-        },
-        {
-          "value": "background-1",
-          "label": "t:sections.rich-text.settings.color_scheme.options__3.label"
-        },
-        {
-          "value": "background-2",
-          "label": "t:sections.rich-text.settings.color_scheme.options__4.label"
-        },
-        {
-          "value": "inverse",
-          "label": "t:sections.rich-text.settings.color_scheme.options__5.label"
-        }
-      ],
-      "default": "background-1",
-      "label": "t:sections.rich-text.settings.color_scheme.label"
-    },
-    {
-      "type": "select",
       "id": "text_aligment",
         "options": [
         {
@@ -94,6 +100,30 @@
       "id": "full_width",
       "default": true,
       "label": "t:sections.rich-text.settings.full_width.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.section_colors.section_colors_heading"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "t:sections.all.section_colors.bg_color.label"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:sections.all.section_colors.text_color.label"
+    },
+    {
+      "type": "color",
+      "id": "button_bg",
+      "label": "t:sections.all.section_colors.button_bg.label"
+    },
+    {
+      "type": "color",
+      "id": "button_text",
+      "label": "t:sections.all.section_colors.button_text.label"
     },
     {
       "type": "header",
