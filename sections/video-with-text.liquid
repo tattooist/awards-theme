@@ -1,4 +1,5 @@
 {{ 'video-section.css' | asset_url | stylesheet_tag }}
+{{ 'section-video-with-text.css' | asset_url | stylesheet_tag }}
 {{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
@@ -15,7 +16,33 @@
   }
 {%- endstyle -%}
 
-<div class="video-section isolate {% if section.settings.layout == 'boxed' %} page-width video-section--boxed{% endif %} section-{{ section.id }}-padding">
+{% unless section.settings.text_color == blank or section.settings.text_color contains 'rgba(0,0,0,0)'  %}
+  {%- style -%}
+    #video-with-text--{{ section.id }} .video-with-text__content > * {
+      --color-foreground: {{ section.settings.text_color.red }}, {{ section.settings.text_color.green }}, {{ section.settings.text_color.blue }};
+      color: rgba(var(--color-foreground));
+    }
+  {%- endstyle -%}
+{% endunless %}
+
+{% unless section.settings.button_bg == blank or section.settings.button_bg contains 'rgba(0,0,0,0)' %}
+  {%- style -%}
+    #video-with-text--{{ section.id }} .button {
+      --color-button: {{ section.settings.button_bg.red }}, {{ section.settings.button_bg.green }}, {{ section.settings.button_bg.blue }};
+    }
+  {%- endstyle -%}
+{% endunless %}
+
+{% unless section.settings.button_text == blank or section.settings.button_text contains 'rgba(0,0,0,0)' %}
+  {%- style -%}
+    #video-with-text--{{ section.id }} .button {
+     --color-button-text: {{ section.settings.button_text.red }}, {{ section.settings.button_text.green }}, {{ section.settings.button_text.blue }};
+    }
+  {%- endstyle -%}
+{% endunless %}
+
+{% if section.settings.layout == 'boxed' %}<div class="page-width">{% endif %}
+<div id="video-with-text--{{ section.id }}" class="video-with-text video-section isolate{% if section.settings.layout == 'boxed' %} video-section--boxed{% endif %} section-{{ section.id }}-padding">
   <noscript>
     <div class="video-section__media"
       {% if section.settings.cover_image != blank %} style="padding-bottom: {{ 1 | divided_by: section.settings.cover_image.aspect_ratio | times: 100 }}%;"{% endif %}
@@ -75,24 +102,41 @@
       {%- else -%}
         {{ 'collection-2' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
       {%- endif -%}
-      <span class="deferred-media__poster-button motion-reduce">
-        {%- render 'icon-play' -%}
-      </span>
     </button>
     {%- endunless -%}
     {%- unless section.settings.autoplay -%}
     <template>
     {%- endunless -%}
       {%- if section.settings.video_url.type == 'youtube' -%}
-        <iframe src="https://www.youtube.com/embed/{{ section.settings.video_url.id }}?enablejsapi=1{%- if section.settings.autoplay -%}&autoplay=1{%- endif -%}" class="js-youtube" allow="autoplay; encrypted-media" allowfullscreen title="{{ section.settings.description | escape }}"></iframe>
+        <iframe src="https://www.youtube.com/embed/{{ section.settings.video_url.id }}?enablejsapi=1{%- if section.settings.autoplay -%}&autoplay=1&loop=1{%- endif -%}" class="js-youtube" allow="autoplay; encrypted-media" allowfullscreen title="{{ section.settings.description | escape }}"></iframe>
       {%- else -%}
-        <iframe src="https://player.vimeo.com/video/{{ section.settings.video_url.id }}{%- if section.settings.autoplay -%}?autoplay=1{%- endif -%}" class="js-vimeo" allow="autoplay; encrypted-media" allowfullscreen title="{{ section.settings.description | escape }}"></iframe>
+        <iframe src="https://player.vimeo.com/video/{{ section.settings.video_url.id }}{%- if section.settings.autoplay -%}?autoplay=1&loop=1{%- endif -%}" class="js-vimeo" allow="autoplay; encrypted-media" allowfullscreen title="{{ section.settings.description | escape }}"></iframe>
       {%- endif -%}
     {%- unless section.settings.autoplay -%}
     </template>
     {%- endunless -%}
   </deferred-media>
+
+  <div class="video-with-text__content video-with-text__content--middle video-with-text--center">
+    {%- for block in section.blocks -%}
+      {% case block.type %}
+        {%- when 'heading' -%}
+          <h2 class="video-with-text__heading {{ block.settings.heading_size }}" {{ block.shopify_attributes }}>
+            {{ block.settings.heading | escape }}
+          </h2>
+        {%- when 'subheading' -%}
+          <p class="video-with-text__text video-with-text__text--caption caption-with-letter-spacing" {{ block.shopify_attributes }}>{{ block.settings.subheading | escape }}</p>
+        {%- when 'buttons' -%}
+          <div class="video-with-text__buttons" {{ block.shopify_attributes }}>
+            {%- if block.settings.button_label_1 != blank -%}
+              <a{% if block.settings.button_link_1 == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.button_link_1 }}"{% endif %} class="button{% if block.settings.button_style_secondary_1 %} button--secondary{% else %} button--primary{% endif %}">{{ block.settings.button_label_1 | escape }}</a>
+            {%- endif -%}
+          </div>
+      {%- endcase -%}
+    {%- endfor -%}
+  </div>
 </div>
+{% if section.settings.layout == 'boxed' %}</div>{% endif %}
 
 {% schema %}
 {
@@ -149,6 +193,25 @@
     },
     {
       "type": "header",
+      "content": "t:sections.all.section_colors.section_colors_heading"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:sections.all.section_colors.text_color.label"
+    },
+    {
+      "type": "color",
+      "id": "button_bg",
+      "label": "t:sections.all.section_colors.button_bg.label"
+    },
+    {
+      "type": "color",
+      "id": "button_text",
+      "label": "t:sections.all.section_colors.button_text.label"
+    },
+    {
+      "type": "header",
       "content": "t:sections.all.padding.section_padding_heading"
     },
     {
@@ -170,6 +233,110 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 32
+    }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "t:sections.video-with-text.blocks.heading.name",
+      "limit": 1,
+      "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "default": "Image with text",
+        "label": "t:sections.video-with-text.blocks.heading.settings.heading.label"
+      },
+      {
+        "type": "select",
+        "id": "heading_size",
+        "options": [
+            {
+              "value": "h2",
+              "label": "t:sections.video-with-text.blocks.heading.settings.heading_size.options__1.label"
+            },
+            {
+              "value": "h1",
+              "label": "t:sections.video-with-text.blocks.heading.settings.heading_size.options__2.label"
+            },
+            {
+              "value": "h0",
+              "label": "t:sections.video-with-text.blocks.heading.settings.heading_size.options__3.label"
+            }
+          ],
+          "default": "h1",
+          "label": "t:sections.video-with-text.blocks.heading.settings.heading_size.label"
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "name": "t:sections.video-with-text.blocks.subheading.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "subheading",
+          "default": "Add a tagline",
+          "label": "t:sections.video-with-text.blocks.subheading.settings.subheading.label"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "t:sections.video-with-text.blocks.text.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+          "label": "t:sections.video-with-text.blocks.text.settings.text.label"
+        }
+      ]
+    },
+    {
+      "type": "buttons",
+      "name": "t:sections.video-with-text.blocks.buttons.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_label_1",
+          "default": "Button label",
+          "label": "t:sections.video-with-text.blocks.buttons.settings.button_label_1.label",
+          "info": "t:sections.video-with-text.blocks.buttons.settings.button_label_1.info"
+        },
+        {
+          "type": "url",
+          "id": "button_link_1",
+          "label": "t:sections.video-with-text.blocks.buttons.settings.button_link_1.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "button_style_secondary_1",
+          "default": false,
+          "label": "t:sections.video-with-text.blocks.buttons.settings.button_style_secondary_1.label"
+        },
+        {
+          "type": "text",
+          "id": "button_label_2",
+          "default": "Button label",
+          "label": "t:sections.video-with-text.blocks.buttons.settings.button_label_2.label",
+          "info": "t:sections.video-with-text.blocks.buttons.settings.button_label_2.info"
+        },
+        {
+          "type": "url",
+          "id": "button_link_2",
+          "label": "t:sections.video-with-text.blocks.buttons.settings.button_link_2.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "button_style_secondary_2",
+          "default": false,
+          "label": "t:sections.video-with-text.blocks.buttons.settings.button_style_secondary_2.label"
+        }
+      ]
     }
   ],
   "presets": [
