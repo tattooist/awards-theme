@@ -84,7 +84,7 @@
       "settings": {
         "layout": "boxed",
         "section_height": "medium",
-        "content_layout": "overlap",
+        "content_layout": "no-overlap",
         "image": "shopify:\/\/shop_images\/242785278_1165681497490643_6274462903799703073_n.jpg",
         "desktop_content_position": "top",
         "desktop_content_alignment": "left",
