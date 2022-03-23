@@ -128,11 +128,11 @@
               </p>
             {%- endif -%}
           </div>
-          <h3 class="card__heading{% if card_product.featured_media or settings.card_style == 'standard' %} h4{% endif %}">
+          <div class="card__heading">
             <a href="{{ card_product.url }}" class="full-unstyled-link">
               {{ card_product.title | escape }}
             </a>
-          </h3>
+          </div>
           {% render 'price', product: card_product, price_class: '' %}
         </div>
         <div class="card__badge {{ settings.badge_position }}">
