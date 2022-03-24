@@ -545,8 +545,6 @@
 
 .banner__text {
   font-weight: normal;
-  font-size: 1.6rem;
-  line-height: 2.4rem;
   letter-spacing: 0.02em;
 }
 
@@ -557,14 +555,7 @@
   }
 
   .banner__heading {
-    font-size: 3.2rem;
-    line-height: 4rem;
     letter-spacing: -0.01em;
-  }
-
-  .banner__text {
-    font-size: 1.4rem;
-    line-height: 2rem;
   }
 
   .banner__box > * + * {
