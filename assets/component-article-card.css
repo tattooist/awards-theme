@@ -118,16 +118,7 @@
 }
 
 .article-card__excerpt {
-  font-size: 1.5rem;
-  line-height: calc(1.7 / var(--font-body-scale));
   letter-spacing: 0.02em;
-}
-
-@media (max-width: 749px) {
-  .article-card__excerpt {
-    font-size: 1.4rem;
-    line-height: calc(1.7 / var(--font-body-scale));
-  }
 }
 
 .article-card__link:not(:only-child) {

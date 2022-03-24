@@ -66,11 +66,11 @@
                 <span>{{ article.author }}</span>
               {%- endif -%}
             </div>
-            <div class="card__heading">
+            <h3 class="card__heading">
               <a href="{{ article.url }}" class="full-unstyled-link">
                 {{ article.title | truncate: 50 | escape }}
               </a>
-            </div>
+            </h3>
             {%- if show_excerpt -%}
               {%- if article.excerpt.size > 0 or article.content.size > 0 -%}
                 <p class="article-card__excerpt rte-width">
@@ -105,11 +105,11 @@
               <span>{{ article.author }}</span>
             {%- endif -%}
           </div>
-          <div class="card__heading">
+          <h3 class="card__heading">
             <a href="{{ article.url }}" class="full-unstyled-link">
               {{ article.title | truncate: 50 | escape }}
             </a>
-          </div>
+          </h3>
           {%- if show_excerpt -%}
             {%- if article.excerpt.size > 0 or article.content.size > 0 -%}
               <p class="article-card__excerpt rte-width">

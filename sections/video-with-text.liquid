@@ -134,7 +134,7 @@
     <template>
     {%- endunless -%}
       {%- if section.settings.video_url.type == 'youtube' -%}
-        <iframe src="https://www.youtube.com/embed/{{ section.settings.video_url.id }}?enablejsapi=1&controls=0{%- if section.settings.autoplay -%}&autoplay=1&loop=1{%- endif -%}" class="js-youtube" allow="autoplay; loop; modestbranding; encrypted-media" allowfullscreen title="{{ section.settings.description | escape }}"></iframe>
+        <iframe src="https://www.youtube.com/embed/{{ section.settings.video_url.id }}?enablejsapi=1&controls=0&showinfo=0&rel=0&modestbranding=1&autohide=1{%- if section.settings.autoplay -%}&autoplay=1&loop=1{%- endif -%}" class="js-youtube" allow="autoplay; loop; modestbranding; encrypted-media" allowfullscreen title="{{ section.settings.description | escape }}"></iframe>
       {%- else -%}
         <iframe src="https://player.vimeo.com/video/{{ section.settings.video_url.id }}{%- if section.settings.autoplay -%}?autoplay=1&loop=1&autopause=0{%- endif -%}" class="js-vimeo" allow="autoplay; modestbranding; encrypted-media" allowfullscreen title="{{ section.settings.description | escape }}"></iframe>
       {%- endif -%}
