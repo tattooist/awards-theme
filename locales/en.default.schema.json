@@ -3022,7 +3022,7 @@
             "label": "Large"
           },
           "options__5": {
-            "label": "Original video ratio"
+            "label": "Original ratio"
           },
           "label": "Video size"
         },
@@ -3065,6 +3065,9 @@
         },
         "header": {
           "content": "Mobile Layout"
+        },
+        "image_overlay_opacity": {
+          "label": "Video overlay opacity"
         }
       },
       "blocks": {
@@ -3087,12 +3090,9 @@
             },
             "heading_size": {
               "options__1": {
-                "label": "Small"
-              },
-              "options__2": {
                 "label": "Medium"
               },
-              "options__3": {
+              "options__2": {
                 "label": "Large"
               },
               "label": "Heading size"

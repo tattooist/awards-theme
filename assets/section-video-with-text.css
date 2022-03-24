@@ -1,5 +1,6 @@
 .video-with-text__media iframe {
     position: absolute;
+    top: 0;
     width: 100%;
     height: 100%;
 }
@@ -10,6 +11,11 @@
     width: 8rem;
     height: 8rem;
     overflow: visible;
+    margin-bottom: 3rem;
+}
+
+.video-with-text .deferred-media[loaded] + .banner__content .deferred-media__poster {
+    display: none;
 }
 
 @media screen and (max-width: 749px) {
@@ -17,9 +23,15 @@
         display: block;
     }
 
-    .video-with-text .banner__box {
+    .video-with-text.banner:not(.banner--mobile-bottom):not(.email-signup-banner) .banner__box {
         --color-foreground: 0, 0, 0;
         --color-button: 0, 0, 0;
         --color-button-text: 255, 255, 255;
+    }
+
+    .video-with-text .video-section__poster {
+        width: 5.6rem;
+        height: 5.6rem;
+        margin-bottom: 1rem;
     }
 }
