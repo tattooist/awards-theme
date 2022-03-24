@@ -5,11 +5,6 @@
 <noscript>{{ 'component-slider.css' | asset_url | stylesheet_tag }}</noscript>
 
 {%- style -%}
-  :root {
-    --color-collection-list-text: {{ section.settings.text_color.red  }}, {{ section.settings.text_color.green  }}, {{ section.settings.text_color.blue  }};
-    --color-collection-list-bg: {{ section.settings.bg_color }};
-  }
-
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
@@ -21,24 +16,44 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
-
-  #shopify-section-{{ section.id }} .collection-list-title,
-  #shopify-section-{{ section.id }} .card__heading,
-  #shopify-section-{{ section.id }} .card__caption {
-    color:rgba(var(--color-collection-list-text));
-  }
 {%- endstyle -%}
 
-{% unless section.settings.bg_color == '#ffffff' %}
-  {% style %}
-    #shopify-section-{{ section.id }} {
-      background:var(--color-collection-list-bg);
-      color:rgba(var(--color-collection-list-text));
+{% unless section.settings.bg_color == blank or section.settings.bg_color contains 'rgba(0,0,0,0)' %}
+  {%- style -%}
+    #Collection-list-{{ section.id }} {
+      background: {{ section.settings.bg_color }};
     }
-  {% endstyle %}
+  {%- endstyle -%}
 {% endunless %}
 
-<div class="collection-list-wrapper page-width isolate{% if section.settings.swipe_on_mobile == true %} page-width-desktop{% endif %}{% if section.settings.title == blank %} no-heading{% endif %}{% if section.settings.show_view_all == false or section.blocks.size > collections.size %} no-mobile-link{% endif %} section-{{ section.id }}-padding">
+{% unless section.settings.text_color == blank or section.settings.text_color contains 'rgba(0,0,0,0)' %}
+  {%- style -%}
+    #Collection-list-{{ section.id }} .collection-list-title,
+    #Collection-list-{{ section.id }} .card__heading,
+    #Collection-list-{{ section.id }} .card__caption {
+      --color-foreground: {{ section.settings.text_color.red }}, {{ section.settings.text_color.green }}, {{ section.settings.text_color.blue }};
+      color:{{ section.settings.text_color }};
+    }
+  {%- endstyle -%}
+{% endunless %}
+
+{% unless section.settings.button_bg == blank or section.settings.button_bg contains 'rgba(0,0,0,0)' %}
+  {%- style -%}
+    #Collection-list-{{ section.id }} .button {
+      --color-button: {{ section.settings.button_bg.red }}, {{ section.settings.button_bg.green }}, {{ section.settings.button_bg.blue }};
+    }
+  {%- endstyle -%}
+{% endunless %}
+
+{% unless section.settings.button_text == blank or section.settings.button_text contains 'rgba(0,0,0,0)' %}
+  {%- style -%}
+    #Collection-list-{{ section.id }} .button {
+      --color-button-text: {{ section.settings.button_text.red }}, {{ section.settings.button_text.green }}, {{ section.settings.button_text.blue }};
+    }
+  {%- endstyle -%}
+{% endunless %}
+
+<div id="Collection-list-{{ section.id }}" class="collection-list-wrapper page-width isolate{% if section.settings.swipe_on_mobile == true %} page-width-desktop{% endif %}{% if section.settings.title == blank %} no-heading{% endif %}{% if section.settings.show_view_all == false or section.blocks.size > collections.size %} no-mobile-link{% endif %} section-{{ section.id }}-padding">
   {% unless section.settings.title == blank %}
     <div class="title-wrapper-with-link{% if section.settings.swipe_on_mobile == true %} title-wrapper--self-padded-tablet-down{% else %} title-wrapper--self-padded-mobile{% endif %}{% if section.settings.title == blank %} title-wrapper-with-link--no-heading{% endif %} title-wrapper--no-top-margin">
       <h2 class="collection-list-title h1">{{ section.settings.title | escape }}</h2>
@@ -209,26 +224,34 @@
       "label": "t:sections.collection-list.settings.swipe_on_mobile.label"
     },
     {
-      "type": "header",
-      "content": "t:sections.collection-list.settings.color_title"
-    },
-    {
-      "type": "color",
-      "id": "bg_color",
-      "label": "t:sections.collection-list.settings.bg_color",
-      "default": "#FFF"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "t:sections.collection-list.settings.text_color",
-      "default": "#262626"
-    },
-    {
       "type": "checkbox",
       "id": "show_view_all",
       "default": true,
       "label": "t:sections.collection-list.settings.show_view_all.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.section_colors.section_colors_heading"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "t:sections.all.section_colors.bg_color.label"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:sections.all.section_colors.text_color.label"
+    },
+    {
+      "type": "color",
+      "id": "button_bg",
+      "label": "t:sections.all.section_colors.button_bg.label"
+    },
+    {
+      "type": "color",
+      "id": "button_text",
+      "label": "t:sections.all.section_colors.button_text.label"
     },
     {
       "type": "header",

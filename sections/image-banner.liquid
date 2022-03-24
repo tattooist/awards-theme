@@ -77,7 +77,7 @@
   {%- endstyle -%}
 {% endunless %}
 
-{% unless section.settings.text_color == blank %}
+{% unless section.settings.text_color == blank or section.settings.text_color contains 'rgba(0,0,0,0)' %}
   {%- style -%}
     #Banner-{{ section.id }} .banner__box {
     --color-foreground: {{ section.settings.text_color.red }}, {{ section.settings.text_color.green }}, {{ section.settings.text_color.blue }};
@@ -85,7 +85,7 @@
   {%- endstyle -%}
 {% endunless %}
 
-{% unless section.settings.button_bg == blank %}
+{% unless section.settings.button_bg == blank or section.settings.button_bg contains 'rgba(0,0,0,0)' %}
   {%- style -%}
     #Banner-{{ section.id }} .banner__box {
       --color-button: {{ section.settings.button_bg.red }}, {{ section.settings.button_bg.green }}, {{ section.settings.button_bg.blue }};
@@ -93,7 +93,7 @@
   {%- endstyle -%}
 {% endunless %}
 
-{% unless section.settings.button_text == blank %}
+{% unless section.settings.button_text == blank or section.settings.button_text contains 'rgba(0,0,0,0)' %}
   {%- style -%}
     #Banner-{{ section.id }} .banner__box {
       --color-button-text: {{ section.settings.button_text.red }}, {{ section.settings.button_text.green }}, {{ section.settings.button_text.blue }};
