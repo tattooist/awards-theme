@@ -3008,9 +3008,63 @@
             "label": "Boxed"
           }
         },
+        "section_height": {
+          "options__1": {
+            "label": "Fit screen height"
+          },
+          "options__2": {
+            "label": "Small"
+          },
+          "options__3": {
+            "label": "Medium"
+          },
+          "options__4": {
+            "label": "Large"
+          },
+          "options__5": {
+            "label": "Original video ratio"
+          },
+          "label": "Video size"
+        },
         "autoplay": {
           "label": "Autoplay",
           "info": "Video is muted automatically to allow autoplay."
+        },
+        "content_position": {
+          "options__1": {
+            "label": "Top Left"
+          },
+          "options__2": {
+            "label": "Top Center"
+          },
+          "options__3": {
+            "label": "Top Right"
+          },
+          "options__4": {
+            "label": "Middle Left"
+          },
+          "options__5": {
+            "label": "Middle Center"
+          },
+          "options__6": {
+            "label": "Middle Right"
+          },
+          "options__7": {
+            "label": "Bottom Left"
+          },
+          "options__8": {
+            "label": "Bottom Center"
+          },
+          "options__9": {
+            "label": "Bottom Right"
+          },
+          "label": "Text position"
+        },
+        "desktop_text_box_header_h1": {
+          "content": "Desktop layout"
+        },
+        "header": {
+          "content": "Mobile Layout"
         }
       },
       "blocks": {
