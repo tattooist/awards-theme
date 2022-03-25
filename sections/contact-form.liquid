@@ -12,27 +12,27 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
-
-  :root {
-    --color-contact-form-text: {{ section.settings.text_color.red  }}, {{ section.settings.text_color.green  }}, {{ section.settings.text_color.blue  }};
-    --color-contact-form-bg: {{ section.settings.bg_color }};
-  }
-
-  #shopify-section-{{ section.id }} .title, #shopify-section-{{ section.id }} .contact__text {
-    color:rgba(var(--color-contact-form-text));
-  }
 {%- endstyle -%}
 
-{% unless section.settings.bg_color == '#ffffff' %}
-  {% style %}
-    #shopify-section-{{ section.id }} {
-      background:var(--color-contact-form-bg);
-      color:rgba(var(--color-contact-form-text));
+{% unless section.settings.bg_color == blank or section.settings.bg_color contains 'rgba(0,0,0,0)' %}
+  {%- style -%}
+    #Contact-{{ section.id }} {
+      background: {{ section.settings.bg_color }};
     }
-  {% endstyle %}
+  {%- endstyle -%}
 {% endunless %}
 
-<div class="contact{% unless section.settings.bg_color == '#ffffff' %} contact--with-bg{% endunless %} contact--{{ section.settings.layout }}{% if section.settings.text != blank %} contact--has-text{% endif %} section-{{ section.id }}-padding">
+{% unless section.settings.text_color == blank or section.settings.text_color contains 'rgba(0,0,0,0)' %}
+  {%- style -%}
+    #Contact-{{ section.id }} .title,
+    #Contact-{{ section.id }} .contact__text {
+      --color-foreground: {{ section.settings.text_color.red }}, {{ section.settings.text_color.green }}, {{ section.settings.text_color.blue }};
+      color:{{ section.settings.text_color }};
+    }
+  {%- endstyle -%}
+{% endunless %}
+
+<div id="Contact-{{ section.id }}" class="contact{% unless section.settings.bg_color == blank %} contact--with-bg{% endunless %} contact--{{ section.settings.layout }}{% if section.settings.text != blank %} contact--has-text{% endif %} section-{{ section.id }}-padding">
   <div class="page-width{% if section.settings.is_full_width == false %}{% if section.settings.layout == 'onecolumn-center'%} page-width--narrow{% endif %}{% else %} contact__full-width{% endif %}">
     <h2 class="title h1">{{ section.settings.heading | escape }}</h2>
   {% if section.settings.layout == 'twocolumns' or section.settings.text != blank  %}
