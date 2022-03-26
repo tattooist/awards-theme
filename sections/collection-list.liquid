@@ -26,6 +26,14 @@
   {%- endstyle -%}
 {% endunless %}
 
+{% unless section.settings.card_color == blank or section.settings.card_color contains 'rgba(0,0,0,0)' %}
+  {%- style -%}
+    #Collection-list-{{ section.id }} .card--card {
+      background: {{ section.settings.card_color }};
+    }
+  {%- endstyle -%}
+{% endunless %}
+
 {% unless section.settings.text_color == blank or section.settings.text_color contains 'rgba(0,0,0,0)' %}
   {%- style -%}
     #Collection-list-{{ section.id }} .collection-list-title,
@@ -242,6 +250,11 @@
       "type": "color",
       "id": "text_color",
       "label": "t:sections.all.section_colors.text_color.label"
+    },
+    {
+      "type": "color",
+      "id": "card_color",
+      "label": "t:sections.all.section_colors.card_color.label"
     },
     {
       "type": "color",

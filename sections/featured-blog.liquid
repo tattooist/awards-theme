@@ -21,13 +21,54 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
-
-  :root {
-    --color-featured-blog-text: {{ section.settings.text_color.red  }}, {{ section.settings.text_color.green  }}, {{ section.settings.text_color.blue  }};
-    --color-featured-blog-bg: {{ section.settings.bg_color }};
-    --color-featured-blog-item: {{ section.settings.item }};
-  }
 {% endstyle %}
+
+{% unless section.settings.bg_color == blank or section.settings.bg_color contains 'rgba(0,0,0,0)' %}
+  {%- style -%}
+    #Featured-blog-{{ section.id }} {
+      background: {{ section.settings.bg_color }};
+    }
+  {%- endstyle -%}
+{% endunless %}
+
+{% unless section.settings.card_color == blank or section.settings.card_color contains 'rgba(0,0,0,0)' %}
+  {%- style -%}
+    #Featured-blog-{{ section.id }} .card--card {
+      background: {{ section.settings.card_color }};
+    }
+  {%- endstyle -%}
+{% endunless %}
+
+{% unless section.settings.text_color == blank or section.settings.text_color contains 'rgba(0,0,0,0)' %}
+  {%- style -%}
+    #Featured-blog-{{ section.id }} .title,
+    #Featured-blog-{{ section.id }} .blog__subheading,
+    #Featured-blog-{{ section.id }} .card__information > * {
+      --color-foreground: {{ section.settings.text_color.red }}, {{ section.settings.text_color.green }}, {{ section.settings.text_color.blue }};
+      color: {{ section.settings.text_color }};
+    }
+  {%- endstyle -%}
+{% endunless %}
+
+{% unless section.settings.button_bg == blank or section.settings.button_bg contains 'rgba(0,0,0,0)' %}
+  {%- style -%}
+    #Featured-blog-{{ section.id }} .button {
+      --color-button: {{ section.settings.button_bg.red }}, {{ section.settings.button_bg.green }}, {{ section.settings.button_bg.blue }};
+    }
+
+    #Featured-blog-{{ section.id }} .button:after {
+      --color-button-text: {{ section.settings.button_bg.red }}, {{ section.settings.button_bg.green }}, {{ section.settings.button_bg.blue }};
+    }
+  {%- endstyle -%}
+{% endunless %}
+
+{% unless section.settings.button_text == blank or section.settings.button_text contains 'rgba(0,0,0,0)' %}
+  {%- style -%}
+    #Featured-blog-{{ section.id }} .button {
+      --color-button-text: {{ section.settings.button_text.red }}, {{ section.settings.button_text.green }}, {{ section.settings.button_text.blue }};
+    }
+  {%- endstyle -%}
+{% endunless %}
 
 {%- liquid
   assign posts_displayed = section.settings.blog.articles_count
@@ -37,7 +78,7 @@
   endif
 -%}
 
-<div class="blog{% if section.settings.heading == blank %} no-heading{% endif %}">
+<div id="Featured-blog-{{ section.id }}" class="blog{% if section.settings.heading == blank %} no-heading{% endif %}">
   <div class="page-width page-width-desktop{% if posts_displayed < 3 %} page-width-tablet{% endif %} section-{{ section.id }}-padding">
     {% if section.settings.subheading != blank %}
       <h2 class="blog__subheading">
@@ -45,7 +86,7 @@
       </h2>
     {% endif %}
     <div class="title-wrapper-with-link{% if section.settings.heading == blank %} title-wrapper-with-link--no-heading{% endif %} {% if posts_displayed > 2 or section.settings.swipe_on_mobile == true %}title-wrapper--self-padded-tablet-down{% else %}title-wrapper--self-padded-mobile{% endif %} title-wrapper--no-top-margin">
-      <h2 class="blog__title h1">{{ section.settings.heading | escape }}</h2>
+      <h2 class="title h1">{{ section.settings.heading | escape }}</h2>
     </div>
     {%- if section.settings.blog != blank and section.settings.blog.articles_count > 0 -%}
       <slider-component class="slider-mobile-gutter">
@@ -188,25 +229,32 @@
     },
     {
       "type": "header",
-      "content": "t:sections.featured-blog.settings.colors_header.content"
+      "content": "t:sections.all.section_colors.section_colors_heading"
     },
     {
       "type": "color",
       "id": "bg_color",
-      "label": "t:sections.featured-blog.settings.bg_color",
-      "default": "#FFF"
+      "label": "t:sections.all.section_colors.bg_color.label"
     },
     {
       "type": "color",
       "id": "text_color",
-      "label": "t:sections.featured-blog.settings.text_color",
-      "default": "#262626"
+      "label": "t:sections.all.section_colors.text_color.label"
     },
     {
       "type": "color",
-      "id": "item_color",
-      "label": "t:sections.featured-blog.settings.item_color",
-      "default": "#FFF"
+      "id": "card_color",
+      "label": "t:sections.all.section_colors.card_color.label"
+    },
+    {
+      "type": "color",
+      "id": "button_bg",
+      "label": "t:sections.all.section_colors.button_bg.label"
+    },
+    {
+      "type": "color",
+      "id": "button_text",
+      "label": "t:sections.all.section_colors.button_text.label"
     },
     {
       "type": "header",

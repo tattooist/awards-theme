@@ -811,6 +811,9 @@
             "label": "2 columns"
           }
         },
+        "swipe_on_mobile_header": {
+          "content": "Mobile layout"
+        },
         "swipe_on_mobile": {
           "label": "Enable swipe on mobile"
         }
