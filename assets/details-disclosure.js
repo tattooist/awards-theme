@@ -2,9 +2,6 @@ class DetailsDisclosure extends HTMLElement {
   constructor() {
     super();
     this.mainDetailsToggle = this.querySelector('details');
-    this.summaryToggle = this.querySelector('summary');
-    this.mainDetailsToggle.addEventListener('focusout', this.onFocusOut.bind(this));
-
 
     this.mainDetailsToggle.addEventListener(
         'mouseenter',
@@ -14,6 +11,11 @@ class DetailsDisclosure extends HTMLElement {
         'mouseleave',
         this.closeMouseOut.bind(this)
     );
+
+    this.content = this.mainDetailsToggle.querySelector('summary').nextElementSibling;
+
+    this.mainDetailsToggle.addEventListener('focusout', this.onFocusOut.bind(this));
+    this.mainDetailsToggle.addEventListener('toggle', this.onToggle.bind(this));
   }
 
   onFocusOut() {
@@ -26,6 +28,16 @@ class DetailsDisclosure extends HTMLElement {
     if(!event.target.closest('details').hasAttribute('open')) {
       this.mainDetailsToggle.setAttribute('open', true);
       this.mainDetailsToggle.querySelector('summary').setAttribute('aria-expanded', true);
+    }
+  }
+
+  onToggle() {
+    if (!this.animations) this.animations = this.content.getAnimations();
+
+    if (this.mainDetailsToggle.hasAttribute('open')) {
+      this.animations.forEach(animation => animation.play());
+    } else {
+      this.animations.forEach(animation => animation.cancel());
     }
   }
 

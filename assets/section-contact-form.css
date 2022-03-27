@@ -69,24 +69,12 @@
   }
 }
 
-.contact--with-bg {
-  padding: 3.2rem 0;
-  margin: 0 auto;
-}
-
 .contact--with-bg .title {
   margin-top: 0;
 }
 
 .contact--with-bg.spaced-section:last-child {
   margin-bottom: 0;
-}
-
-@media screen and (min-width: 750px) {
-  .contact--with-bg {
-    padding: 6.4rem 0;
-    margin: 0 auto;
-  }
 }
 
 .contact__text p {

@@ -28,7 +28,7 @@
         "show_cart_note": true
       }
     },
-    "featured-products": {
+    "featured-collection": {
       "type": "featured-collection",
       "settings": {
         "title": "Featured collection",
@@ -48,6 +48,6 @@
   "order": [
     "cart-items",
     "cart-footer",
-    "featured-products"
+    "featured-collection"
   ]
 }
