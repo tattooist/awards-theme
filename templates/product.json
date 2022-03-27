@@ -41,7 +41,7 @@
             "heading": "Material",
             "content": "<p>{{ product.metafields.my_fields.material | metafield_tag }}<\/p>",
             "page": "",
-            "icon": "none"
+            "icon": "check_mark"
           }
         },
         "c6d2ab2a-2cfb-4981-a5e7-d3945349bf0e": {
@@ -50,7 +50,7 @@
             "heading": "Features",
             "content": "<p>{{ product.metafields.my_fields.features | metafield_tag }}<\/p>",
             "page": "",
-            "icon": "none"
+            "icon": "check_mark"
           }
         },
         "88cfe2fb-50e0-4e3a-93fe-32be87823dee": {
@@ -59,7 +59,7 @@
             "heading": "Measurements",
             "content": "<p>{{ product.metafields.my_fields.measurements | metafield_tag }}<\/p>",
             "page": "",
-            "icon": "none"
+            "icon": "check_mark"
           }
         },
         "2cee0bfb-4445-4936-b324-3ffa44fcbb37": {
@@ -68,7 +68,7 @@
             "heading": "Compartments",
             "content": "<p>{{ product.metafields.my_fields.compartments | metafield_tag }}<\/p>",
             "page": "",
-            "icon": "none"
+            "icon": "check_mark"
           }
         },
         "b514e67a-44c2-401e-9a1b-113ea9afc261": {
@@ -77,7 +77,7 @@
             "heading": "Manufacturing",
             "content": "<p>{{ product.metafields.my_fields.manufacturing | metafield_tag }}<\/p>",
             "page": "",
-            "icon": "none"
+            "icon": "check_mark"
           }
         },
         "5bb7b50d-f0e9-47f7-afd3-100181b3c770": {
@@ -86,7 +86,7 @@
             "heading": "Warranty",
             "content": "<p>Quality control is an important part of our philosophy, but occasionally something might slip through our eyes and fingers (we’re all human).<br\/><br\/>If you found a flaw in our product or we sent you the wrong one by mistake, please send it back to us within 30 days of delivery for a full refund (including shipping).<br\/><br\/>If you change your mind by any reason or wish to return an unwanted gift, please contact us as we would love to help you exchange or refund your purchase within 30 days of delivery. Please note: shipping cost of a refund isn’t covered, so it need to be sent to the original purchaser’s method of payment. All items must be returned in original condition without any signs of use.<\/p>",
             "page": "",
-            "icon": "none"
+            "icon": "check_mark"
           }
         },
         "share": {

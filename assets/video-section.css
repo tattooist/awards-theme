@@ -1,20 +1,18 @@
-.video-section--boxed {
-  padding: 1.6rem;
-}
-
-@media screen and (min-width: 750px) {
-  .video-section--boxed {
-    padding: 4rem 8rem;
-  }
-}
-
 .video-section__media {
   position: relative;
   padding-bottom: 56.25%;
 }
 
 .video-section__media.deferred-media {
-  overflow: visible;
+  box-shadow: var(--media-shadow-horizontal-offset) var(--media-shadow-vertical-offset) var(--media-shadow-blur-radius) rgba(var(--color-shadow), var(--media-shadow-opacity));
+}
+
+.video-section--boxed .video-section__media.deferred-media {
+  border-radius: var(--text-boxes-radius);
+}
+
+.video-section__media.deferred-media:after {
+  content: none;
 }
 
 .video-section__poster.deferred-media__poster:focus {

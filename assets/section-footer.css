@@ -1,18 +1,19 @@
 .footer {
-  background: var(--color-footer-bg);
-  box-shadow: inset 0px 1px 0px rgba(38, 38, 38, 0.1);
+  border-top: 0.1rem solid rgba(var(--color-foreground), 0.08);
+}
+
+.footer:not(.color-background-1) {
+  border-top: none;
 }
 
 .footer__content-top {
   padding-bottom: 7rem;
-  padding-top: 3.2rem;
   display: block;
 }
 
 @media screen and (max-width: 749px) {
   .footer .grid {
     display: block;
-    margin-left: 0;
   }
 
   .footer-block.grid__item {
@@ -36,20 +37,14 @@
 
 @media screen and (min-width: 750px) {
   .footer__content-top .grid {
-    margin-left: -3rem;
     row-gap: 6rem;
     margin-bottom: 0;
-  }
-
-  .footer__content-top .grid__item {
-    padding-left: 3rem;
   }
 }
 
 .footer__content-bottom {
-  border-top: solid 0.1rem rgba(var(--color-footer-text), 0.08);
+  border-top: solid 0.1rem rgba(var(--color-foreground), 0.08);
   padding-top: 3.2rem;
-  padding-bottom: 3.2rem;
 }
 
 .footer__content-bottom:only-child {
@@ -166,7 +161,7 @@
   letter-spacing: 0.04em;
   text-transform: uppercase;
   opacity: 0.5;
-  color:rgba(var(--color-footer-text));
+  color:rgba(var(--color-foreground));
 }
 
 .footer__list-social:empty,
@@ -179,6 +174,10 @@
   margin-left: -1.3rem;
   margin-top: -0.6rem;
   margin-bottom: -1.3rem;
+}
+
+.footer__list-social.list-social:only-child {
+  justify-content: center;
 }
 
 .footer__list-social.list-social .list-social__item .icon {
@@ -213,12 +212,6 @@
 @media screen and (min-width: 750px) {
   .footer-block__newsletter + .footer__list-social {
     margin-top: 0;
-  }
-}
-
-@media screen and (min-width: 750px) {
-  .footer__content-bottom {
-    border-top-width: 0.1rem;
   }
 }
 
@@ -270,7 +263,7 @@
 
 .footer__localization h2 {
   margin: 1rem 1rem 0.5rem;
-  color: rgba(var(--color-footer-text), 0.75);
+  color: rgba(var(--color-foreground), 0.75);
 }
 
 @media screen and (min-width: 750px) {
@@ -321,12 +314,18 @@
 }
 
 .localization-form__select {
-  box-shadow: 0 0 0 0.1rem rgba(var(--color-footer-text), 0.55);
+  border-radius: var(--inputs-radius-outset);
   position: relative;
   margin-bottom: 1.5rem;
-  border: 0.1rem solid transparent;
   padding-left: 1rem;
   text-align: left;
+  min-height: calc(1.8rem + var(--inputs-border-width) * 2);
+  min-width: calc(7rem + var(--inputs-border-width) * 2);
+}
+
+.disclosure__button.localization-form__select {
+  padding: calc(2rem + var(--inputs-border-width));
+  background: rgb(var(--color-background));
 }
 
 noscript .localization-form__select {
@@ -352,7 +351,7 @@ noscript .localization-form__select {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  color: rgb(var(--color-footer-text));
+  color: rgb(var(--color-foreground));
   width: 100%;
   padding-right: 4.5rem;
   padding-bottom: 1.5rem;
@@ -371,8 +370,8 @@ noscript .localization-selector.link {
   color: #000000;
 }
 
-.localization-selector + .disclosure__list {
-  margin-left: 1rem;
+.localization-selector + .disclosure__list-wrapper {
+  margin-left: 2.4rem;
   opacity: 1;
   animation: animateLocalization var(--duration-default) ease;
 }
@@ -426,7 +425,7 @@ noscript .localization-selector.link {
   font-size: 1.4rem;
   line-height: 2rem;
   letter-spacing: 0.02em;
-  color:rgba(var(--color-footer-text));
+  color:rgba(var(--color-foreground));
 }
 
 @media screen and (min-width: 750px) {
@@ -446,7 +445,7 @@ noscript .localization-selector.link {
 
 .footer-block__details-content .list-menu__item--link,
 .copyright__content a {
-  color: rgba(var(--color-footer-text));
+  color: rgba(var(--color-foreground));
 }
 
 .footer-block__details-content .list-menu__item--link {
@@ -458,13 +457,13 @@ noscript .localization-selector.link {
 
 .footer-block__details-content .list-menu__item--active {
   transition: text-decoration-thickness var(--duration-short) ease;
-  color: rgb(var(--color-footer-text));
+  color: rgb(var(--color-foreground));
 }
 
 @media screen and (min-width: 750px) {
   .footer-block__details-content .list-menu__item--link:hover,
   .copyright__content a:hover {
-    color: rgb(var(--color-footer-text));
+    color: rgb(var(--color-foreground));
     text-decoration: underline;
     text-underline-offset: 0.3rem;
   }
@@ -527,39 +526,53 @@ noscript .localization-selector.link {
 
 .footer .disclosure__link {
   padding: 0.95rem 3.5rem 0.95rem 2rem;
-  color: rgba(var(--color-footer-text), 0.75);
+  color: rgba(var(--color-foreground), 0.75);
 }
 
 .footer .disclosure__link:hover {
-  color: rgb(var(--color-footer-text));
+  color: rgb(var(--color-foreground));
 }
 
-.footer .disclosure__link--active {
-  text-decoration: underline;
-}
-
-.footer .field__input,
-.footer .select__select {
-  color: rgb(var(--color-footer-text));
-  box-shadow: 0 0 0 0.1rem rgba(var(--color-footer-text), 0.55);
+.footer .field:hover.field:after,
+.footer .select:hover.select:after,
+.footer .select__select:hover.select__select:after,
+.footer .customer .field:hover.field:after,
+.footer .customer select:hover.select:after,
+.footer .localization-form__select:hover.localization-form__select:after {
+  box-shadow: 0 0 0 calc(0.1rem + var(--inputs-border-width)) rgba(var(--color-foreground),var(--inputs-border-opacity));
 }
 
 .footer .field__input:focus,
-.footer .select__select:focus {
-  box-shadow: 0 0 0 .2rem rgba(var(--color-foreground));
-  outline: transparent;
-}
-
-.footer .field__input:hover,
-.footer .select__select:hover {
-  box-shadow: 0 0 0 .2rem rgba(var(--color-foreground));
-  outline: transparent;
+.footer .select__select:focus,
+.footer .customer .field input:focus,
+.footer .customer select:focus,
+.footer .localization-form__select:focus.localization-form__select:after {
+  box-shadow: 0 0 0 calc(0.1rem + var(--inputs-border-width)) rgba(var(--color-foreground));
 }
 
 .footer .newsletter-form__button .icon path {
-  stroke:rgb(var(--color-footer-text));
+  stroke:rgb(var(--color-foreground));
 }
 
 .footer__list-social.list-social .list-social__item .icon path {
-  fill:rgb(var(--color-footer-icons));
+  fill: rgb(var(--color-foreground));
+}
+
+/* check for flexbox gap in older Safari versions */
+@supports not (inset: 10px) {
+  @media screen and (max-width: 749px) {
+    .footer .grid {
+      margin-left: 0;
+    }
+  }
+
+  @media screen and (min-width: 750px) {
+    .footer__content-top .grid {
+      margin-left: -3rem;
+    }
+
+    .footer__content-top .grid__item {
+      padding-left: 3rem;
+    }
+  }
 }

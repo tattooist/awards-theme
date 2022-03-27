@@ -1,0 +1,288 @@
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+{{ 'section-press.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{% unless section.settings.bg_color == blank %}
+  {%- style -%}
+    #press-{{ section.id }} {
+      background: {{ section.settings.bg_color }};
+    }
+  {%- endstyle -%}
+{% endunless %}
+
+{% unless section.settings.text_color == blank %}
+  {%- style -%}
+    #press-{{ section.id }} .press__logo,
+    #press-{{ section.id }} .press__subheading,
+    #press-{{ section.id }} .title {
+      color: {{ section.settings.text_color }};
+    }
+
+    #press-{{ section.id }}  .press__subheading:before {
+      background: {{ section.settings.text_color }};
+    }
+  {%- endstyle -%}
+{% endunless %}
+
+<slideshow-component id="press-{{ section.id }}" class="press page-width section-{{ section.id }}-padding">
+  <div class="slideshow banner grid grid--1-col slider slider--everywhere"
+    id="Slider-{{ section.id }}"
+    aria-live="polite"
+    aria-atomic="true"
+    data-autoplay="{{ section.settings.auto_rotate }}"
+    data-speed="{{ section.settings.change_slides_speed }}"
+    data-looping="true"
+  >
+    {%- for block in section.blocks -%}
+      <div class="slideshow__slide grid__item grid--1-col slider__slide"
+        id="Slide-{{ section.id }}-{{ forloop.index }}"
+        {{ block.shopify_attributes }}
+        role="group"
+        aria-roledescription="{{ 'sections.slideshow.slide' | t }}"
+        aria-label="{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
+        tabindex="-1"
+      >
+        {% unless block.settings.heading == blank %}
+          <div class="title-wrapper--self-padded-mobile title-wrapper--no-top-margin title-wrapper--no-bottom-margin center">
+            <h2 class="title {{ block.settings.heading_size }}">
+              {{ block.settings.heading | escape }}
+            </h2>
+          </div>
+        {% endunless %}
+        {%- if block.settings.subheading != blank -%}
+          <div class="title-wrapper--self-padded-mobile">
+            <h2 class="press__subheading center">
+              {{ block.settings.subheading | escape }}
+            </h2>
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endfor -%}
+  </div>
+
+  <div class="no-js-hidden">
+    <slider-component class="slider-mobile-gutter">
+      <div id="Slider-thumb-{{ section.id }}" class="slider-buttons press-list contains-content-container grid grid--2-col{% if section.blocks.size <= 4 %}  grid--center grid--4-col-desktop{% elsif section.blocks.size > 6 %} grid--6-col-desktop{% else %} grid--{{ section.blocks.size }}-col-desktop{% endif %} slider slider--mobile grid--peek">
+        {%- for block in section.blocks -%}
+          <div id="Slide-thumb-{{ section.id }}-{{ forloop.index }}" class="grid__item slider__slide slider-counter__link">
+            <div class="press__logo center">
+              {%- if block.settings.image -%}
+                <img
+                        srcset="{%- if block.settings.image.width >= 275 -%}{{ block.settings.image | img_url: '275x' }} 275w,{%- endif -%}
+                              {%- if block.settings.image.width >= 550 -%}{{ block.settings.image | img_url: '550x' }} 550w,{%- endif -%}
+                              {%- if block.settings.image.width >= 710 -%}{{ block.settings.image | img_url: '710x' }} 710w,{%- endif -%}
+                              {%- if block.settings.image.width >= 1420 -%}{{ block.settings.image | img_url: '1420x' }} 1420w,{%- endif -%}
+                              {{ block.settings.image | img_url: 'master' }} {{ block.settings.image.width }}w"
+                        src="{{ block.settings.image | img_url: '550x' }}"
+                        sizes="(min-width: 990px) {% if section.blocks.size <= 2 %}710px{% else %}550px{% endif %},
+                              (min-width: 750px) {% if section.blocks.size == 1 %}710px{% else %}550px{% endif %},
+                              calc(100vw - 30px)"
+                        alt="{{ block.settings.image.alt }}"
+                        height="{{ block.settings.image.height }}"
+                        width="{{ block.settings.image.width }}"
+                        loading="lazy"
+                >
+              {%- else -%}
+                Logo {{ forloop.index }}
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+      <button type="button" class="slider-button slider-button--prev hidden" name="previous" aria-label="{{ 'sections.slideshow.previous_slideshow' | t }}" aria-controls="Slider-{{ section.id }}"></button>
+      <button type="button" class="slider-button slider-button--next hidden" name="next" aria-label="{{ 'sections.slideshow.next_slideshow' | t }}" aria-controls="Slider-{{ section.id }}"></button>
+    </slider-component>
+
+    {%- if section.settings.auto_rotate -%}
+      <button type="button" class="slideshow__autoplay slider-button hidden{% if section.settings.auto_rotate == false %} slideshow__autoplay--paused{% endif %}" aria-label="{{ 'sections.slideshow.pause_slideshow' | t }}"></button>
+    {%- endif -%}
+  </div>
+
+
+  <noscript>
+    <div class="slider-buttons">
+      <div class="press-list grid grid--2-col {% if section.blocks.size <= 4 %}  grid--center grid--4-col-desktop{% elsif section.blocks.size > 6 %} grid--6-col-desktop{% else %} grid--{{ section.blocks.size }}-col-desktop{% endif %}">
+        {%- for block in section.blocks -%}
+          <a href="#Slide-{{ section.id }}-{{ forloop.index }}" class="slider-counter__link grid__item slider__slide">
+            <div class="press__logo center">
+              {%- if block.settings.image -%}
+                <img
+                        srcset="{%- if block.settings.image.width >= 275 -%}{{ block.settings.image | img_url: '275x' }} 275w,{%- endif -%}
+                            {%- if block.settings.image.width >= 550 -%}{{ block.settings.image | img_url: '550x' }} 550w,{%- endif -%}
+                            {%- if block.settings.image.width >= 710 -%}{{ block.settings.image | img_url: '710x' }} 710w,{%- endif -%}
+                            {%- if block.settings.image.width >= 1420 -%}{{ block.settings.image | img_url: '1420x' }} 1420w,{%- endif -%}
+                            {{ block.settings.image | img_url: 'master' }} {{ block.settings.image.width }}w"
+                        src="{{ block.settings.image | img_url: '550x' }}"
+                        sizes="(min-width: 990px) {% if section.blocks.size <= 2 %}710px{% else %}550px{% endif %},
+                            (min-width: 750px) {% if section.blocks.size == 1 %}710px{% else %}550px{% endif %},
+                            calc(100vw - 30px)"
+                        alt="{{ block.settings.image.alt }}"
+                        height="{{ block.settings.image.height }}"
+                        width="{{ block.settings.image.width }}"
+                        loading="lazy"
+                >
+              {%- else -%}
+                Logo {{ forloop.index }}
+              {%- endif -%}
+            </div>
+          </a>
+        {%- endfor -%}
+      </div>
+    </div>
+  </noscript>
+
+</slideshow-component>
+
+{%- if request.design_mode -%}
+  <script src="{{ 'theme-editor.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "t:sections.press.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "auto_rotate",
+      "label": "t:sections.press.settings.auto_rotate.label",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "change_slides_speed",
+      "min": 3,
+      "max": 9,
+      "step": 2,
+      "unit": "s",
+      "label": "t:sections.press.settings.change_slides_speed.label",
+      "default": 5
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.section_colors.section_colors_heading"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "t:sections.all.section_colors.bg_color.label"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:sections.all.section_colors.text_color.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 32
+    }
+  ],
+  "max_blocks": 6,
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "t:sections.press.blocks.testimonial.name",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.press.blocks.testimonial.settings.image.label",
+          "info": "t:sections.press.blocks.testimonial.settings.image.info"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Press testimonial",
+          "label": "t:sections.press.blocks.testimonial.settings.heading.label"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "options": [
+            {
+              "value": "h2",
+              "label": "t:sections.press.blocks.testimonial.settings.heading_size.options__1.label"
+            },
+            {
+              "value": "h1",
+              "label": "t:sections.press.blocks.testimonial.settings.heading_size.options__2.label"
+            },
+            {
+              "value": "h0",
+              "label": "t:sections.press.blocks.testimonial.settings.heading_size.options__3.label"
+            }
+          ],
+          "default": "h1",
+          "label": "t:sections.press.blocks.testimonial.settings.heading_size.label"
+        },
+        {
+          "type": "text",
+          "id": "subheading",
+          "default": "Some kind of magazine",
+          "label": "t:sections.press.blocks.testimonial.settings.subheading.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.press.presets.name",
+      "blocks": [
+        {
+          "type": "testimonial"
+        },
+        {
+          "type": "testimonial"
+        },
+        {
+          "type": "testimonial"
+        },
+        {
+          "type": "testimonial"
+        },
+        {
+          "type": "testimonial"
+        },
+        {
+          "type": "testimonial"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

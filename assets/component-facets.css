@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: repeat(2, auto);
   grid-template-rows: repeat(2, auto);
+  padding-top: 0;
 }
 
 @media screen and (min-width: 750px) {
@@ -68,12 +69,29 @@
   overflow: hidden;
 }
 
+.facet-filters__field .select:after,
+.facet-filters__field .select:before,
+.mobile-facets__sort .select:after,
+.mobile-facets__sort .select:before {
+  content: none;
+}
+
+.facet-filters__field .select__select,
+.mobile-facets__sort .select__select {
+  border-radius: 0;
+  min-width: auto;
+  min-height: auto;
+  transition: none;
+}
+
 .facet-filters button {
   margin-left: 2.5rem;
 }
 
 .facet-filters__sort {
+  background-color: transparent;
   border: 0;
+  border-radius: 0;
   font-size: 1.6rem;
   height: auto;
   line-height: calc(1 + 0.5 / var(--font-body-scale));
@@ -81,6 +99,10 @@
   padding-left: 0;
   padding-right: 1.75rem;
   opacity: 0;
+}
+
+.facet-filters__sort + .icon-caret {
+  right: 0;
 }
 
 @media screen and (forced-colors: active) {
@@ -92,6 +114,8 @@
 .facet-filters__sort,
 .facet-filters__sort:hover {
   box-shadow: none;
+  filter: none;
+  transition: none;
 }
 
 .mobile-facets__sort .select__select:focus-visible {
@@ -213,15 +237,20 @@
 }
 
 .facets__display {
+  border-width: var(--popup-border-width);
+  border-style: solid;
+  border-color: rgba(var(--color-foreground), var(--popup-border-opacity));
+  border-radius: var(--popup-corner-radius);
+  box-shadow: var(--popup-shadow-horizontal-offset) var(--popup-shadow-vertical-offset) var(--popup-shadow-blur-radius) rgba(var(--color-shadow), var(--popup-shadow-opacity));
   background-color: rgb(var(--color-background));
   position: absolute;
-  border: 1px solid rgba(var(--color-foreground), 0.2);
   top: calc(100% + 0.5rem);
   left: -1.2rem;
   width: 35rem;
   max-height: 55rem;
   overflow-y: auto;
   flex-direction: column;
+  border-width: 1px;
 }
 
 .facets__display .facets__list {
@@ -307,10 +336,11 @@
 }
 
 .facet-checkbox .icon-checkmark {
+  visibility: hidden;
   position: absolute;
   top: .4rem;
   left: .2rem;
-  visibility: hidden;
+  z-index: 5;
   background: var(--color-foreground);
 }
 
@@ -373,7 +403,6 @@ button.facets__button {
 }
 
 .facets__button-no-js {
-  min-width: auto;
   transform: translateY(-0.6rem);
 }
 
@@ -406,6 +435,11 @@ span.active-facets__button-inner {
   padding: .4rem .4rem .4rem .8rem;
   display: flex;
   align-items: stretch;
+}
+
+span.active-facets__button-inner:before,
+span.active-facets__button-inner:after {
+  display: none;
 }
 
 .active-facets__button-wrapper {
@@ -455,6 +489,10 @@ span.active-facets__button-inner {
 
 .active-facets__button:hover .active-facets__button-inner {
   box-shadow: 0 0 0 0.2rem rgb(var(--color-foreground));
+}
+
+.active-facets__button--light .active-facets__button-inner {
+  box-shadow:none;
 }
 
 .active-facets__button--light:hover .active-facets__button-inner {
@@ -598,6 +636,12 @@ a.active-facets__button.focused .active-facets__button-inner,
   max-width: 35.6rem;
   display: flex;
   flex-direction: column;
+  filter: drop-shadow(
+    var(--drawer-shadow-horizontal-offset)
+    var(--drawer-shadow-vertical-offset)
+    var(--drawer-shadow-blur-radius)
+    rgba(var(--color-shadow), var(--drawer-shadow-opacity))
+  );
 }
 
 .menu-opening .mobile-facets__inner {
@@ -670,7 +714,7 @@ a.active-facets__button.focused .active-facets__button-inner,
   .facets__form--top {
     grid-template-columns: 1fr 0 1fr;
     margin: 0 -1.6rem;
-    border-bottom: 1px solid #D2D2D2;
+    border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.1);
     height: 4rem;
     align-items: center;
     margin-bottom: 1.9rem;
@@ -678,7 +722,7 @@ a.active-facets__button.focused .active-facets__button-inner,
 
   .mobile-facets__wrapper {
     justify-content: center;
-    border-right: 1px solid #D2D2D2;
+    border-right: 0.1rem solid rgba(var(--color-foreground), 0.1);
     align-items: center;
     padding-left: 1.6rem;
   }
@@ -1001,7 +1045,10 @@ input.mobile-facets__checkbox {
 }
 
 .mobile-facets__sort .select__select {
+  background-color: transparent;
+  border-radius: 0;
   box-shadow: none;
+  filter: none;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
   padding-left: 0.5rem;
@@ -1139,8 +1186,7 @@ input.mobile-facets__checkbox {
 
 .facets__price .field__input {
   height: 3.8rem;
-  box-shadow: 0 0 0 0.1rem #868686;
-  padding: 0 0 0 20px;
+  padding: 0 5px 0 20px;
   text-align: right;
 }
 
@@ -1165,7 +1211,7 @@ input.mobile-facets__checkbox {
   color: #262626;
   display: flex;
   align-items: center;
-  padding: 0 3.2rem;
+  padding: 0 10%;
 }
 
 @media screen and (max-width: 749px) {

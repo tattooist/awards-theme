@@ -1,0 +1,39 @@
+.logo-list__no-image {
+  color: rgba(var(--color-foreground));
+  font-weight: 600;
+  font-size: 2.4rem;
+  line-height: 3.6rem;
+}
+
+@media screen and (max-width: 749px) {
+  .logo-list__no-image {
+    font-size: 2rem;
+    line-height: 3.2rem;
+  }
+}
+
+.logo-list__link {
+  color: rgba(var(--color-foreground));
+  text-decoration: none;
+}
+
+.logo-list .multicolumn-card {
+  height: 100%;
+}
+
+.logo-list .logo-list__no-image {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.logo-list .slider__controls {
+  margin-top: 4rem;
+}
+
+@media screen and (max-width: 749px) {
+  .logo-list .grid__item {
+    width: calc(50% - var(--grid-mobile-horizontal-spacing) - 3.1rem);
+  }
+}

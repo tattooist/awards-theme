@@ -2,102 +2,156 @@
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
-{{ 'component-product-grid.css' | asset_url | stylesheet_tag }}
 
 <link rel="preload" href="{{ 'component-rte.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
 <noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
 
-{%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
-  {%- if section.settings.layout == 'topline' %}
-  {{ 'component-facets.css' | asset_url | stylesheet_tag }}
-  <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: 0;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
 
-  <div class="page-width{% if section.settings.layout == 'sidebar' %} medium-hide large-up-hide{% endif %}" id="main-collection-filters" data-id="{{ section.id }}">
-    {% render 'facets', results: collection, enable_filtering: section.settings.enable_filtering, enable_sorting: section.settings.enable_sorting, collapse_on_larger_devices: section.settings.collapse_on_larger_devices %}
-  </div>
-  {%- endif -%}
-{%- endif -%}
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
 
-<div{% if section.settings.layout == 'topline'  %} id="ProductGridContainer"{%  endif %}>
+<div class="section-{{ section.id }}-padding">
+  {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
+    {%- if section.settings.layout == 'topline' %}
+      {{ 'component-facets.css' | asset_url | stylesheet_tag }}
+      <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
 
-  {% if section.settings.layout == 'sidebar'  %}
-    {% assign products_per_page = section.settings.products_per_page | divided_by: 3 | times: 3 %}
-  {%- else -%}
-    {% assign products_per_page = section.settings.products_per_page %}
-  {%  endif %}
-
-  {%- paginate collection.products by products_per_page -%}
-    {%- if collection.products.size == 0 -%}
-      <div class="collection collection--empty page-width" id="product-grid" data-id="{{ section.id }}">
-        <div class="loading-overlay gradient"></div>
-        <div class="title-wrapper center">
-          <h2 class="title title--primary">
-            {{ 'sections.collection_template.empty' | t }}<br>
-            {{ 'sections.collection_template.use_fewer_filters_html' | t: link: collection.url, class: "underlined-link link" }}
-          </h2>
-        </div>
-      </div>
-    {%- else -%}
-      <div class="{% if section.settings.layout == 'topline'  %}collection{% endif %} page-width">
-        {% if section.settings.layout == 'topline'  %}<div class="loading-overlay gradient"></div>{% endif %}
-        {% if section.settings.layout == 'sidebar'  %}
-        <div class="collection-grid grid grid--1-col grid--2-col-tablet">
-          {{ 'component-facets.css' | asset_url | stylesheet_tag }}
-          <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
-          <div class="grid__item collection__sidebar">
-            {% render 'facets-sidebar', results: collection, enable_filtering: section.settings.enable_filtering, enable_sorting: section.settings.enable_sorting, collapse_on_larger_devices: section.settings.collapse_on_larger_devices %}
-          </div>
-
-          <div id="ProductGridContainer" class="collection__products-grid grid__item">
-            {% render 'facets-sort-only', results: collection, enable_filtering: section.settings.enable_filtering, enable_sorting: section.settings.enable_sorting, collapse_on_larger_devices: section.settings.collapse_on_larger_devices %}
-            <div class="collection">
-              <div class="loading-overlay gradient"></div>
-        {% endif %}
-
-          <ul id="product-grid" data-id="{{ section.id }}" class="
-            grid grid--2-col negative-margin product-grid
-            {% if section.settings.layout == 'sidebar'  %}
-              {% if collection.products_count < 3 %} grid--{{ collection.products_count }}-col-tablet{% else %}
-                {% if collection.products_count == 3 %} grid--3-col-desktop{% else %} grid--3-col-tablet grid--one-third-max grid--3-col-desktop grid--quarter-max{% endif %}
-              {% endif %}
-            {% else %}
-              {% if collection.products_count < 4 %} grid--{{ collection.products_count }}-col-tablet{% else %}
-                {% if collection.products_count == 4 %} grid--4-col-desktop{% else %} grid--3-col-tablet grid--one-third-max grid--4-col-desktop grid--quarter-max{% endif %}
-              {% endif %}
-            {% endif %}
-            ">
-            {%- for product in collection.products -%}
-              <li class="grid__item">
-                {% render 'product-card',
-                  product_card_product: product,
-                  media_size: section.settings.image_ratio,
-                  show_secondary_image: section.settings.show_secondary_image,
-                  show_vendor: section.settings.show_vendor,
-                  show_rating: section.settings.show_rating
-                %}
-              </li>
-            {%- endfor -%}
-          </ul>
-        {% if section.settings.layout == 'sidebar'  %}
-            </div>
-          </div>
-        </div>
-        {% endif %}
-
-        {%- if paginate.pages > 1 -%}
-          {% render 'pagination', paginate: paginate, anchor: '' %}
-        {%- endif -%}
+      <div class="page-width{% if section.settings.layout == 'sidebar' %} medium-hide large-up-hide{% endif %}" id="main-collection-filters" data-id="{{ section.id }}">
+        {% render 'facets', results: collection, enable_filtering: section.settings.enable_filtering, enable_sorting: section.settings.enable_sorting, collapse_on_larger_devices: section.settings.collapse_on_larger_devices %}
       </div>
     {%- endif -%}
-  {%- endpaginate -%}
+  {%- endif -%}
+
+  <div{% if section.settings.layout == 'topline'  %} id="ProductGridContainer"{%  endif %}>
+
+    {% if section.settings.layout == 'sidebar'  %}
+      {% if section.settings.columns_desktop == 1 %}
+        {% assign columns_desktop = 2 %}
+      {% elsif section.settings.columns_desktop == 5 %}
+        {% assign columns_desktop = 4 %}
+      {% else %}
+        {% assign columns_desktop = section.settings.columns_desktop %}
+      {%  endif %}
+
+      {% assign products_per_page = section.settings.products_per_page | divided_by: 3 | times: columns_desktop %}
+    {%- else -%}
+      {% assign products_per_page = section.settings.products_per_page %}
+    {%  endif %}
+
+    {%- paginate collection.products by products_per_page -%}
+      {%- if collection.products.size == 0 -%}
+        <div class="collection collection--empty page-width" id="product-grid" data-id="{{ section.id }}">
+          <div class="loading-overlay gradient"></div>
+          <div class="title-wrapper center">
+            <h2 class="title title--primary">
+              {{ 'sections.collection_template.empty' | t }}<br>
+              {{ 'sections.collection_template.use_fewer_filters_html' | t: link: collection.url, class: "underlined-link link" }}
+            </h2>
+          </div>
+        </div>
+      {%- else -%}
+        <div class="{% if section.settings.layout == 'topline'  %}collection{% endif %} page-width">
+          {% if section.settings.layout == 'topline'  %}<div class="loading-overlay gradient"></div>{% endif %}
+          {% if section.settings.layout == 'sidebar'  %}
+          <div class="collection-grid grid grid--1-col grid--2-col-tablet">
+            {{ 'component-facets.css' | asset_url | stylesheet_tag }}
+            <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
+            <div class="grid__item collection__sidebar">
+              {% render 'facets-sidebar', results: collection, enable_filtering: section.settings.enable_filtering, enable_sorting: section.settings.enable_sorting, collapse_on_larger_devices: section.settings.collapse_on_larger_devices %}
+            </div>
+
+            <div id="ProductGridContainer" class="collection__products-grid grid__item">
+              {% render 'facets-sort-only', results: collection, enable_filtering: section.settings.enable_filtering, enable_sorting: section.settings.enable_sorting, collapse_on_larger_devices: section.settings.collapse_on_larger_devices %}
+              <div class="collection">
+                <div class="loading-overlay gradient"></div>
+                {% endif %}
+
+                  <ul id="product-grid" data-id="{{ section.id }}" class="
+                    grid product-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down
+                    {% if section.settings.layout == 'sidebar'  %}
+                      {% if collection.products_count < 3 %} grid--{{ collection.products_count }}-col-tablet{% else %}
+                        {% if collection.products_count == 3 %}
+                          grid--3-col-desktop
+                        {% else %}
+                          {% if section.settings.columns_desktop == 1 %}
+                            grid--2-col-desktop
+                          {% elsif section.settings.columns_desktop == 5 %}
+                            grid--4-col-desktop
+                          {% else %}
+                            grid--{{ section.settings.columns_desktop }}-col-desktop
+                          {% endif %}
+                        {% endif %}
+                      {% endif %}
+                    {% else %}
+                      {% if section.settings.columns_desktop == 1 %} grid--full-width{% else %}
+                        grid--{{ section.settings.columns_desktop }}-col-desktop
+                      {% endif %}
+                    {% endif %}">
+                    {%- for product in collection.products -%}
+                      {% assign lazy_load = false %}
+                      {%- if forloop.index > 2 -%}
+                        {%- assign lazy_load = true -%}
+                      {%- endif -%}
+
+                      <li class="grid__item">
+                        {% render 'card-product',
+                          card_product: product,
+                          media_aspect_ratio: section.settings.image_ratio,
+                          show_secondary_image: section.settings.show_secondary_image,
+                          show_vendor: section.settings.show_vendor,
+                          show_rating: section.settings.show_rating,
+                          lazy_load: lazy_load
+                        %}
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                  {% if section.settings.layout == 'sidebar'  %}
+                  </div>
+              </div>
+          </div>
+          {% endif %}
+
+          {%- if paginate.pages > 1 -%}
+            {% render 'pagination', paginate: paginate, anchor: '' %}
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    {%- endpaginate -%}
+  </div>
 </div>
 
 {% schema %}
 {
   "name": "t:sections.main-collection-product-grid.name",
-  "class": "spaced-section collection-grid-section",
+  "class": "section",
   "settings": [
+    {
+      "type": "select",
+      "id": "layout",
+      "options": [
+        {
+          "value": "sidebar",
+          "label": "t:sections.main-collection-product-grid.settings.layout.options__1.label"
+        },
+        {
+          "value": "topline",
+          "label": "t:sections.main-collection-product-grid.settings.layout.options__2.label"
+        }
+      ],
+      "default": "topline",
+      "label": "t:sections.main-collection-product-grid.settings.layout.label"
+    },
     {
       "type": "range",
       "id": "products_per_page",
@@ -106,6 +160,15 @@
       "step": 4,
       "default": 16,
       "label": "t:sections.main-collection-product-grid.settings.products_per_page.label"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 4,
+      "label": "t:sections.main-collection-product-grid.settings.columns_desktop.label"
     },
     {
       "type": "header",
@@ -174,20 +237,48 @@
       "label": "t:sections.main-collection-product-grid.settings.collapse_on_larger_devices.label"
     },
     {
+      "type": "header",
+      "content": "t:sections.main-collection-product-grid.settings.header_mobile.content"
+    },
+    {
       "type": "select",
-      "id": "layout",
+      "id": "columns_mobile",
+      "default": "2",
+      "label": "t:sections.main-collection-product-grid.settings.columns_mobile.label",
       "options": [
         {
-          "value": "sidebar",
-          "label": "t:sections.main-collection-product-grid.settings.layout.options__1.label"
+          "value": "1",
+          "label": "t:sections.main-collection-product-grid.settings.columns_mobile.options__1.label"
         },
         {
-          "value": "topline",
-          "label": "t:sections.main-collection-product-grid.settings.layout.options__2.label"
+          "value": "2",
+          "label": "t:sections.main-collection-product-grid.settings.columns_mobile.options__2.label"
         }
-      ],
-      "default": "topline",
-      "label": "t:sections.main-collection-product-grid.settings.layout.label"
+      ]
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 32
     }
   ]
 }
