@@ -40,7 +40,9 @@
 {% unless section.settings.text_color == blank or section.settings.text_color contains 'rgba(0,0,0,0)' %}
   {%- style -%}
     #Featured-collection-{{ section.id }} .title,
-    #Featured-collection-{{ section.id }} .card__information > * {
+    #Featured-collection-{{ section.id }} .card__information > *,
+    #Featured-collection-{{ section.id }} {
+      --color-link: {{ section.settings.text_color.red }}, {{ section.settings.text_color.green }}, {{ section.settings.text_color.blue }};
       --color-foreground: {{ section.settings.text_color.red }}, {{ section.settings.text_color.green }}, {{ section.settings.text_color.blue }};
       color: {{ section.settings.text_color }};
     }

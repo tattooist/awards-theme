@@ -43,7 +43,9 @@
   {%- style -%}
     #Featured-blog-{{ section.id }} .title,
     #Featured-blog-{{ section.id }} .blog__subheading,
-    #Featured-blog-{{ section.id }} .card__information > * {
+    #Featured-blog-{{ section.id }} .card__information > *,
+    #Featured-blog-{{ section.id }} {
+      --color-link: {{ section.settings.text_color.red }}, {{ section.settings.text_color.green }}, {{ section.settings.text_color.blue }};
       --color-foreground: {{ section.settings.text_color.red }}, {{ section.settings.text_color.green }}, {{ section.settings.text_color.blue }};
       color: {{ section.settings.text_color }};
     }

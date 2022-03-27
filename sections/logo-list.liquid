@@ -29,7 +29,10 @@
   {%- style -%}
     #logo-list-{{ section.id }} .logo-list__no-image,
     #logo-list-{{ section.id }} .multicolumn__subheading,
-    #logo-list-{{ section.id }} .title {
+    #logo-list-{{ section.id }} .title,
+    #logo-list-{{ section.id }} {
+      --color-link: {{ section.settings.text_color.red }}, {{ section.settings.text_color.green }}, {{ section.settings.text_color.blue }};
+      --color-foreground: {{ section.settings.text_color.red }}, {{ section.settings.text_color.green }}, {{ section.settings.text_color.blue }};
       color: {{ section.settings.text_color }};
     }
   {%- endstyle -%}

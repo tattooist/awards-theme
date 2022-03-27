@@ -40,7 +40,10 @@
     #testimonials-{{ section.id }} .multicolumn-list p,
     #testimonials-{{ section.id }} .title,
     #testimonials-{{ section.id }} .multicolumn__subheading,
-    #testimonials-{{ section.id }} .testimonials__author {
+    #testimonials-{{ section.id }} .testimonials__author,
+    #testimonials-{{ section.id }} {
+      --color-link: {{ section.settings.text_color.red }}, {{ section.settings.text_color.green }}, {{ section.settings.text_color.blue }};
+      --color-foreground: {{ section.settings.text_color.red }}, {{ section.settings.text_color.green }}, {{ section.settings.text_color.blue }};
       color: {{ section.settings.text_color }};
     }
 

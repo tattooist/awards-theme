@@ -38,7 +38,10 @@
     #multicolumn-{{ section.id }} .multicolumn-list p,
     #multicolumn-{{ section.id }} .multicolumn__subheading,
     #multicolumn-{{ section.id }} .title,
-    #multicolumn-{{ section.id }} .multicolumn-card__info .link{
+    #multicolumn-{{ section.id }} .multicolumn-card__info .link,
+    #multicolumn-{{ section.id }} {
+      --color-link: {{ section.settings.text_color.red }}, {{ section.settings.text_color.green }}, {{ section.settings.text_color.blue }};
+      --color-foreground: {{ section.settings.text_color.red }}, {{ section.settings.text_color.green }}, {{ section.settings.text_color.blue }};
       color: {{ section.settings.text_color }};
     }
 

@@ -38,7 +38,9 @@
   {%- style -%}
     #Collection-list-{{ section.id }} .collection-list-title,
     #Collection-list-{{ section.id }} .card__heading,
-    #Collection-list-{{ section.id }} .card__caption {
+    #Collection-list-{{ section.id }} .card__caption,
+    #Collection-list-{{ section.id }} {
+      --color-link: {{ section.settings.text_color.red }}, {{ section.settings.text_color.green }}, {{ section.settings.text_color.blue }};
       --color-foreground: {{ section.settings.text_color.red }}, {{ section.settings.text_color.green }}, {{ section.settings.text_color.blue }};
       color:{{ section.settings.text_color }};
     }

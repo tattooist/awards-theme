@@ -15,12 +15,6 @@
 <noscript>{{ 'disclosure.css' | asset_url | stylesheet_tag }}</noscript>
 
 {%- style -%}
-  :root {
-    --color-footer-text: {{ section.settings.text_color.red  }}, {{ section.settings.text_color.green  }}, {{ section.settings.text_color.blue  }};
-    --color-footer-bg: {{ section.settings.bg_color }};
-    --color-footer-icons: {{ section.settings.icons_color.red  }}, {{ section.settings.icons_color.green  }}, {{ section.settings.icons_color.blue  }};
-  }
-
   .footer {
     margin-top: {{ section.settings.margin_top | times: 0.75 | round: 0 }}px;
   }
@@ -41,6 +35,35 @@
     }
   }
 {%- endstyle -%}
+
+{% unless section.settings.bg_color == blank or section.settings.bg_color contains 'rgba(0,0,0,0)' or section.settings.bg_color == '#ffffff' %}
+  {%- style -%}
+    .footer {
+      background: {{ section.settings.bg_color }};
+    }
+
+    .footer .localization-selector.link {
+      color: {{ section.settings.bg_color }};
+    }
+  {%- endstyle -%}
+{% endunless %}
+
+{% unless section.settings.text_color == blank or section.settings.text_color contains 'rgba(0,0,0,0)' %}
+  {%- style -%}
+    .footer {
+      --color-foreground: {{ section.settings.text_color.red }}, {{ section.settings.text_color.green }}, {{ section.settings.text_color.blue }};
+      color:{{ section.settings.text_color }};
+    }
+  {%- endstyle -%}
+{% endunless %}
+
+{% unless section.settings.icons_color == blank or section.settings.icons_color contains 'rgba(0,0,0,0)' %}
+  {%- style -%}
+    .footer .list-social__link {
+      --color-foreground: {{ section.settings.icons_color.red }}, {{ section.settings.icons_color.green }}, {{ section.settings.icons_color.blue }};
+    }
+  {%- endstyle -%}
+{% endunless %}
 
 <footer class="footer gradient section-{{ section.id }}-padding">
   {%- if section.blocks.size > 0 or section.settings.newsletter_enable or section.settings.show_social -%}
@@ -541,20 +564,17 @@
     {
         "type": "color",
         "id": "bg_color",
-        "label": "t:sections.footer.settings.bg_color",
-        "default": "#FFF"
+        "label": "t:sections.footer.settings.bg_color"
     },
     {
         "type": "color",
         "id": "text_color",
-        "label": "t:sections.footer.settings.text_color",
-        "default": "#262626"
+        "label": "t:sections.footer.settings.text_color"
     },
     {
         "type": "color",
         "id": "icons_color",
-        "label": "t:sections.footer.settings.icons_color",
-        "default": "#262626"
+        "label": "t:sections.footer.settings.icons_color"
     },
     {
       "type": "header",

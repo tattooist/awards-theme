@@ -36,7 +36,10 @@
 {% unless section.settings.text_color == blank %}
   {%- style -%}
     #text-with-icons-{{ section.id }} .multicolumn-list h3,
-    #text-with-icons-{{ section.id }} .multicolumn-list p {
+    #text-with-icons-{{ section.id }} .multicolumn-list p,
+    #text-with-icons-{{ section.id }} {
+      --color-link: {{ section.settings.text_color.red }}, {{ section.settings.text_color.green }}, {{ section.settings.text_color.blue }};
+      --color-foreground: {{ section.settings.text_color.red }}, {{ section.settings.text_color.green }}, {{ section.settings.text_color.blue }};
       color: {{ section.settings.text_color }};
     }
 
