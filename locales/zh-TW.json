@@ -260,7 +260,8 @@
     },
     "featured_collection": {
       "view_all": "檢視全部",
-      "view_all_label": "檢視 {{ collection_name }} 商品系列的全部產品"
+      "view_all_label": "檢視 {{ collection_name }} 商品系列的全部產品",
+      "slider": "投影播放器"
     },
     "collection_list": {
       "view_all": "檢視全部"
@@ -281,6 +282,9 @@
       "play_slideshow": "播放素材輪播",
       "carousel": "輪播廣告",
       "slide": "投影片"
+    },
+    "page": {
+      "title": "頁面標題"
     }
   },
   "localization": {
@@ -394,7 +398,8 @@
       "tracking_url": "追蹤連結",
       "tracking_company": "貨運業者",
       "tracking_number": "追蹤編號",
-      "subtotal": "小計"
+      "subtotal": "小計",
+      "total_duties": "關稅"
     }
   },
   "gift_cards": {

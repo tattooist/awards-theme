@@ -66,6 +66,10 @@
   max-width: 72rem;
 }
 
+.multicolumn-list__item--empty {
+  display: none;
+}
+
 .multicolumn:not(.background-none) .multicolumn-card {
   background: rgb(var(--color-background));
   height: 100%;
@@ -116,7 +120,7 @@
   }
 
   .multicolumn-list__item {
-    margin: 0 0;
+    margin: 0 0 var(--grid-mobile-vertical-spacing);
     padding: 0;
   }
 
@@ -157,7 +161,7 @@
 }
 
 .multicolumn-card__info {
-  padding: 1.6rem 1.6rem;
+  padding: 1.6rem;
 }
 
 .background-none .multicolumn-card__info {
@@ -237,5 +241,10 @@
     padding: 0 1.6rem;
     font-size: 1.2rem;
     line-height: 1.6rem;
+  }
+}
+@media screen and (min-width: 990px) {
+  .multicolumn-list__item--empty {
+    display: list-item;
   }
 }

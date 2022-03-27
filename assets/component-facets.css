@@ -864,6 +864,7 @@ details.menu-opening .mobile-facets__close svg {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
 }
 
 .mobile-facets__details[open]:not(.mobile-facets__disclosure-web) .icon-caret {
@@ -954,7 +955,6 @@ input.mobile-facets__checkbox {
 .mobile-facets__label {
   padding: 0 0 1.2rem;
   width: 100%;
-  background-color: rgb(var(--color-background));
   transition: background-color 0.2s ease;
   word-break: break-word;
   display: flex;

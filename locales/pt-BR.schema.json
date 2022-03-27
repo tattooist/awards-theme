@@ -77,12 +77,6 @@
       "name": "Ícones",
       "settings": {
         "accent_icons": {
-          "options__1": {
-            "label": "Destaque 1"
-          },
-          "options__2": {
-            "label": "Destaque 2"
-          },
           "options__3": {
             "label": "Botão com contorno"
           },
@@ -238,24 +232,6 @@
             "label": "Direita"
           },
           "label": "Alinhamento do texto"
-        },
-        "color_scheme": {
-          "options__1": {
-            "label": "Destaque 1"
-          },
-          "options__2": {
-            "label": "Destaque 2"
-          },
-          "options__3": {
-            "label": "Plano de fundo 1"
-          },
-          "options__4": {
-            "label": "Plano de fundo 2"
-          },
-          "options__5": {
-            "label": "Inverso"
-          },
-          "label": "Esquema de cores"
         }
       }
     },
@@ -351,6 +327,18 @@
         },
         "label": "Esquema de cores",
         "has_cards_info": "Atualize as configurações do tema para alterar o esquema de cores do cartão."
+      },
+      "heading_size": {
+        "label": "Tamanho do título",
+        "options__1": {
+          "label": "Pequeno"
+        },
+        "options__2": {
+          "label": "Médio"
+        },
+        "options__3": {
+          "label": "Grande"
+        }
       }
     },
     "announcement-bar": {
@@ -361,24 +349,6 @@
           "settings": {
             "text": {
               "label": "Texto"
-            },
-            "color_scheme": {
-              "label": "Esquema de cores",
-              "options__1": {
-                "label": "Plano de fundo 1"
-              },
-              "options__2": {
-                "label": "Plano de fundo 2"
-              },
-              "options__3": {
-                "label": "Inverso"
-              },
-              "options__4": {
-                "label": "Destaque 1"
-              },
-              "options__5": {
-                "label": "Destaque 2"
-              }
             },
             "link": {
               "label": "Link"
@@ -464,7 +434,7 @@
             },
             "description": {
               "label": "Texto alternativo do vídeo",
-              "info": "Descreva o vídeo para que seja acessível a clientes que usam leitores de tela."
+              "info": "Descreva o vídeo para clientes que usam leitores de tela. [Saiba mais](https://help.shopify.com/en/manual/online-store/themes/theme-structure/theme-features#video-block)"
             }
           }
         }
@@ -500,6 +470,18 @@
         },
         "columns_desktop": {
           "label": "Número de colunas no desktop"
+        },
+        "header_mobile": {
+          "content": "Layout para dispositivos móveis"
+        },
+        "columns_mobile": {
+          "label": "Número de colunas em dispositivos móveis",
+          "options__1": {
+            "label": "1 coluna"
+          },
+          "options__2": {
+            "label": "2 colunas"
+          }
         }
       },
       "blocks": {
@@ -580,10 +562,7 @@
           "label": "Máximo de produtos a serem mostrados"
         },
         "show_view_all": {
-          "label": "Habilitar o botão \"Ver tudo\" se a coleção tiver mais produtos que os mostrados"
-        },
-        "swipe_on_mobile": {
-          "label": "Habilitar gesto de deslizar em dispositivos móveis"
+          "label": "Habilitar a opção \"Ver tudo\" se a coleção tiver mais produtos que os mostrados"
         },
         "header": {
           "content": "Cartão de produto"
@@ -612,6 +591,57 @@
         },
         "columns_desktop": {
           "label": "Número de colunas no desktop"
+        },
+        "description": {
+          "label": "Descrição"
+        },
+        "show_description": {
+          "label": "Mostrar a descrição da coleção do admin"
+        },
+        "description_style": {
+          "label": "Estilo da descrição",
+          "options__1": {
+            "label": "Corpo"
+          },
+          "options__2": {
+            "label": "Legenda"
+          },
+          "options__3": {
+            "label": "Letras maiúsculas"
+          }
+        },
+        "view_all_style": {
+          "label": "Estilo \"Ver tudo\"",
+          "options__1": {
+            "label": "Link"
+          },
+          "options__2": {
+            "label": "Botão com contorno"
+          },
+          "options__3": {
+            "label": "Botão sólido"
+          }
+        },
+        "enable_desktop_slider": {
+          "label": "Habilitar carrossel no desktop"
+        },
+        "full_width": {
+          "label": "Deixar os produtos na largura total"
+        },
+        "header_mobile": {
+          "content": "Layout para dispositivos móveis"
+        },
+        "columns_mobile": {
+          "label": "Número de colunas em dispositivos móveis",
+          "options__1": {
+            "label": "1 coluna"
+          },
+          "options__2": {
+            "label": "2 colunas"
+          }
+        },
+        "swipe_on_mobile": {
+          "label": "Habilitar gesto de deslizar em dispositivos móveis"
         }
       },
       "presets": {
@@ -647,24 +677,6 @@
         }
       },
       "settings": {
-        "color_scheme": {
-          "options__1": {
-            "label": "Destaque 1"
-          },
-          "options__2": {
-            "label": "Destaque 2"
-          },
-          "options__3": {
-            "label": "Plano de fundo 1"
-          },
-          "options__4": {
-            "label": "Plano de fundo 2"
-          },
-          "options__5": {
-            "label": "Inverso"
-          },
-          "label": "Esquema de cores"
-        },
         "newsletter_enable": {
           "label": "Exibir assinante de e-mail"
         },
@@ -744,26 +756,18 @@
           "label": "Habilitar cabeçalho fixo",
           "info": "O cabeçalho fica na tela quando o cliente rola para cima."
         },
-        "color_scheme": {
-          "options__1": {
-            "label": "Destaque 1"
-          },
-          "options__2": {
-            "label": "Destaque 2"
-          },
-          "options__3": {
-            "label": "Plano de fundo 1"
-          },
-          "options__4": {
-            "label": "Plano de fundo 2"
-          },
-          "options__5": {
-            "label": "Inverso"
-          },
-          "label": "Esquema de cores"
-        },
         "margin_bottom": {
           "label": "Margem inferior"
+        },
+        "menu_type_desktop": {
+          "label": "Tipo de menu para desktop",
+          "info": "O tipo de menu é otimizado automaticamente para dispositivos móveis.",
+          "options__1": {
+            "label": "Menu suspenso"
+          },
+          "options__2": {
+            "label": "Megamenu"
+          }
         }
       }
     },
@@ -777,22 +781,6 @@
           "label": "Segunda imagem"
         },
         "color_scheme": {
-          "options__1": {
-            "label": "Destaque 1"
-          },
-          "options__2": {
-            "label": "Destaque 2"
-          },
-          "options__3": {
-            "label": "Plano de fundo 1"
-          },
-          "options__4": {
-            "label": "Plano de fundo 2"
-          },
-          "options__5": {
-            "label": "Inverso"
-          },
-          "label": "Esquema de cores",
           "info": "Visível quando o contêiner é exibido."
         },
         "stack_images_on_mobile": {
@@ -888,15 +876,6 @@
           "settings": {
             "heading": {
               "label": "Título"
-            },
-            "heading_size": {
-              "options__1": {
-                "label": "Médio"
-              },
-              "options__2": {
-                "label": "Grande"
-              },
-              "label": "Tamanho do título"
             }
           }
         },
@@ -967,24 +946,6 @@
             "label": "Grande"
           },
           "label": "Altura da imagem"
-        },
-        "color_scheme": {
-          "options__1": {
-            "label": "Plano de fundo 1"
-          },
-          "options__2": {
-            "label": "Plano de fundo 2"
-          },
-          "options__3": {
-            "label": "Inverso"
-          },
-          "options__4": {
-            "label": "Destaque 1"
-          },
-          "options__5": {
-            "label": "Destaque 2"
-          },
-          "label": "Esquema de cores"
         },
         "layout": {
           "options__1": {
@@ -1061,18 +1022,6 @@
           "settings": {
             "heading": {
               "label": "Título"
-            },
-            "heading_size": {
-              "options__1": {
-                "label": "Pequeno"
-              },
-              "options__2": {
-                "label": "Médio"
-              },
-              "options__3": {
-                "label": "Grande"
-              },
-              "label": "Tamanho do título"
             }
           }
         },
@@ -1328,6 +1277,18 @@
         },
         "columns_desktop": {
           "label": "Número de colunas no desktop"
+        },
+        "header_mobile": {
+          "content": "Layout para dispositivos móveis"
+        },
+        "columns_mobile": {
+          "label": "Número de colunas em dispositivos móveis",
+          "options__1": {
+            "label": "1 coluna"
+          },
+          "options__2": {
+            "label": "2 colunas"
+          }
         }
       }
     },
@@ -1370,6 +1331,21 @@
             "label": "Quadrada"
           },
           "info": "Edite as coleções para adicionar imagens. [Saiba mais](https://help.shopify.com/en/manual/products/collections)"
+        },
+        "columns_desktop": {
+          "label": "Número de colunas no desktop"
+        },
+        "header_mobile": {
+          "content": "Layout em dispositivos móveis"
+        },
+        "columns_mobile": {
+          "label": "Número de colunas em dispositivos móveis",
+          "options__1": {
+            "label": "1 coluna"
+          },
+          "options__2": {
+            "label": "2 colunas"
+          }
         }
       }
     },
@@ -1377,27 +1353,7 @@
       "name": "Página"
     },
     "main-password-footer": {
-      "name": "Rodapé de senha",
-      "settings": {
-        "color_scheme": {
-          "options__1": {
-            "label": "Destaque 1"
-          },
-          "options__2": {
-            "label": "Destaque 2"
-          },
-          "options__3": {
-            "label": "Plano de fundo 1"
-          },
-          "options__4": {
-            "label": "Plano de fundo 2"
-          },
-          "options__5": {
-            "label": "Inverso"
-          },
-          "label": "Esquema de cores"
-        }
-      }
+      "name": "Rodapé de senha"
     },
     "main-password-header": {
       "name": "Cabeçalho de senha",
@@ -1408,24 +1364,6 @@
         "logo_max_width": {
           "label": "Largura personalizada do logo",
           "unit": "px"
-        },
-        "color_scheme": {
-          "options__1": {
-            "label": "Destaque 1"
-          },
-          "options__2": {
-            "label": "Destaque 2"
-          },
-          "options__3": {
-            "label": "Plano de fundo 1"
-          },
-          "options__4": {
-            "label": "Plano de fundo 2"
-          },
-          "options__5": {
-            "label": "Inverso"
-          },
-          "label": "Esquema de cores"
         }
       }
     },
@@ -1772,6 +1710,18 @@
         },
         "columns_desktop": {
           "label": "Número de colunas no desktop"
+        },
+        "header_mobile": {
+          "content": "Layout para dispositivos móveis"
+        },
+        "columns_mobile": {
+          "label": "Número de colunas em dispositivos móveis",
+          "options__1": {
+            "label": "1 coluna"
+          },
+          "options__2": {
+            "label": "2 colunas"
+          }
         }
       }
     },
@@ -1837,6 +1787,18 @@
         },
         "columns_desktop": {
           "label": "Número de colunas no desktop"
+        },
+        "header_mobile": {
+          "content": "Layout para dispositivos móveis"
+        },
+        "columns_mobile": {
+          "label": "Número de colunas em dispositivos móveis",
+          "options__1": {
+            "label": "1 coluna"
+          },
+          "options__2": {
+            "label": "2 colunas"
+          }
         }
       },
       "blocks": {
@@ -1868,24 +1830,6 @@
     "newsletter": {
       "name": "Assinante de e-mail",
       "settings": {
-        "color_scheme": {
-          "label": "Esquema de cores",
-          "options__1": {
-            "label": "Destaque 1"
-          },
-          "options__2": {
-            "label": "Destaque 2"
-          },
-          "options__3": {
-            "label": "Plano de fundo 1"
-          },
-          "options__4": {
-            "label": "Plano de fundo 2"
-          },
-          "options__5": {
-            "label": "Inverso"
-          }
-        },
         "full_width": {
           "label": "Definir seção com largura total"
         },
@@ -1965,30 +1909,27 @@
         },
         "columns_desktop": {
           "label": "Número de colunas no desktop"
+        },
+        "header_mobile": {
+          "content": "Layout para dispositivos móveis"
+        },
+        "columns_mobile": {
+          "label": "Número de colunas em dispositivos móveis",
+          "options__1": {
+            "label": "1 coluna"
+          },
+          "options__2": {
+            "label": "2 colunas"
+          }
+        },
+        "products_to_show": {
+          "label": "Máximo de produtos a serem mostrados"
         }
       }
     },
     "rich-text": {
       "name": "Rich text",
       "settings": {
-        "color_scheme": {
-          "options__1": {
-            "label": "Destaque 1"
-          },
-          "options__2": {
-            "label": "Destaque 2"
-          },
-          "options__3": {
-            "label": "Plano de fundo 1"
-          },
-          "options__4": {
-            "label": "Plano de fundo 2"
-          },
-          "options__5": {
-            "label": "Inverso"
-          },
-          "label": "Esquema de cores"
-        },
         "full_width": {
           "label": "Definir seção com largura total"
         }
@@ -1999,18 +1940,6 @@
           "settings": {
             "heading": {
               "label": "Título"
-            },
-            "heading_size": {
-              "options__1": {
-                "label": "Pequeno"
-              },
-              "options__2": {
-                "label": "Médio"
-              },
-              "label": "Tamanho do título",
-              "options__3": {
-                "label": "Grande"
-              }
             }
           }
         },
@@ -2068,7 +1997,7 @@
         },
         "description": {
           "label": "Texto alternativo do vídeo",
-          "info": "Descreva o vídeo para que seja acessível a clientes que usam leitores de tela."
+          "info": "Descreva o vídeo para clientes que usam leitores de tela. [Saiba mais](https://help.shopify.com/en/manual/online-store/themes/theme-structure/theme-features#video)"
         },
         "image_padding": {
           "label": "Adicionar preenchimento de imagem",
@@ -2212,23 +2141,7 @@
           "label": "Opacidade de sobreposição de imagem"
         },
         "color_scheme": {
-          "options__1": {
-            "label": "Destaque 1"
-          },
-          "options__2": {
-            "label": "Destaque 2"
-          },
-          "options__3": {
-            "label": "Plano de fundo 1"
-          },
-          "options__4": {
-            "label": "Plano de fundo 2"
-          },
-          "options__5": {
-            "label": "Inverso"
-          },
-          "label": "Esquema de cores",
-          "info": "Visível quando o contêiner é exibido"
+          "info": "Visível quando o contêiner é exibido."
         },
         "show_text_below": {
           "label": "Exibir conteúdo abaixo da imagem em dispositivos móveis",
@@ -2422,18 +2335,6 @@
             "secondary_style": {
               "label": "Usar estilo de botão com contorno"
             },
-            "heading_size": {
-              "label": "Tamanho do título",
-              "options__1": {
-                "label": "Pequeno"
-              },
-              "options__2": {
-                "label": "Médio"
-              },
-              "options__3": {
-                "label": "Grande"
-              }
-            },
             "box_align": {
               "label": "Posição do conteúdo no desktop",
               "options__1": {
@@ -2484,23 +2385,7 @@
               "label": "Opacidade de sobreposição de imagem"
             },
             "color_scheme": {
-              "info": "Visível quando o contêiner é exibido.",
-              "options__1": {
-                "label": "Destaque 1"
-              },
-              "options__2": {
-                "label": "Destaque 2"
-              },
-              "options__3": {
-                "label": "Plano de fundo 1"
-              },
-              "options__4": {
-                "label": "Plano de fundo 2"
-              },
-              "options__5": {
-                "label": "Inverso"
-              },
-              "label": "Esquema de cores"
+              "info": "Visível quando o contêiner é exibido."
             },
             "text_alignment_mobile": {
               "label": "Alinhamento de conteúdo em dispositivos móveis",
@@ -2554,41 +2439,8 @@
             "label": "Contêiner de seção"
           }
         },
-        "color_scheme": {
-          "label": "Esquema de cores",
-          "options__1": {
-            "label": "Plano de fundo 1"
-          },
-          "options__2": {
-            "label": "Plano de fundo 2"
-          },
-          "options__3": {
-            "label": "Inverso"
-          },
-          "options__4": {
-            "label": "Destaque 1"
-          },
-          "options__5": {
-            "label": "Destaque 2"
-          }
-        },
         "container_color_scheme": {
           "label": "Esquema de cores do contêiner",
-          "options__1": {
-            "label": "Plano de fundo 1"
-          },
-          "options__2": {
-            "label": "Plano de fundo 2"
-          },
-          "options__3": {
-            "label": "Inverso"
-          },
-          "options__4": {
-            "label": "Destaque 1"
-          },
-          "options__5": {
-            "label": "Destaque 2"
-          },
           "info": "Visível quando o layout está definido para contêiner de Linha ou de Seção."
         },
         "open_first_collapsible_row": {

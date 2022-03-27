@@ -260,7 +260,8 @@
     },
     "featured_collection": {
       "view_all": "Покажи всички",
-      "view_all_label": "Покажи всички продукти в колекция {{ collection_name }}"
+      "view_all_label": "Покажи всички продукти в колекция {{ collection_name }}",
+      "slider": "Плъзгач"
     },
     "collection_list": {
       "view_all": "Покажи всички"
@@ -281,6 +282,9 @@
       "play_slideshow": "Възпроизвеждане на слайдшоу",
       "carousel": "Въртележка",
       "slide": "Слайд"
+    },
+    "page": {
+      "title": "Заглавие на страница"
     }
   },
   "localization": {
@@ -394,7 +398,8 @@
       "tracking_url": "Връзка за проследяване",
       "tracking_company": "Превозвач",
       "tracking_number": "Номер за проследяване",
-      "subtotal": "Междинна сума"
+      "subtotal": "Междинна сума",
+      "total_duties": "Мито"
     }
   },
   "gift_cards": {

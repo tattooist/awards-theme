@@ -77,12 +77,6 @@
       "name": "아이콘",
       "settings": {
         "accent_icons": {
-          "options__1": {
-            "label": "강조 1"
-          },
-          "options__2": {
-            "label": "강조 2"
-          },
           "options__3": {
             "label": "윤곽 버튼"
           },
@@ -238,24 +232,6 @@
             "label": "오른쪽"
           },
           "label": "텍스트 정렬"
-        },
-        "color_scheme": {
-          "options__1": {
-            "label": "강조 1"
-          },
-          "options__2": {
-            "label": "강조 2"
-          },
-          "options__3": {
-            "label": "배경 1"
-          },
-          "options__4": {
-            "label": "배경 2"
-          },
-          "options__5": {
-            "label": "서로 바꾸기"
-          },
-          "label": "색상 배합"
         }
       }
     },
@@ -351,6 +327,18 @@
         },
         "label": "색상 배합",
         "has_cards_info": "카드 색상 배합을 변경하려면 테마 설정을 업데이트하십시오."
+      },
+      "heading_size": {
+        "label": "제목 사이즈",
+        "options__1": {
+          "label": "작게"
+        },
+        "options__2": {
+          "label": "보통"
+        },
+        "options__3": {
+          "label": "크게"
+        }
       }
     },
     "announcement-bar": {
@@ -360,24 +348,6 @@
           "settings": {
             "text": {
               "label": "텍스트"
-            },
-            "color_scheme": {
-              "label": "색상 배합",
-              "options__1": {
-                "label": "배경 1"
-              },
-              "options__2": {
-                "label": "배경 2"
-              },
-              "options__3": {
-                "label": "서로 바꾸기"
-              },
-              "options__4": {
-                "label": "강조 1"
-              },
-              "options__5": {
-                "label": "강조 2"
-              }
             },
             "link": {
               "label": "링크"
@@ -463,7 +433,7 @@
             },
             "description": {
               "label": "동영상 대체 텍스트",
-              "info": "시각 장애인용 스크린리더를 사용하는 고객이 사용할 수 있도록 동영상에 대해 설명합니다."
+              "info": "스크린리더를 사용하는 고객에게 슬라이드 쇼를 설명합니다. [자세히 알아보기](https://help.shopify.com/en/manual/online-store/themes/theme-structure/theme-features#video-block)"
             }
           },
           "name": "동영상"
@@ -500,6 +470,18 @@
         },
         "columns_desktop": {
           "label": "데스크톱의 열 수"
+        },
+        "header_mobile": {
+          "content": "모바일 레이아웃"
+        },
+        "columns_mobile": {
+          "label": "모바일의 열 수",
+          "options__1": {
+            "label": "열 1개"
+          },
+          "options__2": {
+            "label": "열 2개"
+          }
         }
       },
       "blocks": {
@@ -580,10 +562,7 @@
           "label": "표시할 제품의 최대 수"
         },
         "show_view_all": {
-          "label": "컬렉션에 표시된 것보다 많은 제품이 있는 경우 \"모두 보기\" 버튼을 활성화하십시오."
-        },
-        "swipe_on_mobile": {
-          "label": "모바일에서 긁기 활성화"
+          "label": "컬렉션에 표시된 것보다 많은 제품이 있는 경우 \"모두 보기\"를 활성화하십시오."
         },
         "header": {
           "content": "제품 카드"
@@ -612,6 +591,57 @@
         },
         "columns_desktop": {
           "label": "데스크톱의 열 수"
+        },
+        "description": {
+          "label": "설명"
+        },
+        "show_description": {
+          "label": "관리자에서 컬렉션 설명 표시"
+        },
+        "description_style": {
+          "label": "설명 스타일",
+          "options__1": {
+            "label": "본문"
+          },
+          "options__2": {
+            "label": "소제목"
+          },
+          "options__3": {
+            "label": "대문자"
+          }
+        },
+        "view_all_style": {
+          "options__1": {
+            "label": "링크"
+          },
+          "options__2": {
+            "label": "윤곽 버튼"
+          },
+          "options__3": {
+            "label": "단색 버튼"
+          },
+          "label": "\"모두 보기\" 스타일"
+        },
+        "enable_desktop_slider": {
+          "label": "데스크톱에서 캐러셀 활성화"
+        },
+        "full_width": {
+          "label": "제품을 전체 폭 사용"
+        },
+        "header_mobile": {
+          "content": "모바일 레이아웃"
+        },
+        "columns_mobile": {
+          "label": "모바일의 열 수",
+          "options__1": {
+            "label": "열 1개"
+          },
+          "options__2": {
+            "label": "열 2개"
+          }
+        },
+        "swipe_on_mobile": {
+          "label": "모바일에서 긁기 활성화"
         }
       },
       "presets": {
@@ -647,24 +677,6 @@
         }
       },
       "settings": {
-        "color_scheme": {
-          "options__1": {
-            "label": "강조 1"
-          },
-          "options__2": {
-            "label": "강조 2"
-          },
-          "options__3": {
-            "label": "배경 1"
-          },
-          "options__4": {
-            "label": "배경 2"
-          },
-          "options__5": {
-            "label": "서로 바꾸기"
-          },
-          "label": "색상 배합"
-        },
         "newsletter_enable": {
           "label": "이메일 가입 표시"
         },
@@ -744,26 +756,18 @@
           "label": "고정 머리글 사용",
           "info": "고객이 위쪽으로 스크롤하면 화면에 표시되는 머리글입니다."
         },
-        "color_scheme": {
-          "options__1": {
-            "label": "강조 1"
-          },
-          "options__2": {
-            "label": "강조 2"
-          },
-          "options__3": {
-            "label": "배경 1"
-          },
-          "options__4": {
-            "label": "배경 2"
-          },
-          "options__5": {
-            "label": "서로 바꾸기"
-          },
-          "label": "색상 배합"
-        },
         "margin_bottom": {
           "label": "하단 마진"
+        },
+        "menu_type_desktop": {
+          "label": "데스크톱 메뉴 유형",
+          "info": "메뉴 유형은 자동으로 모바일에 최적화됩니다.",
+          "options__1": {
+            "label": "드롭다운"
+          },
+          "options__2": {
+            "label": "메가 메뉴"
+          }
         }
       }
     },
@@ -777,22 +781,6 @@
           "label": "두 번째 이미지"
         },
         "color_scheme": {
-          "options__1": {
-            "label": "강조 1"
-          },
-          "options__2": {
-            "label": "강조 2"
-          },
-          "options__3": {
-            "label": "배경 1"
-          },
-          "options__4": {
-            "label": "배경 2"
-          },
-          "options__5": {
-            "label": "서로 바꾸기"
-          },
-          "label": "색상 배합",
           "info": "컨테이너가 표시될 때 볼 수 있습니다."
         },
         "stack_images_on_mobile": {
@@ -887,15 +875,6 @@
           "settings": {
             "heading": {
               "label": "제목"
-            },
-            "heading_size": {
-              "options__1": {
-                "label": "보통"
-              },
-              "options__2": {
-                "label": "크게"
-              },
-              "label": "제목 사이즈"
             }
           },
           "name": "제목"
@@ -967,24 +946,6 @@
             "label": "크게"
           },
           "label": "이미지 높이"
-        },
-        "color_scheme": {
-          "options__1": {
-            "label": "배경 1"
-          },
-          "options__2": {
-            "label": "배경 2"
-          },
-          "options__3": {
-            "label": "서로 바꾸기"
-          },
-          "options__4": {
-            "label": "강조 1"
-          },
-          "options__5": {
-            "label": "강조 2"
-          },
-          "label": "색상 배합"
         },
         "layout": {
           "options__1": {
@@ -1060,18 +1021,6 @@
           "settings": {
             "heading": {
               "label": "제목"
-            },
-            "heading_size": {
-              "options__1": {
-                "label": "작게"
-              },
-              "options__2": {
-                "label": "보통"
-              },
-              "options__3": {
-                "label": "크게"
-              },
-              "label": "제목 사이즈"
             }
           },
           "name": "제목"
@@ -1328,6 +1277,18 @@
         },
         "columns_desktop": {
           "label": "데스크톱의 열 수"
+        },
+        "header_mobile": {
+          "content": "모바일 레이아웃"
+        },
+        "columns_mobile": {
+          "label": "모바일의 열 수",
+          "options__1": {
+            "label": "열 1개"
+          },
+          "options__2": {
+            "label": "열 2개"
+          }
         }
       }
     },
@@ -1370,6 +1331,21 @@
             "label": "정사각형"
           },
           "info": "컬렉션을 편집하여 이미지를 추가하십시오. [자세히 알아보기](https://help.shopify.com/en/manual/products/collections)"
+        },
+        "columns_desktop": {
+          "label": "데스크톱의 열 수"
+        },
+        "header_mobile": {
+          "content": "모바일 레이아웃"
+        },
+        "columns_mobile": {
+          "label": "모바일의 열 수",
+          "options__1": {
+            "label": "열 1개"
+          },
+          "options__2": {
+            "label": "열 2개"
+          }
         }
       }
     },
@@ -1377,27 +1353,7 @@
       "name": "페이지"
     },
     "main-password-footer": {
-      "name": "비밀번호 바닥글",
-      "settings": {
-        "color_scheme": {
-          "options__1": {
-            "label": "강조 1"
-          },
-          "options__2": {
-            "label": "강조 2"
-          },
-          "options__3": {
-            "label": "배경 1"
-          },
-          "options__4": {
-            "label": "배경 2"
-          },
-          "options__5": {
-            "label": "서로 바꾸기"
-          },
-          "label": "색상 배합"
-        }
-      }
+      "name": "비밀번호 바닥글"
     },
     "main-password-header": {
       "name": "비밀번호 머리글",
@@ -1408,24 +1364,6 @@
         "logo_max_width": {
           "label": "사용자 지정 로고 폭",
           "unit": "px"
-        },
-        "color_scheme": {
-          "options__1": {
-            "label": "강조 1"
-          },
-          "options__2": {
-            "label": "강조 2"
-          },
-          "options__3": {
-            "label": "배경 1"
-          },
-          "options__4": {
-            "label": "배경 2"
-          },
-          "options__5": {
-            "label": "서로 바꾸기"
-          },
-          "label": "색상 배합"
         }
       }
     },
@@ -1772,6 +1710,18 @@
         },
         "columns_desktop": {
           "label": "데스크톱의 열 수"
+        },
+        "header_mobile": {
+          "content": "모바일 레이아웃"
+        },
+        "columns_mobile": {
+          "label": "모바일의 열 수",
+          "options__1": {
+            "label": "열 1개"
+          },
+          "options__2": {
+            "label": "열 2개"
+          }
         }
       }
     },
@@ -1837,6 +1787,18 @@
         },
         "columns_desktop": {
           "label": "데스크톱의 열 수"
+        },
+        "header_mobile": {
+          "content": "모바일 레이아웃"
+        },
+        "columns_mobile": {
+          "label": "모바일의 열 수",
+          "options__1": {
+            "label": "열 1개"
+          },
+          "options__2": {
+            "label": "열 2개"
+          }
         }
       },
       "blocks": {
@@ -1868,24 +1830,6 @@
     "newsletter": {
       "name": "이메일 가입",
       "settings": {
-        "color_scheme": {
-          "label": "색상 배합",
-          "options__1": {
-            "label": "강조 1"
-          },
-          "options__2": {
-            "label": "강조 2"
-          },
-          "options__3": {
-            "label": "배경 1"
-          },
-          "options__4": {
-            "label": "배경 2"
-          },
-          "options__5": {
-            "label": "서로 바꾸기"
-          }
-        },
         "full_width": {
           "label": "섹션을 전체 폭 사용"
         },
@@ -1965,30 +1909,27 @@
         },
         "columns_desktop": {
           "label": "데스크톱의 열 수"
+        },
+        "header_mobile": {
+          "content": "모바일 레이아웃"
+        },
+        "columns_mobile": {
+          "label": "모바일의 열 수",
+          "options__1": {
+            "label": "열 1개"
+          },
+          "options__2": {
+            "label": "열 2개"
+          }
+        },
+        "products_to_show": {
+          "label": "표시할 제품의 최대 수"
         }
       }
     },
     "rich-text": {
       "name": "서식있는 텍스트",
       "settings": {
-        "color_scheme": {
-          "options__1": {
-            "label": "강조 1"
-          },
-          "options__2": {
-            "label": "강조 2"
-          },
-          "options__3": {
-            "label": "배경 1"
-          },
-          "options__4": {
-            "label": "배경 2"
-          },
-          "options__5": {
-            "label": "서로 바꾸기"
-          },
-          "label": "색상 배합"
-        },
         "full_width": {
           "label": "섹션을 전체 폭 사용"
         }
@@ -1998,18 +1939,6 @@
           "settings": {
             "heading": {
               "label": "제목"
-            },
-            "heading_size": {
-              "options__1": {
-                "label": "작게"
-              },
-              "options__2": {
-                "label": "보통"
-              },
-              "label": "제목 사이즈",
-              "options__3": {
-                "label": "크게"
-              }
             }
           },
           "name": "제목"
@@ -2068,7 +1997,7 @@
         },
         "description": {
           "label": "동영상 대체 텍스트",
-          "info": "시각 장애인용 스크린리더를 사용하는 고객이 사용할 수 있도록 동영상에 대해 설명합니다."
+          "info": "스크린리더를 사용하는 고객에게 슬라이드 쇼를 설명합니다. [자세히 알아보기](https://help.shopify.com/en/manual/online-store/themes/theme-structure/theme-features#video)"
         },
         "image_padding": {
           "label": "이미지 패딩 추가",
@@ -2212,23 +2141,7 @@
           "label": "이미지 오버레이 투명도"
         },
         "color_scheme": {
-          "options__1": {
-            "label": "강조 1"
-          },
-          "options__2": {
-            "label": "강조 2"
-          },
-          "options__3": {
-            "label": "배경 1"
-          },
-          "options__4": {
-            "label": "배경 2"
-          },
-          "options__5": {
-            "label": "서로 바꾸기"
-          },
-          "label": "색상 배합",
-          "info": "컨테이너가 표시될 때 보이게 하기"
+          "info": "컨테이너가 표시될 때 볼 수 있습니다."
         },
         "show_text_below": {
           "label": "모바일에서 이미지 아래에 콘텐츠 표시",
@@ -2422,18 +2335,6 @@
             "secondary_style": {
               "label": "윤곽 버튼 스타일 사용"
             },
-            "heading_size": {
-              "label": "제목 사이즈",
-              "options__1": {
-                "label": "작게"
-              },
-              "options__2": {
-                "label": "보통"
-              },
-              "options__3": {
-                "label": "크게"
-              }
-            },
             "box_align": {
               "label": "데스크톱 콘텐츠 위치",
               "options__1": {
@@ -2484,23 +2385,7 @@
               "label": "이미지 오버레이 투명도"
             },
             "color_scheme": {
-              "label": "색상 배합",
-              "info": "컨테이너가 표시될 때 볼 수 있습니다.",
-              "options__1": {
-                "label": "강조 1"
-              },
-              "options__2": {
-                "label": "강조 2"
-              },
-              "options__3": {
-                "label": "배경 1"
-              },
-              "options__4": {
-                "label": "배경 2"
-              },
-              "options__5": {
-                "label": "서로 바꾸기"
-              }
+              "info": "컨테이너가 표시될 때 볼 수 있습니다."
             },
             "text_alignment_mobile": {
               "label": "모바일 콘텐츠 정렬",
@@ -2554,24 +2439,6 @@
             "label": "섹션 컨테이너"
           }
         },
-        "color_scheme": {
-          "label": "색상 배합",
-          "options__1": {
-            "label": "배경 1"
-          },
-          "options__2": {
-            "label": "배경 2"
-          },
-          "options__3": {
-            "label": "서로 바꾸기"
-          },
-          "options__4": {
-            "label": "강조 1"
-          },
-          "options__5": {
-            "label": "강조 2"
-          }
-        },
         "open_first_collapsible_row": {
           "label": "첫 번째 축소 가능한 행 열기"
         },
@@ -2605,21 +2472,6 @@
         },
         "container_color_scheme": {
           "label": "컨테이너 색상 배합",
-          "options__1": {
-            "label": "배경 1"
-          },
-          "options__2": {
-            "label": "배경 2"
-          },
-          "options__3": {
-            "label": "서로 바꾸기"
-          },
-          "options__4": {
-            "label": "강조 1"
-          },
-          "options__5": {
-            "label": "강조 2"
-          },
           "info": "행 또는 섹션 컨테이너에 레이아웃이 설정되면 표시됩니다."
         }
       },

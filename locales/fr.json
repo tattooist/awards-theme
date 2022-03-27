@@ -260,7 +260,8 @@
     },
     "featured_collection": {
       "view_all": "Tout afficher",
-      "view_all_label": "Afficher tous les produits de la collection {{ collection_name }}"
+      "view_all_label": "Afficher tous les produits de la collection {{ collection_name }}",
+      "slider": "Carrousel"
     },
     "collection_list": {
       "view_all": "Tout afficher"
@@ -281,6 +282,9 @@
       "play_slideshow": "Lire le diaporama",
       "carousel": "Carrousel",
       "slide": "Diapositive"
+    },
+    "page": {
+      "title": "Titre de la page"
     }
   },
   "localization": {
@@ -394,7 +398,8 @@
       "tracking_url": "Lien de suivi",
       "tracking_company": "Transporteur",
       "tracking_number": "Numéro de suivi",
-      "subtotal": "Sous-total"
+      "subtotal": "Sous-total",
+      "total_duties": "Frais de douane"
     }
   },
   "gift_cards": {

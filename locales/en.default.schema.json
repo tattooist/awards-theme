@@ -3,10 +3,10 @@
     "global": {
       "settings": {
         "header__border": {
-          "content":  "Border"
+          "content": "Border"
         },
         "header__shadow": {
-          "content":  "Shadow"
+          "content": "Shadow"
         },
         "blur": {
           "label": "Blur"
@@ -40,24 +40,6 @@
             "label": "Right"
           },
           "label": "Text alignment"
-        },
-        "color_scheme": {
-          "options__1": {
-            "label": "Accent 1"
-          },
-          "options__2": {
-            "label": "Accent 2"
-          },
-          "options__3": {
-            "label": "Background 1"
-          },
-          "options__4": {
-            "label": "Background 2"
-          },
-          "options__5": {
-            "label": "Inverse"
-          },
-          "label": "Color scheme"
         }
       }
     },
@@ -65,7 +47,7 @@
       "name": "Cards",
       "settings": {
         "header__badge": {
-          "content":  "Badge"
+          "content": "Badge"
         },
         "style": {
           "options__1": {
@@ -203,12 +185,6 @@
       "name": "Icons",
       "settings": {
         "accent_icons": {
-          "options__1": {
-            "label": "Accent 1"
-          },
-          "options__2": {
-            "label": "Accent 2"
-          },
           "options__3": {
             "label": "Outline button"
           },
@@ -311,10 +287,10 @@
           "label": "Vertical space between sections"
         },
         "header__grid": {
-          "content":  "Grid"
+          "content": "Grid"
         },
         "paragraph__grid": {
-          "content":  "Affects areas with a multicolumn layout."
+          "content": "Affects areas with a multicolumn layout."
         },
         "spacing_grid_horizontal": {
           "label": "Horizontal space"
@@ -352,6 +328,18 @@
         "label": "Color scheme",
         "has_cards_info": "To change the card color scheme, update your theme settings."
       },
+      "heading_size": {
+        "label": "Heading size",
+        "options__1": {
+          "label": "Small"
+        },
+        "options__2": {
+          "label": "Medium"
+        },
+        "options__3": {
+          "label": "Large"
+        }
+      },
       "section_colors": {
         "section_colors_heading": "Colors",
         "bg_color": {
@@ -376,18 +364,6 @@
         "overlay_color": {
           "label": "Overlay"
         }
-      },
-      "heading_size": {
-        "label": "Heading size",
-        "options__1": {
-          "label": "Small"
-        },
-        "options__2": {
-          "label": "Medium"
-        },
-        "options__3": {
-          "label": "Large"
-        }
       }
     },
     "announcement-bar": {
@@ -409,24 +385,6 @@
           "settings": {
             "text": {
               "label": "Text"
-            },
-            "color_scheme": {
-              "label": "Color scheme",
-              "options__1": {
-                "label": "Background 1"
-              },
-              "options__2": {
-                "label": "Background 2"
-              },
-              "options__3": {
-                "label": "Inverse"
-              },
-              "options__4": {
-                "label": "Accent 1"
-              },
-              "options__5": {
-                "label": "Accent 2"
-              }
             },
             "link": {
               "label": "Link"
@@ -523,7 +481,7 @@
             },
             "description": {
               "label": "Video alt text",
-              "info": "Describe the video to make it accessible for customers using screen readers."
+              "info": "Describe the video for customers using screen readers. [Learn more](https://help.shopify.com/en/manual/online-store/themes/theme-structure/theme-features#video-block)"
             }
           }
         }
@@ -990,24 +948,6 @@
         }
       },
       "settings": {
-        "color_scheme": {
-          "options__1": {
-            "label": "Accent 1"
-          },
-          "options__2": {
-            "label": "Accent 2"
-          },
-          "options__3": {
-            "label": "Background 1"
-          },
-          "options__4": {
-            "label": "Background 2"
-          },
-          "options__5": {
-            "label": "Inverse"
-          },
-          "label": "Color scheme"
-        },
         "newsletter_enable": {
           "label": "Show email signup"
         },
@@ -1061,24 +1001,6 @@
     "header": {
       "name": "Header",
       "settings": {
-        "color_scheme": {
-          "options__1": {
-            "label": "Accent 1"
-          },
-          "options__2": {
-            "label": "Accent 2"
-          },
-          "options__3": {
-            "label": "Background 1"
-          },
-          "options__4": {
-            "label": "Background 2"
-          },
-          "options__5": {
-            "label": "Inverse"
-          },
-          "label": "Color scheme"
-        },
         "logo": {
           "header": "Logo",
           "label": "Logo image",
@@ -1273,15 +1195,6 @@
           "settings": {
             "heading": {
               "label": "Heading"
-            },
-            "heading_size": {
-              "options__1": {
-                "label": "Medium"
-              },
-              "options__2": {
-                "label": "Large"
-              },
-              "label": "Heading size"
             }
           }
         },
@@ -1354,7 +1267,8 @@
           "options__5": {
             "label": "Original image ratio"
           },
-          "label": "Section height"
+          "label": "Section height",
+          "info": "Image is automatically optimized for mobile."
         },
         "layout": {
           "label": "Layout",
@@ -1432,18 +1346,6 @@
           "settings": {
             "heading": {
               "label": "Heading"
-            },
-            "heading_size": {
-              "options__1": {
-                "label": "Small"
-              },
-              "options__2": {
-                "label": "Medium"
-              },
-              "options__3": {
-                "label": "Large"
-              },
-              "label": "Heading size"
             }
           }
         },
@@ -1575,7 +1477,7 @@
             "label": "Collage"
           },
           "info": "Posts are stacked on mobile."
-       },
+        },
         "image_height": {
           "label": "Featured image height",
           "options__1": {
@@ -1807,24 +1709,6 @@
             "label": "2 columns"
           }
         },
-        "color_scheme": {
-          "options__1": {
-            "label": "Accent 1"
-          },
-          "options__2": {
-            "label": "Accent 2"
-          },
-          "options__3": {
-            "label": "Background 1"
-          },
-          "options__4": {
-            "label": "Background 2"
-          },
-          "options__5": {
-            "label": "Inverse"
-          },
-          "label": "Color scheme"
-        },
         "image_padding": {
           "label": "Add image padding"
         }
@@ -1834,27 +1718,7 @@
       "name": "Page"
     },
     "main-password-footer": {
-      "name": "Password footer",
-      "settings": {
-        "color_scheme": {
-          "options__1": {
-            "label": "Accent 1"
-          },
-          "options__2": {
-            "label": "Accent 2"
-          },
-          "options__3": {
-            "label": "Background 1"
-          },
-          "options__4": {
-            "label": "Background 2"
-          },
-          "options__5": {
-            "label": "Inverse"
-          },
-          "label": "Color scheme"
-        }
-      }
+      "name": "Password footer"
     },
     "main-password-header": {
       "name": "Password header",
@@ -1865,24 +1729,6 @@
         "logo_max_width": {
           "label": "Custom logo width",
           "unit": "px"
-        },
-        "color_scheme": {
-          "options__1": {
-            "label": "Accent 1"
-          },
-          "options__2": {
-            "label": "Accent 2"
-          },
-          "options__3": {
-            "label": "Background 1"
-          },
-          "options__4": {
-            "label": "Background 2"
-          },
-          "options__5": {
-            "label": "Inverse"
-          },
-          "label": "Color scheme"
         }
       }
     },
@@ -2674,23 +2520,7 @@
           "label": "Desktop content position"
         },
         "color_scheme": {
-          "options__1": {
-            "label": "Accent 1"
-          },
-          "options__2": {
-            "label": "Accent 2"
-          },
-          "options__3": {
-            "label": "Background 1"
-          },
-          "options__4": {
-            "label": "Background 2"
-          },
-          "options__5": {
-            "label": "Inverse"
-          },
-          "label": "Color scheme",
-          "info": "Visible when container displayed"
+          "info": "Visible when container displayed."
         },
         "image_height": {
           "label": "Banner height",
@@ -2737,7 +2567,7 @@
         },
         "show_text_below": {
           "label": "Show content below image on mobile",
-          "info": "For best results, use an image with a 16:9 aspect ratio. [Learn more](https:\/\/help.shopify.com\/en\/manual\/shopify-admin\/productivity-tools\/image-editor#understanding-image-aspect-ratio)"
+          "info": "For best results, use an image with a 16:9 aspect ratio. [Learn more](https://help.shopify.com/en/manual/shopify-admin/productivity-tools/image-editor#understanding-image-aspect-ratio)"
         }
       },
       "blocks": {
@@ -2854,24 +2684,6 @@
           },
           "label": "Text alignment"
         },
-        "color_scheme": {
-          "options__1": {
-            "label": "Accent 1"
-          },
-          "options__2": {
-            "label": "Accent 2"
-          },
-          "options__3": {
-            "label": "Background 1"
-          },
-          "options__4": {
-            "label": "Background 2"
-          },
-          "options__5": {
-            "label": "Inverse"
-          },
-          "label": "Color scheme"
-        },
         "full_width": {
           "label": "Make section full width"
         }
@@ -2955,7 +2767,7 @@
         },
         "description": {
           "label": "Video alt text",
-          "info": "Describe the video to make it accessible for customers using screen readers."
+          "info": "Describe the video for customers using screen readers. [Learn more](https://help.shopify.com/en/manual/online-store/themes/theme-structure/theme-features#video)"
         },
         "image_padding": {
           "label": "Add image padding",
@@ -3303,6 +3115,7 @@
             "image_overlay_opacity": {
               "label": "Image overlay opacity"
             }
+            }
           }
         }
       },
@@ -3330,22 +3143,6 @@
             },
             "heading": {
               "label": "Content"
-            },
-            "subheading": {
-              "label": "Under content"
-            },
-            "heading_size": {
-              "label": "Content size",
-              "options__1": {
-                "label": "Small"
-              },
-              "options__2": {
-                "label": "Medium"
-              },
-              "options__3": {
-                "label": "Large"
-              }
-            }
           }
         }
       },
@@ -3386,42 +3183,9 @@
             "label": "Section container"
           }
         },
-        "color_scheme": {
-          "label": "Color scheme",
-          "options__1": {
-            "label": "Background 1"
-          },
-          "options__2": {
-            "label": "Background 2"
-          },
-          "options__3": {
-            "label": "Inverse"
-          },
-          "options__4": {
-            "label": "Accent 1"
-          },
-          "options__5": {
-            "label": "Accent 2"
-          }
-        },
         "container_color_scheme": {
           "label": "Container color scheme",
-          "info": "Visible when Layout is set to Row or Section container.",
-          "options__1": {
-            "label": "Background 1"
-          },
-          "options__2": {
-            "label": "Background 2"
-          },
-          "options__3": {
-            "label": "Inverse"
-          },
-          "options__4": {
-            "label": "Accent 1"
-          },
-          "options__5": {
-            "label": "Accent 2"
-          }
+          "info": "Visible when Layout is set to Row or Section container."
         },
         "open_first_collapsible_row": {
           "label": "Open first collapsible row"

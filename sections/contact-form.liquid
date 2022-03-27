@@ -34,7 +34,7 @@
 
 <div id="Contact-{{ section.id }}" class="contact{% unless section.settings.bg_color == blank %} contact--with-bg{% endunless %} contact--{{ section.settings.layout }}{% if section.settings.text != blank %} contact--has-text{% endif %} section-{{ section.id }}-padding">
   <div class="page-width{% if section.settings.is_full_width == false %}{% if section.settings.layout == 'onecolumn-center'%} page-width--narrow{% endif %}{% else %} contact__full-width{% endif %}">
-    <h2 class="title h1">{{ section.settings.heading | escape }}</h2>
+    <h2 class="title title-wrapper--no-top-margin {{ section.settings.heading_size }}">{{ section.settings.heading | escape }}</h2>
   {% if section.settings.layout == 'twocolumns' or section.settings.text != blank  %}
     <div class="contact__grid grid grid--1-col grid--2-col-desktop">
       <div class="grid__item">
@@ -94,15 +94,15 @@
             <label class="field__label" for="ContactForm-phone">{{ 'templates.contact.form.phone' | t }}</label>
           </div>
           <div class="field">
-          <textarea
-                  rows="10"
-                  id="ContactForm-body"
-                  class="text-area field__input"
-                  name="contact[{{ 'templates.contact.form.comment' | t }}]"
-                  placeholder="{{ 'templates.contact.form.comment' | t }}"
-          >
-            {{- form.body -}}
-          </textarea>
+            <textarea
+                    rows="10"
+                    id="ContactForm-body"
+                    class="text-area field__input"
+                    name="contact[{{ 'templates.contact.form.comment' | t }}]"
+                    placeholder="{{ 'templates.contact.form.comment' | t }}"
+            >
+              {{- form.body -}}
+            </textarea>
             <label class="form__label field__label" for="ContactForm-body">{{ 'templates.contact.form.comment' | t }}</label>
           </div>
           <div class="contact__button">
@@ -150,6 +150,26 @@
       "id": "heading",
       "default": "Want to get in touch with us?",
       "label": "t:sections.contact-form.settings.headline.label"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.all.heading_size.options__3.label"
+        }
+      ],
+      "default": "h1",
+      "label": "t:sections.all.heading_size.label"
     },
     {
       "type": "richtext",
