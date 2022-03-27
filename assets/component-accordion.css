@@ -12,7 +12,7 @@
 }
 
 .accordion .summary__title + .icon-caret {
-  right: .6rem;
+  height: calc(var(--font-heading-scale) * 0.8rem);
 }
 
 .accordion + .accordion {
@@ -50,6 +50,8 @@
 .accordion__content {
   margin-bottom: 1.5rem;
   word-break: break-word;
+  overflow-x: auto;
+  padding: 0 0.6rem;
 }
 
 .accordion__content img {

@@ -1,12 +1,19 @@
 .rich-text {
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
+  z-index: 1;
 }
 
 .rich-text.rich-text--full-width {
   max-width: initial;
   width: 100%;
 }
+
+.rich-text:not(.rich-text--full-width):not(color-background-1) {
+    padding-left:8rem;
+    padding-right:8rem;
+ }
 
 .rich-text__blocks {
   margin: auto;
@@ -17,40 +24,20 @@
   overflow-wrap: break-word;
 }
 
-.rich-text--full-width .rich-text__blocks {
-  width: 100%;
-}
-
-.rich-text:not(.rich-text--full-width),
-.rich-text--full-width.color-background-1 {
-  margin-top: 6.4rem;
-  margin-bottom: 6.4rem;
-}
-
 .rich-text--left {
   text-align: left;
 }
 
-.rich-text--left .rich-text__blocks {
-  margin: 0;
+.rich-text--left .rich-text__blocks,
+.rich-text--right .rich-text__blocks {
+  margin: 0 auto;
+}
+
+.rich-text--right {
+  text-align: right;
 }
 
 @media screen and (min-width: 750px) {
-  .rich-text:not(.rich-text--full-width),
-  .rich-text--full-width.color-background-1 {
-    margin-top: calc(4.4rem + var(--page-width-margin));
-    margin-bottom: calc(4.4rem + var(--page-width-margin));
-  }
-
-  .rich-text:not(.color-background-1) {
-    padding-top: calc(4.4rem + var(--page-width-margin));
-    padding-bottom: calc(4.4rem + var(--page-width-margin));
-  }
-
-  .rich-text--full-width .rich-text__blocks {
-    width: 100%;
-  }
-
   .rich-text__subheading {
     font-size: 1.8rem;
     line-height: 2.8rem;
@@ -115,11 +102,12 @@
     width: 100%;
   }
 
-  .button {
+  .rich-text--full-width .rich-text__blocks .button {
     width: 100%;
   }
 
-  .rich-text--left .button {
+  .rich-text--left .button,
+  .rich-text--right .button {
     width: auto;
   }
 }

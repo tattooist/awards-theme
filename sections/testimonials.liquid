@@ -1,0 +1,372 @@
+{{ 'section-multicolumn.css' | asset_url | stylesheet_tag }}
+{{ 'section-testimonials.css' | asset_url | stylesheet_tag }}
+{{ 'component-rating.css' | asset_url | stylesheet_tag }}
+<link rel="stylesheet" href="{{ 'component-slider.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'component-slider.css' | asset_url | stylesheet_tag }}</noscript>
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{% unless section.settings.card_color == blank %}
+  {%- style -%}
+    #testimonials-{{ section.id }}.multicolumn.background-primary .multicolumn-card {
+      background: {{ section.settings.card_color }};
+    }
+  {%- endstyle -%}
+{% endunless %}
+
+{% unless section.settings.bg_color == blank %}
+  {%- style -%}
+    #testimonials-{{ section.id }} {
+      background: {{ section.settings.bg_color }};
+    }
+  {%- endstyle -%}
+{% endunless %}
+
+{% unless section.settings.text_color == blank %}
+  {%- style -%}
+    #testimonials-{{ section.id }} .multicolumn-list h3,
+    #testimonials-{{ section.id }} .multicolumn-list p,
+    #testimonials-{{ section.id }} .title,
+    #testimonials-{{ section.id }} .multicolumn__subheading,
+    #testimonials-{{ section.id }} .testimonials__author,
+    #testimonials-{{ section.id }} {
+      --color-link: {{ section.settings.text_color.red }}, {{ section.settings.text_color.green }}, {{ section.settings.text_color.blue }};
+      --color-foreground: {{ section.settings.text_color.red }}, {{ section.settings.text_color.green }}, {{ section.settings.text_color.blue }};
+      color: {{ section.settings.text_color }};
+    }
+
+    #testimonials-{{ section.id }} .testimonials__location {
+      color: rgba({{ section.settings.text_color.red }}, {{ section.settings.text_color.green }}, {{ section.settings.text_color.blue }},.5);
+    }
+
+    #testimonials-{{ section.id }}.testimonials .placeholder-svg {
+      border:1px solid rgba({{ section.settings.text_color.red }}, {{ section.settings.text_color.green }}, {{ section.settings.text_color.blue }},.5);
+    }
+
+    #testimonials-{{ section.id }} .rating-star:before {
+      -webkit-text-fill-color: {{ section.settings.text_color }};
+    }
+
+    #testimonials-{{ section.id }} .placeholder-svg {
+      fill: {{ section.settings.text_color }};
+    }
+  {%- endstyle -%}
+{% endunless %}
+
+<div id="testimonials-{{ section.id }}" class="multicolumn testimonials color-{{ section.settings.color_scheme }} gradient{% unless section.settings.background_style == 'none' and settings.text_boxes_border_thickness > 0 or settings.text_boxes_shadow_opacity > 0 %} background-{{ section.settings.background_style }}{% endunless %}{% if section.settings.title == blank %} no-heading{% endif %}">
+  <div class="page-width section-{{ section.id }}-padding isolate">
+    {% if section.settings.subtitle != blank %}
+      <h2 class="multicolumn__subheading {{ section.settings.text_aligment }}">
+        {{ section.settings.subtitle | escape }}
+      </h2>
+    {% endif %}
+    {% unless section.settings.title == blank %}
+      <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin{% if section.settings.title == blank %} title-wrapper-with-link--no-heading{% endif %} {{ section.settings.text_aligment }}">
+        <h2 class="title h1">
+          {{ section.settings.title | escape }}
+        </h2>
+      </div>
+    {% endunless %}
+    <slider-component class="slider-mobile-gutter">
+      <ul class="multicolumn-list contains-content-container grid grid--1-col{% if section.blocks.size <= 3 %} grid--center grid--3-col-desktop{% elsif section.blocks.size > 3 %} grid--3-col-desktop{% endif %}{% if section.settings.swipe_on_mobile and section.blocks.size > 1 %} slider slider--mobile grid--peek{% endif %}"
+        id="Slider-{{ section.id }}"
+        role="list"
+      >
+        {%- liquid
+          assign highest_ratio = 0
+          for block in section.blocks
+            if block.settings.image.aspect_ratio > highest_ratio
+              assign highest_ratio = block.settings.image.aspect_ratio
+            endif
+          endfor
+        -%}
+        {%- for block in section.blocks -%}
+          <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="multicolumn-list__item grid__item{% if section.settings.swipe_on_mobile %} slider__slide{% endif %}{% if section.settings.column_alignment == 'center' %} center{% endif %}" {{ block.shopify_attributes }}>
+            <div class="multicolumn-card content-container">
+              <div class="multicolumn-card__info">
+                {% liquid
+                  assign rating_decimal = 0
+                  assign decimal = block.settings.rating | modulo: 1
+                  if decimal >= 0.3 and decimal <= 0.7
+                    assign rating_decimal = 0.5
+                  elsif decimal > 0.7
+                    assign rating_decimal = 1
+                  endif
+                %}
+                <div class="rating" role="img" aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: block.settings.rating, rating_max: 5 }}">
+                  <span aria-hidden="true" class="rating-star color-icon-{{ settings.accent_icons }}" style="--rating: {{ block.settings.rating }}; --rating-max: 5; --rating-decimal: {{ rating_decimal }};"></span>
+                </div>
+
+                {%- if block.settings.title != blank -%}
+                  <h3>{{ block.settings.title | escape }}</h3>
+                {%- endif -%}
+                {%- if block.settings.text != blank -%}
+                  <div class="rte">{{ block.settings.text }}</div>
+                {%- endif -%}
+                <div class="testimonials__bottom">
+                  <div class="testimonials__image">
+                    {%- if block.settings.image != blank -%}
+                      <div class="media media--transparent media--circle">
+                        <img
+                                class="multicolumn-card__image"
+                                srcset="{%- if block.settings.image.width >= 275 -%}{{ block.settings.image | img_url: '275x' }} 275w,{%- endif -%}
+                            {%- if block.settings.image.width >= 550 -%}{{ block.settings.image | img_url: '550x' }} 550w,{%- endif -%}
+                            {%- if block.settings.image.width >= 710 -%}{{ block.settings.image | img_url: '710x' }} 710w,{%- endif -%}
+                            {%- if block.settings.image.width >= 1420 -%}{{ block.settings.image | img_url: '1420x' }} 1420w,{%- endif -%}
+                            {{ block.settings.image | img_url: 'master' }} {{ block.settings.image.width }}w"
+                                src="{{ block.settings.image | img_url: '550x' }}"
+                                sizes="(min-width: 990px) {% if section.blocks.size <= 2 %}710px{% else %}550px{% endif %},
+                            (min-width: 750px) {% if section.blocks.size == 1 %}710px{% else %}550px{% endif %},
+                            calc(100vw - 30px)"
+                                alt="{{ block.settings.image.alt }}"
+                                height="{{ block.settings.image.height }}"
+                                width="{{ block.settings.image.width }}"
+                                loading="lazy"
+                        >
+                      </div>
+                    {%- else -%}
+                      {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                    {% endif %}
+                  </div>
+                  <div class="testimonials__bottom-right">
+                    <div class="testimonials__author">{{ block.settings.author }}</div>
+                    <div class="testimonials__location">{{ block.settings.location }}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        {%- endfor -%}
+      </ul>
+
+      {%- if section.settings.swipe_on_mobile -%}
+        <div class="slider__controls slider__controls--center large-up-hide">
+          <div class="slider-buttons no-js-hidden medium-hide{% if section.blocks.size < 2 %} small-hide{% endif %}">
+            <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'general.slider.previous_slide' | t }}">{% render 'icon-arrow' %}</button>
+            <div class="slider-counter caption">
+              <span class="slider-counter--current">1</span>
+              <span aria-hidden="true"> / </span>
+              <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
+              <span class="slider-counter--total">{{ section.blocks.size }}</span>
+            </div>
+            <button type="button" class="slider-button slider-button--next" name="next" aria-label="{{ 'general.slider.next_slide' | t }}">{% render 'icon-arrow' %}</button>
+          </div>
+        </div>
+      {%- endif -%}
+    </slider-component>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.testimonials.name",
+  "class": "section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "t:sections.testimonials.settings.subtitle.label"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "default": "Reviews",
+      "label": "t:sections.testimonials.settings.title.label"
+    },
+    {
+      "type": "select",
+      "id": "text_aligment",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.testimonials.settings.text_aligment.options__1.label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.testimonials.settings.text_aligment.options__2.label"
+        }
+      ],
+      "default": "left",
+      "label": "t:sections.testimonials.settings.text_aligment.label"
+    },
+    {
+      "type": "select",
+      "id": "column_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.testimonials.settings.column_alignment.options__1.label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.testimonials.settings.column_alignment.options__2.label"
+        }
+      ],
+      "default": "left",
+      "label": "t:sections.testimonials.settings.column_alignment.label"
+    },
+    {
+      "type": "select",
+      "id": "background_style",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:sections.testimonials.settings.background_style.options__1.label"
+        },
+        {
+          "value": "primary",
+          "label": "t:sections.testimonials.settings.background_style.options__2.label"
+        }
+      ],
+      "default": "none",
+      "label": "t:sections.testimonials.settings.background_style.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "swipe_on_mobile",
+      "default": true,
+      "label": "t:sections.testimonials.settings.swipe_on_mobile.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.section_colors.section_colors_heading"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "t:sections.all.section_colors.bg_color.label"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:sections.all.section_colors.text_color.label"
+    },
+    {
+      "type": "color",
+      "id": "card_color",
+      "label": "t:sections.all.section_colors.card_color.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 32
+    }
+  ],
+  "max_blocks": 6,
+  "blocks": [
+    {
+      "type": "column",
+      "name": "t:sections.testimonials.blocks.column.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "default": "Testimonial",
+          "label": "t:sections.testimonials.blocks.column.settings.title.label"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "<p>This is now my HG concealer. The shade match is perfect and the coverage is there whilst being skinlike. All the ‘creamy’ concealer, like Kosas or PML happen to crease under my eyes unless I prime it and this does not, even without priming.</p>",
+          "label": "t:sections.testimonials.blocks.column.settings.text.label",
+          "info": "t:sections.testimonials.blocks.column.settings.text.info"
+        },
+        {
+          "type": "select",
+          "id": "rating",
+          "options": [
+            {
+              "value": "1",
+              "label": "1"
+            },
+            {
+              "value": "2",
+              "label": "2"
+            },
+            {
+              "value": "3",
+              "label": "3"
+            },
+            {
+              "value": "4",
+              "label": "4"
+            },
+            {
+              "value": "5",
+              "label": "5"
+            }
+          ],
+          "default": "5",
+          "label": "t:sections.testimonials.blocks.column.settings.rating.label"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.testimonials.blocks.column.settings.image.label",
+          "info": "t:sections.testimonials.blocks.column.settings.image.info"
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "default": "Author",
+          "label": "t:sections.testimonials.blocks.column.settings.author.label"
+        },
+        {
+          "type": "text",
+          "id": "location",
+          "default": "Location",
+          "label": "t:sections.testimonials.blocks.column.settings.location.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.testimonials.presets.name",
+      "blocks": [
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
