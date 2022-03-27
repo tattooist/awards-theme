@@ -2405,10 +2405,6 @@ input[type='checkbox'] {
     padding-bottom: 2rem;
   }
 
-  .header--has-menu:not(.header--middle-left) {
-    padding-bottom: 0;
-  }
-
   .header--top-left,
   .header--middle-left:not(.header--has-menu) {
     grid-template-areas:
