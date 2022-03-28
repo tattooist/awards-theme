@@ -379,7 +379,7 @@
                                  form="{{ product_form_id }}"
                                  {% if option.selected_value == value %}checked{% endif %}
                           >
-                          <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" class="product-swatch{% if block.settings.swatch_type == 'color_swatch' %} product-swatch--color{% else %} product-swatch--image{% endif %}" title="{{ value }}" style="{% if block.settings.swatch_type == 'color_swatch' %}background-color:{{ color_code }};{% else %}background-image:url('{{ current_variant.featured_image | img_url: '128x' }}');{% endif %}"></label>
+                          <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" class="product-swatch{% if block.settings.swatch_type == 'color_swatch' %} product-swatch--color{% else %} product-swatch--image{% endif %}" title="{{ value }}" style="{% if block.settings.swatch_type == 'color_swatch' %}background-color:{{ color_code }};{% else %}background-image:url('{{ current_variant.featured_image | image_url: width: 128 }}');{% endif %}"></label>
                         {%- endfor -%}
                       </fieldset>
                     {% else %}
@@ -425,7 +425,7 @@
                                  form="{{ product_form_id }}"
                                  {% if option.selected_value == value %}checked{% endif %}
                           >
-                          <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" class="product-swatch" title="{{ value }}" style="{% if block.settings.swatch_type == 'color_swatch' %}background-color:{{ color_code }};{% else %}background-image:url('{{ current_variant.featured_image | img_url: '128x' }}');{% endif %}"></label>
+                          <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}" class="product-swatch" title="{{ value }}" style="{% if block.settings.swatch_type == 'color_swatch' %}background-color:{{ color_code }};{% else %}background-image:url('{{ current_variant.featured_image | image_url: width: 128 }}');{% endif %}"></label>
                         {%- endfor -%}
                       </fieldset>
                     {% else %}
