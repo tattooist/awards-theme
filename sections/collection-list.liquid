@@ -114,12 +114,12 @@
     </ul>
 
     {%- if show_mobile_slider -%}
-      <div class="slider__controls large-up-hide">
+      <div class="slider__controls large-up-hide{%- unless section.settings.show_view_all -%} slider__controls--center{%- endunless -%}">
         {%- if section.settings.show_view_all and show_mobile_slider -%}
           <a href="{{ routes.collections_url }}" class="link underlined-link large-up-hide">{{ 'sections.collection_list.view_all' | t }}</a>
         {%- endif -%}
         <div class="slider-buttons no-js-hidden">
-          <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'general.slider.previous_slide' | t }}">{% render 'icon-caret' %}</button>
+          <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'general.slider.previous_slide' | t }}">{% render 'icon-arrow' %}</button>
           <div class="slider-counter caption">
             <span class="slider-counter--current">1</span>
             <span aria-hidden="true"> / </span>

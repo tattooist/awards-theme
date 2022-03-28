@@ -480,6 +480,7 @@
   .image-with-text__buttons {
     margin-top: 2.4rem;
     gap: 1.6rem;
+    width: 100%;
   }
 
   .image-with-text__buttons .button {

@@ -106,7 +106,7 @@
         </ul>
 
         {% if section.settings.swipe_on_mobile %}
-          <div class="slider__controls large-up-hide">
+          <div class="slider__controls large-up-hide{%- unless section.settings.show_view_all -%} slider__controls--center{%- endunless -%}">
             {%- if section.settings.blog != blank and section.settings.show_view_all -%}
               <a href="{{ section.settings.blog.url }}"
                  class="link underlined-link large-up-hide"

@@ -91,7 +91,7 @@
 
 <div id="Featured-collection-{{ section.id }}" class="color-background-1 isolate gradient">
   <div class="collection section-{{ section.id }}-padding{% if section.settings.full_width %} collection--full-width{% endif %}">
-    <div class="collection__title title-wrapper title-wrapper--no-top-margin page-width{% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% endif %}{% if show_desktop_slider %} collection__title--desktop-slider{% endif %}">
+    <div class="collection__title title-wrapper title-wrapper--no-top-margin page-width">
       {%- if section.settings.title != blank -%}
         <h2 class="title {{ section.settings.heading_size }}">{{ section.settings.title | escape }}</h2>
       {%- endif -%}
@@ -122,7 +122,7 @@
       </ul>
 
       {%- if show_mobile_slider or show_desktop_slider -%}
-        <div class="slider__controls large-up-hide">
+        <div class="slider__controls{%- unless section.settings.show_view_all -%} slider__controls--center{%- endunless -%} large-up-hide">
           {%- if section.settings.show_view_all and section.settings.swipe_on_mobile and more_in_collection -%}
             <a href="{{ section.settings.collection.url }}" class="link underlined-link large-up-hide">{{ 'sections.featured_collection.view_all' | t }}</a>
           {%- endif -%}
