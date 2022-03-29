@@ -3115,7 +3115,6 @@
             "image_overlay_opacity": {
               "label": "Image overlay opacity"
             }
-            }
           }
         }
       },
@@ -3143,6 +3142,7 @@
             },
             "heading": {
               "label": "Content"
+            }
           }
         }
       },
