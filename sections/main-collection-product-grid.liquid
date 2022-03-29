@@ -35,19 +35,21 @@
 
   <div{% if section.settings.layout == 'topline'  %} id="ProductGridContainer"{%  endif %}>
 
-    {% if section.settings.layout == 'sidebar'  %}
-      {% if section.settings.columns_desktop == 1 %}
-        {% assign columns_desktop = 2 %}
-      {% elsif section.settings.columns_desktop == 5 %}
-        {% assign columns_desktop = 4 %}
-      {% else %}
-        {% assign columns_desktop = section.settings.columns_desktop %}
-      {%  endif %}
+    {%- liquid
+      if section.settings.layout == 'sidebar'
+        if section.settings.columns_desktop == 1
+          assign columns_desktop = 2
+        elsif section.settings.columns_desktop == 5
+          assign columns_desktop = 4
+        else
+          assign columns_desktop = section.settings.columns_desktop
+        endif
 
-      {% assign products_per_page = section.settings.products_per_page | divided_by: 3 | times: columns_desktop %}
-    {%- else -%}
-      {% assign products_per_page = section.settings.products_per_page %}
-    {%  endif %}
+        assign products_per_page = section.settings.products_per_page | divided_by: 3 | times: columns_desktop
+      else
+        assign products_per_page = section.settings.products_per_page
+      endif
+    -%}
 
     {%- paginate collection.products by products_per_page -%}
       {%- if collection.products.size == 0 -%}

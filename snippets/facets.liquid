@@ -109,7 +109,7 @@
                               {% for item in colors_array %}
                                 {% assign color_vals = item | strip | split: '#' %}
 
-                                {% if color_vals[0] == value.label  %}
+                                {% if color_vals[0] == value.label %}
                                   {% assign color_code = color_vals[1] | prepend: '#' %}
                                 {% endif %}
                               {% endfor %}
@@ -398,7 +398,7 @@
                                     {% for item in colors_array %}
                                       {% assign color_vals = item | strip | split: '#' %}
 
-                                      {% if color_vals[0] == value.label  %}
+                                      {% if color_vals[0] == value.label %}
                                         {% assign color_code = color_vals[1] | prepend: '#' %}
                                       {% endif %}
                                     {% endfor %}

@@ -43,13 +43,16 @@
   >
 {%- endcapture -%}
 
-{%- if section.settings.image_mob != blank -%}
-  {%- assign image_mob = section.settings.image_mob -%}
-{% elsif section.settings.image != blank %}
-  {%- assign image_mob = section.settings.image -%}
-{% else %}
-  {%- assign image_mob = collection.image -%}
-{%- endif -%}
+
+{%- liquid
+  if section.settings.image_mob != blank
+    assign image_mob = section.settings.image_mob
+  elsif section.settings.image != blank
+    assign image_mob = section.settings.image
+  else
+    assign image_mob = collection.image
+  endif
+-%}
 
 {%- capture var_image_mob -%}
   <img

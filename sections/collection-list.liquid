@@ -90,21 +90,23 @@
         endif
       -%}
 
-      {%- if section.settings.sort_collections == 'title_asc' -%}
-        {% assign sort_collections = section.blocks | sort: "title" %}
-      {% elsif section.settings.sort_collections == 'title_desc' %}
-        {% assign sort_collections = section.blocks | sort: "title" | reverse %}
-      {% elsif section.settings.sort_collections == 'date_asc' %}
-        {% assign sort_collections = section.blocks | sort: "published_at" | reverse %}
-      {% elsif section.settings.sort_collections == 'date_desc' %}
-        {% assign sort_collections = section.blocks | sort: "published_at"  %}
-      {% elsif section.settings.sort_collections == 'product_count_asc' %}
-        {% assign sort_collections = section.blocks | sort: "products_count" %}
-      {% elsif section.settings.sort_collections == 'product_count_desc' %}
-        {% assign sort_collections = section.blocks | sort: "products_count" | reverse %}
-      {% elsif section.settings.sort_collections == 'manual' %}
-        {% assign sort_collections = section.blocks %}
-      {%- endif -%}
+      {%- liquid
+        if section.settings.sort_collections == 'title_asc'
+          assign sort_collections = section.blocks | sort: "title"
+        elsif section.settings.sort_collections == 'title_desc'
+          assign sort_collections = section.blocks | sort: "title" | reverse
+        elsif section.settings.sort_collections == 'date_asc'
+          assign sort_collections = section.blocks | sort: "published_at" | reverse
+        elsif section.settings.sort_collections == 'date_desc'
+          assign sort_collections = section.blocks | sort: "published_at"
+        elsif section.settings.sort_collections == 'product_count_asc'
+          assign sort_collections = section.blocks | sort: "products_count"
+        elsif section.settings.sort_collections == 'product_count_desc'
+          assign sort_collections = section.blocks | sort: "products_count" | reverse
+        elsif section.settings.sort_collections == 'manual'
+          assign sort_collections = section.blocks
+        endif
+      -%}
 
       {%- for block in sort_collections -%}
         <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="collection-list__item grid__item{% if show_mobile_slider %} slider__slide{% endif %}{% if block.settings.collection.featured_image == nil %} collection-list__item--no-media{% endif %}" {{ block.shopify_attributes }}>

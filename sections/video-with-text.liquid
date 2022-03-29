@@ -52,7 +52,7 @@
   }
 {%- endstyle -%}
 
-{% unless section.settings.text_color == blank or section.settings.text_color contains 'rgba(0,0,0,0)'  %}
+{% unless section.settings.text_color == blank or section.settings.text_color contains 'rgba(0,0,0,0)' %}
   {%- style -%}
     #video-with-text-{{ section.id }} .banner__content > * {
       --color-foreground: {{ section.settings.text_color.red }}, {{ section.settings.text_color.green }}, {{ section.settings.text_color.blue }};

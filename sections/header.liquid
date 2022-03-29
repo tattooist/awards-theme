@@ -396,11 +396,13 @@
       <h1 class="header__heading">
     {%- endif -%}
         <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
-          {%- if section.settings.transparent_header_logo != blank and section.settings.enable_transparent_header and request.page_type == 'index' -%}
-            {%- assign header_logo = section.settings.transparent_header_logo -%}
-          {% else %}
-            {%- assign header_logo = section.settings.logo  -%}
-          {% endif %}
+          {%- liquid
+            if section.settings.transparent_header_logo != blank and section.settings.enable_transparent_header and request.page_type == 'index'
+              assign header_logo = section.settings.transparent_header_logo
+            else
+              assign header_logo = section.settings.logo
+            endif
+          -%}
 
           {%- if header_logo != blank -%}
             {%- assign image_size_2x = section.settings.logo_width | times: 2 | at_most: 5760 -%}

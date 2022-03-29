@@ -363,15 +363,18 @@
                       <legend class="form__label">{{ option.name }}: <span>{{ option.selected_value }}</span></legend>
                       <fieldset class="js product-form__input">
                         {%- for value in option.values -%}
-                          {% assign current_variant = product.variants[forloop.index0] %}
 
-                          {% for item in colors_array %}
-                            {% assign color_vals = item | strip | split: '#' %}
+                          {%- liquid
+                            assign current_variant = product.variants[forloop.index0]
 
-                            {% if color_vals[0] == current_variant.title  %}
-                              {% assign color_code = color_vals[1] | prepend: '#' %}
-                            {% endif %}
-                          {% endfor %}
+                            for item in colors_array
+                              assign color_vals = item | strip | split: '#'
+
+                              if color_vals[0] == current_variant.title
+                                assign color_code = color_vals[1] | prepend: '#'
+                              endif
+                            endfor
+                          -%}
 
                           <input type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
                                  name="{{ option.name }}"
@@ -409,15 +412,18 @@
                     {% if option.name == 'Color' and block.settings.swatch_type != 'default' %}
                       <fieldset class="js product-form__input">
                         {%- for value in option.values -%}
-                          {% assign current_variant = product.variants[forloop.index0] %}
 
-                          {% for item in colors_array %}
-                            {% assign color_vals = item | strip | split: '#' %}
+                          {%- liquid
+                            assign current_variant = product.variants[forloop.index0]
 
-                            {% if color_vals[0] == current_variant.title  %}
-                              {% assign color_code = color_vals[1] | prepend: '#' %}
-                            {% endif %}
-                          {% endfor %}
+                            for item in colors_array
+                              assign color_vals = item | strip | split: '#'
+
+                              if color_vals[0] == current_variant.title
+                                assign color_code = color_vals[1] | prepend: '#'
+                              endif
+                            endfor
+                          -%}
 
                           <input type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
                                  name="{{ option.name }}"

@@ -13,7 +13,6 @@
 
 {%- liquid
   assign sort_by = results.sort_by | default: results.default_sort_by
-  assign total_active_values = 0
   if results.url
     assign results_url = results.url
   else
@@ -144,7 +143,7 @@
                                       {% for item in colors_array %}
                                         {% assign color_vals = item | strip | split: '#' %}
 
-                                        {% if color_vals[0] == value.label  %}
+                                        {% if color_vals[0] == value.label %}
                                           {% assign color_code = color_vals[1] | prepend: '#' %}
                                         {% endif %}
                                       {% endfor %}
