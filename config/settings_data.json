@@ -62,7 +62,7 @@
             "type": "text",
             "settings": {
               "heading": "Heading",
-              "text": "<p>Share store details, promotions, or brand content with your customers.<\/p>",
+              "text": "<p>Share store details, promotions, or brand content with your customers.</p>",
               "show_social": false
             }
           },
@@ -84,7 +84,7 @@
             "type": "newsletter",
             "settings": {
               "heading": "Newsletter",
-              "text": "<p>Be the first to hear about new launches, exclusive offers and expert beauty tips.<\/p>"
+              "text": "<p>Be the first to hear about new launches, exclusive offers and expert beauty tips.</p>"
             }
           }
         },

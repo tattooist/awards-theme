@@ -33,7 +33,7 @@
     {%- endif -%}
   {%- endif -%}
 
-  <div{% if section.settings.layout == 'topline'  %} id="ProductGridContainer"{%  endif %}>
+  <div{% if section.settings.layout == 'topline' %} id="ProductGridContainer"{% endif %}>
 
     {%- liquid
       if section.settings.layout == 'sidebar'
@@ -63,9 +63,9 @@
           </div>
         </div>
       {%- else -%}
-        <div class="{% if section.settings.layout == 'topline'  %}collection{% endif %} page-width">
-          {% if section.settings.layout == 'topline'  %}<div class="loading-overlay gradient"></div>{% endif %}
-          {% if section.settings.layout == 'sidebar'  %}
+        <div class="{% if section.settings.layout == 'topline' %}collection{% endif %} page-width">
+          {% if section.settings.layout == 'topline' %}<div class="loading-overlay gradient"></div>{% endif %}
+          {% if section.settings.layout == 'sidebar' %}
           <div class="collection-grid grid grid--1-col grid--2-col-tablet">
             {{ 'component-facets.css' | asset_url | stylesheet_tag }}
             <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
@@ -81,7 +81,7 @@
 
                   <ul id="product-grid" data-id="{{ section.id }}" class="
                     grid product-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down
-                    {% if section.settings.layout == 'sidebar'  %}
+                    {% if section.settings.layout == 'sidebar' %}
                       {% if collection.products_count < 3 %} grid--{{ collection.products_count }}-col-tablet{% else %}
                         {% if collection.products_count == 3 %}
                           grid--3-col-desktop
@@ -118,7 +118,7 @@
                       </li>
                     {%- endfor -%}
                   </ul>
-                  {% if section.settings.layout == 'sidebar'  %}
+                  {% if section.settings.layout == 'sidebar' %}
                   </div>
               </div>
           </div>

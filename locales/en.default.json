@@ -285,6 +285,9 @@
     },
     "page": {
       "title": "Page title"
+    },
+    "video-with-text": {
+      "load_video": "TODO"
     }
   },
   "localization": {

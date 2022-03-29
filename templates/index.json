@@ -21,7 +21,7 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "Shop all",
-            "button_link_1": "shopify:\/\/collections\/all",
+            "button_link_1": "shopify://collections/all",
             "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
@@ -61,7 +61,7 @@
         "16469350868bfef871-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
           }
         },
         "16469350868bfef871-2": {
@@ -85,7 +85,7 @@
         "layout": "boxed",
         "section_height": "medium",
         "content_layout": "no-overlap",
-        "image": "shopify:\/\/shop_images\/242785278_1165681497490643_6274462903799703073_n.jpg",
+        "image": "shopify://shop_images/242785278_1165681497490643_6274462903799703073_n.jpg",
         "desktop_content_position": "top",
         "desktop_content_alignment": "left",
         "desktop_text_first": true,
@@ -111,7 +111,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
           }
         },
         "button": {
@@ -198,7 +198,7 @@
       "type": "video",
       "settings": {
         "layout": "full-width",
-        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
         "description": "",
         "autoplay": false,
         "padding_top": 32,
@@ -212,7 +212,7 @@
           "type": "column",
           "settings": {
             "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
             "link_label": "",
             "link": ""
           }
@@ -221,7 +221,7 @@
           "type": "column",
           "settings": {
             "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
             "link_label": "",
             "link": ""
           }
@@ -230,7 +230,7 @@
           "type": "column",
           "settings": {
             "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
             "link_label": "",
             "link": ""
           }
@@ -240,7 +240,7 @@
           "disabled": true,
           "settings": {
             "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
             "link_label": "",
             "link": ""
           }
@@ -409,14 +409,14 @@
         "164709825290b9b1d8-0": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/pexels-karolina-grabowska-5706269.jpg",
+            "image": "shopify://shop_images/pexels-karolina-grabowska-5706269.jpg",
             "subheading": "Tell your brand's story through images",
             "heading": "Image slide",
             "heading_size": "medium",
             "text": "Give customers details about the banner image(s) or content on the template.",
             "text_style": "body",
             "button_label_1": "Learn more",
-            "button_link_1": "shopify:\/\/products\/bumbag-black",
+            "button_link_1": "shopify://products/bumbag-black",
             "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
@@ -475,7 +475,7 @@
           "settings": {
             "icon": "leaf",
             "title": "Safe on all ages",
-            "text": "<p>Everyone naturally benefits from a healthy balance<\/p>"
+            "text": "<p>Everyone naturally benefits from a healthy balance</p>"
           }
         },
         "16471420027c4ddc86-1": {
@@ -483,7 +483,7 @@
           "settings": {
             "icon": "heart",
             "title": "100% Drug-Free",
-            "text": "<p>Restore natural balance with bio-frequencies, not chemicals<\/p>"
+            "text": "<p>Restore natural balance with bio-frequencies, not chemicals</p>"
           }
         },
         "16471420027c4ddc86-2": {
@@ -491,7 +491,7 @@
           "settings": {
             "icon": "map_pin",
             "title": "Worldwide shipping",
-            "text": "<p>On all UK and Europ orders over £50<\/p>"
+            "text": "<p>On all UK and Europ orders over £50</p>"
           }
         },
         "16471420027c4ddc86-3": {
@@ -499,7 +499,7 @@
           "settings": {
             "icon": "return",
             "title": "Easy returns",
-            "text": "<p>Within 30 days of recovering your purchase<\/p>"
+            "text": "<p>Within 30 days of recovering your purchase</p>"
           }
         }
       },
@@ -527,28 +527,28 @@
         "16471423227a415602-0": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Logo.png",
+            "image": "shopify://shop_images/Logo.png",
             "link": ""
           }
         },
         "16471423227a415602-1": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Logo_45b043f3-671e-48ec-8d91-c908ed9e84fa.png",
+            "image": "shopify://shop_images/Logo_45b043f3-671e-48ec-8d91-c908ed9e84fa.png",
             "link": ""
           }
         },
         "16471423227a415602-2": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Logo_3f14e979-a5c4-4ca4-98c8-0687e9ebc43c.png",
+            "image": "shopify://shop_images/Logo_3f14e979-a5c4-4ca4-98c8-0687e9ebc43c.png",
             "link": ""
           }
         },
         "16471423227a415602-3": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Logo_7298a4a4-bc71-453a-9a5f-78cc7bb0cfc8.png",
+            "image": "shopify://shop_images/Logo_7298a4a4-bc71-453a-9a5f-78cc7bb0cfc8.png",
             "link": ""
           }
         },
@@ -590,7 +590,7 @@
           "type": "column",
           "settings": {
             "title": "Testimonial",
-            "text": "<p>This is now my HG concealer. The shade match is perfect and the coverage is there whilst being skinlike. All the ‘creamy’ concealer, like Kosas or PML happen to crease under my eyes unless I prime it and this does not, even without priming.<\/p>",
+            "text": "<p>This is now my HG concealer. The shade match is perfect and the coverage is there whilst being skinlike. All the ‘creamy’ concealer, like Kosas or PML happen to crease under my eyes unless I prime it and this does not, even without priming.</p>",
             "rating": "5",
             "author": "Author",
             "location": "Location"
@@ -600,7 +600,7 @@
           "type": "column",
           "settings": {
             "title": "Testimonial",
-            "text": "<p>This is now my HG concealer. The shade match is perfect and the coverage is there whilst being skinlike. All the ‘creamy’ concealer, like Kosas or PML happen to crease under my eyes unless I prime it and this does not, even without priming.<\/p>",
+            "text": "<p>This is now my HG concealer. The shade match is perfect and the coverage is there whilst being skinlike. All the ‘creamy’ concealer, like Kosas or PML happen to crease under my eyes unless I prime it and this does not, even without priming.</p>",
             "rating": "5",
             "author": "Author",
             "location": "Location"
@@ -610,7 +610,7 @@
           "type": "column",
           "settings": {
             "title": "Testimonial",
-            "text": "<p>This is now my HG concealer. The shade match is perfect and the coverage is there whilst being skinlike. All the ‘creamy’ concealer, like Kosas or PML happen to crease under my eyes unless I prime it and this does not, even without priming.<\/p>",
+            "text": "<p>This is now my HG concealer. The shade match is perfect and the coverage is there whilst being skinlike. All the ‘creamy’ concealer, like Kosas or PML happen to crease under my eyes unless I prime it and this does not, even without priming.</p>",
             "rating": "5",
             "author": "Author",
             "location": "Location"

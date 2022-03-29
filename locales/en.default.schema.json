@@ -969,7 +969,7 @@
           "content": "Currency selector"
         },
         "header__4": {
-          "info": "To add a currency, go to your [payment settings.](\/admin\/settings\/payments)"
+          "info": "To add a currency, go to your [payment settings.](/admin/settings/payments)"
         },
         "enable_country_selector": {
           "label": "Currency selector"
@@ -1561,7 +1561,7 @@
         },
         "show_collection_image": {
           "label": "Show collection image",
-          "info": "For best results, use an image with a 16:9 aspect ratio. [Learn more](https:\/\/help.shopify.com\/en\/manual\/shopify-admin\/productivity-tools\/image-editor#understanding-image-aspect-ratio)"
+          "info": "For best results, use an image with a 16:9 aspect ratio. [Learn more](https://help.shopify.com/en/manual/shopify-admin/productivity-tools/image-editor#understanding-image-aspect-ratio)"
         },
         "color_h1": {
           "content": "Colors"
@@ -2754,16 +2754,13 @@
           "label": "Heading"
         },
         "cover_image": {
-          "label": "Cover image"
+          "label": "Cover image",
+          "info": "2000 x 1125px .jpg recommended. Required if you turn off autoplay."
         },
         "video_url": {
           "label": "URL",
           "placeholder": "Use a YouTube or Vimeo URL",
           "info": "Accepts Video or YouTube links"
-        },
-        "cover_image": {
-          "label": "Cover image",
-          "info": "2000 x 1125px .jpg recommended. Required if you turn off autoplay."
         },
         "description": {
           "label": "Video alt text",
