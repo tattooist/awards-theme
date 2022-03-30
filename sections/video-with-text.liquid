@@ -174,11 +174,11 @@
                 <span>{{ block.settings.subheading | escape }}</span>
               </h2>
             {%- when 'heading' -%}
-              <h2 class="banner__heading {% if block.settings.heading_size == 'medium' %}h1{% else %}h0{% endif %}" {{ block.shopify_attributes }}>
+              <h2 class="banner__heading {{ block.settings.heading_size  }}" {{ block.shopify_attributes }}>
                 <span>{{ block.settings.heading | escape }}</span>
               </h2>
             {%- when 'text' -%}
-              <div class="banner__text {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
+              <div class="banner__text" {{ block.shopify_attributes }}>
                 <span>{{ block.settings.text | escape }}</span>
               </div>
             {%- when 'buttons' -%}
@@ -452,15 +452,15 @@
           "id": "heading_size",
           "options": [
             {
-              "value": "medium",
+              "value": "h1",
               "label": "t:sections.video-with-text.blocks.heading.settings.heading_size.options__1.label"
             },
             {
-              "value": "large",
+              "value": "h0",
               "label": "t:sections.video-with-text.blocks.heading.settings.heading_size.options__2.label"
             }
           ],
-          "default": "large",
+          "default": "h1",
           "label": "t:sections.video-with-text.blocks.heading.settings.heading_size.label"
         }
       ]
