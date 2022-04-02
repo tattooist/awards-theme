@@ -122,7 +122,7 @@
       </ul>
 
       {%- if show_mobile_slider or show_desktop_slider -%}
-        <div class="slider__controls{%- unless section.settings.show_view_all -%} slider__controls--center{%- endunless -%} large-up-hide">
+        <div class="slider__controls large-up-hide{% unless section.settings.show_view_all %} slider__controls--center{% endunless %}">
           {%- if section.settings.show_view_all and section.settings.swipe_on_mobile and more_in_collection -%}
             <a href="{{ section.settings.collection.url }}" class="link underlined-link large-up-hide">{{ 'sections.featured_collection.view_all' | t }}</a>
           {%- endif -%}

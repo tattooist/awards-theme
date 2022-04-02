@@ -63,12 +63,12 @@
 <div id="multicolumn-{{ section.id }}" class="multicolumn color-background-1 gradient{% unless section.settings.background_style == 'none' and settings.text_boxes_border_thickness > 0 or settings.text_boxes_shadow_opacity > 0 %} background-{{ section.settings.background_style }}{% endunless %}{% if section.settings.title == blank %} no-heading{% endif %}">
   <div class="page-width section-{{ section.id }}-padding isolate">
     {% if section.settings.subtitle != blank %}
-      <h2 class="multicolumn__subheading {{ section.settings.text_aligment }}">
+      <h2 class="multicolumn__subheading {{ section.settings.text_alignment }}">
         {{ section.settings.subtitle | escape }}
       </h2>
     {% endif %}
     {% unless section.settings.title == blank %}
-      <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin{% if section.settings.title == blank %} title-wrapper-with-link--no-heading{% endif %} {{ section.settings.text_aligment }}">
+      <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin{% if section.settings.title == blank %} title-wrapper-with-link--no-heading{% endif %} {{ section.settings.text_alignment }}">
         <h2 class="title {{ section.settings.heading_size }}">
           {{ section.settings.title | escape }}
         </h2>
@@ -207,19 +207,19 @@
     },
     {
       "type": "select",
-      "id": "text_aligment",
+      "id": "text_alignment",
       "options": [
         {
           "value": "left",
-          "label": "t:sections.multicolumn.settings.text_aligment.options__1.label"
+          "label": "t:sections.multicolumn.settings.text_alignment.options__1.label"
         },
         {
           "value": "center",
-          "label": "t:sections.multicolumn.settings.text_aligment.options__2.label"
+          "label": "t:sections.multicolumn.settings.text_alignment.options__2.label"
         }
       ],
       "default": "left",
-      "label": "t:sections.multicolumn.settings.text_aligment.label"
+      "label": "t:sections.multicolumn.settings.text_alignment.label"
     },
     {
       "type": "select",

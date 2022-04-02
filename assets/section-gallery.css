@@ -1,0 +1,22 @@
+@media screen and (min-width: 750px) {
+  .gallery .slider--desktop + .slider__controls {
+    position: absolute;
+    top: calc(50% - 4.5rem);
+    width: 100%;
+  }
+
+  .gallery .slider--desktop + .slider__controls .slider-buttons {
+    justify-content: space-between;
+  }
+
+  .gallery .slider--desktop + .slider__controls .slider-button {
+    background: #FFF;
+    width: 5.6rem;
+    height: 5.6rem;
+    border: 1px solid rgba(38, 38, 38, 0.1);
+  }
+
+  .gallery .slider--desktop + .slider__controls .slider-button[disabled] {
+    visibility: hidden;
+  }
+}

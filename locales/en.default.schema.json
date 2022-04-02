@@ -2111,7 +2111,7 @@
         "title": {
           "label": "Heading"
         },
-        "text_aligment": {
+        "text_alignment": {
           "options__1": {
             "label": "Left"
           },
@@ -2334,6 +2334,43 @@
       },
       "presets": {
         "name": "Logo list"
+      }
+    },
+    "gallery": {
+      "name": "Gallery",
+      "settings": {
+        "subtitle": {
+          "label": "Subheading"
+        },
+        "title": {
+          "label": "Heading"
+        },
+        "heading_alignment": {
+          "options__1": {
+            "label": "Left"
+          },
+          "options__2": {
+            "label": "Center"
+          },
+          "label": "Heading alignment"
+        }
+      },
+      "blocks": {
+        "column": {
+          "name": "Image",
+          "settings": {
+            "image": {
+              "label": "Image",
+              "info": "1400 x 1400px .png recommended"
+            },
+            "caption": {
+              "label": "Caption"
+            }
+          }
+        }
+      },
+      "presets": {
+        "name": "Gallery"
       }
     },
     "testimonials": {

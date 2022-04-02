@@ -1,0 +1,234 @@
+{{ 'section-multicolumn.css' | asset_url | stylesheet_tag }}
+{{ 'section-gallery.css' | asset_url | stylesheet_tag }}
+<link rel="stylesheet" href="{{ 'component-slider.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'component-slider.css' | asset_url | stylesheet_tag }}</noscript>
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{% unless section.settings.bg_color == blank %}
+  {%- style -%}
+    #Gallery{{ section.id }} {
+      background: {{ section.settings.bg_color }};
+    }
+  {%- endstyle -%}
+{% endunless %}
+
+{% unless section.settings.text_color == blank %}
+  {%- style -%}
+    #Gallery{{ section.id }} .gallery__no-image,
+    #Gallery{{ section.id }} .multicolumn__subheading,
+    #Gallery{{ section.id }} .title,
+    #Gallery{{ section.id }} {
+      --color-link: {{ section.settings.text_color.red }}, {{ section.settings.text_color.green }}, {{ section.settings.text_color.blue }};
+      --color-foreground: {{ section.settings.text_color.red }}, {{ section.settings.text_color.green }}, {{ section.settings.text_color.blue }};
+      color: {{ section.settings.text_color }};
+    }
+  {%- endstyle -%}
+{% endunless %}
+
+<div id="Gallery{{ section.id }}" class="multicolumn gallery color-background-1 gradient{% if section.settings.title == blank %} no-heading{% endif %} background-none">
+  <div class="section-{{ section.id }}-padding isolate">
+    <div class="page-width">
+      {% if section.settings.subtitle != blank %}
+        <h2 class="multicolumn__subheading {{ section.settings.heading_alignment }}">
+          {{ section.settings.subtitle | escape }}
+        </h2>
+      {% endif %}
+      {% unless section.settings.title == blank %}
+        <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin{% if section.settings.title == blank %} title-wrapper-with-link--no-heading{% endif %} {{ section.settings.heading_alignment }}">
+          <h2 class="title h1">
+            {{ section.settings.title | escape }}
+          </h2>
+        </div>
+      {% endunless %}
+    </div>
+    <slider-component class="slider-mobile-gutter slider-component-desktop">
+      <ul class="multicolumn-list contains-content-container contains-card{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid grid--1-col grid--3-col-desktop{% if section.blocks.size > 1 %} slider slider--tablet slider--desktop grid--peek{% endif %}"
+        id="Slider-{{ section.id }}"
+        role="list"
+      >
+        {%- for block in section.blocks -%}
+          <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="multicolumn-list__item grid__item slider__slide {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %}" {{ block.shopify_attributes }}>
+            <div class="multicolumn-card content-container">
+              <div class="multicolumn-card__image-wrapper">
+                <div class="media media--transparent media--square">
+                    {%- if block.settings.image != blank -%}
+                      <img
+                              class="multicolumn-card__image"
+                              srcset="{%- if block.settings.image.width >= 275 -%}{{ block.settings.image | image_url: width: 275 }} 275w,{%- endif -%}
+                                {%- if block.settings.image.width >= 550 -%}{{ block.settings.image | image_url: width: 550 }} 550w,{%- endif -%}
+                                {%- if block.settings.image.width >= 710 -%}{{ block.settings.image | image_url: width: 710 }} 710w,{%- endif -%}
+                                {%- if block.settings.image.width >= 1420 -%}{{ block.settings.image | image_url: width: 1420 }} 1420w,{%- endif -%}
+                                {{ block.settings.image | image_url }} {{ block.settings.image.width }}w"
+                              src="{{ block.settings.image | image_url: width: 550 }}"
+                              sizes="(min-width: 990px) {% if section.blocks.size <= 2 %}710px{% else %}550px{% endif %},
+                                (min-width: 750px) {% if section.blocks.size == 1 %}710px{% else %}550px{% endif %},
+                                calc(100vw - 30px)"
+                              alt="{{ block.settings.image.alt }}"
+                              height="{{ block.settings.image.height }}"
+                              width="{{ block.settings.image.width }}"
+                              loading="lazy"
+                      >
+                    {%- else -%}
+                      {{ 'image' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
+                    {% endif %}
+                </div>
+              </div>
+              <div class="multicolumn-card__info">
+                {%- if block.settings.text != blank -%}
+                  <div class="rte">{{ block.settings.text }}</div>
+                {%- endif -%}
+              </div>
+            </div>
+          </li>
+        {%- endfor -%}
+      </ul>
+
+      <div class="slider__controls slider__controls--center">
+        <div class="slider-buttons no-js-hidden medium-hide{% if section.blocks.size < 2 %} small-hide{% endif %}">
+          <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'general.slider.previous_slide' | t }}">{% render 'icon-arrow' %}</button>
+          <div class="slider-counter caption">
+            <span class="slider-counter--current">1</span>
+            <span aria-hidden="true"> / </span>
+            <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
+            <span class="slider-counter--total">{{ section.blocks.size }}</span>
+          </div>
+          <button type="button" class="slider-button slider-button--next" name="next" aria-label="{{ 'general.slider.next_slide' | t }}">{% render 'icon-arrow' %}</button>
+        </div>
+      </div>
+    </slider-component>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.gallery.name",
+  "class": "section",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subtitle",
+      "default": "Subtitle",
+      "label": "t:sections.gallery.settings.subtitle.label"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "default": "Headline",
+      "label": "t:sections.gallery.settings.title.label"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.gallery.settings.heading_alignment.options__1.label"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.gallery.settings.heading_alignment.options__2.label"
+        }
+      ],
+      "default": "left",
+      "label": "t:sections.gallery.settings.heading_alignment.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.section_colors.section_colors_heading"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "t:sections.all.section_colors.bg_color.label"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "t:sections.all.section_colors.text_color.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 32
+    }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "t:sections.gallery.blocks.column.name",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.gallery.blocks.column.settings.image.label",
+          "info": "t:sections.gallery.blocks.column.settings.image.info"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "<p>Gallery image</p>",
+          "label": "t:sections.gallery.blocks.column.settings.caption.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.gallery.presets.name",
+      "blocks": [
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
